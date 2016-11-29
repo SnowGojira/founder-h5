@@ -1,0 +1,40 @@
+/*lock的动画*/
+@keyframes a {
+
+    0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    20% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+    80% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+/*loading的动画*/
+.animLoad{
+    /*animation: animload 1.2s steps(3) infinite;*/
+    /*-webkit-animation: animload 1.2s steps(3) infinite;*/
+    -webkit-animation: animLoad 2.1s step-end infinite;
+}
+@-webkit-keyframes animLoad{
+    0%{
+        background-image:url(../images/loading/la1.png);
+    }
+    33%{
+        background-image:url(../images/loading/la2.png);
+    }
+
+    66%{
+        background-image:url(../images/loading/la3.png);
+    }
+
+}

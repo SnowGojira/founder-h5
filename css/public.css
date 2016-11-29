@@ -9,6 +9,7 @@ a,img{
 }
 a{text-decoration: none}
 img{vertical-align:middle}
+.none{display: none}
 
 /*引入自定义字体*/
 @font-face {
@@ -50,11 +51,14 @@ body,html{
 
 /*loading页面*/
 .pageLoadBox{
-    width: 100vh;
-    height: 100vw;
-    transform-origin: left top 0;
-    /*-webkit-transform: rotate(90deg);*/
-    /*transform: translate(100%, 0) rotate(90deg);*/
+    /*width: 100vh;
+    height: 100vw;*/
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+
+    /*transform-origin: left top 0;
+
 
     -webkit-transform:translate(100vw, 0) rotate(90deg);
     -moz-transform:translate(100vw, 0) rotate(90deg);
@@ -63,12 +67,51 @@ body,html{
     transform:translate(100vw, 0) rotate(90deg);
 
     background: url("../images/page1/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;*/
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    background: url("../images/page1/bg.jpg") 0 0 no-repeat;
     background-size: 100% 100%;
+}
+.lock{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index: 9999;
+    background:#000;
+
+}
+.lock-bg {
+    width: 4.1875rem;
+    height: 6.75rem;
+    position: absolute;
+    top: 25vh;
+    left: 45vw;
+    background: url(../images/lock.png) 0 0 no-repeat;
+    background-size: 4.1875rem auto;
+    -webkit-animation: a 3s infinite 1.5s linear;
+    animation: a 3s infinite 1.5s linear;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.lock-txt{
+    margin-top: 14rem;
+    color: #fff;
+    font-size: .5625rem;
+    position: relative;
+    text-align: center;
 }
 .loadPercent{
     font-size: 2.5rem;
-    position: relative;
+    position: absolute;
     text-align: center;
+    left: 45vh;
     top: 50vw;
 }
 .page-loading{
@@ -78,24 +121,7 @@ body,html{
     top: 40vw;
     left: 37vh;
 }
-.animLoad{
-    /*animation: animload 1.2s steps(3) infinite;*/
-    /*-webkit-animation: animload 1.2s steps(3) infinite;*/
-    -webkit-animation: animLoad 2.1s step-end infinite;
-}
-@-webkit-keyframes animLoad{
-    0%{
-        background-image:url(../images/loading/la1.png);
-    }
-    33%{
-        background-image:url(../images/loading/la2.png);
-    }
 
-    66%{
-    background-image:url(../images/loading/la3.png);
-    }
-
-}
 /*开始页面*/
 /*世界页*/
 /*在变页*/
