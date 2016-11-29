@@ -59,14 +59,14 @@ function setScreen(){
 }
 
 // 预加载逻辑
-var pageLoad = new Array(
+/*var pageLoad = new Array(
     "images/train.png"
-);
+);*/
 
 $(function () {
     // var sticker=new Array();
     //图片懒加载
-    var aImagesIndex=0;
+    /*var aImagesIndex=0;
 
     function loadImgs(arr,fn){
         var len  = arr.length,
@@ -108,5 +108,9 @@ $(function () {
 
         $('#page1').show();
 
-    });
+    });*/
+
+    /*开始做5页和第六页的大逻辑*/
+
+
 });
