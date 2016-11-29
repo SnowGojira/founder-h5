@@ -50,31 +50,16 @@ body,html{
 }
 
 /*loading页面*/
-.pageLoadBox{
-    /*width: 100vh;
-    height: 100vw;*/
+.pageBox{
     width: 100%;
     height: 100%;
     overflow:hidden;
-
-    /*transform-origin: left top 0;
-
-
-    -webkit-transform:translate(100vw, 0) rotate(90deg);
-    -moz-transform:translate(100vw, 0) rotate(90deg);
-    -o-transform:translate(100vw, 0) rotate(90deg);
-    -ms-transform:translate(100vw, 0) rotate(90deg);
-    transform:translate(100vw, 0) rotate(90deg);
-
-    background: url("../images/page1/bg.jpg") 0 0 no-repeat;
-    background-size: 100% 100%;*/
 }
 .bg{
     width: 100%;
     height: 100%;
     overflow:hidden;
-    background: url("../images/page1/bg.jpg") 0 0 no-repeat;
-    background-size: 100% 100%;
+    position: absolute;
 }
 .lock{
     width:100%;
@@ -121,11 +106,40 @@ body,html{
     top: 40vw;
     left: 37vh;
 }
-
 /*开始页面*/
+.bg1{
+    background: url("../images/page1/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
 /*世界页*/
+.bg2{
+    background: url("../images/page2/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
 /*在变页*/
+.bg3{
+    background: url("../images/page3/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
 /*创新页*/
+.bg4{
+    background: url("../images/page4/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
 /*不变页*/
+.bg5{
+    background: url("../images/page5/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+/*slogan页*/
+.bg6{
+    background: url("../images/page6/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+/*分享页面*/
+.bg7{
+    background: url("../images/page7/bg.jpg") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
 
 

@@ -38,3 +38,97 @@
     }
 
 }
+
+
+/*进入进出等等效果*/
+/*--界面出现动画--*/
+.mainIn{
+    display: block;
+    -webkit-animation:mainIn 1s .2s ease both;
+    -moz-animation:mainIn 1s .2s ease both;}
+@-webkit-keyframes mainIn{
+    0%{-webkit-transform:scale(0.9); opacity: 0; -webkit-transform-origin:center center;}
+    50%{-webkit-transform:scale(1); opacity: 1; -webkit-transform-origin:center center;}
+    100%{-webkit-transform:scale(1); opacity: 1; -webkit-transform-origin:center center;}
+}
+@-moz-keyframes mainIn{
+    0%{-moz-transform:scale(0.9); opacity: 0; -moz-transform-origin:center center;}
+    50%{-moz-transform:scale(1); opacity: 1; -moz-transform-origin:center center;}
+    100%{-moz-transform:scale(1); opacity: 1; -moz-transform-origin:center center;}
+}
+/*--旋转--*/
+.rotate{
+    -webkit-animation:rotateIn .5s .2s linear infinite;
+    -moz-animation:rotateIn .5s .2s linear infinite;}
+@-webkit-keyframes rotateIn{
+    from{ -webkit-transform-origin:center center;
+        -webkit-transform:rotate(0deg);}
+    to{-webkit-transform-origin:center center;
+        -webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes rotateIn{
+    from{ -moz-transform-origin:center center;
+        -moz-transform:rotate(0deg);}
+    to{-moz-transform-origin:center center;
+        -moz-transform:rotate(360deg);}
+}
+/*--X轴淡入--*/
+.flipInX{
+    -webkit-animation:flipInX 1s .2s ease both;
+    -moz-animation:flipInX 1s .2s ease both;}
+@-webkit-keyframes flipInX{
+    0%{-webkit-transform:perspective(400px) rotateX(90deg);
+        opacity:0}
+    40%{-webkit-transform:perspective(400px) rotateX(-10deg)}
+    70%{-webkit-transform:perspective(400px) rotateX(10deg)}
+    100%{-webkit-transform:perspective(400px) rotateX(0deg);
+        opacity:1}
+}
+@-moz-keyframes flipInX{
+    0%{-moz-transform:perspective(400px) rotateX(90deg);
+        opacity:0}
+    40%{-moz-transform:perspective(400px) rotateX(-10deg)}
+    70%{-moz-transform:perspective(400px) rotateX(10deg)}
+    100%{-moz-transform:perspective(400px) rotateX(0deg);
+        opacity:1}
+}
+/*右侧淡入*/
+.fadeInRight{
+    -webkit-animation:fadeInRight 1s .2s ease both;
+    -moz-animation:fadeInRight 1s .2s ease both;}
+@-webkit-keyframes fadeInRight{
+    0%{opacity:0;
+        -webkit-transform:translateX(20px)}
+    100%{opacity:1;
+        -webkit-transform:translateX(0)}
+}
+@-moz-keyframes fadeInRight{
+    0%{opacity:0;
+        -moz-transform:translateX(20px)}
+    100%{opacity:1;
+        -moz-transform:translateX(0)}
+}
+/*页面左滑*/
+.pageLeft{
+    -webkit-animation:pageLeft  .5s .5s ease both;
+    -moz-animation:pageLeft .5s .5s  ease both;}
+@-webkit-keyframes pageLeft{
+    0%{-webkit-transform:translateX(0)}
+    100%{-webkit-transform:translateX(-2000px)}
+}
+@-moz-keyframes pageLeft{
+    0%{ -moz-transform:translateX(0)}
+    100%{ -moz-transform:translateX(-2000px)}
+}
+.pageRightIn{
+    display: block;
+    -webkit-animation:pageRightIn .5s 0s ease both ;
+    -moz-animation:pageRightIn .5s 0s ease both;}
+@-webkit-keyframes pageRightIn{
+    0%{-webkit-transform:translateX(2000px); }
+    100%{-webkit-transform:translateX(0);}
+}
+@-moz-keyframes pageRightIn{
+    0%{ -moz-transform:translateX(2000px); }
+    100%{ -moz-transform:translateX(0); }
+}

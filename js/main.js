@@ -1,8 +1,8 @@
 /**
  * Created by hakuh on 2016/11/28.
  */
-LGlobal={};
 // 横屏设置，以及重力监听
+LGlobal={};
 document.addEventListener("DOMContentLoaded",function(){
     setScreen();
 });
@@ -13,7 +13,7 @@ function setScreen(){
     function roScreen(){
        /* var b=document.getElementsByTagName("body")[0];
         var t=document.getElementsByTagName("html")[0];*/
-        var lo=document.getElementsByClassName("pageLoadBox")[0];
+        var lo=document.getElementsByClassName("pageBox")[0];
         var ps=document.getElementsByClassName("page")[0];
         var lock=document.getElementsByClassName("lock")[0];
         setTimeout(function(){
@@ -57,3 +57,56 @@ function setScreen(){
         },100);
     }
 }
+
+// 预加载逻辑
+var pageLoad = new Array(
+    "images/train.png"
+);
+
+$(function () {
+    // var sticker=new Array();
+    //图片懒加载
+    var aImagesIndex=0;
+
+    function loadImgs(arr,fn){
+        var len  = arr.length,
+            behginTime = new Date().getTime();
+        aImagesIndex = 0;
+
+        function loadImg(){
+            var oImg = new Image(),
+                flag = true;
+            oImg.onload = function(){
+
+                if(flag){
+                    flag = false;
+                    aImagesIndex ++;
+                }
+                if(aImagesIndex < len){
+                    loadImg();
+                }else{
+                    var t = new Date().getTime() - behginTime;
+                    if(t < 3000){//等待时间
+                        setTimeout(function(){
+                            fn && fn();
+                        },3000-t);
+                    }else{
+                        fn && fn();
+                    }
+                }
+            };
+            // var img_src = arr[aImagesIndex];
+            oImg.src = arr[aImagesIndex];
+            document.getElementById("loadPercent").innerHTML=aImagesIndex*5+'%';
+            console.log(document.getElementById("loadPercent").innerHTML);
+        }
+        loadImg();
+    }
+
+    loadImgs(pageLoad,function(){
+        $('#pageLoad').hide();
+
+        $('#page1').show();
+
+    });
+});
