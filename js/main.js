@@ -238,6 +238,7 @@ function init(title) {
 
 }
 
+/**/
 function Guess(Title1,Title2,Title1_r,Title2_r){
     Title1.visible=false;
     Title2.visible=false;
