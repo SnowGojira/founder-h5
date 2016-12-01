@@ -136,6 +136,118 @@ $(function () {
         console.log('点击的时候出现状况：' + choice);
     });
 
-
-
 });
+
+
+var w = document.documentElement.clientWidth,
+    h = document.documentElement.clientHeight;
+var  stage=new createjs.Stage("canvas"),
+    container = new createjs.Container();
+
+function init(title) {
+
+    stage.canvas.width=h;
+    stage.canvas.height=w;
+
+    /*图片适配比例*/
+    var original = w*0.275;
+    var scale = original/203;
+    var positonY=0.489*w;
+
+    // console.log(w+" "+original+" "+scale+" "+positonY);
+
+    var train= new createjs.Bitmap("./images/train.png");
+    var railway = new createjs.Bitmap("./images/railway.png");
+
+    var Title1= new createjs.Bitmap("./images/page"+title+"/title1.png");
+    var Title2= new createjs.Bitmap("./images/page"+title+"/title2.png");
+
+    var Title1_r= new createjs.Bitmap("./images/page"+title+"/title1_r.png");
+    var Title2_r= new createjs.Bitmap("./images/page"+title+"/title2_r.png");
+
+    train.scaleX=scale;
+    train.scaleY=scale;
+
+    Title1.scaleX=scale;
+    Title1.scaleY=scale;
+    Title2.scaleX=scale;
+    Title2.scaleY=scale;
+
+    Title1_r.scaleX=scale;
+    Title1_r.scaleY=scale;
+    Title2_r.scaleX=scale;
+    Title2_r.scaleY=scale;
+
+    Title1_r.visible=false;
+    Title2_r.visible=false;
+
+    railway.scaleY=scale;
+
+//设置在舞台中的位置
+    train.x=1000;
+    train.y=positonY;
+
+    Title1.x=1000;
+    Title1.y=positonY;
+    Title2.x=1000;
+    Title2.y=positonY;
+
+    Title1_r.x=1000;
+    Title1_r.y=positonY;
+    Title2_r.x=1000;
+    Title2_r.y=positonY;
+
+    railway.y=positonY;
+// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+    stage.addChild(railway);
+    stage.addChild(train);
+    stage.addChild(Title1_r);
+    stage.addChild(Title2_r);
+    stage.addChild(Title1);
+    stage.addChild(Title2);
+
+    createjs.Ticker.setFPS(30);
+    createjs.Ticker.on('tick',stage);
+
+    createjs.Tween.get(train, {loop: false})
+        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title1, {loop: false})
+        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2, {loop: false})
+        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title1_r, {loop: false})
+        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2_r, {loop: false})
+        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+
+
+    var btn = document.getElementById('key51');
+
+    btn.addEventListener('click', function(){
+        console.log('你点击了这里');
+        Title1.visible=false;
+        Title2.visible=false;
+
+        Title1_r.visible=true;
+        Title2_r.visible=true;
+    }, false);
+
+}
+
+function Guess(Title1,Title2,Title1_r,Title2_r){
+    Title1.visible=false;
+    Title2.visible=false;
+
+    Title1_r.visible=true;
+    Title2_r.visible=true;
+}
+
+
+
+
+
+init(5);
