@@ -111,6 +111,31 @@ $(function () {
     });*/
 
     /*开始做5页和第六页的大逻辑*/
+    // 做题的逻辑
+    var ruleFive_1= new Array(
+        6,8,9,2
+    );
+    var ruleFive_2=new Array(
+        2,6,9,9,3,2,4,0
+    );
+
+
+    var choice= $('#key50').attr('data-choice');
+    $('#key50').tap(function() {
+        if (choice == 0){
+            $('#key50_r').show();
+            setTimeout(function(){
+                $('#key50_r').hide();
+            },100);
+        }else {
+            $('#key50_w').show();
+            setTimeout(function(){
+                $('#key50_w').hide();
+            },100);
+        }
+        console.log('点击的时候出现状况：' + choice);
+    });
+
 
 
 });

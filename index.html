@@ -13,6 +13,7 @@
     <title>方正30周年庆</title>
     <link rel="stylesheet" href="css/public.css" type="text/css">
     <link rel="stylesheet" href="css/animation.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/reset.css" type="text/css">-->
 </head>
 <body>
 
@@ -23,6 +24,12 @@
 </div>
 
 <div class="page pageBox" >
+    <!--testing createJs-->
+    <!--<div class="test">-->
+        <!--<canvas id="canvas"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>-->
+        <!--<input value="暂停pause" id="btn" type="button">-->
+    <!--</div>-->
+
     <!--loading-->
     <div class="none" id="pageLoad">
         <div class="bg bg1"></div>
@@ -48,16 +55,69 @@
     <!--page5-->
     <div id="page5">
         <div class="bg bg5"></div>
-        <div class="train"></div>
-        <div class="title title4"></div>
-        <div class="effect animEff5"></div>
-        <div class="fbg fbg5"></div>
-        <div class="timer" id="timer5"></div>
-        <ul class="keys">
-            <li data-choice="0">
-                <p class="right"></p>
-                <p class="wrong"></p>
+        <div class="train5">
+            <canvas id="canvas"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+        <p class="title title4"></p>
+        <p class="effect animEff5"></p>
+        <p class="fbg fbg5"></p>
+        <div class="timer" >
+               <img src="images/timer.png">
+                <p class="indicator" id="timer5">00:00</p>
+        </div>
+
+        <ul class="keys keys5">
+            <li id="key50" data-choice="0">
+                <a><img src="images/page5/fa1.png"></a>
+                <p id="key50_r" class="right"></p>
+                <p id="key50_w" class="wrong"></p>
             </li>
+            <li id="key51" data-choice="1">
+                <a><img src="images/page5/fa2.png"></a>
+                <p id="key51_r" class="right"></p>
+                <p id="key51_w" class="wrong"></p>
+            </li>
+            <li id="key52" data-choice="2">
+                <a><img src="images/page5/fa3.png"></a>
+                <p id="key52_r" class="right"></p>
+                <p id="key52_w" class="wrong"></p>
+            </li>
+            <li id="key53" data-choice="3">
+                <a><img src="images/page5/fa4.png"></a>
+                <p id="key53_r" class="right"></p>
+                <p id="key53_w" class="wrong"></p>
+            </li>
+            <li id="key54" data-choice="4">
+                <a><img src="images/page5/fa5.png"></a>
+                <p id="key54_r" class="right"></p>
+                <p id="key54_w" class="wrong"></p>
+            </li>
+            <li id="key55" data-choice="5">
+                <a><img src="images/page5/fa6.png"></a>
+                <p id="key55_r" class="right"></p>
+                <p id="key55_w" class="wrong"></p>
+            </li>
+            <li id="key56" data-choice="6">
+                <a><img src="images/page5/fa7.png"></a>
+                <p id="key56_r" class="right"></p>
+                <p id="key56_w" class="wrong"></p>
+            </li>
+            <li id="key57" data-choice="7">
+                <a><img src="images/page5/fa8.png"></a>
+                <p id="key57_r" class="right"></p>
+                <p id="key57_w" class="wrong"></p>
+            </li>
+            <li id="key58" data-choice="8">
+                <a><img src="images/page5/fa9.png"></a>
+                <p id="key58_r" class="right"></p>
+                <p id="key58_w" class="wrong"></p>
+            </li>
+            <li id="key59" data-choice="9">
+                <a><img src="images/page5/fa10.png"></a>
+                <p id="key59_r" class="right"></p>
+                <p id="key59_w" class="wrong"></p>
+            </li>
+
         </ul>
     </div>
     <!--page6-->
@@ -79,7 +139,10 @@
 
 <script src="js/lib/zepto.min.js"></script>
 <script src="js/lib/jweixin-1.0.0.js"></script>
+<script src="js/lib/easeljs-0.7.1.min.js"></script>
+<script src="js/lib/tweenjs-0.6.2.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/move.js"></script>
 
 
 <!--这个script的作用是阻止在电脑端上打开-->

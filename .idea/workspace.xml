@@ -1,8 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="功能单元的结构创建 / Build the HTML structure for one function union&#10;">
+    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="点击的逻辑和布局/ click button's structure and logic">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/fa9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/fa9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/fa9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/runningGrant.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/font/timing-type.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/font/writing-type.TTF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/easeljs-0.7.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/tweenjs-0.6.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/move.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/timing-type.TTF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/writing-type.TTF" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page2/bg.jpg" afterPath="$PROJECT_DIR$/images/page2/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page2/fbg.png" afterPath="$PROJECT_DIR$/images/page2/fbg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page3/bg.jpg" afterPath="$PROJECT_DIR$/images/page3/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page3/fbg.png" afterPath="$PROJECT_DIR$/images/page3/fbg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page4/bg.jpg" afterPath="$PROJECT_DIR$/images/page4/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page4/fbg.png" afterPath="$PROJECT_DIR$/images/page4/fbg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/bg.jpg" afterPath="$PROJECT_DIR$/images/page5/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa1.png" afterPath="$PROJECT_DIR$/images/page5/fa1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa10.png" afterPath="$PROJECT_DIR$/images/page5/fa10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa2.png" afterPath="$PROJECT_DIR$/images/page5/fa2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa3.png" afterPath="$PROJECT_DIR$/images/page5/fa3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa4.png" afterPath="$PROJECT_DIR$/images/page5/fa4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa5.png" afterPath="$PROJECT_DIR$/images/page5/fa5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa6.png" afterPath="$PROJECT_DIR$/images/page5/fa6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa7.png" afterPath="$PROJECT_DIR$/images/page5/fa7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa8.png" afterPath="$PROJECT_DIR$/images/page5/fa8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fa9.png" afterPath="$PROJECT_DIR$/images/page5/fa9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page5/fbg.png" afterPath="$PROJECT_DIR$/images/page5/fbg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/bg.jpg" afterPath="$PROJECT_DIR$/images/page6/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/fbg.png" afterPath="$PROJECT_DIR$/images/page6/fbg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page7/bg.jpg" afterPath="$PROJECT_DIR$/images/page7/bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/train.png" afterPath="$PROJECT_DIR$/images/train.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/public.css" afterPath="$PROJECT_DIR$/css/public.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
@@ -26,56 +88,49 @@
     <favorites_list name="founder-h5" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="public.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/public.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1129">
-              <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+            <state relative-caret-position="-113">
+              <caret line="157" column="15" selection-start-line="157" selection-start-column="15" selection-end-line="157" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="61" column="2" selection-start-line="61" selection-start-column="0" selection-end-line="63" selection-end-column="4" />
+            <state relative-caret-position="0">
+              <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <marker date="1480436718754" expanded="false" signature="2666:3737" ph="{...}" />
+                <marker date="1480517853426" expanded="false" signature="2666:3737" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public.css" pinned="false" current-in-tab="false">
-        <entry file="file://G:/download/Desktop/reference-static/__PUBLIC__/css/public.css">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="-220">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="animation.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/animation.css">
+      <file leaf-file-name="move.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/move.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="352">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+                <element signature="e#778#1411#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,22 +141,28 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/css/main_style.css" />
         <option value="$PROJECT_DIR$/css/animation.css" />
-        <option value="$PROJECT_DIR$/css/public.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/public.css" />
+        <option value="$PROJECT_DIR$/js/move.js" />
       </list>
     </option>
   </component>
@@ -220,7 +281,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="page5" />
+              <option name="myItemId" value="page7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="founder-h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="founder-h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page6" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -238,10 +317,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="founder-h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="founder-h5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,19 +345,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\汉字H5\founder-h5\js\lib" />
-      <recent name="F:\汉字H5\founder-h5\images" />
-      <recent name="F:\汉字H5\founder-h5\images\page1" />
-      <recent name="F:\汉字H5\founder-h5\images\page5" />
-      <recent name="F:\汉字H5\founder-h5\asset" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\汉字H5\founder-h5\asset\font" />
+      <recent name="F:\汉字H5\founder-h5\asset" />
       <recent name="F:\汉字H5\founder-h5\images" />
       <recent name="F:\汉字H5\founder-h5\images\loading" />
       <recent name="F:\汉字H5\founder-h5\images\page3" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\汉字H5\founder-h5\images" />
+      <recent name="F:\汉字H5\founder-h5\js\lib" />
+      <recent name="F:\汉字H5\founder-h5\images\page1" />
       <recent name="F:\汉字H5\founder-h5\images\page5" />
-      <recent name="F:\汉字H5\founder-h5\images\page7" />
+      <recent name="F:\汉字H5\founder-h5\asset" />
     </key>
   </component>
   <component name="RunManager">
@@ -293,6 +386,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -329,7 +428,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480271949714</updated>
-      <workItem from="1480271951110" duration="30710000" />
+      <workItem from="1480271951110" duration="44104000" />
+      <workItem from="1480511214912" duration="11469000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -387,32 +487,39 @@
       <option name="project" value="LOCAL" />
       <updated>1480433665054</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="功能单元的结构创建 / Build the HTML structure for one function union&#10;">
+      <created>1480436724217</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1480436724217</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30710000" />
+    <option name="totallyTimeSpent" value="55573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15148188" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23710209" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -455,13 +562,49 @@
     <MESSAGE value="change to use the js to set the screen to rotate 90, and add the gravity listener/通过js做了横屏适配，另外做了重力监听" />
     <MESSAGE value="背景的框架调整好/make all the background be right&#10;" />
     <MESSAGE value="功能单元的结构创建 / Build the HTML structure for one function union&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="功能单元的结构创建 / Build the HTML structure for one function union&#10;" />
+    <MESSAGE value="点击的逻辑和布局/ click button's structure and logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="点击的逻辑和布局/ click button's structure and logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9108">
+          <caret line="207" column="17" selection-start-line="207" selection-start-column="17" selection-end-line="207" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/animation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3300">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <marker date="1480517853426" expanded="false" signature="2666:3737" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4752">
+          <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/images/page1/snow1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -470,14 +613,6 @@
     <entry file="file://$PROJECT_DIR$/images/page1/snow3.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/timing-type.TTF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/images/page1/snow2.png">
@@ -503,45 +638,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://G:/download/Desktop/reference-static/__PUBLIC__/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/animation.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="3300">
           <caret line="75" column="8" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/download/Desktop/reference-static/__PUBLIC__/css/public.css">
+    <entry file="file://$PROJECT_DIR$/asset/font/timing-type.TTF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/public.css">
+    <entry file="file://$PROJECT_DIR$/asset/font/writing-type.TTF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1129">
-          <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="-132">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="61" column="2" selection-start-line="61" selection-start-column="0" selection-end-line="63" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <marker date="1480436718754" expanded="false" signature="2666:3737" ph="{...}" />
+            <marker date="1480517853426" expanded="false" signature="2666:3737" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="157" column="15" selection-start-line="157" selection-start-column="15" selection-end-line="157" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/move.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#778#1411#0" expanded="false" />
           </folding>
         </state>
       </provider>

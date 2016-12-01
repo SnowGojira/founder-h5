@@ -14,20 +14,20 @@ img{vertical-align:middle}
 /*引入自定义字体*/
 @font-face {
     font-family: Timing_Font;
-    src: url('../asset/timing-type.TTF');
-    /* IE9 Compat Modes */ src: url('../asset/timing-type.TTF?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('../asset/timing-type.TTF') format('woff'),
-    /* Modern Browsers */ url('../asset/timing-type.TTF') format('truetype'),
-    /* Safari, Android, iOS */ url('../asset/timing-type.TTF') format('svg');
+    src: url('../asset/font/timing-type.TTF');
+    /* IE9 Compat Modes */ src: url('../asset/font/timing-type.TTF?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../asset/font/timing-type.TTF') format('woff'),
+    /* Modern Browsers */ url('../asset/font/timing-type.TTF') format('truetype'),
+    /* Safari, Android, iOS */ url('../asset/font/timing-type.TTF') format('svg');
     /* Legacy iOS */
 }
 @font-face {
     font-family: Writing_Font;
-    src: url('../asset/writing-type.TTF');
-    /* IE9 Compat Modes */ src: url('../asset/writing-type.TTF?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('../asset/writing-type.TTF') format('woff'),
-    /* Modern Browsers */ url('../asset/writing-type.TTF') format('truetype'),
-    /* Safari, Android, iOS */ url('../asset/writing-type.TTF') format('svg');
+    src: url('../asset/font/writing-type.TTF');
+    /* IE9 Compat Modes */ src: url('../asset/font/writing-type.TTF?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../asset/font/writing-type.TTF') format('woff'),
+    /* Modern Browsers */ url('../asset/font/writing-type.TTF') format('truetype'),
+    /* Safari, Android, iOS */ url('../asset/font/writing-type.TTF') format('svg');
     /* Legacy iOS */
 }
 .NumType{
@@ -107,10 +107,35 @@ body,html{
     left: 37vh;
 }
 /*开始页面*/
+.fbg{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    float: left;
+    position: fixed;
+
+}
 .bg1{
     background: url("../images/page1/bg.jpg") 0 0 no-repeat;
     background-size: 100% 100%;
 }
+.keys{
+    width: 100%;
+    height: auto;
+    float: left;
+    position: fixed;
+    margin: 0 auto;
+    text-align: center;
+    bottom: 6.3vh;
+}
+.keys li{
+    display: inline-block;
+}
+.keys li img{
+    width: 10vw;
+    height: auto;
+}
+
 /*世界页*/
 .bg2{
     background: url("../images/page2/bg.jpg") 0 0 no-repeat;
@@ -130,7 +155,66 @@ body,html{
 .bg5{
     background: url("../images/page5/bg.jpg") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 51;
 }
+.train5{
+    position: fixed;
+    z-index: 52;
+}
+.fbg5{
+    background: url("../images/page5/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 55;
+}
+.keys5{
+    z-index: 57;
+}
+.timer{
+    width:100%;
+    height: 8vh;
+    position: fixed;
+    text-align: center;
+    top: 10vw;
+    z-index: 56;
+}
+.timer p{
+    width:100%;
+    height: auto;
+    position: fixed;
+    text-align: center;
+    top:12.5vw;
+    vertical-align: middle;
+    font-family: Timing_Font;
+    font-size: 1.7rem;
+}
+
+.timer img{
+    width:34vw;
+    height: auto;
+}
+
+.wrong{
+    width: 10vw;
+    height: 9.5vw;
+    z-index: 58;
+    background: orangered;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0.3vh;
+    display: none;
+}
+.right{
+    width: 10vw;
+    height: 9.5vw;
+    z-index: 59;
+    background: limegreen;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0.3vh;
+    display: none;
+}
+
+
 /*slogan页*/
 .bg6{
     background: url("../images/page6/bg.jpg") 0 0 no-repeat;
