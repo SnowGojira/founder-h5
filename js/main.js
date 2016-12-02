@@ -111,17 +111,9 @@ $(function () {
     });*/
 
     /*开始做5页和第六页的大逻辑*/
-    // 做题的逻辑
-    var ruleFive_1= new Array(
-        6,8,9,2
-    );
-    var ruleFive_2=new Array(
-        2,6,9,9,3,2,4,0
-    );
 
 
-    var choice= $('#key50').attr('data-choice');
-    $('#key50').tap(function() {
+   /* $('#key50').tap(function() {
         if (choice == 0){
             $('#key50_r').show();
             setTimeout(function(){
@@ -134,17 +126,54 @@ $(function () {
             },100);
         }
         console.log('点击的时候出现状况：' + choice);
+    });*/
+    $('#key50').tap(function(){
+        lock(0);
+    });
+   $('#key51').tap(function(){
+       lock(1);
+   });
+    $('#key52').tap(function(){
+        lock(2);
+    });
+    $('#key53').tap(function(){
+        lock(3);
+    });
+    $('#key54').tap(function(){
+        lock(4);
+    });
+    $('#key55').tap(function(){
+        lock(5);
+    });
+    $('#key56').tap(function(){
+        lock(6);
+    });
+    $('#key57').tap(function(){
+        lock(7);
+    });
+    $('#key58').tap(function(){
+        lock(8);
+    });
+    $('#key59').tap(function(){
+        lock(9);
     });
 
 });
 
 
+
+
 var w = document.documentElement.clientWidth,
     h = document.documentElement.clientHeight;
-var  stage=new createjs.Stage("canvas"),
-    container = new createjs.Container();
+var  stage=new createjs.Stage("canvas");
 
-function init(title) {
+var Title1= new createjs.Bitmap("./images/page5/title1.png");
+var Title2= new createjs.Bitmap("./images/page5/title2.png");
+
+var Title1_r= new createjs.Bitmap("./images/page5/title1_r.png");
+var Title2_r= new createjs.Bitmap("./images/page5/title2_r.png");
+
+function init() {
 
     stage.canvas.width=h;
     stage.canvas.height=w;
@@ -159,11 +188,6 @@ function init(title) {
     var train= new createjs.Bitmap("./images/train.png");
     var railway = new createjs.Bitmap("./images/railway.png");
 
-    var Title1= new createjs.Bitmap("./images/page"+title+"/title1.png");
-    var Title2= new createjs.Bitmap("./images/page"+title+"/title2.png");
-
-    var Title1_r= new createjs.Bitmap("./images/page"+title+"/title1_r.png");
-    var Title2_r= new createjs.Bitmap("./images/page"+title+"/title2_r.png");
 
     train.scaleX=scale;
     train.scaleY=scale;
@@ -225,30 +249,142 @@ function init(title) {
         .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
 
 
-    var btn = document.getElementById('key51');
+}
+init();
 
-    btn.addEventListener('click', function(){
-        console.log('你点击了这里');
-        Title1.visible=false;
-        Title2.visible=false;
+//The passcode to check against.
+var password_bu = [6,8,9,2];
+var password_bian = [2,6,9,9,3,2,4,0];
+//The values that the user enters while attempting to unlock the phone
+var enteredPass = [];
+var isTitle1 = false;
+var isTitle2 = false;
 
-        Title1_r.visible=true;
-        Title2_r.visible=true;
-    }, false);
+/*Functions to enter the numbers to enteredPass[]*/
+
+function lock(a) {
+
+    var Choice = $('#key5'+a).attr('data-choice');
+    console.log("点击的choice："+Choice);
+    enteredPass.push(Choice);
+    console.log("enterPass的长度："+enteredPass.length);
+    checkPasscode_bu('#key5',password_bu);
+}
+
+
+/*拼写的规则*/
+
+var booleanArr = [];
+function checkPasscode_bu(key,password) {
+    /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
+    /*if(enteredPass.length>password.length){
+        return;
+    }*/
+
+    if (enteredPass.length>password.length){
+        resetAll();
+    }else{
+        for(var i = 0; i<password.length;i++){
+            if (enteredPass[i]==password[i]){
+                if(i==password.length-1){
+                    unlocked();
+                    // isTitle1=true;
+                    booleanArr.push(true);
+                }else{
+                    // isTitle1=true;
+                    booleanArr.push(true);
+                }
+            }else{
+                // isTitle1=false;
+                booleanArr.push(false);
+            }
+        }
+    }
+
+    if(enteredPass.length>0 ){
+        console.log(booleanArr);
+        console.log(booleanArr[enteredPass.length-1]+"");
+
+        if (booleanArr[enteredPass.length-1]){
+            checkRight(key+enteredPass[enteredPass.length-1]);
+        }else {
+            checkWrong(key+enteredPass[enteredPass.length-1]);
+        }
+        booleanArr=[];
+    }else{
+
+    }
+
+    console.log(enteredPass);
+    console.log(booleanArr);
+
+   /* if (enteredPass[0] == password[0]){
+        isTitle1=true;
+        checkRight(key+enteredPass[0]);
+    }
+    else if (enteredPass[0] != password[0]){
+        isTitle1=false;
+        checkWrong(key+enteredPass[0]);
+    }
+    else if(enteredPass[1]==password[1]){
+        isTitle1=true;
+        checkRight(key+enteredPass[1]);
+    }
+    else if (enteredPass[1] != password[1]){
+        isTitle1=false;
+        checkWrong(key+enteredPass[1]);
+    }
+    else  if(enteredPass[2]==password[2]){
+        isTitle1=true;
+        checkRight(key+enteredPass[2]);
+    }
+    else if (enteredPass[2] != password[2]){
+        isTitle1=false;
+        checkWrong(key+enteredPass[2]);
+    }
+
+    else if(enteredPass[3]==password[3]){
+        isTitle1=true;
+        unlocked();
+        checkRight(key+enteredPass[3]);
+    }else if (enteredPass[3] != password[3]){
+        isTitle1=false;
+        checkWrong(key+enteredPass[3]);
+    }*/
 
 }
 
-/**/
-function Guess(Title1,Title2,Title1_r,Title2_r){
+
+function checkRight(key){
+    $(key+'_r').show();
+    setTimeout(function () {
+        $(key+'_r').hide();
+    },100);
+    console.log(key+'_r');
+}
+
+function checkWrong(key){
+    resetAll();
+    $(key+'_w').show();
+    setTimeout(function () {
+        $(key+'_w').hide();
+    },100);
+
+    console.log(key+'_w');
+
+}
+
+
+/*Displays all the correct stuff, then moves on to homeScreen()*/
+
+function unlocked() {
     Title1.visible=false;
-    Title2.visible=false;
-
     Title1_r.visible=true;
-    Title2_r.visible=true;
+    console.log("Your Phone is Unlocked");
+
 }
 
-
-
-
-
-init(5);
+function resetAll() {
+    enteredPass = [];
+    console.log("清零了请重新输入");
+}
