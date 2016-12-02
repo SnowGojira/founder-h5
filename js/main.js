@@ -59,7 +59,6 @@ function setScreen(){
 }
 
 
-
 // 预加载逻辑
 /*var pageLoad = new Array(
     "images/train.png"
@@ -115,20 +114,6 @@ $(function () {
     /*开始做5页和第六页的大逻辑*/
 
 
-   /* $('#key50').tap(function() {
-        if (choice == 0){
-            $('#key50_r').show();
-            setTimeout(function(){
-                $('#key50_r').hide();
-            },100);
-        }else {
-            $('#key50_w').show();
-            setTimeout(function(){
-                $('#key50_w').hide();
-            },100);
-        }
-        console.log('点击的时候出现状况：' + choice);
-    });*/
     $('#key50').tap(function(){
         lock(0);
     });
@@ -318,39 +303,6 @@ function checkPasscode_bu(key,password) {
     console.log(enteredPass);
     console.log(booleanArr);
 
-   /* if (enteredPass[0] == password[0]){
-        isTitle1=true;
-        checkRight(key+enteredPass[0]);
-    }
-    else if (enteredPass[0] != password[0]){
-        isTitle1=false;
-        checkWrong(key+enteredPass[0]);
-    }
-    else if(enteredPass[1]==password[1]){
-        isTitle1=true;
-        checkRight(key+enteredPass[1]);
-    }
-    else if (enteredPass[1] != password[1]){
-        isTitle1=false;
-        checkWrong(key+enteredPass[1]);
-    }
-    else  if(enteredPass[2]==password[2]){
-        isTitle1=true;
-        checkRight(key+enteredPass[2]);
-    }
-    else if (enteredPass[2] != password[2]){
-        isTitle1=false;
-        checkWrong(key+enteredPass[2]);
-    }
-
-    else if(enteredPass[3]==password[3]){
-        isTitle1=true;
-        unlocked();
-        checkRight(key+enteredPass[3]);
-    }else if (enteredPass[3] != password[3]){
-        isTitle1=false;
-        checkWrong(key+enteredPass[3]);
-    }*/
 
 }
 

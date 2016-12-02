@@ -156,29 +156,39 @@ body,html{
     position: fixed;
     z-index: 43;
 }
+.effect{
+    overflow:hidden;
+    float: left;
+    position: absolute;
+
+}
+.eff1_pa4{
+    overflow:hidden;
+    float: left;
+    position: fixed;
+    z-index: 44;
+    width: 100%;
+    height: 9vh;
+    opacity: 0.5;
+}
+
+.eff2_pa4{
+    overflow:hidden;
+    float: left;
+    position: fixed;
+    width: 22vw;
+    height: 12vh;
+    z-index: 44;
+    top:15.5vh;
+    right:24vw;
+}
 
 .fbg4{
     background: url("../images/page4/fbg.png") 0 0 no-repeat;
     background-size: 100% 100%;
     z-index: 46;
 }
-.effect{
-    overflow:hidden;
-    float: left;
-    position: fixed;
-}
-.eff1_pa4{
-    overflow:hidden;
-    float: left;
-    position: fixed;
-    width: 100%;
-    height: auto;
-    z-index: 45;
-}
 
-.eff2_pa4{
-    z-index: 45;
-}
 
 .keys4{
     z-index: 48;
