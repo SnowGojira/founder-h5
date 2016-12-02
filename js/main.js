@@ -58,6 +58,8 @@ function setScreen(){
     }
 }
 
+
+
 // 预加载逻辑
 /*var pageLoad = new Array(
     "images/train.png"
@@ -182,9 +184,7 @@ function init() {
     var original = w*0.275;
     var scale = original/203;
     var positonY=0.489*w;
-
     // console.log(w+" "+original+" "+scale+" "+positonY);
-
     var train= new createjs.Bitmap("./images/train.png");
     var railway = new createjs.Bitmap("./images/railway.png");
 

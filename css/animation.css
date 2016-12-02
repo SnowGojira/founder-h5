@@ -39,7 +39,32 @@
 
 }
 
+/*page1*/
+/*page2*/
+/*page3*/
+/*page4*/
+.animHeart{
+    /*animation: animload 1.2s steps(3) infinite;*/
+    /*-webkit-animation: animload 1.2s steps(3) infinite;*/
+    -webkit-animation: animHeart 2.1s step-end infinite;
+}
+@-webkit-keyframes animHeart{
+    0%{
+        background-image:url(../images/page4/heart1.png);
+    }
+    33%{
+        background-image:url(../images/page4/heart2.png);
+    }
 
+    66%{
+        background-image:url(../images/page4/heart3.png);
+    }
+
+}
+
+/*page5*/
+/*page6*/
+/*page7*/
 /*进入进出等等效果*/
 /*--界面出现动画--*/
 .mainIn{

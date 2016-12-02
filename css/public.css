@@ -148,9 +148,43 @@ body,html{
 }
 /*创新页*/
 .bg4{
-    background: url("../images/page4/bg.jpg") 0 0 no-repeat;
+    background: url("../images/page4/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 41;
 }
+.train4{
+    position: fixed;
+    z-index: 43;
+}
+
+.fbg4{
+    background: url("../images/page4/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 46;
+}
+.effect{
+    overflow:hidden;
+    float: left;
+    position: fixed;
+}
+.eff1_pa4{
+    overflow:hidden;
+    float: left;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 45;
+}
+
+.eff2_pa4{
+    z-index: 45;
+}
+
+.keys4{
+    z-index: 48;
+}
+
+
 /*不变页*/
 .bg5{
     background: url("../images/page5/bg.png") 0 0 no-repeat;
