@@ -204,6 +204,8 @@ body,html{
     z-index: 21;
 }
 .animEff2{
+    width: 100%;
+    height: 100%;
     position: fixed;
     z-index: 22;
 }

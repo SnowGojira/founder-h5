@@ -160,7 +160,7 @@ var Title2= new createjs.Bitmap("./images/page5/title2.png");
 var Title1_r= new createjs.Bitmap("./images/page5/title1_r.png");
 var Title2_r= new createjs.Bitmap("./images/page5/title2_r.png");
 
-function init() {
+function train5In() {
 
     stage5.canvas.width=h;
     stage5.canvas.height=w;
@@ -232,10 +232,71 @@ function init() {
 
     createjs.Tween.get(Title2_r, {loop: false})
         .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+}
+train5In();
 
+//page2 实验性的动效
+var loader;
+var img;
+var stage;
+
+function snow(){
+    stage = new createjs.Stage('animCanvas');//创建舞台
+    stage.canvas.height=w;
+    stage.canvas.width=h;
+    // $('#animCanvas').css({'height':+310+'px','width':310+'px'});//适配用
+
+    var spriteSheet1 = new createjs.SpriteSheet({//创建精灵
+        framerate: 60,
+        'images': ['./images/page2/snow.png'],
+        'frames': {'regX':0, 'height':300, 'count':3, 'regY': 0, 'width': 300},
+        'animations': {
+            'anim': [0,2,'anim'],
+        }
+    });
+    var spriteSheet2 = new createjs.SpriteSheet({//创建精灵
+        framerate: 60,
+        'images': ['./images/page2/snow.png'],
+        'frames': {'regX':350, 'height':300, 'count':3, 'regY': 0, 'width': 300},
+        'animations': {
+            'snow': [0,1,'snow'],
+        }
+    });
+    var img1 = new createjs.Sprite(spriteSheet1, 'anim');
+    var img2 = new createjs.Sprite(spriteSheet2, 'snow');
+    stage.addChild(img1);
+    stage.addChild(img2);
+    //将img加载到舞台上
+    createjs.Ticker.addEventListener('tick', tick);//刷新
+    createjs.Ticker.setFPS(5);
+
+    function tick(e){//tick函数
+        stage.update(event);//更新舞台
+    }
 
 }
-init();
+snow();
+
+/*function handleComplete(){//加载完成调用函数
+    var spriteSheet = new createjs.SpriteSheet({//创建精灵
+        framerate: 60,
+        'images': [loader.getResult('img')],
+        'frames': {'regX':0, 'height':120, 'count':6, 'regY': 0, 'width': 120},
+        'animations': {
+            'anim': [0, 5, 'anim'],
+        }
+    });
+    img = new createjs.Sprite(spriteSheet, 'anim');
+    stage.addChild(img);//将img加载到舞台上
+    createjs.Ticker.addEventListener('tick', tick);//刷新
+    createjs.Ticker.setFPS(10); //每秒调用tick函数 3次 控制动画快慢
+}
+
+function handleFileProgress(event){//加载中函数
+    console.log(loader.progress*100|0+'%');
+}*/
+
+
 
 //The passcode to check against.
 var password_bu = [6,8,9,2];
@@ -246,7 +307,6 @@ var isTitle1 = false;
 var isTitle2 = false;
 
 /*Functions to enter the numbers to enteredPass[]*/
-
 function lock(a) {
 
     var Choice = $('#key5'+a).attr('data-choice');
@@ -258,7 +318,6 @@ function lock(a) {
 
 
 /*拼写的规则*/
-
 var booleanArr = [];
 function checkPasscode_bu(key,password) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
@@ -306,7 +365,6 @@ function checkPasscode_bu(key,password) {
 
 }
 
-
 function checkRight(key){
     $(key+'_r').show();
     setTimeout(function () {
@@ -326,9 +384,7 @@ function checkWrong(key){
 
 }
 
-
 /*Displays all the correct stuff, then moves on to homeScreen()*/
-
 function unlocked() {
     Title1.visible=false;
     Title1_r.visible=true;

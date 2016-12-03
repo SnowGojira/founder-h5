@@ -52,9 +52,12 @@
         <div class="Hint none" id="hint"></div>
     </div>
     <!--page2-->
-    <div id="page2" class="none">
+    <div id="page2" >
         <div class="bg bg2"></div>
-        <div class="effect animEff2"></div>
+        <div class="effect animEff2" >
+            <canvas id="animCanvas" width="120" height="120"></canvas>
+
+        </div>
         <div class="train2">
             <canvas id="canvas2"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
         </div>
@@ -342,9 +345,10 @@
 
     </div>
     <!--page7-->
-    <div id="page7">
+    <div id="page7" class="none">
         <div class="bg bg7"></div>
         <div class="effect animEff7">
+            <!--<canvas id="anim7" >您的浏览器不支持canvas，请选择现代浏览器</canvas>-->
             <img src="images/page7/border1.png">
         </div>
         <div class="result">
@@ -376,6 +380,7 @@
 <script src="js/lib/jweixin-1.0.0.js"></script>
 <script src="js/lib/easeljs-0.7.1.min.js"></script>
 <script src="js/lib/tweenjs-0.6.2.min.js"></script>
+<script src="js/lib/preloadjs-0.6.2.min.js"></script>
 <script src="js/main.js"></script>
 <!--<script src="js/passcode.js"></script>-->
 

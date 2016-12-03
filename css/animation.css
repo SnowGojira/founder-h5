@@ -41,6 +41,25 @@
 
 /*page1*/
 /*page2*/
+/*#snow{
+    background: none;
+    font-family: Androgyne;
+    background-image:
+            url('../images/page2/snow1.png'),
+            url('../images/page2/snow2.png'),
+            url('../images/page2/snow3.png');
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index:22;
+    -webkit-animation: snow 10s linear infinite;
+    -moz-animation: snow 10s linear infinite;
+    -ms-animation: snow 10s linear infinite;
+    animation: snow 10s linear infinite;
+
+}*/
 /*page3*/
 /*page4*/
 .animHeart{
