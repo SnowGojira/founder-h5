@@ -49,14 +49,14 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="835">
-              <caret line="279" column="6" selection-start-line="279" selection-start-column="4" selection-end-line="281" selection-end-column="7" />
+            <state relative-caret-position="347">
+              <caret line="269" column="28" selection-start-line="269" selection-start-column="28" selection-end-line="269" selection-end-column="28" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#125#145#0" expanded="false" />
                 <element signature="n#!!block;n#setScreen#0" expanded="false" />
                 <element signature="e#2727#3956#0" expanded="false" />
-                <element signature="e#7880#8493#0" expanded="false" />
+                <element signature="e#7506#8119#0" expanded="false" />
                 <element signature="n#!!block;n#lock#0" expanded="false" />
                 <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
                 <element signature="n#!!block;n#checkRight#0" expanded="false" />
@@ -529,7 +529,7 @@
       <updated>1480271949714</updated>
       <workItem from="1480271951110" duration="44104000" />
       <workItem from="1480511214912" duration="20206000" />
-      <workItem from="1480590592064" duration="69782000" />
+      <workItem from="1480590592064" duration="71002000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -650,11 +650,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480802729469</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="另外一种写法的spritesheet/ another writing type">
+      <created>1480803782573</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1480803782573</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134092000" />
+    <option name="totallyTimeSpent" value="135312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -706,7 +713,8 @@
     <MESSAGE value="page3的动效做好/ finish the page3's animation" />
     <MESSAGE value="建好静态框架/Build a static framework" />
     <MESSAGE value="一个初期的静态效果图/ rough static motion effect" />
-    <option name="LAST_COMMIT_MESSAGE" value="一个初期的静态效果图/ rough static motion effect" />
+    <MESSAGE value="另外一种写法的spritesheet/ another writing type" />
+    <option name="LAST_COMMIT_MESSAGE" value="另外一种写法的spritesheet/ another writing type" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -732,7 +740,7 @@
             <element signature="e#125#145#0" expanded="false" />
             <element signature="n#!!block;n#setScreen#0" expanded="false" />
             <element signature="e#2727#3956#0" expanded="false" />
-            <element signature="e#7880#8493#0" expanded="false" />
+            <element signature="e#7506#8119#0" expanded="false" />
             <element signature="n#!!block;n#lock#0" expanded="false" />
             <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
             <element signature="n#!!block;n#checkRight#0" expanded="false" />
@@ -791,7 +799,7 @@
             <element signature="e#125#145#0" expanded="false" />
             <element signature="n#!!block;n#setScreen#0" expanded="false" />
             <element signature="e#2727#3956#0" expanded="false" />
-            <element signature="e#7880#8493#0" expanded="false" />
+            <element signature="e#7506#8119#0" expanded="false" />
             <element signature="n#!!block;n#lock#0" expanded="false" />
             <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
             <element signature="n#!!block;n#checkRight#0" expanded="false" />
@@ -946,14 +954,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="279" column="6" selection-start-line="279" selection-start-column="4" selection-end-line="281" selection-end-column="7" />
+        <state relative-caret-position="347">
+          <caret line="269" column="28" selection-start-line="269" selection-start-column="28" selection-end-line="269" selection-end-column="28" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#125#145#0" expanded="false" />
             <element signature="n#!!block;n#setScreen#0" expanded="false" />
             <element signature="e#2727#3956#0" expanded="false" />
-            <element signature="e#7880#8493#0" expanded="false" />
+            <element signature="e#7506#8119#0" expanded="false" />
             <element signature="n#!!block;n#lock#0" expanded="false" />
             <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
             <element signature="n#!!block;n#checkRight#0" expanded="false" />

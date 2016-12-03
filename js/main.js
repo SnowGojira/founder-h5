@@ -244,14 +244,15 @@ var img,snowStage,
 function snow(){
     snowStage = new createjs.Stage(snowCanvas);//创建舞台
     snowContainer= new createjs.Container();
+    snowStage.addChild(snowContainer);
     snowStage.canvas.height=w;
     snowStage.canvas.width=h;
 
     var data ={
         images:['./images/page2/snow.png'],
         frames:{
-            width:300,
-            height:300,
+            width:1206,
+            height:750,
             count:3
         },
         animations:{
@@ -259,27 +260,16 @@ function snow(){
         }
 
     }
-   /* var spriteSheet1 = new createjs.SpriteSheet({//创建精灵
-        framerate: 60,
-        'images': ['./images/page2/snow.png'],
-        'frames': {'regX':0, 'height':300, 'count':3, 'regY': 0, 'width': 300},
-        'animations': {
-            'anim': [0,2,'anim'],
-        }
-    });*/
+
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    // snowStage.addChild(img1);
-    snowStage.addChild(img1);
-    //将img加载到舞台上
-    // createjs.Ticker.addEventListener('tick', tick);//刷新
-    createjs.Ticker.setFPS(5);
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    snowContainer.addChild(img1);
+
+    createjs.Ticker.setFPS(2);
     createjs.Ticker.on('tick',snowStage);
 
-    /*function tick(e){//tick函数
-        snowStage.update(event);//更新舞台
-    }*/
 
 }
 snow();
