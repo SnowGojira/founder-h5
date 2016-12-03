@@ -236,43 +236,50 @@ function train5In() {
 train5In();
 
 //page2 实验性的动效
-var loader;
-var img;
-var stage;
+var img,snowStage,
+    snowCanvas,
+    snowContainer;
+    snowCanvas=document.getElementById('animCanvas');
 
 function snow(){
-    stage = new createjs.Stage('animCanvas');//创建舞台
-    stage.canvas.height=w;
-    stage.canvas.width=h;
-    // $('#animCanvas').css({'height':+310+'px','width':310+'px'});//适配用
+    snowStage = new createjs.Stage(snowCanvas);//创建舞台
+    snowContainer= new createjs.Container();
+    snowStage.canvas.height=w;
+    snowStage.canvas.width=h;
 
-    var spriteSheet1 = new createjs.SpriteSheet({//创建精灵
+    var data ={
+        images:['./images/page2/snow.png'],
+        frames:{
+            width:300,
+            height:300,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    }
+   /* var spriteSheet1 = new createjs.SpriteSheet({//创建精灵
         framerate: 60,
         'images': ['./images/page2/snow.png'],
         'frames': {'regX':0, 'height':300, 'count':3, 'regY': 0, 'width': 300},
         'animations': {
             'anim': [0,2,'anim'],
         }
-    });
-    var spriteSheet2 = new createjs.SpriteSheet({//创建精灵
-        framerate: 60,
-        'images': ['./images/page2/snow.png'],
-        'frames': {'regX':350, 'height':300, 'count':3, 'regY': 0, 'width': 300},
-        'animations': {
-            'snow': [0,1,'snow'],
-        }
-    });
-    var img1 = new createjs.Sprite(spriteSheet1, 'anim');
-    var img2 = new createjs.Sprite(spriteSheet2, 'snow');
-    stage.addChild(img1);
-    stage.addChild(img2);
-    //将img加载到舞台上
-    createjs.Ticker.addEventListener('tick', tick);//刷新
-    createjs.Ticker.setFPS(5);
+    });*/
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    function tick(e){//tick函数
-        stage.update(event);//更新舞台
-    }
+    // snowStage.addChild(img1);
+    snowStage.addChild(img1);
+    //将img加载到舞台上
+    // createjs.Ticker.addEventListener('tick', tick);//刷新
+    createjs.Ticker.setFPS(5);
+    createjs.Ticker.on('tick',snowStage);
+
+    /*function tick(e){//tick函数
+        snowStage.update(event);//更新舞台
+    }*/
 
 }
 snow();
