@@ -6,7 +6,6 @@ LGlobal={};
 document.addEventListener("DOMContentLoaded",function(){
     setScreen();
 });
-
 function setScreen(){
     var loaded=false;
     roScreen();
@@ -57,7 +56,10 @@ function setScreen(){
         },100);
     }
 }
+var w = document.documentElement.clientWidth,
+    h = document.documentElement.clientHeight;
 
+// pageLoading的动画问题
 
 // 预加载逻辑
 /*var pageLoad = new Array(
@@ -111,13 +113,12 @@ $(function () {
 
     });*/
 
+
     /*开始做5页和第六页的大逻辑*/
-
-
     $('#key50').tap(function(){
         lock(0);
     });
-   $('#key51').tap(function(){
+    $('#key51').tap(function(){
        lock(1);
    });
     $('#key52').tap(function(){
@@ -150,9 +151,8 @@ $(function () {
 
 
 
-var w = document.documentElement.clientWidth,
-    h = document.documentElement.clientHeight;
-var  stage=new createjs.Stage("canvas");
+
+var  stage5=new createjs.Stage("canvas");
 
 var Title1= new createjs.Bitmap("./images/page5/title1.png");
 var Title2= new createjs.Bitmap("./images/page5/title2.png");
@@ -162,8 +162,8 @@ var Title2_r= new createjs.Bitmap("./images/page5/title2_r.png");
 
 function init() {
 
-    stage.canvas.width=h;
-    stage.canvas.height=w;
+    stage5.canvas.width=h;
+    stage5.canvas.height=w;
 
     /*图片适配比例*/
     var original = w*0.275;
@@ -208,15 +208,15 @@ function init() {
 
     railway.y=positonY;
 // 把动画放到舞台上，创建一个间隔事件侦听，进行动画
-    stage.addChild(railway);
-    stage.addChild(train);
-    stage.addChild(Title1_r);
-    stage.addChild(Title2_r);
-    stage.addChild(Title1);
-    stage.addChild(Title2);
+    stage5.addChild(railway);
+    stage5.addChild(train);
+    stage5.addChild(Title1_r);
+    stage5.addChild(Title2_r);
+    stage5.addChild(Title1);
+    stage5.addChild(Title2);
 
     createjs.Ticker.setFPS(30);
-    createjs.Ticker.on('tick',stage);
+    createjs.Ticker.on('tick',stage5);
 
     createjs.Tween.get(train, {loop: false})
         .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));

@@ -92,20 +92,33 @@ body,html{
     position: relative;
     text-align: center;
 }
-.loadPercent{
-    font-size: 2.5rem;
+#loadPercent{
+    width: 100%;
+    font-size: 1.5rem;
     position: absolute;
     text-align: center;
-    left: 45vh;
-    top: 50vw;
+    top: 30vh;
 }
-.page-loading{
+/*.page-loading{
     width: 166px;
     height: 54px;
     position: absolute;
     top: 40vw;
     left: 37vh;
+}*/
+.animLoad{
+    width: 100%;
+    height: 54px;
+    position: absolute;
+    text-align: center;
+    top: 19vh;
+
 }
+.animLoad img{
+    width:20%;
+}
+
+
 /*开始页面*/
 .fbg{
     width: 100%;
@@ -116,9 +129,57 @@ body,html{
 
 }
 .bg1{
-    background: url("../images/page1/bg.jpg") 0 0 no-repeat;
+    background: url("../images/page1/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 11;
 }
+.animEff1{
+    position: fixed;
+    z-index: 12;
+}
+.train1{
+    position: fixed;
+    z-index: 13;
+}
+
+.fbg1{
+    background: url("../images/page1/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 14;
+}
+.floatButton{
+    width: 100%;
+    height:20vh;
+    position:fixed;
+    text-align: center;
+    top: 25vh;
+    z-index: 15;
+}
+.floatButton img{
+    width: 20vw;
+    height: auto;
+}
+.floatTitle{
+    width: 100%;
+    height: 15vh;
+    position: fixed;
+    text-align: center;
+    top: 8vh;
+    z-index: 15;
+}
+.floatTitle img{
+    width: 50vw;
+    height: auto;
+}
+.Hint{
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    background: url("../images/page1/hint.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 16;
+}
+
 .keys{
     width: 100%;
     height: auto;
@@ -137,61 +198,79 @@ body,html{
 }
 
 /*世界页*/
-.bg2{
-    background: url("../images/page2/bg.jpg") 0 0 no-repeat;
+.bg2 {
+    background: url("../images/page2/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 21;
 }
+.animEff2{
+    position: fixed;
+    z-index: 22;
+}
+.train2{
+    position: fixed;
+    z-index: 23;
+}
+.fbg2{
+    background: url("../images/page2/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 24;
+}
+.keys2{
+    z-index: 25;
+}
+
+
 /*在变页*/
 .bg3{
-    background: url("../images/page3/bg.jpg") 0 0 no-repeat;
+    background: url("../images/page3/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 31;
 }
+
+
+.train3{
+    position: fixed;
+    z-index: 32;
+}
+.fbg3{
+    background: url("../images/page3/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 33;
+}
+/*这里面稍微effect float上面*/
+.animEff3{
+    position: fixed;
+    z-index: 34;
+}
+.keys3{
+    z-index: 35;
+}
+
+
 /*创新页*/
 .bg4{
     background: url("../images/page4/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
     z-index: 41;
 }
+.animEff4{
+    position: fixed;
+    z-index: 42;
+}
 .train4{
     position: fixed;
     z-index: 43;
-}
-.effect{
-    overflow:hidden;
-    float: left;
-    position: absolute;
-
-}
-.eff1_pa4{
-    overflow:hidden;
-    float: left;
-    position: fixed;
-    z-index: 44;
-    width: 100%;
-    height: 9vh;
-    opacity: 0.5;
-}
-
-.eff2_pa4{
-    overflow:hidden;
-    float: left;
-    position: fixed;
-    width: 22vw;
-    height: 12vh;
-    z-index: 44;
-    top:15.5vh;
-    right:24vw;
 }
 
 .fbg4{
     background: url("../images/page4/fbg.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 46;
+    z-index: 44;
 }
 
-
 .keys4{
-    z-index: 48;
+    z-index: 45;
 }
 
 
@@ -201,17 +280,21 @@ body,html{
     background-size: 100% 100%;
     z-index: 51;
 }
-.train5{
+.animEff5{
     position: fixed;
     z-index: 52;
+}
+.train5{
+    position: fixed;
+    z-index: 53;
 }
 .fbg5{
     background: url("../images/page5/fbg.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 55;
+    z-index: 54;
 }
 .keys5{
-    z-index: 57;
+    z-index: 55;
 }
 .timer{
     width:100%;
@@ -226,14 +309,14 @@ body,html{
     height: auto;
     position: fixed;
     text-align: center;
-    top:12.5vw;
+    top:12.8vw;
     vertical-align: middle;
     font-family: Timing_Font;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .timer img{
-    width:34vw;
+    width:31vw;
     height: auto;
 }
 
@@ -261,13 +344,123 @@ body,html{
 
 /*slogan页*/
 .bg6{
-    background: url("../images/page6/bg.jpg") 0 0 no-repeat;
+    background: url("../images/page6/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 61;
 }
+.animEff6{
+    position: fixed;
+    z-index: 62;
+}
+.train6{
+    position: fixed;
+    z-index: 63;
+}
+.fbg6{
+    background: url("../images/page6/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 64;
+}
+
+#slogan1{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 65;
+    text-align: center;
+    top: 6.5vh;
+}
+#slogan1 img{
+    width: 80vw;
+    height: auto;
+    /*position: fixed;*/
+
+
+}
+#slogan2{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 65;
+    text-align: center;
+    top: 5.5vh;
+}
+#slogan2 img{
+    width: 70vw;
+    height: auto;
+    /*position: fixed;*/
+
+}
+#flag{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 65;
+    text-align: center;
+    bottom: 3vh;
+}
+#flag img{
+    width: 30vw;
+    height: auto;
+   /* position: fixed;*/
+
+}
+
 /*分享页面*/
 .bg7{
-    background: url("../images/page7/bg.jpg") 0 0 no-repeat;
+    background: url("../images/page7/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
+    z-index: 71;
 }
+.animEff7{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 72;
+}
+.animEff7 img{
+    width: 108vw;
+    height: auto;
+}
+.result{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 73;
+    text-align: center;
+    font-family: Writing_Font;
+    font-size: 1.3rem;
+    top: 12vh;
+}
+
+
+.shareBtn{
+    width: 100%;
+    height: auto;
+    float: left;
+    position: fixed;
+    margin: 0 auto;
+    text-align: center;
+    top: 21vh;
+    z-index: 74;
+}
+.shareBtn li{
+    display: inline-block;
+}
+.shareBtn li img{
+    width: 27vw;
+    height: auto;
+}
+
+.share{
+    width:100%;
+    height:100%;
+    position: fixed;
+    background: url("../images/page7/share.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 75;
+}
+
 
 
