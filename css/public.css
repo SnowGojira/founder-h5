@@ -14,20 +14,20 @@ img{vertical-align:middle}
 /*引入自定义字体*/
 @font-face {
     font-family: Timing_Font;
-    src: url('../asset/font/timing-type.TTF');
-    /* IE9 Compat Modes */ src: url('../asset/font/timing-type.TTF?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('../asset/font/timing-type.TTF') format('woff'),
-    /* Modern Browsers */ url('../asset/font/timing-type.TTF') format('truetype'),
-    /* Safari, Android, iOS */ url('../asset/font/timing-type.TTF') format('svg');
+    src: url('../asset/font/timing-light.TTF');
+    /* IE9 Compat Modes */ src: url('../asset/font/timing-light.TTF?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../asset/font/timing-light.TTF') format('woff'),
+    /* Modern Browsers */ url('../asset/font/timing-light.TTF') format('truetype'),
+    /* Safari, Android, iOS */ url('../asset/font/timing-light.TTF') format('svg');
     /* Legacy iOS */
 }
 @font-face {
     font-family: Writing_Font;
-    src: url('../asset/font/writing-type.TTF');
-    /* IE9 Compat Modes */ src: url('../asset/font/writing-type.TTF?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('../asset/font/writing-type.TTF') format('woff'),
-    /* Modern Browsers */ url('../asset/font/writing-type.TTF') format('truetype'),
-    /* Safari, Android, iOS */ url('../asset/font/writing-type.TTF') format('svg');
+    src: url('../asset/font/writing-light.TTF');
+    /* IE9 Compat Modes */ src: url('../asset/font/writing-light.TTF?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../asset/font/writing-light.TTF') format('woff'),
+    /* Modern Browsers */ url('../asset/font/writing-light.TTF') format('truetype'),
+    /* Safari, Android, iOS */ url('../asset/font/writing-light.TTF') format('svg');
     /* Legacy iOS */
 }
 .NumType{
@@ -332,7 +332,7 @@ body,html{
     text-align: center;
     top:12.8vw;
     vertical-align: middle;
-    font-family: Timing_Font;
+    font-family: Timing_Font,Arial;
     font-size: 1.5rem;
 }
 
@@ -450,7 +450,7 @@ body,html{
     position: fixed;
     z-index: 73;
     text-align: center;
-    font-family: Writing_Font;
+    font-family: Writing_Font,Arial;
     font-size: 1.3rem;
     top: 12vh;
 }
