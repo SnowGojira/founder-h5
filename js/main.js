@@ -62,59 +62,13 @@ var w = document.documentElement.clientWidth,
 // pageLoading的动画问题
 
 // 预加载逻辑
-/*var pageLoad = new Array(
-    "images/train.png"
-);*/
 
 $(function () {
-    // var sticker=new Array();
-    //图片懒加载
-    /*var aImagesIndex=0;
-
-    function loadImgs(arr,fn){
-        var len  = arr.length,
-            behginTime = new Date().getTime();
-        aImagesIndex = 0;
-
-        function loadImg(){
-            var oImg = new Image(),
-                flag = true;
-            oImg.onload = function(){
-
-                if(flag){
-                    flag = false;
-                    aImagesIndex ++;
-                }
-                if(aImagesIndex < len){
-                    loadImg();
-                }else{
-                    var t = new Date().getTime() - behginTime;
-                    if(t < 3000){//等待时间
-                        setTimeout(function(){
-                            fn && fn();
-                        },3000-t);
-                    }else{
-                        fn && fn();
-                    }
-                }
-            };
-            // var img_src = arr[aImagesIndex];
-            oImg.src = arr[aImagesIndex];
-            document.getElementById("loadPercent").innerHTML=aImagesIndex*5+'%';
-            console.log(document.getElementById("loadPercent").innerHTML);
-        }
-        loadImg();
-    }
-
-    loadImgs(pageLoad,function(){
-        $('#pageLoad').hide();
-
-        $('#page1').show();
-
-    });*/
-
-
-    /*开始做5页和第六页的大逻辑*/
+    //page1
+    //page2
+    //page3
+    //page4
+    //page5
     $('#key50').tap(function(){
         lock(0);
     });
@@ -161,7 +115,6 @@ function bubble(){
     bubbleStage.addChild(bubbleContainer);
     bubbleStage.canvas.height=w;
     bubbleStage.canvas.width=h;
-
     var data ={
         framerate:1,
         images:['./images/page1/bubble.png'],
@@ -451,35 +404,37 @@ function money(canvas,path){
 }
 money(moneyCanvas,'./images/page5/money.png');
 
+//page6 动效处理
+
+var flowerCanvas2=document.getElementById('flower2');
+flower(flowerCanvas2);
+var moneyCanvas2=document.getElementById('money2');
+money(moneyCanvas2,'./images/page6/money.png');
 
 
-var  stage5=new createjs.Stage("canvas");
-var Title1= new createjs.Bitmap("./images/page5/title1.png");
-var Title2= new createjs.Bitmap("./images/page5/title2.png");
-var Title1_r= new createjs.Bitmap("./images/page5/title1_r.png");
-var Title2_r= new createjs.Bitmap("./images/page5/title2_r.png");
+
+//火车的动效
 var train= new createjs.Bitmap("./images/train.png");
 var railway = new createjs.Bitmap("./images/railway.png");
-var tweenTrain5;
-var tweenTitle1_5;
-var tweenTitle2_5;
-var tweenTitle1_5_r;
-var tweenTitle2_5_r;
+var  stage5=new createjs.Stage("canvas");
 
-function train5In() {
+var Title51= new createjs.Bitmap("./images/page5/title1.png");
+var Title52= new createjs.Bitmap("./images/page5/title2.png");
+var Title51_r= new createjs.Bitmap("./images/page5/title1_r.png");
+var Title52_r= new createjs.Bitmap("./images/page5/title2_r.png");
 
-    stage5.canvas.width=h;
-    stage5.canvas.height=w;
+
+
+function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
+    stage.canvas.width=h;
+    stage.canvas.height=w;
     /*图片适配比例*/
     var original = w*0.275;
     var scale = original/203;
     var positonY=0.489*w;
-    // console.log(w+" "+original+" "+scale+" "+positonY);
-
 
     train.scaleX=scale;
     train.scaleY=scale;
-
     Title1.scaleX=scale;
     Title1.scaleY=scale;
     Title2.scaleX=scale;
@@ -518,76 +473,65 @@ function train5In() {
     stage5.addChild(Title1);
     stage5.addChild(Title2);
 
-    createjs.Ticker.setFPS(20);
+    createjs.Ticker.setFPS(30);
     createjs.Ticker.on('tick',stage5);
 
+    createjs.Tween.get(train, {loop: false})
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    createjs.Sound.on("fileload", playEnter, this);
-    tweenTrain5=createjs.Tween.get(train, {loop: false})
-        .to({x: -5000}, 25000, createjs.Ease.getPowInOut(1));
-    setTimeout(function () {
-        tweenTrain5.setPaused(true);
+    createjs.Tween.get(Title1, {loop: false})
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    },3000);
-    tweenTitle1_5=createjs.Tween.get(Title1, {loop: false})
-        .to({x: 150}, 1000, createjs.Ease.getPowOut(4));
+    createjs.Tween.get(Title2, {loop: false})
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    tweenTitle2_5=createjs.Tween.get(Title2, {loop: false})
-        .to({x: 150}, 1000, createjs.Ease.getPowOut(4));
+    createjs.Tween.get(Title1_r, {loop: false})
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    tweenTitle1_5_r=createjs.Tween.get(Title1_r, {loop: false})
-        .to({x: 150}, 1000, createjs.Ease.getPowOut(4));
-
-    tweenTitle2_5_r=createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: 150}, 1000, createjs.Ease.getPowOut(4));
+    createjs.Tween.get(Title2_r, {loop: false})
+        .to({x: 150}, 5000, createjs.Ease.getPowOut(1));
 }
-train5In();
+trainIn(stage5,Title51,Title52,Title51_r,Title52_r);
+function trainOut(Title1,Title2,Title1_r,Title2_r) {
 
-//page6 动效处理
+    console.log("Train is going to leave");
 
-var flowerCanvas2=document.getElementById('flower2');
-flower(flowerCanvas2);
-var moneyCanvas2=document.getElementById('money2');
-money(moneyCanvas2,'./images/page6/money.png');
+    createjs.Tween.get(train, {loop: false})
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
 
-/*function handleComplete(){//加载完成调用函数
-    var spriteSheet = new createjs.SpriteSheet({//创建精灵
-        framerate: 60,
-        'images': [loader.getResult('img')],
-        'frames': {'regX':0, 'height':120, 'count':6, 'regY': 0, 'width': 120},
-        'animations': {
-            'anim': [0, 5, 'anim'],
-        }
-    });
-    img = new createjs.Sprite(spriteSheet, 'anim');
-    stage.addChild(img);//将img加载到舞台上
-    createjs.Ticker.addEventListener('tick', tick);//刷新
-    createjs.Ticker.setFPS(10); //每秒调用tick函数 3次 控制动画快慢
+    createjs.Tween.get(Title1, {loop: false})
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2, {loop: false})
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title1_r, {loop: false})
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2_r, {loop: false})
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
+
 }
-
-function handleFileProgress(event){//加载中函数
-    console.log(loader.progress*100|0+'%');
-}*/
-
 
 
 //The passcode to check against.
-var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
-//The values that the user enters while attempting to unlock the phone
+// var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
+var password_bubian = [6,8,9,2,2];
 var enteredPass = [];
 
-/*Functions to enter the numbers to enteredPass[]*/
 function lock(a) {
     var Choice = $('#key5'+a).attr('data-choice');
     console.log("点击的choice："+Choice);
+    console.log("点击的a："+a);
     enteredPass.push(Choice);
     console.log("enterPass的长度："+enteredPass.length);
-    checkPasscode_bu('#key5',password_bubian);
-}
+   checkPasscode('#key5',password_bubian,Title51,Title52,Title51_r,Title52_r);
+
+};
 
 /*拼写的规则*/
 var booleanArr = [];
-function checkPasscode_bu(key,password) {
+function checkPasscode(key,password,Title1,Title2,Title1_r,Title2_r) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
 
     if (enteredPass.length>password.length){
@@ -603,8 +547,7 @@ function checkPasscode_bu(key,password) {
                 else if(i==password.length-1){
                     Title2.visible=false;
                     Title2_r.visible=true;
-                    unlocked();
-
+                    trainOut(Title1,Title2,Title1_r,Title2_r);
                 }else{
 
                 }
@@ -654,27 +597,7 @@ function checkWrong(key){
 
 
 /*Displays all the correct stuff, then moves on to homeScreen()*/
-function unlocked() {
-    console.log("Your Phone is Unlocked");
-    setTimeout(function () {
-        playOut();
-    },10);
-    createjs.Tween.get(train, {loop: false})
-        .to({x: -10000}, 150, createjs.Ease.getPowOut(4));
 
-    createjs.Tween.get(Title1, {loop: false})
-        .to({x: -10000}, 150, createjs.Ease.getPowOut(4));
-
-    createjs.Tween.get(Title2, {loop: false})
-        .to({x: -10000}, 150, createjs.Ease.getPowOut(4));
-
-    createjs.Tween.get(Title1_r, {loop: false})
-        .to({x: -10000}, 150, createjs.Ease.getPowOut(4));
-
-    createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: -10000}, 150, createjs.Ease.getPowOut(4));
-
-}
 
 function resetAll() {
     Title1.visible=true;
@@ -712,9 +635,4 @@ function playStart() {
 function playRun(){
     createjs.Sound.registerSound({src:"asset/audio/run.mp3", id:"run"});
     createjs.Sound.play("run");
-}
-
-function playCorrect() {
-    createjs.Sound.registerSound({src:"asset/audio/correct.mp3", id:"correct"});
-    createjs.Sound.play("correct");
 }
