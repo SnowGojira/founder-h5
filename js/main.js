@@ -150,13 +150,312 @@ $(function () {
 
 
 
+//page1 实验性的动效
+var bubbleStage,
+    bubbleCanvas,
+    bubbleContainer;
+bubbleCanvas=document.getElementById('bubble');
+function bubble(){
+    bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
+    bubbleContainer= new createjs.Container();
+    bubbleStage.addChild(bubbleContainer);
+    bubbleStage.canvas.height=w;
+    bubbleStage.canvas.width=h;
+
+    var data ={
+        framerate:1,
+        images:['./images/page1/bubble.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    bubbleContainer.addChild(img1);
+
+    // createjs.Ticker.setFPS(30);
+    createjs.Ticker.on('tick',bubbleStage);
+}
+bubble();
+
+var  stage1=new createjs.Stage("canvas1");
+
+function train1In() {
+
+    stage1.canvas.width=h;
+    stage1.canvas.height=w;
+
+    /*图片适配比例*/
+    var original = w*0.275;
+    var scale = original/203;
+    var positonY=0.489*w;
+    // console.log(w+" "+original+" "+scale+" "+positonY);
+    var train= new createjs.Bitmap("./images/train.png");
+    var railway = new createjs.Bitmap("./images/railway.png");
+
+
+    train.scaleX=scale;
+    train.scaleY=scale;
+    railway.scaleY=scale;
+
+//设置在舞台中的位置
+    train.x=1000;
+    train.y=positonY;
+    railway.y=positonY;
+// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+    stage1.addChild(railway);
+    stage1.addChild(train);
+
+    createjs.Ticker.setFPS(30);
+    createjs.Ticker.on('tick',stage1);
+    createjs.Tween.get(train, {loop: false})
+        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+
+}
+train1In();
+
+//page2 实验性的动效
+var img,snowStage,
+    snowCanvas,
+    snowContainer;
+    snowCanvas=document.getElementById('animCanvas');
+
+function snow(){
+    snowStage = new createjs.Stage(snowCanvas);//创建舞台
+    snowContainer= new createjs.Container();
+    snowStage.addChild(snowContainer);
+    snowStage.canvas.height=w;
+    snowStage.canvas.width=h;
+
+    var data ={
+        images:['./images/page2/snow.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    snowContainer.addChild(img1);
+
+    createjs.Ticker.setFPS(2);
+    createjs.Ticker.on('tick',snowStage);
+}
+snow();
+
+//page3 实验性动效
+var cloudStage,
+    cloudCanvas,
+    cloudContainer;
+cloudCanvas=document.getElementById('cloud');
+
+function cloud(){
+    cloudStage = new createjs.Stage(cloudCanvas);//创建舞台
+    cloudContainer= new createjs.Container();
+    cloudStage.addChild(cloudContainer);
+    cloudStage.canvas.height=w;
+    cloudStage.canvas.width=h;
+
+    var data ={
+        images:['./images/page3/cloud.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    cloudContainer.addChild(img1);
+
+    createjs.Ticker.setFPS(2);
+    createjs.Ticker.on('tick',cloudStage);
+}
+cloud();
+
+var signalStage,
+    signalCanvas,
+    signalContainer;
+signalCanvas=document.getElementById('signal');
+
+function signal(){
+    signalStage = new createjs.Stage(signalCanvas);//创建舞台
+    signalContainer= new createjs.Container();
+    signalStage.addChild(signalContainer);
+    signalStage.canvas.height=w;
+    signalStage.canvas.width=h;
+
+    var data ={
+        images:['./images/page3/signal.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:6
+        },
+        animations:{
+            anim : [0,5,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    signalContainer.addChild(img1);
+
+    createjs.Ticker.setFPS(10);
+    createjs.Ticker.on('tick',signalStage);
+}
+signal();
+
+//page4 背景动效
+var heartStage,
+    heartCanvas,
+    heartContainer;
+heartCanvas=document.getElementById('heart');
+function heart(){
+
+    heartStage = new createjs.Stage(heartCanvas);//创建舞台
+    heartContainer= new createjs.Container();
+    heartStage.addChild(heartContainer);
+
+
+
+    heartStage.canvas.width=h;
+    heartStage.canvas.height=w;
+
+
+    var data ={
+        images:['./images/page4/heart.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    heartContainer.addChild(img1);
+
+    createjs.Ticker.setFPS(2);
+    createjs.Ticker.on('tick',heartStage);
+}
+heart();
+
+//page5 背景动效
+var flowerStage,
+    flowerCanvas,
+    flowerContainer;
+flowerCanvas=document.getElementById('flower');
+function flower(canvas){
+
+    flowerStage = new createjs.Stage(canvas);//创建舞台
+    flowerContainer= new createjs.Container();
+    flowerStage.addChild(flowerContainer);
+
+    flowerStage.canvas.width=h;
+    flowerStage.canvas.height=w;
+
+    var data ={
+        framerate:2,
+        images:['./images/page5/flower.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    flowerContainer.addChild(img1);
+
+    // createjs.Ticker.setFPS(1);
+    createjs.Ticker.on('tick',flowerStage);
+}
+flower(flowerCanvas);
+
+var moneyStage,
+    moneyCanvas,
+    moneyContainer;
+moneyCanvas=document.getElementById('money');
+function money(canvas,path){
+
+    moneyStage = new createjs.Stage(canvas);//创建舞台
+    moneyContainer= new createjs.Container();
+    moneyStage.addChild(moneyContainer);
+
+    moneyStage.canvas.width=h;
+    moneyStage.canvas.height=w;
+
+    var data ={
+        framerate:2,
+        images:[path],
+        frames:{
+            width:1206,
+            height:750,
+            count:2
+        },
+        animations:{
+            anim : [0,1,'anim']
+        }
+
+    }
+
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    moneyContainer.addChild(img1);
+
+    // createjs.Ticker.setFPS(1);
+    createjs.Ticker.on('tick',moneyStage);
+}
+money(moneyCanvas,'./images/page5/money.png');
+
 
 
 var  stage5=new createjs.Stage("canvas");
-
 var Title1= new createjs.Bitmap("./images/page5/title1.png");
 var Title2= new createjs.Bitmap("./images/page5/title2.png");
-
 var Title1_r= new createjs.Bitmap("./images/page5/title1_r.png");
 var Title2_r= new createjs.Bitmap("./images/page5/title2_r.png");
 
@@ -235,44 +534,12 @@ function train5In() {
 }
 train5In();
 
-//page2 实验性的动效
-var img,snowStage,
-    snowCanvas,
-    snowContainer;
-    snowCanvas=document.getElementById('animCanvas');
+//page6 动效处理
 
-function snow(){
-    snowStage = new createjs.Stage(snowCanvas);//创建舞台
-    snowContainer= new createjs.Container();
-    snowStage.addChild(snowContainer);
-    snowStage.canvas.height=w;
-    snowStage.canvas.width=h;
-
-    var data ={
-        images:['./images/page2/snow.png'],
-        frames:{
-            width:1206,
-            height:750,
-            count:3
-        },
-        animations:{
-            anim : [0,2,'anim']
-        }
-
-    }
-
-    var spriteSheet2 = new createjs.SpriteSheet(data);
-    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
-    snowContainer.addChild(img1);
-
-    createjs.Ticker.setFPS(2);
-    createjs.Ticker.on('tick',snowStage);
-
-
-}
-snow();
+var flowerCanvas2=document.getElementById('flower2');
+flower(flowerCanvas2);
+var moneyCanvas2=document.getElementById('money2');
+money(moneyCanvas2,'./images/page6/money.png');
 
 /*function handleComplete(){//加载完成调用函数
     var spriteSheet = new createjs.SpriteSheet({//创建精灵

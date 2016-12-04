@@ -230,23 +230,36 @@ body,html{
     z-index: 31;
 }
 
-
-.train3{
+.animEff3{
+    width: 100%;
+    height: 100%;
     position: fixed;
     z-index: 32;
 }
-.fbg3{
-    background: url("../images/page3/fbg.png") 0 0 no-repeat;
+.bg32{
+    background: url("../images/page3/bg2.png") 0 0 no-repeat;
     background-size: 100% 100%;
     z-index: 33;
 }
-/*这里面稍微effect float上面*/
-.animEff3{
+.train3{
     position: fixed;
     z-index: 34;
 }
-.keys3{
+
+.fbg3{
+    background: url("../images/page3/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
     z-index: 35;
+}
+
+.animEff32{
+    width:100%;
+    height:100%;
+    position: fixed;
+    z-index: 36;
+}
+.keys3{
+    z-index: 37;
 }
 
 
@@ -257,6 +270,8 @@ body,html{
     z-index: 41;
 }
 .animEff4{
+    width: 100%;
+    height: 100%;
     position: fixed;
     z-index: 42;
 }
@@ -286,17 +301,21 @@ body,html{
     position: fixed;
     z-index: 52;
 }
-.train5{
+.animEff52{
     position: fixed;
     z-index: 53;
+}
+.train5{
+    position: fixed;
+    z-index: 54;
 }
 .fbg5{
     background: url("../images/page5/fbg.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 54;
+    z-index: 55;
 }
 .keys5{
-    z-index: 55;
+    z-index: 56;
 }
 .timer{
     width:100%;
@@ -304,7 +323,7 @@ body,html{
     position: fixed;
     text-align: center;
     top: 10vw;
-    z-index: 56;
+    z-index: 57;
 }
 .timer p{
     width:100%;

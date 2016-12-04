@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/loading/la1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/loading/la2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/loading/la3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page1/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page2/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page3/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/heart1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/heart2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/heart3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page6/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/anim.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/border.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/border2.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/public.css" afterPath="$PROJECT_DIR$/css/public.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="founder-h5.iws" />
@@ -29,18 +46,22 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="57" column="34" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="34" />
+            <state relative-caret-position="419">
+              <caret line="344" column="29" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
               <folding>
                 <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#ul#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#ul#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#ul#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1480798907708" expanded="false" signature="2125:4365" ph="..." />
+                <marker date="1480834030082" expanded="false" signature="2155:4395" ph="..." />
               </folding>
             </state>
           </provider>
@@ -49,14 +70,23 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="269" column="28" selection-start-line="269" selection-start-column="28" selection-end-line="269" selection-end-column="28" />
+            <state relative-caret-position="583">
+              <caret line="541" column="47" selection-start-line="541" selection-start-column="47" selection-end-line="541" selection-end-column="47" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#125#145#0" expanded="false" />
                 <element signature="n#!!block;n#setScreen#0" expanded="false" />
                 <element signature="e#2727#3956#0" expanded="false" />
-                <element signature="e#7506#8119#0" expanded="false" />
+                <element signature="n#!!block;n#bubble#0" expanded="false" />
+                <element signature="n#!!block;n#train1In#0" expanded="false" />
+                <element signature="n#!!block;n#snow#0" expanded="false" />
+                <element signature="n#!!block;n#cloud#0" expanded="false" />
+                <element signature="n#!!block;n#signal#0" expanded="false" />
+                <element signature="n#!!block;n#heart#0" expanded="false" />
+                <element signature="n#!!block;n#flower#0" expanded="false" />
+                <element signature="e#10089#10323#0" expanded="false" />
+                <element signature="n#!!block;n#train5In#0" expanded="false" />
+                <element signature="e#13805#14418#0" expanded="false" />
                 <element signature="n#!!block;n#lock#0" expanded="false" />
                 <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
                 <element signature="n#!!block;n#checkRight#0" expanded="false" />
@@ -71,8 +101,8 @@
       <file leaf-file-name="public.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/public.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69">
-              <caret line="207" column="10" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
+            <state relative-caret-position="576">
+              <caret line="339" column="15" selection-start-line="339" selection-start-column="15" selection-end-line="339" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -81,38 +111,10 @@
       <file leaf-file-name="animation.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/animation.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="43" column="2" selection-start-line="43" selection-start-column="0" selection-end-line="61" selection-end-column="3" />
+            <state relative-caret-position="184">
+              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="heart3.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/page4/heart3.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="heart2.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/page4/heart2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="heart1.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/page4/heart1.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bg.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/page4/bg.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -152,8 +154,8 @@
         <option value="$PROJECT_DIR$/js/passcode.js" />
         <option value="$PROJECT_DIR$/css/animation.css" />
         <option value="$PROJECT_DIR$/css/public.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -529,7 +531,7 @@
       <updated>1480271949714</updated>
       <workItem from="1480271951110" duration="44104000" />
       <workItem from="1480511214912" duration="20206000" />
-      <workItem from="1480590592064" duration="71002000" />
+      <workItem from="1480590592064" duration="82205000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -657,21 +659,28 @@
       <option name="project" value="LOCAL" />
       <updated>1480803782573</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="实现了page2下雪的静态动效/complete the static gif 1">
+      <created>1480805217599</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1480805217599</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135312000" />
+    <option name="totallyTimeSpent" value="146515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09166667" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1869469" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.273326" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18002196" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -685,6 +694,25 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1869469" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18002196" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -714,11 +742,12 @@
     <MESSAGE value="建好静态框架/Build a static framework" />
     <MESSAGE value="一个初期的静态效果图/ rough static motion effect" />
     <MESSAGE value="另外一种写法的spritesheet/ another writing type" />
-    <option name="LAST_COMMIT_MESSAGE" value="另外一种写法的spritesheet/ another writing type" />
+    <MESSAGE value="实现了page2下雪的静态动效/complete the static gif 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了page2下雪的静态动效/complete the static gif 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -740,7 +769,16 @@
             <element signature="e#125#145#0" expanded="false" />
             <element signature="n#!!block;n#setScreen#0" expanded="false" />
             <element signature="e#2727#3956#0" expanded="false" />
-            <element signature="e#7506#8119#0" expanded="false" />
+            <element signature="n#!!block;n#bubble#0" expanded="false" />
+            <element signature="n#!!block;n#train1In#0" expanded="false" />
+            <element signature="n#!!block;n#snow#0" expanded="false" />
+            <element signature="n#!!block;n#cloud#0" expanded="false" />
+            <element signature="n#!!block;n#signal#0" expanded="false" />
+            <element signature="n#!!block;n#heart#0" expanded="false" />
+            <element signature="n#!!block;n#flower#0" expanded="false" />
+            <element signature="e#10089#10323#0" expanded="false" />
+            <element signature="n#!!block;n#train5In#0" expanded="false" />
+            <element signature="e#13805#14418#0" expanded="false" />
             <element signature="n#!!block;n#lock#0" expanded="false" />
             <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
             <element signature="n#!!block;n#checkRight#0" expanded="false" />
@@ -763,13 +801,17 @@
           <folding>
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1480798907708" expanded="false" signature="2125:4365" ph="..." />
+            <marker date="1480834030082" expanded="false" signature="2155:4395" ph="..." />
           </folding>
         </state>
       </provider>
@@ -799,7 +841,16 @@
             <element signature="e#125#145#0" expanded="false" />
             <element signature="n#!!block;n#setScreen#0" expanded="false" />
             <element signature="e#2727#3956#0" expanded="false" />
-            <element signature="e#7506#8119#0" expanded="false" />
+            <element signature="n#!!block;n#bubble#0" expanded="false" />
+            <element signature="n#!!block;n#train1In#0" expanded="false" />
+            <element signature="n#!!block;n#snow#0" expanded="false" />
+            <element signature="n#!!block;n#cloud#0" expanded="false" />
+            <element signature="n#!!block;n#signal#0" expanded="false" />
+            <element signature="n#!!block;n#heart#0" expanded="false" />
+            <element signature="n#!!block;n#flower#0" expanded="false" />
+            <element signature="e#10089#10323#0" expanded="false" />
+            <element signature="n#!!block;n#train5In#0" expanded="false" />
+            <element signature="e#13805#14418#0" expanded="false" />
             <element signature="n#!!block;n#lock#0" expanded="false" />
             <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
             <element signature="n#!!block;n#checkRight#0" expanded="false" />
@@ -817,13 +868,17 @@
           <folding>
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1480798907708" expanded="false" signature="2125:4365" ph="..." />
+            <marker date="1480834030082" expanded="false" signature="2155:4395" ph="..." />
           </folding>
         </state>
       </provider>
@@ -920,48 +975,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/animation.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="0" selection-end-line="61" selection-end-column="3" />
+        <state relative-caret-position="184">
+          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/public.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="207" column="10" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
+        <state relative-caret-position="576">
+          <caret line="339" column="15" selection-start-line="339" selection-start-column="15" selection-end-line="339" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="57" column="34" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="34" />
+        <state relative-caret-position="419">
+          <caret line="344" column="29" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
           <folding>
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1480798907708" expanded="false" signature="2125:4365" ph="..." />
+            <marker date="1480834030082" expanded="false" signature="2155:4395" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="269" column="28" selection-start-line="269" selection-start-column="28" selection-end-line="269" selection-end-column="28" />
+        <state relative-caret-position="583">
+          <caret line="541" column="47" selection-start-line="541" selection-start-column="47" selection-end-line="541" selection-end-column="47" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#125#145#0" expanded="false" />
             <element signature="n#!!block;n#setScreen#0" expanded="false" />
             <element signature="e#2727#3956#0" expanded="false" />
-            <element signature="e#7506#8119#0" expanded="false" />
+            <element signature="n#!!block;n#bubble#0" expanded="false" />
+            <element signature="n#!!block;n#train1In#0" expanded="false" />
+            <element signature="n#!!block;n#snow#0" expanded="false" />
+            <element signature="n#!!block;n#cloud#0" expanded="false" />
+            <element signature="n#!!block;n#signal#0" expanded="false" />
+            <element signature="n#!!block;n#heart#0" expanded="false" />
+            <element signature="n#!!block;n#flower#0" expanded="false" />
+            <element signature="e#10089#10323#0" expanded="false" />
+            <element signature="n#!!block;n#train5In#0" expanded="false" />
+            <element signature="e#13805#14418#0" expanded="false" />
             <element signature="n#!!block;n#lock#0" expanded="false" />
             <element signature="n#!!block;n#checkPasscode_bu#0" expanded="false" />
             <element signature="n#!!block;n#checkRight#0" expanded="false" />
