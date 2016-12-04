@@ -59,45 +59,140 @@ function setScreen(){
 var w = document.documentElement.clientWidth,
     h = document.documentElement.clientHeight;
 
-// pageLoading的动画问题
 
 // 预加载逻辑
+window.onload=function(){
+    manifest = [
+        {src: 'asset/audio/enter.mp3', id: 'sona1'},
+        {src: 'asset/audio/out.mp3', id: 'sona2'},
+        {src: 'asset/audio/right.mp3', id: 'sona3'},
+        {src: 'asset/audio/running.mp3', id: 'sona4'},
+        {src: 'asset/audio/start.mp3', id: 'sona5'},
+        {src: 'asset/audio/wrong.mp3', id: 'sona6'},
+        {src: 'asset/font/timing-light.TTF', id: 'font1'},
+        {src: 'asset/font/writing-light.TTF', id: 'font2'},
+
+        {src: 'images/page1/bg.png', id: 'p11'},
+        {src: 'images/page1/btn.png', id: 'p12'},
+        {src: 'images/page1/bubble.png', id: 'p13'},
+        {src: 'images/page1/fbg.png', id: 'p14'},
+        {src: 'images/page1/hint.png', id: 'p15'},
+        {src: 'images/page1/title.png', id: 'p16'},
+
+        {src: 'images/page2/bg.png', id: 'p21'},
+        {src: 'images/page2/fbg.png', id: 'p22'},
+        {src: 'images/page2/snow.png', id: 'p22'},
+
+        {src: 'images/page3/bg.png', id: 'p31'},
+        {src: 'images/page3/bg2.png', id: 'p32'},
+        {src: 'images/page3/cloud.png', id: 'p33'},
+        {src: 'images/page3/fbg.png', id: 'p34'},
+        {src: 'images/page3/signal.png', id: 'p35'},
+
+        {src: 'images/page4/bg.png', id: 'p41'},
+        {src: 'images/page4/fbg.png', id: 'p42'},
+        {src: 'images/page4/heart.png', id: 'p43'},
+
+        {src: 'images/page5/bg.png', id: 'p51'},
+        {src: 'images/page5/fbg.png', id: 'p52'},
+        {src: 'images/page5/flower.png', id: 'p53'},
+        {src: 'images/page5/money.png', id: 'p54'},
+
+        {src: 'images/page6/bg.png', id: 'p61'},
+        {src: 'images/page6/fbg.png', id: 'p62'},
+        {src: 'images/page6/flag.png', id: 'p63'},
+        {src: 'images/page6/solgan1.png', id: 'p64'},
+        {src: 'images/page6/solgan2.png', id: 'p65'},
+
+        {src: 'images/page7/bg.png', id: 'p71'},
+        {src: 'images/page7/border1.png', id: 'p72'},
+        {src: 'images/page7/share.png', id: 'p73'},
+        {src: 'images/page7/btn1.png', id: 'p74'},
+        {src: 'images/page7/btn2.png', id: 'p75'},
+        {src: 'images/page7/btn3.png', id: 'p76'},
+
+        {src: 'images/railway.png', id: 'p1'},
+        {src: 'images/timer.png', id: 'p2'},
+        {src: 'images/train.png', id: 'p3'},
+
+    ];//预加载
+    loader = new createjs.LoadQueue(false);
+    // 关键！----设置并发数
+    loader.setMaxConnections(100);
+// 关键！---一定要将其设置为 true, 否则不起作用。
+    loader.maintainScriptOrder=true;
+    loader.installPlugin(createjs.Sound);
+    loader.addEventListener('complete', handleComplete);//加载完成 调用handleComplete函数
+    loader.addEventListener('progress', handleFileProgress);//加载完成 调用handleFileProgress函数
+    loader.loadManifest(manifest);
+}
+
+function handleFileProgress(event){//加载中函数
+    var percent=loader.progress*100|0+'%';
+    document.getElementById('loadPercent').innerHTML=percent+"%";
+    // $("#loadPercent").HTML=loader.progress%100|0+'%';
+    console.log(loader.progress*100|0+'%');
+}
+
+function handleComplete(){
+    // 显示下一张图
+    $('#pageLoad').hide();
+    $('#page1').show();
+    playStart();
+    bubble();
+    train1In();
+}
+
+
 
 $(function () {
     //page1
+    $("#hint").tap(function(){
+        $("#hint").hide();
+        $("#title").addClass('mainIn');
+        $("#startBtn").addClass('mainIn');
+    });
+
+    $("#startBtn").tap(function () {
+        console.log()
+        playRun();
+        train1Out();
+    });
+
+
     //page2
     //page3
     //page4
     //page5
     $('#key50').tap(function(){
-        lock(0);
+        quiz5(0);
     });
     $('#key51').tap(function(){
-       lock(1);
+       quiz5(1);
    });
     $('#key52').tap(function(){
-        lock(2);
+        quiz5(2);
     });
     $('#key53').tap(function(){
-        lock(3);
+        quiz5(3);
     });
     $('#key54').tap(function(){
-        lock(4);
+        quiz5(4);
     });
     $('#key55').tap(function(){
-        lock(5);
+        quiz5(5);
     });
     $('#key56').tap(function(){
-        lock(6);
+        quiz5(6);
     });
     $('#key57').tap(function(){
-        lock(7);
+        quiz5(7);
     });
     $('#key58').tap(function(){
-        lock(8);
+        quiz5(8);
     });
     $('#key59').tap(function(){
-        lock(9);
+        quiz5(9);
     });
 
 });
@@ -138,7 +233,6 @@ function bubble(){
     // createjs.Ticker.setFPS(30);
     createjs.Ticker.on('tick',bubbleStage);
 }
-bubble();
 
 var  stage1=new createjs.Stage("canvas1");
 
@@ -150,11 +244,7 @@ function train1In() {
     /*图片适配比例*/
     var original = w*0.275;
     var scale = original/203;
-    var positonY=0.489*w;
-    // console.log(w+" "+original+" "+scale+" "+positonY);
-    var train= new createjs.Bitmap("./images/train.png");
-    var railway = new createjs.Bitmap("./images/railway.png");
-
+    var positonY=0.54*w;
 
     train.scaleX=scale;
     train.scaleY=scale;
@@ -168,13 +258,24 @@ function train1In() {
     stage1.addChild(railway);
     stage1.addChild(train);
 
-    createjs.Ticker.setFPS(30);
+    createjs.Ticker.setFPS(60);
     createjs.Ticker.on('tick',stage1);
     createjs.Tween.get(train, {loop: false})
-        .to({x: 200}, 10000, createjs.Ease.getPowInOut(4));
+        .to({x: 250}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        $("#hint").show();
+    }
 
 }
-train1In();
+function train1Out(){
+    createjs.Tween.get(train, {loop: false})
+        .to({x: -2000}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        $("#page1").hide();
+        $("#page2").show();
+        playEnter();
+    }
+    }
 
 //page2 实验性的动效
 var img,snowStage,
@@ -477,10 +578,19 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
     createjs.Ticker.on('tick',stage5);
 
     createjs.Tween.get(train, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete).call(enterFun);
+
+    function enterFun() {
+        playEnter();
+    }
 
     createjs.Tween.get(Title1, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        // 开始计时逻辑，题目显示逻辑
+        $('.keys').show();
+        console.log("finished");
+    }
 
     createjs.Tween.get(Title2, {loop: false})
         .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
@@ -489,16 +599,21 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
         .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
     createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowOut(1));
+        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+
+
 }
-trainIn(stage5,Title51,Title52,Title51_r,Title52_r);
+// trainIn(stage5,Title51,Title52,Title51_r,Title52_r);
 function trainOut(Title1,Title2,Title1_r,Title2_r) {
 
     console.log("Train is going to leave");
+    playOut();
 
     createjs.Tween.get(train, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
-
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4)).call(myFunction);
+    function myFunction() {
+        playOut();
+    }
     createjs.Tween.get(Title1, {loop: false})
         .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
 
@@ -509,38 +624,42 @@ function trainOut(Title1,Title2,Title1_r,Title2_r) {
         .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
 
     createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        $("#page5").hide();
+        $("#page6").show();
+
+    }
 
 }
 
 
 //The passcode to check against.
-// var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
-var password_bubian = [6,8,9,2,2];
+var password_shijie=[0,8,8,0,7,8,4,0,8,0,6,3,6,8];//4
+var password_zaibian=[9,8,1,9,1,9,6,9,1,1,7,6,5,2];//5
+var password_chuangxin=[0,6,7,2,8,1,0,0,4,5];//4
+var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
 var enteredPass = [];
 
-function lock(a) {
+function quiz5(a) {
     var Choice = $('#key5'+a).attr('data-choice');
-    console.log("点击的choice："+Choice);
-    console.log("点击的a："+a);
+    console.log("点击的choice："+Choice);;
     enteredPass.push(Choice);
     console.log("enterPass的长度："+enteredPass.length);
-   checkPasscode('#key5',password_bubian,Title51,Title52,Title51_r,Title52_r);
-
+   checkPasscode('#key5',password_bubian,3,Title51,Title52,Title51_r,Title52_r);
 };
 
 /*拼写的规则*/
 var booleanArr = [];
-function checkPasscode(key,password,Title1,Title2,Title1_r,Title2_r) {
+function checkPasscode(key,password,num,Title1,Title2,Title1_r,Title2_r) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-
     if (enteredPass.length>password.length){
          return;
     }else{
         for(var i = 0; i<password.length;i++){
             if (enteredPass[i]==password[i]){
                 booleanArr.push(true);
-                if (i==3){
+                if (i==num){
                     Title1.visible=false;
                     Title1_r.visible=true;
                 }
@@ -633,6 +752,6 @@ function playStart() {
     createjs.Sound.play("start");
 }
 function playRun(){
-    createjs.Sound.registerSound({src:"asset/audio/run.mp3", id:"run"});
+    createjs.Sound.registerSound({src:"asset/audio/running.mp3", id:"run"});
     createjs.Sound.play("run");
 }
