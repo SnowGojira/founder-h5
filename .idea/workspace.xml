@@ -2,25 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/loading/la1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/loading/la2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/loading/la3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page1/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page2/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page3/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/heart1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/heart2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page4/heart3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page6/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/anim.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/border.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page7/border2.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page1/bubble.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page2/snow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/bg2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/cloud.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page3/signal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page4/heart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page5/flower.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page5/money.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page6/money.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/preloadjs-0.6.2.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/runningGrant.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page4/bg.png" afterPath="$PROJECT_DIR$/images/page4/bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/bg.png" afterPath="$PROJECT_DIR$/images/page6/bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/fbg.png" afterPath="$PROJECT_DIR$/images/page6/fbg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/flag.png" afterPath="$PROJECT_DIR$/images/page6/flag.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/solgan1.png" afterPath="$PROJECT_DIR$/images/page6/solgan1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page6/solgan2.png" afterPath="$PROJECT_DIR$/images/page6/solgan2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page7/btn1.png" afterPath="$PROJECT_DIR$/images/page7/btn1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page7/btn2.png" afterPath="$PROJECT_DIR$/images/page7/btn2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page7/btn3.png" afterPath="$PROJECT_DIR$/images/page7/btn3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page7/share.png" afterPath="$PROJECT_DIR$/images/page7/share.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/public.css" afterPath="$PROJECT_DIR$/css/public.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="founder-h5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +74,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="541" column="47" selection-start-line="541" selection-start-column="47" selection-end-line="541" selection-end-column="47" />
+            <state relative-caret-position="1067">
+              <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
                 <element signature="e#125#145#0" expanded="false" />
@@ -531,7 +535,7 @@
       <updated>1480271949714</updated>
       <workItem from="1480271951110" duration="44104000" />
       <workItem from="1480511214912" duration="20206000" />
-      <workItem from="1480590592064" duration="82205000" />
+      <workItem from="1480590592064" duration="82905000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -666,17 +670,24 @@
       <option name="project" value="LOCAL" />
       <updated>1480805217599</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="所有的背景动画已经完成/ complete all the bg animation&#10;">
+      <created>1480834093905</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1480834093905</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146515000" />
+    <option name="totallyTimeSpent" value="147215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1869469" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -743,7 +754,8 @@
     <MESSAGE value="一个初期的静态效果图/ rough static motion effect" />
     <MESSAGE value="另外一种写法的spritesheet/ another writing type" />
     <MESSAGE value="实现了page2下雪的静态动效/complete the static gif 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了page2下雪的静态动效/complete the static gif 1" />
+    <MESSAGE value="所有的背景动画已经完成/ complete all the bg animation&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="所有的背景动画已经完成/ complete all the bg animation&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1013,8 +1025,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="541" column="47" selection-start-line="541" selection-start-column="47" selection-end-line="541" selection-end-column="47" />
+        <state relative-caret-position="1067">
+          <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
             <element signature="e#125#145#0" expanded="false" />
