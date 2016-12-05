@@ -131,21 +131,39 @@ function handleFileProgress(event){//加载中函数
     var percent=loader.progress*100|0+'%';
     document.getElementById('loadPercent').innerHTML=percent+"%";
     // $("#loadPercent").HTML=loader.progress%100|0+'%';
-    console.log(loader.progress*100|0+'%');
+    // console.log(loader.progress*100|0+'%');
 }
 
 function handleComplete(){
     // 显示下一张图
     $('#pageLoad').hide();
-    $('#page1').show();
+    /*$('#page1').show();
     playStart();
     bubble();
-    train1In();
+    train1In();*/
+
+    $("#page2").show();
+    snow();
+    train2In(Title21,Title22,Title21_r,Title22_r);
 }
 
 
 
 $(function () {
+    //timer
+    /*timer = new _timer
+    (
+        function(time)
+        {
+            if(time == 0)
+            {
+                timer.stop();
+                alert('time out');
+            }
+        }
+    );
+    timer.reset(0);
+    timer.mode(0);*/
     //page1
     $("#hint").tap(function(){
         $("#hint").hide();
@@ -161,6 +179,40 @@ $(function () {
 
 
     //page2
+    $('#key20').tap(function(){
+        quiz2(0);
+        // setInterval(Tit,1000);
+        // Timer();
+        startTimer();
+    });
+
+    $('#key21').tap(function(){
+        quiz2(1);
+    });
+    $('#key22').tap(function(){
+        quiz2(2);
+    });
+    $('#key23').tap(function(){
+        quiz2(3);
+    });
+    $('#key24').tap(function(){
+        quiz2(4);
+    });
+    $('#key25').tap(function(){
+        quiz2(5);
+    });
+    $('#key26').tap(function(){
+        quiz2(6);
+    });
+    $('#key27').tap(function(){
+        quiz2(7);
+    });
+    $('#key28').tap(function(){
+        quiz2(8);
+    });
+    $('#key29').tap(function(){
+        quiz2(9);
+    });
     //page3
     //page4
     //page5
@@ -274,6 +326,7 @@ function train1Out(){
         $("#page1").hide();
         $("#page2").show();
         playEnter();
+        snow();
     }
     }
 
@@ -291,6 +344,7 @@ function snow(){
     snowStage.canvas.width=h;
 
     var data ={
+        framerate:1,
         images:['./images/page2/snow.png'],
         frames:{
             width:1206,
@@ -308,11 +362,162 @@ function snow(){
 
     img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
     snowContainer.addChild(img1);
-
-    createjs.Ticker.setFPS(2);
+    // createjs.Ticker.setFPS(2);
     createjs.Ticker.on('tick',snowStage);
 }
-snow();
+
+var  stage2=new createjs.Stage("canvas2");
+var Title21= new createjs.Bitmap("./images/page2/title1.png");
+var Title22= new createjs.Bitmap("./images/page2/title2.png");
+var Title21_r= new createjs.Bitmap("./images/page2/title1_r.png");
+var Title22_r= new createjs.Bitmap("./images/page2/title2_r.png");
+
+function train2In(Title1,Title2,Title1_r,Title2_r) {
+    stage2.canvas.width=h;
+    stage2.canvas.height=w;
+    /*图片适配比例*/
+    var original = w*0.275;
+    var scale = original/203;
+    var positonY=0.489*w;
+
+    train.scaleX=scale;
+    train.scaleY=scale;
+    Title1.scaleX=scale;
+    Title1.scaleY=scale;
+    Title2.scaleX=scale;
+    Title2.scaleY=scale;
+
+    Title1_r.scaleX=scale;
+    Title1_r.scaleY=scale;
+    Title2_r.scaleX=scale;
+    Title2_r.scaleY=scale;
+
+    Title1_r.visible=false;
+    Title2_r.visible=false;
+
+    railway.scaleY=scale;
+
+//设置在舞台中的位置
+    train.x=1000;
+    train.y=positonY;
+
+    Title1.x=1000;
+    Title1.y=positonY;
+    Title2.x=1000;
+    Title2.y=positonY;
+
+    Title1_r.x=1000;
+    Title1_r.y=positonY;
+    Title2_r.x=1000;
+    Title2_r.y=positonY;
+
+    railway.y=positonY;
+// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+    stage2.addChild(railway);
+    stage2.addChild(train);
+    stage2.addChild(Title1_r);
+    stage2.addChild(Title2_r);
+    stage2.addChild(Title1);
+    stage2.addChild(Title2);
+
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.on('tick',stage2);
+
+    createjs.Tween.get(train, {loop: false})
+        .to({x: 150}, 6000, createjs.Ease.getPowInOut(4));
+
+
+    createjs.Tween.get(Title1, {loop: false})
+        .to({x: 150}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        // 开始计时逻辑，题目显示逻辑
+        $('.keys').addClass('mainIn');
+        // timer.mode(1);
+    }
+
+    createjs.Tween.get(Title2, {loop: false})
+        .to({x: 150}, 6000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title1_r, {loop: false})
+        .to({x: 150}, 6000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2_r, {loop: false})
+        .to({x: 150}, 6000, createjs.Ease.getPowInOut(4));
+
+
+}
+function train2Out(Title1,Title2,Title1_r,Title2_r) {
+
+    console.log("Train is going to leave");
+    // playOut();
+
+    createjs.Tween.get(train, {loop: false})
+        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title1, {loop: false})
+        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2, {loop: false})
+        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title1_r, {loop: false})
+        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
+
+    createjs.Tween.get(Title2_r, {loop: false})
+        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        $("#page2").hide();
+        $("#page3").show();
+        playEnter();
+        //add function()
+        cloud();
+        signal();
+        train3In();
+
+    }
+
+}
+
+
+// example use
+var hour,minute,second;//时 分 秒
+hour=minute=second=0;//初始化
+var millisecond=0;//毫秒
+var int;
+function resetTimer()//重置
+{
+    window.clearInterval(int);
+    millisecond=hour=minute=second=0;
+    document.getElementById('timer').innerHTML='00:00';
+}
+
+function startTimer()//开始
+{
+    int=setInterval(timer,1000);
+}
+
+function timer()//计时
+{   second++;
+    if(second>=60)
+    {
+        second=0;
+        minute=minute+1;
+    }
+
+    if(minute>=60)
+    {
+        minute=0;
+    }
+    document.getElementById('timer').innerHTML=minute+':'+second;
+    console.log(minute+":"+second);
+
+}
+
+function stopTimer()//暂停
+{
+    window.clearInterval(int);
+}
+
 
 //page3 实验性动效
 var cloudStage,
@@ -349,7 +554,7 @@ function cloud(){
     createjs.Ticker.setFPS(2);
     createjs.Ticker.on('tick',cloudStage);
 }
-cloud();
+
 
 var signalStage,
     signalCanvas,
@@ -385,7 +590,7 @@ function signal(){
     createjs.Ticker.setFPS(10);
     createjs.Ticker.on('tick',signalStage);
 }
-signal();
+
 
 //page4 背景动效
 var heartStage,
@@ -518,7 +723,6 @@ money(moneyCanvas2,'./images/page6/money.png');
 var train= new createjs.Bitmap("./images/train.png");
 var railway = new createjs.Bitmap("./images/railway.png");
 var  stage5=new createjs.Stage("canvas");
-
 var Title51= new createjs.Bitmap("./images/page5/title1.png");
 var Title52= new createjs.Bitmap("./images/page5/title2.png");
 var Title51_r= new createjs.Bitmap("./images/page5/title1_r.png");
@@ -603,17 +807,14 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
 
 
 }
-// trainIn(stage5,Title51,Title52,Title51_r,Title52_r);
 function trainOut(Title1,Title2,Title1_r,Title2_r) {
 
     console.log("Train is going to leave");
-    playOut();
+
 
     createjs.Tween.get(train, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4)).call(myFunction);
-    function myFunction() {
-        playOut();
-    }
+        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
+
     createjs.Tween.get(Title1, {loop: false})
         .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
 
@@ -640,6 +841,13 @@ var password_zaibian=[9,8,1,9,1,9,6,9,1,1,7,6,5,2];//5
 var password_chuangxin=[0,6,7,2,8,1,0,0,4,5];//4
 var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
 var enteredPass = [];
+function quiz2(a) {
+    var Choice = $('#key2'+a).attr('data-choice');
+    console.log("点击的choice："+Choice);;
+    enteredPass.push(Choice);
+    console.log("enterPass的长度："+enteredPass.length);
+    checkPasscode2('#key2',password_shijie,4,Title21,Title22,Title21_r,Title22_r);
+};
 
 function quiz5(a) {
     var Choice = $('#key5'+a).attr('data-choice');
@@ -666,7 +874,7 @@ function checkPasscode(key,password,num,Title1,Title2,Title1_r,Title2_r) {
                 else if(i==password.length-1){
                     Title2.visible=false;
                     Title2_r.visible=true;
-                    trainOut(Title1,Title2,Title1_r,Title2_r);
+                    trainOut(Title1,Title2,Title1_r,Title2_r)
                 }else{
 
                 }
@@ -713,7 +921,50 @@ function checkWrong(key){
     console.log(key+'_w');
 }
 
+function checkPasscode2(key,password,num,Title1,Title2,Title1_r,Title2_r) {
+    /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
+    if (enteredPass.length>password.length){
+        return;
+    }else{
+        for(var i = 0; i<password.length;i++){
+            if (enteredPass[i]==password[i]){
+                booleanArr.push(true);
+                if (i==num){
+                    Title1.visible=false;
+                    Title1_r.visible=true;
+                }
+                else if(i==password.length-1){
+                    Title2.visible=false;
+                    Title2_r.visible=true;
+                    playOut();
+                    train2Out(Title1,Title2,Title1_r,Title2_r)
+                }else{
 
+                }
+            }else{
+
+                booleanArr.push(false);
+            }
+        }
+    }
+
+    if(enteredPass.length>0 ){
+        console.log("enteredPass里面开始有内容的时候："+booleanArr);
+        console.log("当前指针对应的boolean值是："+booleanArr[enteredPass.length-1]+"");
+        if (booleanArr[enteredPass.length-1]){
+            checkRight(key+enteredPass[enteredPass.length-1]);
+        }else {
+            checkWrong(key+enteredPass[enteredPass.length-1]);
+            enteredPass.pop();
+        }
+        //需要清空，重新加入新的遍历array
+        booleanArr=[];
+    }else{
+    }
+
+    console.log("enteredPass的状态："+enteredPass);
+
+}
 
 /*Displays all the correct stuff, then moves on to homeScreen()*/
 

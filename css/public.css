@@ -188,6 +188,7 @@ body,html{
     margin: 0 auto;
     text-align: center;
     bottom: 6.3vh;
+    display: none;
 }
 .keys li{
     display: inline-block;
