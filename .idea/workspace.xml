@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="模型基本上已经全部做好了/ complete the first Model">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/soundjs-0.6.2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page1/hint.png" afterPath="$PROJECT_DIR$/images/page1/hint.png" />
+    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/public.css" afterPath="$PROJECT_DIR$/css/public.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="founder-h5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -509,7 +504,7 @@
       <updated>1480271949714</updated>
       <workItem from="1480271951110" duration="44104000" />
       <workItem from="1480511214912" duration="20206000" />
-      <workItem from="1480590592064" duration="141519000" />
+      <workItem from="1480590592064" duration="141707000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -700,11 +695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480900751465</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="模型基本上已经全部做好了/ complete the first Model">
+      <created>1481081991299</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1481081991299</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205829000" />
+    <option name="totallyTimeSpent" value="206017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1918" height="1038" extended-state="0" />
