@@ -162,51 +162,30 @@ window.onload=function(){
     loader.addEventListener('complete', handleComplete);//加载完成 调用handleComplete函数
     loader.addEventListener('progress', handleFileProgress);//加载完成 调用handleFileProgress函数
     loader.loadManifest(manifest);
-    $('.timer').hide();
+    // $('.timer').hide();
 };
-
 function handleFileProgress(){//加载中函数
     var percent=loader.progress*100|0+'%';
     document.getElementById('loadPercent').innerHTML=percent+"%";
 }
 
+
+//first load function
 function handleComplete(){
     // 显示下一张图
     $('#pageLoad').hide();
 
     $('#page1').show();
      playStart();
-     bubble();
-     train1In();
-
-   /* $("#page2").show();
-    snow();
-    trainIn(stage2,Title21,Title22,Title21_r,Title22_r);*/
-
-   /* $("#page3").show();
-    cloud();
-    signal();
-    trainIn(stage3,Title31,Title32,Title31_r,Title32_r);*/
-   /* $("#page4").show();
-     playEnter();
-    ower(flowerCanvas2);
-    mon  //add function()
-     heart();
-     trainIn(stage4,Title41,Title42,Title41_r,Title42_r);*/
-    /*$("#page6").show();
-    fley(moneyCanvas2,'./images/page6/money.png');
-    train6In();*/
-
-
-
-    // $('#flag').show();
+     Scene1In();
+    train1In();
+    bubble();
 
 }
 
 
 
 $(function () {
-
     //page1
     $("#hint").tap(function(){
         $("#hint").hide();
@@ -224,7 +203,6 @@ $(function () {
     $('#key20').tap(function(){
         console.log('#key20 点击了');
         quiz2(0);
-
     });
     $('#key21').tap(function(){
         quiz2(1);
@@ -353,23 +331,27 @@ $(function () {
         quiz5(9);
     });
 
+    //page7 logic
     $('#wxShare').tap(function () {
        $('#share').show();
     });
-
     $('#share').tap(function () {
         $('#share').hide();
     });
-
 });
 
 
 /*****************************************火车的动效*********************************/
 var w = document.documentElement.clientWidth,
     h = document.documentElement.clientHeight;
-
 var train= new createjs.Bitmap("./images/train.png");
 var railway = new createjs.Bitmap("./images/railway.png");
+/*火车在屏幕中的高度占比，和真实的火车像素高度*/
+var original = w*0.275;
+var scale = original/203;
+var bgScaleY=h/1206;
+var positonY=0.489*w;
+
 var  stage5=new createjs.Stage("canvas");
 var Title51= new createjs.Bitmap("./images/page5/title1.png");
 var Title52= new createjs.Bitmap("./images/page5/title2.png");
@@ -379,10 +361,6 @@ var Title52_r= new createjs.Bitmap("./images/page5/title2_r.png");
 function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
     stage.canvas.width=h;
     stage.canvas.height=w;
-    /*图片适配比例*/
-    var original = w*0.275;
-    var scale = original/203;
-    var positonY=0.489*w;
 
     train.scaleX=scale;
     train.scaleY=scale;
@@ -477,16 +455,12 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
 
 // 火车page1
 var  stage1=new createjs.Stage("canvas1");
+var  stage_bg1= new createjs.Stage('bg1');
+var  background1 = new createjs.Bitmap('./images/page1/bg.png');
 
 function train1In() {
-
     stage1.canvas.width=h;
     stage1.canvas.height=w;
-
-    /*图片适配比例*/
-    var original = w*0.275;
-    var scale = original/203;
-    var positonY=0.54*w;
 
     train.scaleX=scale;
     train.scaleY=scale;
@@ -507,8 +481,20 @@ function train1In() {
     function handleComplete() {
         $("#hint").show();
     }
-
 }
+
+function Scene1In() {
+    stage_bg1.canvas.width=h;
+    stage_bg1.canvas.height=w;
+
+    background1.scaleX=bgScaleY;
+    background1.scaleY=scale;
+    background1.x=0;
+    background1.y=0;
+
+    stage1.addChild(background1);
+}
+
 function train1Out(){
     createjs.Tween.get(train, {loop: false})
         .to({x: -2000}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
