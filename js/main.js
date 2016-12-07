@@ -196,10 +196,11 @@ $(function () {
 
     $("#startBtn").tap(function () {
         /*console.log()*/
-        playRun();
+        // playRun();
+        playOut();
         Scene1Out();
         frontScene1Out();
-        train1Out();
+        // train1Out();
 
     });
 
@@ -514,7 +515,7 @@ function Scene1In() {
 
 function Scene1Out() {
     createjs.Tween.get(background1, {loop: false})
-        .to({x: 0}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: 0}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         /* $("#hint").show();*/
     }
@@ -537,7 +538,7 @@ function frontScene1Out() {
     $(".page1float").hide();
     $("#bubble").hide();
     createjs.Tween.get(frontgrond1, {loop: false})
-        .to({x: 0}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: 0}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         /* $("#hint").show();*/
     }
@@ -545,17 +546,26 @@ function frontScene1Out() {
 
 function train1Out(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: h/2}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: -h/4}, 10000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         /*$("#page1").hide();
         $("#page2").show();*/
-        playEnter();
+        // playEnter();
         // 第二页要显示的逻辑
         $('.timer').show();
-        snow();
-        $('.keys').show();
-
+        startTimer();
+        $('.keys').addClass('mainIn');
+        // trainEnter();
         // trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
+    }
+}
+
+function trainEnter() {
+    createjs.Tween.get(train, {loop: false})
+        .to({x: -h/2}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        startTimer();
+        $('.keys').addClass('mainIn');
     }
 }
 // 火车page2
@@ -565,79 +575,8 @@ var Title22= new createjs.Bitmap("./images/page2/title2.png");
 var Title21_r= new createjs.Bitmap("./images/page2/title1_r.png");
 var Title22_r= new createjs.Bitmap("./images/page2/title2_r.png");
 
-/*function train2In(Title1,Title2,Title1_r,Title2_r) {
-    stage2.canvas.width=h;
-    stage2.canvas.height=w;
-    /!*图片适配比例*!/
-    var original = w*0.275;
-    var scale = original/203;
-    var positonY=0.489*w;
 
-    train.scaleX=scale;
-    train.scaleY=scale;
-    Title1.scaleX=scale;
-    Title1.scaleY=scale;
-    Title2.scaleX=scale;
-    Title2.scaleY=scale;
 
-    Title1_r.scaleX=scale;
-    Title1_r.scaleY=scale;
-    Title2_r.scaleX=scale;
-    Title2_r.scaleY=scale;
-
-    Title1_r.visible=false;
-    Title2_r.visible=false;
-
-    railway.scaleY=scale;
-
-//设置在舞台中的位置
-    train.x=1000;
-    train.y=positonY;
-
-    Title1.x=1000;
-    Title1.y=positonY;
-    Title2.x=1000;
-    Title2.y=positonY;
-
-    Title1_r.x=1000;
-    Title1_r.y=positonY;
-    Title2_r.x=1000;
-    Title2_r.y=positonY;
-
-    railway.y=positonY;
-// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
-    stage2.addChild(railway);
-    stage2.addChild(train);
-    stage2.addChild(Title1_r);
-    stage2.addChild(Title2_r);
-    stage2.addChild(Title1);
-    stage2.addChild(Title2);
-
-    createjs.Ticker.setFPS(30);
-    createjs.Ticker.on('tick',stage2);
-
-    createjs.Tween.get(train, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title1, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-    function handleComplete() {
-        // 开始计时逻辑，题目显示逻辑
-        startTimer();
-        // $('.keys').addClass('mainIn');
-
-    }
-
-    createjs.Tween.get(Title2, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title1_r, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
-
-}*/
 function train2Out(Title1,Title2,Title1_r,Title2_r) {
 
     console.log("Train is going to leave");

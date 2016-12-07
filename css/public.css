@@ -346,8 +346,8 @@ body,html{
 }
 
 .wrong{
-    width: 10vw;
-    height: 9.5vw;
+    width: 12vw;
+    height: 12vw;
     z-index: 58;
     background: orangered;
     opacity: 0.5;
@@ -356,8 +356,8 @@ body,html{
     display: none;
 }
 .right{
-    width: 10vw;
-    height: 9.5vw;
+    width: 12vw;
+    height: 12vw;
     z-index: 59;
     background: limegreen;
     opacity: 0.5;
