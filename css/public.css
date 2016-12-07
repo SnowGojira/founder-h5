@@ -55,12 +55,7 @@ body,html{
     height: 100%;
     overflow:hidden;
 }
-.bg{
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*overflow:hidden;*/
-    position: fixed;
-}
+
 .lock{
     width:100%;
     height:100%;
@@ -121,16 +116,17 @@ body,html{
 
 /*开始页面*/
 .fbg{
-    width: 100%;
+    /*width: 100%;
     height: 100%;
-    overflow:hidden;
+    overflow:hidden;*/
     float: left;
     position: fixed;
 
 }
 .bg1{
-    /*background: url("../images/page1/bg.png") 0 0 no-repeat;
-    background-size: 100% 100%;*/
+    width: 100%;
+    height:100%;
+    position: fixed;
     z-index: 11;
 }
 .train1{
@@ -145,18 +141,13 @@ body,html{
     z-index: 13;
 }
 
-/*#bubble{
-    top:0;
-    left: 0;
-}
-#snow{
-    z-index: 15;
-}*/
-
 .fbg1{
-    background: url("../images/page1/fbg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 16;
+   /* background: url("../images/page1/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;*/
+    width: 100%;
+    height:100%;
+    position: fixed;
+    z-index: 14;
 }
 .floatButton{
     width: 100%;
@@ -164,7 +155,7 @@ body,html{
     position:fixed;
     text-align: center;
     top: 21vh;
-    z-index: 19;
+    z-index: 15;
 }
 .floatButton img{
     width: 20vw;
@@ -176,7 +167,7 @@ body,html{
     position: fixed;
     text-align: center;
     top: 6vh;
-    z-index: 19;
+    z-index: 15;
 }
 .floatTitle img{
     width: 50vw;
@@ -188,7 +179,7 @@ body,html{
     position:fixed;
     background: url("../images/page1/hint.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 20;
+    z-index: 16;
 }
 
 .keys{

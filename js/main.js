@@ -163,6 +163,7 @@ window.onload=function(){
     loader.addEventListener('progress', handleFileProgress);//加载完成 调用handleFileProgress函数
     loader.loadManifest(manifest);
     // $('.timer').hide();
+
 };
 function handleFileProgress(){//加载中函数
     var percent=loader.progress*100|0+'%';
@@ -173,13 +174,13 @@ function handleFileProgress(){//加载中函数
 //first load function
 function handleComplete(){
     // 显示下一张图
-    $('#pageLoad').hide();
-
-    $('#page1').show();
-     playStart();
-    bubble();
+    playStart();
+    frontScene1In();
     Scene1In();
+    bubble();
     train1In();
+    $('#pageLoad').hide();
+    $('#page1').show();
 
 
 }
@@ -198,6 +199,7 @@ $(function () {
         /*console.log()*/
         playRun();
         Scene1Out();
+        frontScene1Out();
         train1Out();
 
     });
@@ -459,7 +461,9 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
 // 火车page1
 var  stage1=new createjs.Stage("canvas1");
 var  stage_bg1= new createjs.Stage('bg1');
+var  stage_fbg1= new createjs.Stage('fbg1');
 var  background1 = new createjs.Bitmap('./images/page1/bgt.png');
+var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
 
 function train1In() {
     stage1.canvas.width=h;
@@ -487,22 +491,45 @@ function train1In() {
 }
 
 function Scene1In() {
+    console.log("背景一创建");
     stage_bg1.canvas.width=h;
     stage_bg1.canvas.height=w;
     background1.scaleX=bgScaleY;
     background1.scaleY=scale;
-    background1.x=0;
+    background1.x=-h;
     background1.y=0;
-    stage1.addChild(background1);
+    stage_bg1.addChild(background1);
+
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.on('tick',stage_bg1);
 }
 
 function Scene1Out() {
-    createjs.Ticker.setFPS(60);
-    createjs.Ticker.on('tick',stage_bg1);
     createjs.Tween.get(background1, {loop: false})
-        .to({x: -h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: 0}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
-       /* $("#hint").show();*/
+        /* $("#hint").show();*/
+    }
+}
+
+function frontScene1In() {
+    console.log("前景一创建");
+    stage_fbg1.canvas.width=h;
+    stage_fbg1.canvas.height=w;
+    frontgrond1.scaleX=bgScaleY;
+    frontgrond1.scaleY=scale;
+    frontgrond1.x=-h;
+    frontgrond1.y=0;
+    stage_fbg1.addChild(frontgrond1);
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.on('tick',stage_fbg1);
+}
+
+function frontScene1Out() {
+    createjs.Tween.get(frontgrond1, {loop: false})
+        .to({x: 0}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        /* $("#hint").show();*/
     }
 }
 
