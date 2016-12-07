@@ -177,9 +177,10 @@ function handleComplete(){
 
     $('#page1').show();
      playStart();
-     Scene1In();
-    train1In();
     bubble();
+    Scene1In();
+    train1In();
+
 
 }
 
@@ -196,7 +197,9 @@ $(function () {
     $("#startBtn").tap(function () {
         /*console.log()*/
         playRun();
+        Scene1Out();
         train1Out();
+
     });
 
     //page2
@@ -456,7 +459,7 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
 // 火车page1
 var  stage1=new createjs.Stage("canvas1");
 var  stage_bg1= new createjs.Stage('bg1');
-var  background1 = new createjs.Bitmap('./images/page1/bg.png');
+var  background1 = new createjs.Bitmap('./images/page1/bgt.png');
 
 function train1In() {
     stage1.canvas.width=h;
@@ -486,26 +489,35 @@ function train1In() {
 function Scene1In() {
     stage_bg1.canvas.width=h;
     stage_bg1.canvas.height=w;
-
     background1.scaleX=bgScaleY;
     background1.scaleY=scale;
     background1.x=0;
     background1.y=0;
-
     stage1.addChild(background1);
+}
+
+function Scene1Out() {
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.on('tick',stage_bg1);
+    createjs.Tween.get(background1, {loop: false})
+        .to({x: -h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+       /* $("#hint").show();*/
+    }
 }
 
 function train1Out(){
     createjs.Tween.get(train, {loop: false})
         .to({x: -2000}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
-        $("#page1").hide();
-        $("#page2").show();
+        /*$("#page1").hide();
+        $("#page2").show();*/
         $('.timer').show();
         playEnter();
+        $(".page1float").hide();
+        $("#bubble").hide();
         snow();
-        // train2In(Title21,Title22,Title21_r,Title22_r)
-        trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
+        // trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
 
     }
 }
@@ -793,6 +805,7 @@ var bubbleStage,
     bubbleContainer;
 bubbleCanvas=document.getElementById('bubble');
 function bubble(){
+    console.log("bubble canvas 创建")
     bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
     bubbleContainer= new createjs.Container();
     bubbleStage.addChild(bubbleContainer);
@@ -826,8 +839,9 @@ function bubble(){
 var img,snowStage,
     snowCanvas,
     snowContainer;
-    snowCanvas=document.getElementById('animCanvas');
+    snowCanvas=document.getElementById('snow');
 function snow(){
+    console.log("snow canvas 创建成功");
     snowStage = new createjs.Stage(snowCanvas);//创建舞台
     snowContainer= new createjs.Container();
     snowStage.addChild(snowContainer);

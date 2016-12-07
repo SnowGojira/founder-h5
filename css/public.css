@@ -56,8 +56,8 @@ body,html{
     overflow:hidden;
 }
 .bg{
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     /*overflow:hidden;*/
     position: fixed;
 }
@@ -133,19 +133,30 @@ body,html{
     background-size: 100% 100%;*/
     z-index: 11;
 }
-.animEff1{
+.train1{
     position: fixed;
     z-index: 12;
 }
-.train1{
+.animEff1{
+    width: 100%;
+    height:100%;
+    /*float: left;*/
     position: fixed;
     z-index: 13;
 }
 
+/*#bubble{
+    top:0;
+    left: 0;
+}
+#snow{
+    z-index: 15;
+}*/
+
 .fbg1{
     background: url("../images/page1/fbg.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 14;
+    z-index: 16;
 }
 .floatButton{
     width: 100%;
@@ -165,7 +176,7 @@ body,html{
     position: fixed;
     text-align: center;
     top: 6vh;
-    z-index: 15;
+    z-index: 19;
 }
 .floatTitle img{
     width: 50vw;
@@ -177,7 +188,7 @@ body,html{
     position:fixed;
     background: url("../images/page1/hint.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 16;
+    z-index: 20;
 }
 
 .keys{

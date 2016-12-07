@@ -36,30 +36,49 @@
     </div>
     <!--page1-->
     <div  id="page1" class="none" >
+
         <div class="bg bg1">
             <canvas id="bg1"></canvas>
-        </div>
-        <div class="effect animEff1">
-            <canvas id="bubble"></canvas>
         </div>
         <div class="train1">
             <canvas id="canvas1"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
         </div>
-        <p class="fbg fbg1"></p>
-        <div class="floatTitle none" id="title">
-            <img src="images/page1/title.png">
+        <!--static effect-->
+        <div class="effect animEff1">
+            <canvas id="bubble"></canvas>
+            <canvas class="none" id="snow"></canvas>
         </div>
-        <div class="floatButton none" id="startBtn">
-            <img src="images/page1/btn.png">
+
+
+
+
+
+        <!--front-page-->
+        <p class="fbg fbg1">
+            <canvas id="fbg1"></canvas>
+        </p>
+
+        <!--page1 float-->
+        <div class="page1float">
+            <div class="floatTitle none" id="title">
+                <img src="images/page1/title.png">
+            </div>
+            <div class="floatButton none" id="startBtn">
+                <img src="images/page1/btn.png">
+            </div>
+            <div class="Hint none" id="hint"></div>
         </div>
-        <div class="Hint none" id="hint"></div>
+
+
+
+
     </div>
     <!--page2-->
     <div id="page2" class="none">
         <div class="bg bg2"></div>
-        <div class="effect animEff2" >
+        <!--<div class="effect animEff2" >
             <canvas id="animCanvas" ></canvas>
-        </div>
+        </div>-->
         <div class="train2">
             <canvas id="canvas2"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
         </div>
