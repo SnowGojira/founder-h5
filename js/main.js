@@ -200,7 +200,7 @@ $(function () {
         playOut();
         Scene1Out();
         frontScene1Out();
-        // train1Out();
+        train1Out();
 
     });
 
@@ -357,106 +357,101 @@ var scale = original/203;
 var bgScaleY=h/1206;
 var positonY=0.489*w;
 
+//title的合适
+var Title1_0= new createjs.Bitmap("./images/title1/0.png");
+var Title1_1= new createjs.Bitmap("./images/title1/1.png");
+var Title1_2= new createjs.Bitmap("./images/title1/2.png");
+var Title1_3= new createjs.Bitmap("./images/title1/3.png");
+var Title1_4= new createjs.Bitmap("./images/title1/4.png");
+var Title1_5= new createjs.Bitmap("./images/title1/5.png");
+var Title1_6= new createjs.Bitmap("./images/title1/6.png");
+var Title1_7= new createjs.Bitmap("./images/title1/7.png");
+var Title1_8= new createjs.Bitmap("./images/title1/8.png");
+var Title1_9= new createjs.Bitmap("./images/title1/9.png");
+var Title1_10= new createjs.Bitmap("./images/title1/10.png");
+var Title1_11= new createjs.Bitmap("./images/title1/11.png");
+var Title1_12= new createjs.Bitmap("./images/title1/12.png");
+var Title1_13= new createjs.Bitmap("./images/title1/13.png");
+var Title1_14= new createjs.Bitmap("./images/title1/14.png");
+
+var  stageTitle1=new createjs.Stage("title1");
+
 var  stage5=new createjs.Stage("canvas");
+
 var Title51= new createjs.Bitmap("./images/page5/title1.png");
 var Title52= new createjs.Bitmap("./images/page5/title2.png");
 var Title51_r= new createjs.Bitmap("./images/page5/title1_r.png");
 var Title52_r= new createjs.Bitmap("./images/page5/title2_r.png");
 /*通用函数*/
-function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
-    stage.canvas.width=h;
-    stage.canvas.height=w;
+/*function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
+ stage.canvas.width=h;
+ stage.canvas.height=w;
 
-    train.scaleX=scale;
-    train.scaleY=scale;
-    Title1.scaleX=scale;
-    Title1.scaleY=scale;
-    Title2.scaleX=scale;
-    Title2.scaleY=scale;
+ train.scaleX=scale;
+ train.scaleY=scale;
+ Title1.scaleX=scale;
+ Title1.scaleY=scale;
+ Title2.scaleX=scale;
+ Title2.scaleY=scale;
 
-    Title1_r.scaleX=scale;
-    Title1_r.scaleY=scale;
-    Title2_r.scaleX=scale;
-    Title2_r.scaleY=scale;
+ Title1_r.scaleX=scale;
+ Title1_r.scaleY=scale;
+ Title2_r.scaleX=scale;
+ Title2_r.scaleY=scale;
 
-    Title1_r.visible=false;
-    Title2_r.visible=false;
+ Title1_r.visible=false;
+ Title2_r.visible=false;
 
-    railway.scaleY=scale;
+ railway.scaleY=scale;
 
-//设置在舞台中的位置
-    train.x=1000;
-    train.y=positonY;
+ //设置在舞台中的位置
+ train.x=1000;
+ train.y=positonY;
 
-    Title1.x=1000;
-    Title1.y=positonY;
-    Title2.x=1000;
-    Title2.y=positonY;
+ Title1.x=1000;
+ Title1.y=positonY;
+ Title2.x=1000;
+ Title2.y=positonY;
 
-    Title1_r.x=1000;
-    Title1_r.y=positonY;
-    Title2_r.x=1000;
-    Title2_r.y=positonY;
+ Title1_r.x=1000;
+ Title1_r.y=positonY;
+ Title2_r.x=1000;
+ Title2_r.y=positonY;
 
-    railway.y=positonY;
-// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
-    stage.addChild(railway);
-    stage.addChild(train);
-    stage.addChild(Title1_r);
-    stage.addChild(Title2_r);
-    stage.addChild(Title1);
-    stage.addChild(Title2);
+ railway.y=positonY;
+ // 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+ stage.addChild(railway);
+ stage.addChild(train);
+ stage.addChild(Title1_r);
+ stage.addChild(Title2_r);
+ stage.addChild(Title1);
+ stage.addChild(Title2);
 
-    createjs.Ticker.setFPS(30);
-    createjs.Ticker.on('tick',stage);
+ createjs.Ticker.setFPS(30);
+ createjs.Ticker.on('tick',stage);
 
-    createjs.Tween.get(train, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+ createjs.Tween.get(train, {loop: false})
+ .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    createjs.Tween.get(Title1, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-    function handleComplete() {
-        // 开始计时逻辑，题目显示逻辑
-        startTimer();
-        $('.keys').addClass('mainIn');
+ createjs.Tween.get(Title1, {loop: false})
+ .to({x: 150}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+ function handleComplete() {
+ // 开始计时逻辑，题目显示逻辑
+ startTimer();
+ $('.keys').addClass('mainIn');
 
-    }
+ }
 
-    createjs.Tween.get(Title2, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+ createjs.Tween.get(Title2, {loop: false})
+ .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    createjs.Tween.get(Title1_r, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+ createjs.Tween.get(Title1_r, {loop: false})
+ .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-    createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
+ createjs.Tween.get(Title2_r, {loop: false})
+ .to({x: 150}, 5000, createjs.Ease.getPowInOut(4));
 
-}
-/*function trainOut(Title1,Title2,Title1_r,Title2_r) {
-
-    console.log("Train is going to leave");
-
-    createjs.Tween.get(train, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title1, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title2, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title1_r, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: -1500}, 5000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-    function handleComplete() {
-        $("#page5").hide();
-        $("#page6").show();
-
-    }
-
-}*/
+ }*/
 
 // 火车page1
 var  stage1=new createjs.Stage("canvas1");
@@ -547,18 +542,56 @@ function frontScene1Out() {
 function train1Out(){
     createjs.Tween.get(train, {loop: false})
         .to({x: -h/4}, 10000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+
     function handleComplete() {
-        /*$("#page1").hide();
-        $("#page2").show();*/
-        // playEnter();
         // 第二页要显示的逻辑
         $('.timer').show();
         startTimer();
         $('.keys').addClass('mainIn');
+        // title1In(stageTitle1);
         // trainEnter();
         // trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
     }
 }
+
+//stage不对
+function title1In(stage) {
+    initTitle(Title1_0,true,stage);
+    initTitle(Title1_1,false,stage);
+    initTitle(Title1_2,false,stage);
+    initTitle(Title1_3,false,stage);
+    initTitle(Title1_4,false,stage);
+    initTitle(Title1_5,false,stage);
+    initTitle(Title1_6,false,stage);
+    initTitle(Title1_7,false,stage);
+    initTitle(Title1_8,false,stage);
+    initTitle(Title1_9,false,stage);
+    initTitle(Title1_10,false,stage);
+    initTitle(Title1_11,false,stage);
+    initTitle(Title1_12,false,stage);
+    initTitle(Title1_13,false,stage);
+    initTitle(Title1_14,false,stage);
+
+}
+
+function initTitle(title,isVisible,stage){
+    console.log("初始化："+title);
+    title.scaleX=scale;
+    title.scaleY=scale;
+    if (isVisible){
+        title.visible=true;
+    }else{
+        title.visible=false;
+    }
+
+    title.x=h;
+    title.y=positonY;
+
+    stage.addChild(title);
+    /*createjs.Tween.get(title, {loop: false})
+        .to({x: h/2}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);*/
+}
+
 
 function trainEnter() {
     createjs.Tween.get(train, {loop: false})
@@ -1045,7 +1078,7 @@ var moneyCanvas2=document.getElementById('money2');
 
 /*****************************************题目逻辑*********************************/
 //The passcode to check against.
-var password_shijie=[0,8,8,0,7,8,4,0,8,0,6,3,6,8];//4
+var password_shijie=[0,1,1,0,2,1,4,0,1,0,5,3,5,1];//4
 var password_zaibian=[9,8,1,9,1,9,6,9,1,1,7,6,5,2];//5
 var password_chuangxin=[0,6,7,2,8,1,0,0,4,5];//4
 var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
