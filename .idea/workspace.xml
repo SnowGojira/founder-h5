@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/page1/bgt.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page2/fa7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page2/fa8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/page2/fa9.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page2/fa2.png" afterPath="$PROJECT_DIR$/images/page2/fa2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page2/fa3.png" afterPath="$PROJECT_DIR$/images/page2/fa3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/page2/fa6.png" afterPath="$PROJECT_DIR$/images/page2/fa6.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/public.css" afterPath="$PROJECT_DIR$/css/public.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="founder-h5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -456,7 +446,7 @@
       <updated>1480271949714</updated>
       <workItem from="1480271951110" duration="44104000" />
       <workItem from="1480511214912" duration="20206000" />
-      <workItem from="1480590592064" duration="149469000" />
+      <workItem from="1480590592064" duration="149531000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -661,17 +651,24 @@
       <option name="project" value="LOCAL" />
       <updated>1481084570706</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix the static bg animation&#10;">
+      <created>1481092353255</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1481092353255</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213779000" />
+    <option name="totallyTimeSpent" value="213841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1918" height="1038" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17526315" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17526315" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49791667" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19319429" sideWeight="0.50208336" order="1" side_tool="true" content_ui="tabs" />
@@ -721,7 +718,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="introduce the factors which will be used in the function-development/ 功能元素先行抽取引入" />
     <MESSAGE value="rotate the page about 90 deg, however, the text-align contribute is not working/将布局里面的内容转了90度，但是居中的问题还是没有解决" />
     <MESSAGE value="fix the adapt viewport problem ,however the bg is kind of stretched, will the mobile port as first/适配问题更改到了80%、图像有些拉伸，暂时提交手机测试" />
     <MESSAGE value="change to use the js to set the screen to rotate 90, and add the gravity listener/通过js做了横屏适配，另外做了重力监听" />
@@ -746,7 +742,8 @@
     <MESSAGE value="timer的rough模型/rough timer 2" />
     <MESSAGE value="模型基本上已经全部做好了/ complete the first Model" />
     <MESSAGE value="加入背景的初级canvas/add the rough bg canvas&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入背景的初级canvas/add the rough bg canvas&#10;" />
+    <MESSAGE value="fix the static bg animation&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the static bg animation&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
