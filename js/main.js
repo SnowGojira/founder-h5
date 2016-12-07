@@ -1170,15 +1170,12 @@ function checkPasscode2(key,password,num,Title1,Title2,Title1_r,Title2_r) {
                     playOut();
                     train2Out(Title1,Title2,Title1_r,Title2_r);
                 }else{
-
                 }
             }else{
-
                 booleanArr.push(false);
             }
         }
     }
-
     if(enteredPass2.length>0 ){
         console.log("enteredPass里面开始有内容的时候："+booleanArr);
         console.log("当前指针对应的boolean值是："+booleanArr[enteredPass2.length-1]+"");
@@ -1192,9 +1189,7 @@ function checkPasscode2(key,password,num,Title1,Title2,Title1_r,Title2_r) {
         booleanArr=[];
     }else{
     }
-
     console.log("enteredPass的状态："+enteredPass2);
-
 }
 
 function checkPasscode3(key,password,num,Title1,Title2,Title1_r,Title2_r) {
