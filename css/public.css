@@ -189,14 +189,14 @@ body,html{
     position: fixed;
     margin: 0 auto;
     text-align: center;
-    bottom: 6.3vh;
+    bottom: 5.3vh;
     display: none;
 }
 .keys li{
     display: inline-block;
 }
 .keys li img{
-    width: 10vw;
+    width: 12vw;
     height: auto;
 }
 

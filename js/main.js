@@ -191,8 +191,7 @@ $(function () {
     //page1
     $("#hint").tap(function(){
         $("#hint").hide();
-        $("#title").addClass('mainIn');
-        $("#startBtn").addClass('mainIn');
+        train1Enter();
     });
 
     $("#startBtn").tap(function () {
@@ -484,9 +483,18 @@ function train1In() {
     createjs.Ticker.setFPS(60);
     createjs.Ticker.on('tick',stage1);
     createjs.Tween.get(train, {loop: false})
-        .to({x: 250}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: h*3/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         $("#hint").show();
+    }
+}
+
+function train1Enter() {
+    createjs.Tween.get(train, {loop: false})
+        .to({x: 10}, 4000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        $("#title").addClass('mainIn');
+        $("#startBtn").addClass('mainIn');
     }
 }
 
@@ -526,6 +534,8 @@ function frontScene1In() {
 }
 
 function frontScene1Out() {
+    $(".page1float").hide();
+    $("#bubble").hide();
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: 0}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
@@ -535,17 +545,17 @@ function frontScene1Out() {
 
 function train1Out(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -2000}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: h/2}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         /*$("#page1").hide();
         $("#page2").show();*/
-        $('.timer').show();
         playEnter();
-        $(".page1float").hide();
-        $("#bubble").hide();
+        // 第二页要显示的逻辑
+        $('.timer').show();
         snow();
-        // trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
+        $('.keys').show();
 
+        // trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
     }
 }
 // 火车page2
