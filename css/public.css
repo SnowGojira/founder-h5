@@ -123,20 +123,24 @@ body,html{
     position: fixed;
 
 }
+/*bg z-index: 11*/
 .bg1{
     width: 100%;
     height:100%;
     position: fixed;
     z-index: 11;
 }
+/*train z-index: 12*/
 .train1{
     position: fixed;
     z-index: 12;
 }
+/*title z-index: 13*/
 .title{
     position: fixed;
     z-index:13;
 }
+/*animEff z-index: 14*/
 .animEff1{
     width: 100%;
     height:100%;
@@ -144,7 +148,7 @@ body,html{
     position: fixed;
     z-index: 14;
 }
-
+/*fbg z-index: 15*/
 .fbg1{
    /* background: url("../images/page1/fbg.png") 0 0 no-repeat;
     background-size: 100% 100%;*/
@@ -153,13 +157,14 @@ body,html{
     position: fixed;
     z-index: 15;
 }
+/*float z-index: 16*/
 .floatButton{
     width: 100%;
     height:20vh;
     position:fixed;
     text-align: center;
     top: 21vh;
-    z-index: 16;
+    z-index: 17;
 }
 .floatButton img{
     width: 20vw;
@@ -171,21 +176,26 @@ body,html{
     position: fixed;
     text-align: center;
     top: 6vh;
-    z-index: 16;
+    z-index: 17;
 }
 .floatTitle img{
     width: 50vw;
     height: auto;
 }
+/*hint z-index: 17*/
 .Hint{
     width: 100%;
     height: 100%;
     position:fixed;
     background: url("../images/page1/hint.png") 0 0 no-repeat;
     background-size: 100% 100%;
-    z-index: 17;
+    z-index: 18;
 }
-
+/*背景的signal的z-index要复写*/
+#signal{
+    position: fixed;
+    z-index:16;
+}
 .keys{
     width: 100%;
     height: auto;
@@ -203,152 +213,18 @@ body,html{
     width: 12vw;
     height: auto;
 }
-
-/*世界页*/
-.bg2 {
-    background: url("../images/page2/bg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 21;
-}
-.animEff2{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 22;
-}
-.train2{
-    position: fixed;
-    z-index: 23;
-}
-.fbg2{
-    background: url("../images/page2/fbg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 24;
-}
 .keys2{
     z-index: 25;
-}
-
-
-/*在变页*/
-.bg3{
-    background: url("../images/page3/bg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 31;
-}
-
-.animEff3{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 32;
-}
-.bg32{
-    background: url("../images/page3/bg2.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 33;
-}
-.train3{
-    position: fixed;
-    z-index: 34;
-}
-
-.fbg3{
-    background: url("../images/page3/fbg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 35;
-}
-
-.animEff32{
-    width:100%;
-    height:100%;
-    position: fixed;
-    z-index: 36;
 }
 .keys3{
     z-index: 39;
 }
-
-
-/*创新页*/
-.bg4{
-    background: url("../images/page4/bg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 41;
-}
-.animEff4{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 42;
-}
-.train4{
-    position: fixed;
-    z-index: 43;
-}
-
-.fbg4{
-    background: url("../images/page4/fbg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 44;
-}
-
 .keys4{
     z-index: 45;
-}
-
-
-/*不变页*/
-.bg5{
-    background: url("../images/page5/bg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 51;
-}
-.animEff5{
-    position: fixed;
-    z-index: 52;
-}
-.animEff52{
-    position: fixed;
-    z-index: 53;
-}
-.train5{
-    position: fixed;
-    z-index: 54;
-}
-.fbg5{
-    background: url("../images/page5/fbg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 55;
 }
 .keys5{
     z-index: 56;
 }
-.timer{
-    width:100%;
-    height: 8vh;
-    float: left;
-    position: fixed;
-    text-align: center;
-    top: 10vw;
-    z-index: 57;
-}
-.timer p{
-    width:100%;
-    height: auto;
-    position: fixed;
-    text-align: center;
-    top:12.8vw;
-    vertical-align: middle;
-    font-family: Timing_Font,Arial,sans-serif;
-    font-size: 1.5rem;
-}
-
-.timer img{
-    width:31vw;
-    height: auto;
-}
-
 .wrong{
     width: 12vw;
     height: 12vw;
@@ -370,30 +246,30 @@ body,html{
     display: none;
 }
 
-
-/*slogan页*/
-.bg6{
-    background: url("../images/page6/bg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 61;
-}
-.animEff6{
-    position: fixed;
-    z-index: 62;
-}
-
-.train6{
+.timer{
+    width:100%;
+    height: 8vh;
     float: left;
     position: fixed;
-    z-index: 63;
-    top: 0;
+    text-align: center;
+    top: 10vw;
+    z-index: 57;
 }
-.fbg6{
-    background: url("../images/page6/fbg.png") 0 0 no-repeat;
-    background-size: 100% 100%;
-    z-index: 65;
-    top:0;
+.timer p{
+    width:100%;
+    height: auto;
+    position: fixed;
+    text-align: center;
+    top:12.8vw;
+    vertical-align: middle;
+    font-family: Timing_Font,Arial,sans-serif;
+    font-size: 1.5rem;
 }
+.timer img{
+    width:31vw;
+    height: auto;
+}
+
 
 #slogan1{
     width: 100%;
@@ -424,7 +300,6 @@ body,html{
     /*position: fixed;*/
 }
 
-
 #flag{
     width: 100%;
     height: auto;
@@ -436,9 +311,134 @@ body,html{
 #flag img{
     width: 30vw;
     height: auto;
-   /* position: fixed;*/
+    /* position: fixed;*/
 
 }
+
+/*世界页*/
+.bg2 {
+    background: url("../images/page2/bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 21;
+}
+.animEff2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 22;
+}
+.train2{
+    position: fixed;
+    z-index: 23;
+}
+.fbg2{
+    background: url("../images/page2/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 24;
+}
+
+/*在变页*/
+.bg3{
+    background: url("../images/page3/bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 31;
+}
+.animEff3{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 32;
+}
+.bg32{
+    background: url("../images/page3/bg2.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 33;
+}
+.train3{
+    position: fixed;
+    z-index: 34;
+}
+.fbg3{
+    background: url("../images/page3/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 35;
+}
+.animEff32{
+    width:100%;
+    height:100%;
+    position: fixed;
+    z-index: 36;
+}
+
+/*创新页*/
+.bg4{
+    background: url("../images/page4/bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 41;
+}
+.animEff4{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 42;
+}
+.train4{
+    position: fixed;
+    z-index: 43;
+}
+.fbg4{
+    background: url("../images/page4/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 44;
+}
+
+/*不变页*/
+.bg5{
+    background: url("../images/page5/bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 51;
+}
+.animEff5{
+    position: fixed;
+    z-index: 52;
+}
+.animEff52{
+    position: fixed;
+    z-index: 53;
+}
+.train5{
+    position: fixed;
+    z-index: 54;
+}
+.fbg5{
+    background: url("../images/page5/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 55;
+}
+
+/*slogan页*/
+.bg6{
+    background: url("../images/page6/bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 61;
+}
+.animEff6{
+    position: fixed;
+    z-index: 62;
+}
+.train6{
+    float: left;
+    position: fixed;
+    z-index: 63;
+    top: 0;
+}
+.fbg6{
+    background: url("../images/page6/fbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 65;
+    top:0;
+}
+
 
 /*分享页面*/
 .bg7{
@@ -446,6 +446,7 @@ body,html{
     background-size: 100% 100%;
     z-index: 71;
 }
+
 .animEff7{
     width: 100%;
     height: 100%;
@@ -457,6 +458,7 @@ body,html{
     width: 108vw;
     height: auto;
 }
+
 .result{
     width: 100%;
     height: auto;
@@ -467,8 +469,6 @@ body,html{
     font-size: 1.3rem;
     top: 12vh;
 }
-
-
 .shareBtn{
     width: 100%;
     height: auto;
@@ -486,7 +486,6 @@ body,html{
     width: 27vw;
     height: auto;
 }
-
 .share{
     width:100%;
     height:100%;

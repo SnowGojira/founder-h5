@@ -45,14 +45,16 @@
         </div>
         <div class="title">
             <canvas id="title1"></canvas>
-
+            <canvas id="title2"></canvas>
+            <canvas id="title3"></canvas>
+            <canvas id="title4"></canvas>
         </div>
         <!--static effect-->
         <div class="effect animEff1">
             <canvas id="bubble"></canvas>
             <canvas id="snow"></canvas>
             <canvas id="cloud"></canvas>
-            <canvas id="signal"></canvas>
+            <canvas id="heart"></canvas>
             <canvas id="money"></canvas>
             <canvas id="flower"></canvas>
             <canvas id="money2"></canvas>
@@ -61,6 +63,10 @@
         <p class="fbg fbg1">
             <canvas id="fbg1"></canvas>
         </p>
+        <!--page3在前景上的动画特效-->
+        <div>
+            <canvas id="signal"></canvas>
+        </div>
         <!--按键的分区-->
         <ul class="keys keys2">
             <li id="key20"  data-choice="0">
@@ -132,102 +138,6 @@
             </li>
 
         </ul>
-        <!--page1 float-->
-        <div class="page1float">
-            <div class="floatTitle none" id="title">
-                <img src="images/page1/title.png">
-            </div>
-            <div class="floatButton none" id="startBtn">
-                <img src="images/page1/btn.png">
-            </div>
-            <div class="Hint none" id="hint"></div>
-        </div>
-
-
-    </div>
-    <!--page2-->
-    <div id="page2" class="none">
-        <div class="bg bg2"></div>
-        <!--<div class="effect animEff2" >
-            <canvas id="animCanvas" ></canvas>
-        </div>-->
-        <div class="train2">
-            <canvas id="canvas2"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
-        </div>
-        <p class="fbg fbg2"></p>
-
-
-    </div>
-    <!--page3-->
-    <div id="page3" class="none">
-        <div class="bg bg3"></div>
-        <!--<div class="effect animEff3">
-            <canvas id="cloud"></canvas>
-        </div>-->
-        <div class="bg bg32"></div>
-        <div class="train3">
-            <canvas id="canvas3">您的浏览器不支持canvas，请选择现代浏览器</canvas>
-        </div>
-        <p class="fbg fbg3"></p>
-        <!--<div class="effect animEff32">
-            <canvas id="signal"></canvas>
-            </div>-->
-        <ul class="keys keys3">
-            <li id="key30"  data-choice="0" onclick="quiz2(0);">
-                <a><img src="images/page3/fa1.png"></a>
-                <p data-right="" id="key30_r" class="right"></p>
-                <p id="key30_w" class="wrong"></p>
-            </li>
-            <li id="key31"  data-choice="1">
-                <a><img src="images/page3/fa2.png"></a>
-                <p id="key31_r" class="right"></p>
-                <p id="key31_w" class="wrong"></p>
-            </li>
-            <li id="key32"  data-choice="2">
-                <a><img src="images/page3/fa3.png"></a>
-                <p id="key32_r" class="right"></p>
-                <p id="key32_w" class="wrong"></p>
-            </li>
-            <li id="key33"  data-choice="3">
-                <a><img src="images/page3/fa4.png"></a>
-                <p id="key33_r" class="right"></p>
-                <p id="key33_w" class="wrong"></p>
-            </li>
-            <li id="key34"  data-choice="4">
-                <a><img src="images/page3/fa5.png"></a>
-                <p id="key34_r" class="right"></p>
-                <p id="key34_w" class="wrong"></p>
-            </li>
-            <li id="key35"  data-choice="5">
-                <a><img src="images/page3/fa6.png"></a>
-                <p id="key35_r" class="right"></p>
-                <p id="key35_w" class="wrong"></p>
-            </li>
-            <li id="key36"  data-choice="6">
-                <a><img src="images/page3/fa7.png"></a>
-                <p id="key36_r" class="right"></p>
-                <p id="key36_w" class="wrong"></p>
-            </li>
-
-        </ul>
-
-    </div>
-    <!--page4-->
-    <div id="page4" class="none">
-        <div class="bg bg4"></div>
-        <!--特效-->
-        <div class="effect animEff4" >
-            <canvas id="heart"></canvas>
-        </div>
-        <div class="train4">
-            <canvas id="canvas4">您的浏览器不支持canvas，请选择现代浏览器</canvas>
-        </div>
-
-        <p class="fbg fbg4"></p>
-        <!--<div class="timer">
-            <img src="images/timer.png">
-            <p class="indicator" id="timer4">00:00</p>
-        </div>-->
         <ul class="keys keys4">
             <li id="key40"  data-choice="0">
                 <a><img src="images/page4/fa1.png"></a>
@@ -270,20 +180,6 @@
                 <p id="key47_w" class="wrong"></p>
             </li>
         </ul>
-    </div>
-    <!--page5-->
-    <div id="page5" class="none" >
-        <div class="bg bg5"></div>
-       <!-- <p class="effect animEff5">
-            <canvas id="flower"></canvas>
-        </p>-->
-        <p class="effect animEff52">
-            <!--<canvas id="money"></canvas>-->
-        </p>
-        <div class="train5">
-            <canvas id="canvas"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
-        </div>
-        <p class="fbg fbg5"></p>
         <ul class="keys keys5" >
             <li id="key50"  data-choice="0">
                 <a><img src="images/page5/fa1.png"></a>
@@ -322,6 +218,118 @@
             </li>
 
         </ul>
+        <!--page1 float-->
+        <div class="page1float">
+            <div class="floatTitle none" id="title">
+                <img src="images/page1/title.png">
+            </div>
+            <div class="floatButton none" id="startBtn">
+                <img src="images/page1/btn.png">
+            </div>
+            <div class="Hint none" id="hint"></div>
+        </div>
+
+
+    </div>
+    <!--page2-->
+    <div id="page2" class="none">
+        <div class="bg bg2"></div>
+        <!--<div class="effect animEff2" >
+            <canvas id="animCanvas" ></canvas>
+        </div>-->
+        <div class="train2">
+            <canvas id="canvas2"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+        <p class="fbg fbg2"></p>
+
+
+    </div>
+    <!--page3-->
+    <div id="page3" class="none">
+        <div class="bg bg3"></div>
+        <!--<div class="effect animEff3">
+            <canvas id="cloud"></canvas>
+        </div>-->
+        <div class="bg bg32"></div>
+        <div class="train3">
+            <canvas id="canvas3">您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+        <p class="fbg fbg3"></p>
+        <!--<div class="effect animEff32">
+            <canvas id="signal"></canvas>
+            </div>-->
+       <!-- <ul class="keys keys3">
+            <li id="key30"  data-choice="0" onclick="quiz2(0);">
+                <a><img src="images/page3/fa1.png"></a>
+                <p data-right="" id="key30_r" class="right"></p>
+                <p id="key30_w" class="wrong"></p>
+            </li>
+            <li id="key31"  data-choice="1">
+                <a><img src="images/page3/fa2.png"></a>
+                <p id="key31_r" class="right"></p>
+                <p id="key31_w" class="wrong"></p>
+            </li>
+            <li id="key32"  data-choice="2">
+                <a><img src="images/page3/fa3.png"></a>
+                <p id="key32_r" class="right"></p>
+                <p id="key32_w" class="wrong"></p>
+            </li>
+            <li id="key33"  data-choice="3">
+                <a><img src="images/page3/fa4.png"></a>
+                <p id="key33_r" class="right"></p>
+                <p id="key33_w" class="wrong"></p>
+            </li>
+            <li id="key34"  data-choice="4">
+                <a><img src="images/page3/fa5.png"></a>
+                <p id="key34_r" class="right"></p>
+                <p id="key34_w" class="wrong"></p>
+            </li>
+            <li id="key35"  data-choice="5">
+                <a><img src="images/page3/fa6.png"></a>
+                <p id="key35_r" class="right"></p>
+                <p id="key35_w" class="wrong"></p>
+            </li>
+            <li id="key36"  data-choice="6">
+                <a><img src="images/page3/fa7.png"></a>
+                <p id="key36_r" class="right"></p>
+                <p id="key36_w" class="wrong"></p>
+            </li>
+
+        </ul>-->
+
+    </div>
+    <!--page4-->
+    <div id="page4" class="none">
+        <div class="bg bg4"></div>
+        <!--特效-->
+       <!-- <div class="effect animEff4" >
+            <canvas id="heart"></canvas>
+        </div>-->
+        <div class="train4">
+            <canvas id="canvas4">您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+
+        <p class="fbg fbg4"></p>
+        <!--<div class="timer">
+            <img src="images/timer.png">
+            <p class="indicator" id="timer4">00:00</p>
+        </div>-->
+
+    </div>
+    <!--page5-->
+    <div id="page5" class="none" >
+        <div class="bg bg5"></div>
+       <!-- <p class="effect animEff5">
+            <canvas id="flower"></canvas>
+        </p>-->
+        <p class="effect animEff52">
+            <!--<canvas id="money"></canvas>-->
+        </p>
+        <div class="train5">
+            <canvas id="canvas"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+        <p class="fbg fbg5"></p>
+
     </div>
     <div class="timer none" >
         <img src="images/timer.png">
@@ -365,7 +373,7 @@
         </div>
         <ul class="shareBtn">
             <li>
-                <a href="http://promote.caixin.com/founder2016-m/"><img src="images/page7/btn1.png"></a>
+                <a href="http://www.founder.com"><img src="images/page7/btn1.png"></a>
             </li>
             <li>
                 <a href="index.html"><img src="images/page7/btn2.png"></a>
