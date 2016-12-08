@@ -130,6 +130,12 @@ body,html{
     position: fixed;
     z-index: 11;
 }
+.bg2{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    z-index: 11;
+}
 /*train z-index: 12*/
 .train1{
     position: fixed;
@@ -147,6 +153,10 @@ body,html{
     /*float: left;*/
     position: fixed;
     z-index: 14;
+}
+#flower{
+    position: fixed;
+    top:0;
 }
 /*fbg z-index: 15*/
 .fbg1{
@@ -280,7 +290,7 @@ body,html{
     z-index: 64;
 }
 #slogan1 img{
-    width: 70vw;
+    width: 82vw;
     height: auto;
     /*display: none;*/
     /*position: fixed;*/
@@ -305,7 +315,7 @@ body,html{
     height: auto;
     position: fixed;
     text-align: center;
-    bottom: 3vh;
+    bottom: 0;
     z-index: 64;
 }
 #flag img{
@@ -316,11 +326,11 @@ body,html{
 }
 
 /*世界页*/
-.bg2 {
+/*.bg2 {
     background: url("../images/page2/bg.png") 0 0 no-repeat;
     background-size: 100% 100%;
     z-index: 21;
-}
+}*/
 .animEff2{
     width: 100%;
     height: 100%;

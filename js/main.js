@@ -118,7 +118,7 @@ window.onload=function(){
 
         {src: 'images/page2/bg.png', id: 'p21'},
         {src: 'images/page2/fbg.png', id: 'p22'},
-        {src: 'images/page2/snow.png', id: 'p22'},
+        {src: 'images/page2/snow1.png', id: 'p23'},
 
         {src: 'images/page3/bg.png', id: 'p31'},
         {src: 'images/page3/bg2.png', id: 'p32'},
@@ -271,6 +271,7 @@ $(function () {
 
     //page4
     $('#key40').tap(function(){
+        console.log("key40 背点击");
         quiz4(0);
 
     });
@@ -348,6 +349,8 @@ $(function () {
 /*****************************************火车的动效*********************************/
 var w = document.documentElement.clientWidth,
     h = document.documentElement.clientHeight;
+//刷帧的帧率
+var ratio=60;
 var train= new createjs.Bitmap("./images/train.png");
 var railway = new createjs.Bitmap("./images/railway.png");
 /*火车在屏幕中的高度占比，和真实的火车像素高度*/
@@ -399,6 +402,7 @@ var Title3_6= new createjs.Bitmap("./images/title3/6.png");
 var Title3_7= new createjs.Bitmap("./images/title3/7.png");
 var Title3_8= new createjs.Bitmap("./images/title3/8.png");
 var Title3_9= new createjs.Bitmap("./images/title3/9.png");
+var Title3_10= new createjs.Bitmap("./images/title3/10.png");
 
 var Title4_0= new createjs.Bitmap("./images/title4/0.png");
 var Title4_1= new createjs.Bitmap("./images/title4/1.png");
@@ -422,7 +426,7 @@ var arrTitle2=[Title2_0,Title2_1,Title2_2,Title2_3,Title2_4,
     Title2_5,Title2_6,Title2_7,Title2_8,Title2_9,Title2_10,
     Title2_11,Title2_12,Title2_13,Title2_14];
 var arrTitle3=[Title3_0,Title3_1,Title3_2,Title3_3,Title3_4,
-    Title3_5,Title3_6,Title3_7,Title3_8,Title3_9];
+    Title3_5,Title3_6,Title3_7,Title3_8,Title3_9,Title3_10];
 var arrTitle4=[Title4_0,Title4_1,Title4_2,Title4_3,Title4_4,
     Title4_5,Title4_6,Title4_7,Title4_8,Title4_9,Title4_10,
     Title4_11,Title4_12];
@@ -507,6 +511,7 @@ function trainIn(stage,Title1,Title2,Title1_r,Title2_r) {
 // 火车page1
 var  stage1=new createjs.Stage("canvas1");
 var  stage_bg1= new createjs.Stage('bg1');
+
 var  stage_fbg1= new createjs.Stage('fbg1');
 var  background1 = new createjs.Bitmap('./images/page1/bgt.png');
 var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
@@ -527,15 +532,16 @@ function train1In() {
     stage1.addChild(railway);
     stage1.addChild(train);
 
-    createjs.Ticker.setFPS(60);
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',stage1);
     createjs.Tween.get(train, {loop: false})
         .to({x: h*3/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         $("#hint").show();
     }
-}
 
+    console.log("train1In 的帧率："+createjs.Ticker.getMeasuredFPS());
+}
 function train1Enter() {
     createjs.Tween.get(train, {loop: false})
         .to({x: 10}, 4000, createjs.Ease.getPowInOut(4)).call(handleComplete);
@@ -543,6 +549,8 @@ function train1Enter() {
         $("#title").addClass('mainIn');
         $("#startBtn").addClass('mainIn');
     }
+    console.log("train1Enter 的帧率："+createjs.Ticker.getMeasuredFPS());
+
 }
 
 function Scene1In() {
@@ -555,44 +563,73 @@ function Scene1In() {
     background1.y=0;
     stage_bg1.addChild(background1);
 
-    createjs.Ticker.setFPS(60);
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',stage_bg1);
+    console.log("Scene1In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene2In() {
+
     createjs.Tween.get(background1, {loop: false})
         .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         snow();
     }
+    console.log("Scene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene3In() {
+
     createjs.Tween.get(background1, {loop: false})
         .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         cloud();
-        // signal();
     }
+    console.log("Scene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
+
+
+
 function Scene4In() {
+
     createjs.Tween.get(background1, {loop: false})
         .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         heart();
     }
+    console.log("Scene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
+//从这个地方变得有点慢
+
 function Scene5In() {
+
+    stage_bg1.canvas.width=h;
+    stage_bg1.canvas.height=w;
+    background1.scaleX=bgScaleY;
+    background1.scaleY=scale;
+    background1.x=-2*h;
+    background1.y=0;
+    stage_bg1.addChild(background1);
+
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',stage_bg1);
+
     createjs.Tween.get(background1, {loop: false})
         .to({x: -h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
-        snow();
+        money();
+        flower();
     }
+    console.log("Scene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene6In() {
     createjs.Tween.get(background1, {loop: false})
         .to({x: 0}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
-        snow();
+        /*$('#flower').show();*/
+        money2();
+        flower();
     }
+
+    console.log("Scene6In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 
 
@@ -605,7 +642,7 @@ function frontScene1In() {
     frontgrond1.x=-5*h;
     frontgrond1.y=0;
     stage_fbg1.addChild(frontgrond1);
-    createjs.Ticker.setFPS(60);
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',stage_fbg1);
 }
 function frontScene2In() {
@@ -613,6 +650,8 @@ function frontScene2In() {
     $("#bubble").hide();
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4));
+
+    console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function frontScene3In() {
     $(".keys2").hide();
@@ -620,28 +659,36 @@ function frontScene3In() {
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4));
 
+    console.log("frontScene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function frontScene4In() {
     $(".keys3").hide();
-    $("#signal").hide();
+    // $("#signal").hide();
     $("#cloud").hide();
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4));
 
+    console.log("frontScene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
+
 }
 function frontScene5In() {
-    $(".page1float").hide();
-    $("#bubble").hide();
+    $(".keys4").hide();
+    $("#heart").hide();
+
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -h}, 6000, createjs.Ease.getPowInOut(4));
 
+    console.log("frontScene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function frontScene6In() {
-    $(".page1float").hide();
-    $("#bubble").hide();
+    $(".keys5").hide();
+    // $("#flower").hide();
+    $("#money").hide();
+    $(".timer").hide();
+    console.log("前景6进入，timer隐藏："+minute+':'+second);
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: 0}, 6000, createjs.Ease.getPowInOut(4));
-
+    console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 
 function train2In(){
@@ -653,26 +700,53 @@ function train2In(){
         startTimer();
         $('.keys2').addClass('mainIn');
     }
+    console.log("train2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
-
 function train3In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -0.8*h}, 8500, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: -0.9*h}, 8500, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         // 第三页要显示的逻辑
+        // signal();
         startTimer();
         $('.keys3').addClass('mainIn');
     }
-}
 
+    console.log("train3In 的帧率："+createjs.Ticker.getMeasuredFPS());
+}
 function train4In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -1.3*h}, 8500, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: -0.9*h}, 8500, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
-        // 第三页要显示的逻辑
+        // 第四页要显示的逻辑
         startTimer();
         $('.keys4').addClass('mainIn');
     }
+
+    console.log("train4In 的帧率："+createjs.Ticker.getMeasuredFPS());
+}
+function train5In(){
+    createjs.Tween.get(train, {loop: false})
+        .to({x: -0.9*h}, 8500, createjs.Ease.getPowInOut(1)).call(handleComplete);
+    function handleComplete() {
+        // 第五页要显示的逻辑
+        startTimer();
+        $('.keys5').addClass('mainIn');
+    }
+
+    console.log("train5In 的帧率："+createjs.Ticker.getMeasuredFPS());
+}
+function train6In(){
+    createjs.Tween.get(train, {loop: false})
+        .to({x: -4*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        // 第六页要显示的逻辑
+        $('#flag').addClass('mainIn');
+        $('#slogan1').addClass('mainIn');
+
+    }
+
+    console.log("train6In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 
 
@@ -686,11 +760,10 @@ function title1In() {
     stageTitle1.canvas.height=w;
 
     initTitle(arrTitle1,stageTitle1);
-    createjs.Ticker.setFPS(60);
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',stageTitle1);
     TweenIn1Title(arrTitle1);
 }
-
 function title1Out() {
     console.log("title1out 被调用");
 
@@ -702,21 +775,59 @@ function title1Out() {
         title2In();
     }
 }
-
 function title2In(){
     stageTitle2.canvas.width=h;
     stageTitle2.canvas.height=w;
 
     initTitle(arrTitle2,stageTitle2);
-    createjs.Ticker.setFPS(60);
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',stageTitle2);
     TweenInTitle(arrTitle2);
 }
-
 function title2Out() {
-
+    TweenOutTitle(arrTitle2);
+    createjs.Tween.get(Title2_14, {loop: false})
+        .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function  handleComplete() {
+        $('#title2').hide();
+        title3In();
+    }
 }
+function title3In(){
+    stageTitle3.canvas.width=h;
+    stageTitle3.canvas.height=w;
 
+    initTitle(arrTitle3,stageTitle3);
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',stageTitle3);
+    TweenInTitle(arrTitle3);
+}
+function title3Out() {
+    TweenOutTitle(arrTitle3);
+    createjs.Tween.get(Title3_10, {loop: false})
+        .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function  handleComplete() {
+        $('#title3').hide();
+        title4In();
+    }
+}
+function title4In(){
+    stageTitle4.canvas.width=h;
+    stageTitle4.canvas.height=w;
+
+    initTitle(arrTitle4,stageTitle4);
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',stageTitle4);
+    TweenInTitle(arrTitle4);
+}
+function title4Out() {
+    TweenOutTitle(arrTitle4);
+    createjs.Tween.get(Title4_12, {loop: false})
+        .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function  handleComplete() {
+        $('#title4').hide();
+    }
+}
 /**
  * Title 的通用函数*/
 function initTitle(arr,stage){
@@ -735,7 +846,7 @@ function initTitle(arr,stage){
 function TweenIn1Title(arr){
     for(var i=0;i<arr.length;i++){
         createjs.Tween.get(arr[i], {loop: false})
-            .to({x: h*0.42}, 6000, createjs.Ease.getPowInOut(4));
+            .to({x: h*0.42}, 8000, createjs.Ease.getPowInOut(4));
     }
 }
 function TweenInTitle(arr){
@@ -960,8 +1071,8 @@ function snow(){
     snowStage.canvas.width=h;
 
     var data ={
-        framerate:1,
-        images:['./images/page2/snow.png'],
+        framerate:2,
+        images:['./images/page2/snow1.png'],
         frames:{
             width:1206,
             height:750,
@@ -1031,15 +1142,15 @@ function signal(){
     signalStage.canvas.width=h;
 
     var data ={
-        framerate:10,
+        framerate:1,
         images:['./images/page3/signal.png'],
         frames:{
             width:1206,
             height:750,
-            count:6
+            count:30
         },
         animations:{
-            anim : [0,5,'anim']
+            anim : [0,29,'anim']
         }
 
     };
@@ -1049,7 +1160,8 @@ function signal(){
 
     img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
     signalContainer.addChild(img1);
-    // createjs.Ticker.setFPS(10);
+
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',signalStage);
 }
 
@@ -1199,8 +1311,8 @@ function money2(){
 //The passcode to check against.
 var password_shijie=[0,1,1,0,2,1,4,0,1,0,5,3,5,1];//4
 var password_zaibian=[4,3,1,4,1,4,6,4,1,1,5,6,0,2];//5
-var password_chuangxin=[0,6,7,2,8,1,0,0,4,5];//4
-var password_bubian = [6,8,9,2,2,6,9,9,3,2,4,0];
+var password_chuangxin=[0,3,6,2,7,1,0,0,4,5];//4
+var password_bubian = [6,5,1,2,2,6,1,1,3,2,4,0];
 var enteredPass2 = [];
 var enteredPass3 = [];
 var enteredPass4 = [];
@@ -1226,7 +1338,7 @@ function quiz4(a) {
     // console.log("点击的choice："+Choice);
     enteredPass4.push(Choice);
     // console.log("enterPass的长度："+enteredPass4.length);
-    checkPasscode4('#key4',password_chuangxin,4,Title41,Title42,Title41_r,Title42_r);
+    checkPasscode4('#key4',password_chuangxin,arrTitle3);
 }
 
 function quiz5(a) {
@@ -1234,55 +1346,12 @@ function quiz5(a) {
     // console.log("点击的choice："+Choice);
     enteredPass5.push(Choice);
     // console.log("enterPass的长度："+enteredPass5.length);
-   checkPasscode('#key5',password_bubian,3,Title51,Title52,Title51_r,Title52_r);
+   checkPasscode5('#key5',password_bubian,arrTitle4);
 }
 
 /*拼写的规则*/
 var booleanArr = [];
-function checkPasscode(key,password,num,Title1,Title2,Title1_r,Title2_r) {
-    /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-    if (enteredPass5.length>password.length){
-         return;
-    }else{
-        for(var i = 0; i<password.length;i++){
-            if (enteredPass5[i]==password[i]){
-                booleanArr.push(true);
-                if (i==num){
-                    Title1.visible=false;
-                    Title1_r.visible=true;
-                }
-                else if(i==password.length-1){
-                    Title2.visible=false;
-                    Title2_r.visible=true;
-                    stopTimer();
-                    train5Out(Title1,Title2,Title1_r,Title2_r);
-                }else{
 
-                }
-            }else{
-
-                booleanArr.push(false);
-            }
-        }
-    }
-
-    if(enteredPass5.length>0 ){
-        // console.log("enteredPass里面开始有内容的时候："+booleanArr);
-        // console.log("当前指针对应的boolean值是："+booleanArr[enteredPass5.length-1]+"");
-        if (booleanArr[enteredPass5.length-1]){
-            checkRight(key+enteredPass5[enteredPass5.length-1]);
-        }else {
-            checkWrong(key+enteredPass5[enteredPass5.length-1]);
-            enteredPass5.pop();
-        }
-        //需要清空，重新加入新的遍历array
-        booleanArr=[];
-    }else{
-    }
-
-    // console.log("enteredPass的状态5："+enteredPass5);
-
-}
 
 function checkRight(key){
     playRight();
@@ -1301,11 +1370,13 @@ function checkWrong(key){
     },100);
     // console.log(key+'_w');
 }
+
 function VBTitleByNum(arr,num){
     for(var i=0;i<arr.length;i++){
         i==num?arr[i].visible=true:arr[i].visible=false;
     }
 }
+
 function checkPasscode2(key,password,arr) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
     if (enteredPass2.length>password.length){
@@ -1393,7 +1464,7 @@ function checkPasscode2(key,password,arr) {
 function checkPasscode3(key,password,arr) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
     if (enteredPass3.length>password.length){
-        console.log("enteredPass2 溢出来了");
+        // console.log("enteredPass2 溢出来了");
         return;
     }else{
         for(var i = 0; i<password.length;i++){
@@ -1460,8 +1531,8 @@ function checkPasscode3(key,password,arr) {
     }
 
     if(enteredPass3.length>0 ){
-        console.log("enteredPass里面开始有内容的时候："+booleanArr);
-        console.log("当前指针对应的boolean值是："+booleanArr[enteredPass3.length-1]+"");
+        // console.log("enteredPass里面开始有内容的时候："+booleanArr);
+        // console.log("当前指针对应的boolean值是："+booleanArr[enteredPass3.length-1]+"");
         if (booleanArr[enteredPass3.length-1]){
             checkRight(key+enteredPass3[enteredPass3.length-1]);
         }else {
@@ -1473,30 +1544,59 @@ function checkPasscode3(key,password,arr) {
     }else{
     }
 
-    console.log("enteredPass3的状态："+enteredPass3);
+    // console.log("enteredPass3的状态："+enteredPass3);
 
 }
 
-function checkPasscode4(key,password,num,Title1,Title2,Title1_r,Title2_r) {
+function checkPasscode4(key,password,arr) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
     if (enteredPass4.length>password.length){
+        console.log("enterPass4 被溢栈了");
         return;
     }else{
         for(var i = 0; i<password.length;i++){
             if (enteredPass4[i]==password[i]){
                 booleanArr.push(true);
-                if (i==num){
-                    Title1.visible=false;
-                    Title1_r.visible=true;
-                }
-                else if(i==password.length-1){
-                    Title2.visible=false;
-                    Title2_r.visible=true;
-                    stopTimer();
-                    playOut();
-                    train4Out(Title1,Title2,Title1_r,Title2_r);
-                }else{
+                switch (i){
+                    case 0:
+                        VBTitleByNum(arr,1);
+                        break;
+                    case 1:
+                        VBTitleByNum(arr,2);
+                        break;
+                    case 2:
+                        VBTitleByNum(arr,3);
+                        break;
+                    case 3:
+                        VBTitleByNum(arr,4);
+                        break;
+                    case 4:
+                        VBTitleByNum(arr,5);
+                        break;
+                    case 5:
+                        VBTitleByNum(arr,6);
+                        break;
+                    case 6:
+                        VBTitleByNum(arr,7);
+                        break;
+                    case 7:
+                        VBTitleByNum(arr,8);
+                        break;
+                    case 8:
+                        VBTitleByNum(arr,9);
+                        break;
+                    case 9:
+                        VBTitleByNum(arr,10);
+                        playOut();
+                        stopTimer();
 
+                        title3Out();
+                        Scene5In();
+                        frontScene5In();
+                        train5In();
+                        break;
+                    default:
+                        break;
                 }
             }else{
 
@@ -1506,8 +1606,8 @@ function checkPasscode4(key,password,num,Title1,Title2,Title1_r,Title2_r) {
     }
 
     if(enteredPass4.length>0 ){
-        console.log("enteredPass里面开始有内容的时候："+booleanArr);
-        console.log("当前指针对应的boolean值是："+booleanArr[enteredPass4.length-1]+"");
+        // console.log("enteredPass里面开始有内容的时候："+booleanArr);
+        // console.log("当前指针对应的boolean值是："+booleanArr[enteredPass4.length-1]+"");
         if (booleanArr[enteredPass4.length-1]){
             checkRight(key+enteredPass4[enteredPass4.length-1]);
         }else {
@@ -1519,7 +1619,91 @@ function checkPasscode4(key,password,num,Title1,Title2,Title1_r,Title2_r) {
     }else{
     }
 
-    console.log("enteredPass4的状态："+enteredPass4);
+    // console.log("enteredPass4的状态："+enteredPass4);
+
+}
+
+function checkPasscode5(key,password,arr) {
+    /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
+    if (enteredPass5.length>password.length){
+        return;
+    }else{
+        for(var i = 0; i<password.length;i++){
+            if (enteredPass5[i]==password[i]){
+                booleanArr.push(true);
+                switch (i){
+                    case 0:
+                        VBTitleByNum(arr,1);
+                        break;
+                    case 1:
+                        VBTitleByNum(arr,2);
+                        break;
+                    case 2:
+                        VBTitleByNum(arr,3);
+                        break;
+                    case 3:
+                        VBTitleByNum(arr,4);
+                        break;
+                    case 4:
+                        VBTitleByNum(arr,5);
+                        break;
+                    case 5:
+                        VBTitleByNum(arr,6);
+                        break;
+                    case 6:
+                        VBTitleByNum(arr,7);
+                        break;
+                    case 7:
+                        VBTitleByNum(arr,8);
+                        break;
+                    case 8:
+                        VBTitleByNum(arr,9);
+                        break;
+                    case 9:
+                        VBTitleByNum(arr,10);
+
+                        break;
+                    case 10:
+                        VBTitleByNum(arr,11);
+
+                        break;
+                    case 11:
+                        VBTitleByNum(arr,12);
+
+                        playRun();
+                        stopTimer();
+
+                        title4Out();
+                        Scene6In();
+                        frontScene6In();
+                        train6In();
+
+                        break;
+                    default:
+                        break;
+                }
+            }else{
+
+                booleanArr.push(false);
+            }
+        }
+    }
+
+    if(enteredPass5.length>0 ){
+        // console.log("enteredPass里面开始有内容的时候："+booleanArr);
+        // console.log("当前指针对应的boolean值是："+booleanArr[enteredPass5.length-1]+"");
+        if (booleanArr[enteredPass5.length-1]){
+            checkRight(key+enteredPass5[enteredPass5.length-1]);
+        }else {
+            checkWrong(key+enteredPass5[enteredPass5.length-1]);
+            enteredPass5.pop();
+        }
+        //需要清空，重新加入新的遍历array
+        booleanArr=[];
+    }else{
+    }
+
+    // console.log("enteredPass的状态5："+enteredPass5);
 
 }
 /*Displays all the correct stuff, then moves on to homeScreen()*/
@@ -1550,10 +1734,10 @@ function playOut() {
     createjs.Sound.play("out");
 }
 
-function playEnter() {
+/*function playEnter() {
     createjs.Sound.registerSound({src:"asset/audio/enter.mp3", id:"enter"});
     createjs.Sound.play("enter");
-}
+}*/
 function playStart() {
     createjs.Sound.registerSound({src:"asset/audio/start.mp3", id:"start"});
     createjs.Sound.play("start");
