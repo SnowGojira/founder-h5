@@ -45,11 +45,17 @@
         </div>
         <div class="title">
             <canvas id="title1"></canvas>
+
         </div>
         <!--static effect-->
         <div class="effect animEff1">
             <canvas id="bubble"></canvas>
             <canvas id="snow"></canvas>
+            <canvas id="cloud"></canvas>
+            <canvas id="signal"></canvas>
+            <canvas id="money"></canvas>
+            <canvas id="flower"></canvas>
+            <canvas id="money2"></canvas>
         </div>
         <!--front-page-->
         <p class="fbg fbg1">
@@ -88,46 +94,6 @@
                 <p id="key25_w" class="wrong"></p>
             </li>
         </ul>
-        <!--page1 float-->
-        <div class="page1float">
-            <div class="floatTitle none" id="title">
-                <img src="images/page1/title.png">
-            </div>
-            <div class="floatButton none" id="startBtn">
-                <img src="images/page1/btn.png">
-            </div>
-            <div class="Hint none" id="hint"></div>
-        </div>
-
-
-    </div>
-    <!--page2-->
-    <div id="page2" class="none">
-        <div class="bg bg2"></div>
-        <!--<div class="effect animEff2" >
-            <canvas id="animCanvas" ></canvas>
-        </div>-->
-        <div class="train2">
-            <canvas id="canvas2"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
-        </div>
-        <p class="fbg fbg2"></p>
-
-
-    </div>
-    <!--page3-->
-    <div id="page3" class="none">
-        <div class="bg bg3"></div>
-        <div class="effect animEff3">
-            <canvas id="cloud"></canvas>
-        </div>
-        <div class="bg bg32"></div>
-        <div class="train3">
-            <canvas id="canvas3">您的浏览器不支持canvas，请选择现代浏览器</canvas>
-        </div>
-        <p class="fbg fbg3"></p>
-        <div class="effect animEff32">
-            <canvas id="signal"></canvas>
-            </div>
         <ul class="keys keys3">
             <li id="key30"  data-choice="0" onclick="quiz2(0);">
                 <a><img src="images/page3/fa1.png"></a>
@@ -164,20 +130,83 @@
                 <p id="key36_r" class="right"></p>
                 <p id="key36_w" class="wrong"></p>
             </li>
-            <li id="key37"  data-choice="7">
-                <a><img src="images/page3/fa8.png"></a>
-                <p id="key37_r" class="right"></p>
-                <p id="key37_w" class="wrong"></p>
+
+        </ul>
+        <!--page1 float-->
+        <div class="page1float">
+            <div class="floatTitle none" id="title">
+                <img src="images/page1/title.png">
+            </div>
+            <div class="floatButton none" id="startBtn">
+                <img src="images/page1/btn.png">
+            </div>
+            <div class="Hint none" id="hint"></div>
+        </div>
+
+
+    </div>
+    <!--page2-->
+    <div id="page2" class="none">
+        <div class="bg bg2"></div>
+        <!--<div class="effect animEff2" >
+            <canvas id="animCanvas" ></canvas>
+        </div>-->
+        <div class="train2">
+            <canvas id="canvas2"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+        <p class="fbg fbg2"></p>
+
+
+    </div>
+    <!--page3-->
+    <div id="page3" class="none">
+        <div class="bg bg3"></div>
+        <!--<div class="effect animEff3">
+            <canvas id="cloud"></canvas>
+        </div>-->
+        <div class="bg bg32"></div>
+        <div class="train3">
+            <canvas id="canvas3">您的浏览器不支持canvas，请选择现代浏览器</canvas>
+        </div>
+        <p class="fbg fbg3"></p>
+        <!--<div class="effect animEff32">
+            <canvas id="signal"></canvas>
+            </div>-->
+        <ul class="keys keys3">
+            <li id="key30"  data-choice="0" onclick="quiz2(0);">
+                <a><img src="images/page3/fa1.png"></a>
+                <p data-right="" id="key30_r" class="right"></p>
+                <p id="key30_w" class="wrong"></p>
             </li>
-            <li id="key38"  data-choice="8">
-                <a><img src="images/page3/fa9.png"></a>
-                <p id="key38_r" class="right"></p>
-                <p id="key38_w" class="wrong"></p>
+            <li id="key31"  data-choice="1">
+                <a><img src="images/page3/fa2.png"></a>
+                <p id="key31_r" class="right"></p>
+                <p id="key31_w" class="wrong"></p>
             </li>
-            <li id="key39"  data-choice="9">
-                <a><img src="images/page3/fa10.png"></a>
-                <p id="key39_r" class="right"></p>
-                <p id="key39_w" class="wrong"></p>
+            <li id="key32"  data-choice="2">
+                <a><img src="images/page3/fa3.png"></a>
+                <p id="key32_r" class="right"></p>
+                <p id="key32_w" class="wrong"></p>
+            </li>
+            <li id="key33"  data-choice="3">
+                <a><img src="images/page3/fa4.png"></a>
+                <p id="key33_r" class="right"></p>
+                <p id="key33_w" class="wrong"></p>
+            </li>
+            <li id="key34"  data-choice="4">
+                <a><img src="images/page3/fa5.png"></a>
+                <p id="key34_r" class="right"></p>
+                <p id="key34_w" class="wrong"></p>
+            </li>
+            <li id="key35"  data-choice="5">
+                <a><img src="images/page3/fa6.png"></a>
+                <p id="key35_r" class="right"></p>
+                <p id="key35_w" class="wrong"></p>
+            </li>
+            <li id="key36"  data-choice="6">
+                <a><img src="images/page3/fa7.png"></a>
+                <p id="key36_r" class="right"></p>
+                <p id="key36_w" class="wrong"></p>
             </li>
 
         </ul>
@@ -240,27 +269,16 @@
                 <p id="key47_r" class="right"></p>
                 <p id="key47_w" class="wrong"></p>
             </li>
-            <li id="key48"  data-choice="8">
-                <a><img src="images/page4/fa9.png"></a>
-                <p id="key48_r" class="right"></p>
-                <p id="key48_w" class="wrong"></p>
-            </li>
-            <li id="key49"  data-choice="9">
-                <a><img src="images/page4/fa10.png"></a>
-                <p id="key49_r" class="right"></p>
-                <p id="key49_w" class="wrong"></p>
-            </li>
-
         </ul>
     </div>
     <!--page5-->
     <div id="page5" class="none" >
         <div class="bg bg5"></div>
-        <p class="effect animEff5">
+       <!-- <p class="effect animEff5">
             <canvas id="flower"></canvas>
-        </p>
+        </p>-->
         <p class="effect animEff52">
-            <canvas id="money"></canvas>
+            <!--<canvas id="money"></canvas>-->
         </p>
         <div class="train5">
             <canvas id="canvas"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
@@ -302,21 +320,6 @@
                 <p id="key56_r" class="right"></p>
                 <p id="key56_w" class="wrong"></p>
             </li>
-            <li id="key57"  data-choice="7">
-                <a><img src="images/page5/fa8.png"></a>
-                <p id="key57_r" class="right"></p>
-                <p id="key57_w" class="wrong"></p>
-            </li>
-            <li id="key58"  data-choice="8">
-                <a><img src="images/page5/fa9.png"></a>
-                <p id="key58_r" class="right"></p>
-                <p id="key58_w" class="wrong"></p>
-            </li>
-            <li id="key59"  data-choice="9">
-                <a><img src="images/page5/fa10.png"></a>
-                <p id="key59_r" class="right"></p>
-                <p id="key59_w" class="wrong"></p>
-            </li>
 
         </ul>
     </div>
@@ -330,9 +333,9 @@
         <p class="effect animEff6">
             <canvas id="flower2"></canvas>
         </p>
-        <p class="effect animEff62">
+       <!-- <p class="effect animEff62">
             <canvas id="money2"></canvas>
-        </p>
+        </p>-->
         <div class="train6">
             <canvas id="canvas6"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
         </div>

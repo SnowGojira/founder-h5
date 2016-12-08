@@ -135,7 +135,7 @@ body,html{
 }
 .title{
     position: fixed;
-    z-inde:13;
+    z-index:13;
 }
 .animEff1{
     width: 100%;
@@ -356,7 +356,7 @@ body,html{
     background: orangered;
     opacity: 0.5;
     position: absolute;
-    bottom: 0.3vh;
+    bottom: 0.29vh;
     display: none;
 }
 .right{
@@ -366,7 +366,7 @@ body,html{
     background: limegreen;
     opacity: 0.5;
     position: absolute;
-    bottom: 0.3vh;
+    bottom: 0.29vh;
     display: none;
 }
 

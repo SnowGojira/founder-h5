@@ -181,8 +181,6 @@ function handleComplete(){
     train1In();
     $('#pageLoad').hide();
     $('#page1').show();
-
-
 }
 
 
@@ -191,16 +189,17 @@ $(function () {
     //page1
     $("#hint").tap(function(){
         $("#hint").hide();
+        playRun();
         train1Enter();
     });
 
     $("#startBtn").tap(function () {
         /*console.log()*/
-        // playRun();
         playOut();
-        Scene1Out();
-        frontScene1Out();
-        train1Out();
+        Scene2In();
+        frontScene2In();
+        train2In();
+        title1In();
 
     });
 
@@ -374,7 +373,9 @@ var Title1_12= new createjs.Bitmap("./images/title1/12.png");
 var Title1_13= new createjs.Bitmap("./images/title1/13.png");
 var Title1_14= new createjs.Bitmap("./images/title1/14.png");
 
-var  stageTitle1=new createjs.Stage("title1");
+var arrTitle1=[Title1_0,Title1_1,Title1_2,Title1_3,Title1_4,
+    Title1_5,Title1_6,Title1_7,Title1_8,Title1_9,Title1_10,
+    Title1_11,Title1_12,Title1_13,Title1_14];
 
 var  stage5=new createjs.Stage("canvas");
 
@@ -500,21 +501,50 @@ function Scene1In() {
     stage_bg1.canvas.height=w;
     background1.scaleX=bgScaleY;
     background1.scaleY=scale;
-    background1.x=-h;
+    background1.x=-5*h;
     background1.y=0;
     stage_bg1.addChild(background1);
 
     createjs.Ticker.setFPS(60);
     createjs.Ticker.on('tick',stage_bg1);
 }
-
-function Scene1Out() {
+function Scene2In() {
+    createjs.Tween.get(background1, {loop: false})
+        .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        snow();
+    }
+}
+function Scene3In() {
+    createjs.Tween.get(background1, {loop: false})
+        .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        cloud();
+        signal();
+    }
+}
+function Scene4In() {
+    createjs.Tween.get(background1, {loop: false})
+        .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        snow();
+    }
+}
+function Scene5In() {
+    createjs.Tween.get(background1, {loop: false})
+        .to({x: -h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        snow();
+    }
+}
+function Scene6In() {
     createjs.Tween.get(background1, {loop: false})
         .to({x: 0}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
-        /* $("#hint").show();*/
+        snow();
     }
 }
+
 
 function frontScene1In() {
     console.log("前景一创建");
@@ -522,14 +552,50 @@ function frontScene1In() {
     stage_fbg1.canvas.height=w;
     frontgrond1.scaleX=bgScaleY;
     frontgrond1.scaleY=scale;
-    frontgrond1.x=-h;
+    frontgrond1.x=-5*h;
     frontgrond1.y=0;
     stage_fbg1.addChild(frontgrond1);
     createjs.Ticker.setFPS(60);
     createjs.Ticker.on('tick',stage_fbg1);
 }
-
-function frontScene1Out() {
+function frontScene2In() {
+    $(".page1float").hide();
+    $("#bubble").hide();
+    createjs.Tween.get(frontgrond1, {loop: false})
+        .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        /* $("#hint").show();*/
+    }
+}
+function frontScene3In() {
+    $('#title1').hide();
+    $(".keys2").hide();
+    $("#snow").hide();
+    createjs.Tween.get(frontgrond1, {loop: false})
+        .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        /* $("#hint").show();*/
+    }
+}
+function frontScene4In() {
+    $(".page1float").hide();
+    $("#bubble").hide();
+    createjs.Tween.get(frontgrond1, {loop: false})
+        .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        /* $("#hint").show();*/
+    }
+}
+function frontScene5In() {
+    $(".page1float").hide();
+    $("#bubble").hide();
+    createjs.Tween.get(frontgrond1, {loop: false})
+        .to({x: -h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    function handleComplete() {
+        /* $("#hint").show();*/
+    }
+}
+function frontScene6In() {
     $(".page1float").hide();
     $("#bubble").hide();
     createjs.Tween.get(frontgrond1, {loop: false})
@@ -539,116 +605,52 @@ function frontScene1Out() {
     }
 }
 
-function train1Out(){
+function train2In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -h/4}, 10000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-
+        .to({x: -h/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         // 第二页要显示的逻辑
         $('.timer').show();
         startTimer();
-        $('.keys').addClass('mainIn');
-        // title1In(stageTitle1);
-        // trainEnter();
-        // trainIn(stage2,Title21,Title22,Title21_r,Title22_r);
+        $('.keys2').addClass('mainIn');
     }
 }
 
-//stage不对
-function title1In(stage) {
-    initTitle(Title1_0,true,stage);
-    initTitle(Title1_1,false,stage);
-    initTitle(Title1_2,false,stage);
-    initTitle(Title1_3,false,stage);
-    initTitle(Title1_4,false,stage);
-    initTitle(Title1_5,false,stage);
-    initTitle(Title1_6,false,stage);
-    initTitle(Title1_7,false,stage);
-    initTitle(Title1_8,false,stage);
-    initTitle(Title1_9,false,stage);
-    initTitle(Title1_10,false,stage);
-    initTitle(Title1_11,false,stage);
-    initTitle(Title1_12,false,stage);
-    initTitle(Title1_13,false,stage);
-    initTitle(Title1_14,false,stage);
+var  stageTitle1=new createjs.Stage("title1");
+//stage和handle函数要注意避免毁掉错误
+function title1In() {
+    stageTitle1.canvas.width=h;
+    stageTitle1.canvas.height=w;
 
+    console.log("初始化 title：");
+    initTitle(arrTitle1,stageTitle1);
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.on('tick',stageTitle1);
+    TweenInTitle(arrTitle1);
 }
 
-function initTitle(title,isVisible,stage){
-    console.log("初始化："+title);
-    title.scaleX=scale;
-    title.scaleY=scale;
-    if (isVisible){
-        title.visible=true;
-    }else{
-        title.visible=false;
-    }
+/**
+ * Title 的通用函数*/
+function initTitle(arr,stage){
+    for(var i=0;i<arr.length;i++){
+        arr[i].scaleX=scale*1.2;
+        arr[i].scaleY=scale*1.2;
 
-    title.x=h;
-    title.y=positonY;
+        i==0?arr[i].visible=true:arr[i].visible=false;
 
-    stage.addChild(title);
-    /*createjs.Tween.get(title, {loop: false})
-        .to({x: h/2}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);*/
-}
-
-
-function trainEnter() {
-    createjs.Tween.get(train, {loop: false})
-        .to({x: -h/2}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-    function handleComplete() {
-        startTimer();
-        $('.keys').addClass('mainIn');
+        arr[i].x=h;
+        arr[i].y=positonY*0.95;
+        stage.addChild(arr[i]);
     }
 }
-// 火车page2
-var  stage2=new createjs.Stage("canvas2");
-var Title21= new createjs.Bitmap("./images/page2/title1.png");
-var Title22= new createjs.Bitmap("./images/page2/title2.png");
-var Title21_r= new createjs.Bitmap("./images/page2/title1_r.png");
-var Title22_r= new createjs.Bitmap("./images/page2/title2_r.png");
 
-
-
-function train2Out(Title1,Title2,Title1_r,Title2_r) {
-
-    console.log("Train is going to leave");
-
-    createjs.Tween.get(train, {loop: false})
-        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-    function handleComplete() {
-        $("#page2").hide();
-        $("#page3").show();
-        cloud();
-        signal();
-        playEnter();
-        trainIn(stage3,Title31,Title32,Title31_r,Title32_r);
-        // trainIn(stage4,Title41,Title42,Title41_r,Title42_r);
-
+function TweenInTitle(arr){
+    for(var i=0;i<arr.length;i++){
+        createjs.Tween.get(arr[i], {loop: false})
+            .to({x: h*0.42}, 8000, createjs.Ease.getPowInOut(4));
     }
-
-    createjs.Tween.get(Title1, {loop: false})
-        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title2, {loop: false})
-        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title1_r, {loop: false})
-        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
-
-    createjs.Tween.get(Title2_r, {loop: false})
-        .to({x: -1500}, 8000, createjs.Ease.getPowInOut(4));
-
-    /*setTimeout(function(){
-        $("#page2").hide();
-        $("#page3").show();
-        cloud();
-        signal();
-        // playEnter();
-        trainIn(stage3,Title31,Title32,Title31_r,Title32_r);
-        // trainIn(stage4,Title41,Title42,Title41_r,Title42_r);
-    },8000);*/
 }
+
 // 火车page3
 var  stage3=new createjs.Stage("canvas3");
 var Title31= new createjs.Bitmap("./images/page3/title1.png");
@@ -814,7 +816,7 @@ var bubbleStage,
     bubbleContainer;
 bubbleCanvas=document.getElementById('bubble');
 function bubble(){
-    console.log("bubble canvas 创建")
+    console.log("bubble canvas 创建");
     bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
     bubbleContainer= new createjs.Container();
     bubbleStage.addChild(bubbleContainer);
@@ -886,6 +888,7 @@ var cloudStage,
     cloudContainer;
 cloudCanvas=document.getElementById('cloud');
 function cloud(){
+    console.log("cloud创建");
     cloudStage = new createjs.Stage(cloudCanvas);//创建舞台
     cloudContainer= new createjs.Container();
     cloudStage.addChild(cloudContainer);
@@ -920,6 +923,7 @@ var signalStage,
     signalContainer;
 signalCanvas=document.getElementById('signal');
 function signal(){
+    console.log("signal 创建");
     signalStage = new createjs.Stage(signalCanvas);//创建舞台
     signalContainer= new createjs.Container();
     signalStage.addChild(signalContainer);
@@ -956,16 +960,13 @@ var heartStage,
     heartContainer;
 heartCanvas=document.getElementById('heart');
 function heart(){
-
+    console.log("heart 创建");
     heartStage = new createjs.Stage(heartCanvas);//创建舞台
     heartContainer= new createjs.Container();
     heartStage.addChild(heartContainer);
 
-
-
     heartStage.canvas.width=h;
     heartStage.canvas.height=w;
-
 
     var data ={
         framerate:2,
@@ -994,10 +995,11 @@ function heart(){
 var flowerStage,
     flowerCanvas,
     flowerContainer;
-flowerCanvas=document.getElementById('flower');
-function flower(canvas){
 
-    flowerStage = new createjs.Stage(canvas);//创建舞台
+function flower(){
+    console.log("flower 创建");
+    flowerCanvas=document.getElementById('flower');
+    flowerStage = new createjs.Stage(flowerCanvas);//创建舞台
     flowerContainer= new createjs.Container();
     flowerStage.addChild(flowerContainer);
 
@@ -1017,14 +1019,10 @@ function flower(canvas){
         }
 
     };
-
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-
     img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
     flowerContainer.addChild(img1);
-
-    // createjs.Ticker.setFPS(1);
     createjs.Ticker.on('tick',flowerStage);
 }
 
@@ -1032,19 +1030,18 @@ function flower(canvas){
 var moneyStage,
     moneyCanvas,
     moneyContainer;
-moneyCanvas=document.getElementById('money');
-function money(canvas,path){
 
-    moneyStage = new createjs.Stage(canvas);//创建舞台
+function money(){
+    moneyCanvas=document.getElementById('money');
+    moneyStage = new createjs.Stage(moneyCanvas);//创建舞台
     moneyContainer= new createjs.Container();
     moneyStage.addChild(moneyContainer);
-
     moneyStage.canvas.width=h;
     moneyStage.canvas.height=w;
 
     var data ={
         framerate:2,
-        images:[path],
+        images:['./images/page5/money.png'],
         frames:{
             width:1206,
             height:750,
@@ -1055,7 +1052,6 @@ function money(canvas,path){
         }
 
     };
-
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
@@ -1066,13 +1062,36 @@ function money(canvas,path){
     createjs.Ticker.on('tick',moneyStage);
 }
 
+function money2(){
+    var moneyCanvas2=document.getElementById('money2');
+    moneyStage = new createjs.Stage(moneyCanvas2);//创建舞台
+    moneyContainer= new createjs.Container();
+    moneyStage.addChild(moneyContainer);
+    moneyStage.canvas.width=h;
+    moneyStage.canvas.height=w;
 
+    var data ={
+        framerate:2,
+        images:['./images/page6/money.png'],
+        frames:{
+            width:1206,
+            height:750,
+            count:2
+        },
+        animations:{
+            anim : [0,1,'anim']
+        }
+
+    };
+    var spriteSheet2 = new createjs.SpriteSheet(data);
+    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+
+    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    moneyContainer.addChild(img1);
+    // createjs.Ticker.setFPS(1);
+    createjs.Ticker.on('tick',moneyStage);
+}
 //page6 动效处理
-
-var flowerCanvas2=document.getElementById('flower2');
-var moneyCanvas2=document.getElementById('money2');
-
-
 
 
 
@@ -1091,7 +1110,7 @@ function quiz2(a) {
     console.log("点击的choice："+Choice);
     enteredPass2.push(Choice);
     console.log("enterPass的长度："+enteredPass2.length);
-    checkPasscode2('#key2',password_shijie,4,Title21,Title22,Title21_r,Title22_r);
+    checkPasscode2('#key2',password_shijie,arrTitle1);
 }
 
 function quiz3(a) {
@@ -1182,27 +1201,70 @@ function checkWrong(key){
     },100);
     console.log(key+'_w');
 }
-
-function checkPasscode2(key,password,num,Title1,Title2,Title1_r,Title2_r) {
+function VBTitleByNum(arr,num){
+    for(var i=0;i<arr.length;i++){
+        i==num?arr[i].visible=true:arr[i].visible=false;
+    }
+}
+function checkPasscode2(key,password,arr) {
     /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
     if (enteredPass2.length>password.length){
-        console.log("enteredPass2 溢出来了");
+        // console.log("enteredPass2 溢出来了");
         return;
     }else{
         for(var i = 0; i<password.length;i++){
             if (enteredPass2[i]==password[i]){
                 booleanArr.push(true);
-                if (i==num){
-                    Title1.visible=false;
-                    Title1_r.visible=true;
-                }
-                else if(i==password.length-1){
-                    Title2.visible=false;
-                    Title2_r.visible=true;
-                    stopTimer();
-                    playOut();
-                    train2Out(Title1,Title2,Title1_r,Title2_r);
-                }else{
+                switch (i){
+                    case 0:
+                        VBTitleByNum(arr,1);
+                        break;
+                    case 1:
+                        VBTitleByNum(arr,2);
+                        break;
+                    case 2:
+                        VBTitleByNum(arr,3);
+                        break;
+                    case 3:
+                        VBTitleByNum(arr,4);
+                        break;
+                    case 4:
+                        VBTitleByNum(arr,5);
+                        break;
+                    case 5:
+                        VBTitleByNum(arr,6);
+                        break;
+                    case 6:
+                        VBTitleByNum(arr,7);
+                        break;
+                    case 7:
+                        VBTitleByNum(arr,8);
+                        break;
+                    case 8:
+                        VBTitleByNum(arr,9);
+                        break;
+                    case 9:
+                        VBTitleByNum(arr,10);
+                        break;
+                    case 10:
+                        VBTitleByNum(arr,11);
+                        break;
+                    case 11:
+                        VBTitleByNum(arr,12);
+                        break;
+                    case 12:
+                        VBTitleByNum(arr,13);
+                        break;
+                    case 13:
+                        VBTitleByNum(arr,14);
+
+                        playOut();
+                        stopTimer();
+                        Scene3In();
+                        frontScene3In();
+                        break;
+                    default:
+                        break;
                 }
             }else{
                 booleanArr.push(false);
@@ -1210,8 +1272,8 @@ function checkPasscode2(key,password,num,Title1,Title2,Title1_r,Title2_r) {
         }
     }
     if(enteredPass2.length>0 ){
-        console.log("enteredPass里面开始有内容的时候："+booleanArr);
-        console.log("当前指针对应的boolean值是："+booleanArr[enteredPass2.length-1]+"");
+        // console.log("enteredPass里面开始有内容的时候："+booleanArr);
+        // console.log("当前指针对应的boolean值是："+booleanArr[enteredPass2.length-1]+"");
         if (booleanArr[enteredPass2.length-1]){
             checkRight(key+enteredPass2[enteredPass2.length-1]);
         }else {
@@ -1222,7 +1284,7 @@ function checkPasscode2(key,password,num,Title1,Title2,Title1_r,Title2_r) {
         booleanArr=[];
     }else{
     }
-    console.log("enteredPass的状态："+enteredPass2);
+    // console.log("enteredPass的状态："+enteredPass2);
 }
 
 function checkPasscode3(key,password,num,Title1,Title2,Title1_r,Title2_r) {
