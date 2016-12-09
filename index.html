@@ -41,7 +41,7 @@
             <canvas id="bg1"></canvas>
         </div>
 
-        <div class="train1">
+        <div class="train1 ">
             <canvas id="canvas1"> 您的浏览器不支持canvas，请选择现代浏览器</canvas>
         </div>
         <div class="title">
@@ -61,9 +61,9 @@
             <canvas id="money2"></canvas>
         </div>
         <!--front-page-->
-        <p class="fbg fbg1">
+        <div class="fbg fbg1">
             <canvas id="fbg1"></canvas>
-        </p>
+        </div>
         <!--page3在前景上的动画特效-->
         <div>
             <canvas id="signal"></canvas>
@@ -230,34 +230,30 @@
             <div class="Hint none" id="hint"></div>
         </div>
 
-
-    </div>
-
-
-    <div class="timer none" >
-        <img src="images/timer.png">
-        <p class="indicator" id="timer">00:00</p>
-    </div>
-    <!--page6-->
-    <div id="page6" >
-
+        <div class="timer none" >
+            <img src="images/timer.png">
+            <p class="indicator" id="timer">00:00</p>
+        </div>
+        <!--page6-->
         <div class="slogan none" id="slogan1">
             <img src="images/page6/solgan1.png">
         </div>
         <div class="slogan none" id="slogan2">
             <img src="images/page6/solgan2.png">
         </div>
+        <div class="slogan none" id="check">
+            <a id="checkBtn"><img  src="images/page6/check.png"></a>
+        </div>
         <div class="slogan none" id="flag">
             <img src="images/page6/flag.png">
         </div>
 
-        <p class="fbg fbg6"></p>
-
-
+        <!--page7-->
     </div>
-    <!--page7-->
     <div id="page7" class="none">
-        <div class="bg bg7"></div>
+        <div class="bg bg7">
+            <img src="images/page7/bg.png">
+        </div>
         <div class="effect animEff7">
             <!--<canvas id="anim7" >您的浏览器不支持canvas，请选择现代浏览器</canvas>-->
             <img src="images/page7/border1.png">
@@ -267,10 +263,10 @@
         </div>
         <ul class="shareBtn">
             <li>
-                <a href="http://www.founder.com"><img src="images/page7/btn1.png"></a>
+                <a id="founder"><img src="images/page7/btn1.png"></a>
             </li>
             <li>
-                <a href="index.html"><img src="images/page7/btn2.png"></a>
+                <a id="retry"><img src="images/page7/btn2.png"></a>
             </li>
             <li>
                 <a id="wxShare"><img src="images/page7/btn3.png"></a>
@@ -278,6 +274,7 @@
         </ul>
         <div class="share none" id="share"></div>
     </div>
+
 </div>
 
 <script src="js/lib/zepto.min.js"></script>

@@ -100,7 +100,6 @@ function stopTimer()//暂停
 // 预加载逻辑
 window.onload=function(){
     manifest = [
-        {src: 'asset/audio/enter.mp3', id: 'sona1'},
         {src: 'asset/audio/out.mp3', id: 'sona2'},
         {src: 'asset/audio/right.mp3', id: 'sona3'},
         {src: 'asset/audio/running.mp3', id: 'sona4'},
@@ -109,37 +108,57 @@ window.onload=function(){
         {src: 'asset/font/timing-light.TTF', id: 'font1'},
         {src: 'asset/font/writing-light.TTF', id: 'font2'},
 
-        {src: 'images/page1/bg.png', id: 'p11'},
         {src: 'images/page1/btn.png', id: 'p12'},
         {src: 'images/page1/bubble.png', id: 'p13'},
-        {src: 'images/page1/fbg.png', id: 'p14'},
         {src: 'images/page1/hint.png', id: 'p15'},
         {src: 'images/page1/title.png', id: 'p16'},
+        {src: 'images/page1/fbgt.png', id: 'p18'},
+        {src: 'images/page1/bgt1.png', id: 'p19'},
 
-        {src: 'images/page2/bg.png', id: 'p21'},
-        {src: 'images/page2/fbg.png', id: 'p22'},
-        {src: 'images/page2/snow1.png', id: 'p23'},
+        {src: 'images/page2/snow1.png', id: 'p20'},
+        {src: 'images/page2/fa1.png', id: 'p21'},
+        {src: 'images/page2/fa2.png', id: 'p22'},
+        {src: 'images/page2/fa3.png', id: 'p23'},
+        {src: 'images/page2/fa4.png', id: 'p24'},
+        {src: 'images/page2/fa5.png', id: 'p25'},
+        {src: 'images/page2/fa6.png', id: 'p26'},
 
-        {src: 'images/page3/bg.png', id: 'p31'},
-        {src: 'images/page3/bg2.png', id: 'p32'},
-        {src: 'images/page3/cloud.png', id: 'p33'},
-        {src: 'images/page3/fbg.png', id: 'p34'},
-        {src: 'images/page3/signal.png', id: 'p35'},
 
-        {src: 'images/page4/bg.png', id: 'p41'},
-        {src: 'images/page4/fbg.png', id: 'p42'},
-        {src: 'images/page4/heart.png', id: 'p43'},
+        {src: 'images/page3/cloud.png', id: 'p30'},
+        {src: 'images/page3/fa1.png', id: 'p31'},
+        {src: 'images/page3/fa2.png', id: 'p32'},
+        {src: 'images/page3/fa3.png', id: 'p33'},
+        {src: 'images/page3/fa4.png', id: 'p34'},
+        {src: 'images/page3/fa5.png', id: 'p35'},
+        {src: 'images/page3/fa6.png', id: 'p36'},
+        {src: 'images/page3/fa7.png', id: 'p37'},
+        {src: 'images/page3/signal.png', id: 'p38'},
 
-        {src: 'images/page5/bg.png', id: 'p51'},
-        {src: 'images/page5/fbg.png', id: 'p52'},
-        {src: 'images/page5/flower.png', id: 'p53'},
-        {src: 'images/page5/money.png', id: 'p54'},
+        {src: 'images/page4/heart.png', id: 'p40'},
+        {src: 'images/page4/fa1.png', id: 'p41'},
+        {src: 'images/page4/fa2.png', id: 'p42'},
+        {src: 'images/page4/fa3.png', id: 'p43'},
+        {src: 'images/page4/fa4.png', id: 'p44'},
+        {src: 'images/page4/fa5.png', id: 'p45'},
+        {src: 'images/page4/fa6.png', id: 'p46'},
+        {src: 'images/page4/fa7.png', id: 'p47'},
+        {src: 'images/page4/fa8.png', id: 'p48'},
 
-        {src: 'images/page6/bg.png', id: 'p61'},
-        {src: 'images/page6/fbg.png', id: 'p62'},
+        {src: 'images/page5/flower.png', id: 'p50'},
+        {src: 'images/page5/fa1.png', id: 'p51'},
+        {src: 'images/page5/fa2.png', id: 'p52'},
+        {src: 'images/page5/fa3.png', id: 'p53'},
+        {src: 'images/page5/fa4.png', id: 'p54'},
+        {src: 'images/page5/fa5.png', id: 'p55'},
+        {src: 'images/page5/fa6.png', id: 'p56'},
+        {src: 'images/page5/fa7.png', id: 'p57'},
+        {src: 'images/page5/money.png', id: 'p58'},
+
         {src: 'images/page6/flag.png', id: 'p63'},
         {src: 'images/page6/solgan1.png', id: 'p64'},
         {src: 'images/page6/solgan2.png', id: 'p65'},
+        {src: 'images/page6/check.png', id: 'p60'},
+        {src: 'images/page6/money.png', id: 'p61'},
 
         {src: 'images/page7/bg.png', id: 'p71'},
         {src: 'images/page7/border1.png', id: 'p72'},
@@ -150,7 +169,66 @@ window.onload=function(){
 
         {src: 'images/railway.png', id: 'p1'},
         {src: 'images/timer.png', id: 'p2'},
-        {src: 'images/train.png', id: 'p3'}
+        {src: 'images/train.png', id: 'p3'},
+
+        {src: 'images/title1/0.png', id: 't10'},
+        {src: 'images/title1/1.png', id: 't11'},
+        {src: 'images/title1/2.png', id: 't12'},
+        {src: 'images/title1/3.png', id: 't13'},
+        {src: 'images/title1/4.png', id: 't14'},
+        {src: 'images/title1/5.png', id: 't15'},
+        {src: 'images/title1/6.png', id: 't16'},
+        {src: 'images/title1/7.png', id: 't17'},
+        {src: 'images/title1/8.png', id: 't18'},
+        {src: 'images/title1/9.png', id: 't19'},
+        {src: 'images/title1/10.png', id: 't110'},
+        {src: 'images/title1/11.png', id: 't111'},
+        {src: 'images/title1/12.png', id: 't112'},
+        {src: 'images/title1/13.png', id: 't113'},
+        {src: 'images/title1/14.png', id: 't114'},
+
+        {src: 'images/title2/0.png', id: 't20'},
+        {src: 'images/title2/1.png', id: 't21'},
+        {src: 'images/title2/2.png', id: 't22'},
+        {src: 'images/title2/3.png', id: 't23'},
+        {src: 'images/title2/4.png', id: 't24'},
+        {src: 'images/title2/5.png', id: 't25'},
+        {src: 'images/title2/6.png', id: 't26'},
+        {src: 'images/title2/7.png', id: 't27'},
+        {src: 'images/title2/8.png', id: 't28'},
+        {src: 'images/title2/9.png', id: 't29'},
+        {src: 'images/title2/10.png', id: 't210'},
+        {src: 'images/title2/11.png', id: 't211'},
+        {src: 'images/title2/12.png', id: 't212'},
+        {src: 'images/title2/13.png', id: 't213'},
+        {src: 'images/title2/14.png', id: 't214'},
+
+        {src: 'images/title3/0.png', id: 't30'},
+        {src: 'images/title3/1.png', id: 't31'},
+        {src: 'images/title3/2.png', id: 't32'},
+        {src: 'images/title3/3.png', id: 't33'},
+        {src: 'images/title3/4.png', id: 't34'},
+        {src: 'images/title3/5.png', id: 't35'},
+        {src: 'images/title3/6.png', id: 't36'},
+        {src: 'images/title3/7.png', id: 't37'},
+        {src: 'images/title3/8.png', id: 't38'},
+        {src: 'images/title3/9.png', id: 't39'},
+        {src: 'images/title3/10.png', id: 't310'},
+
+
+        {src: 'images/title4/0.png', id: 't40'},
+        {src: 'images/title4/1.png', id: 't41'},
+        {src: 'images/title4/2.png', id: 't42'},
+        {src: 'images/title4/3.png', id: 't43'},
+        {src: 'images/title4/4.png', id: 't44'},
+        {src: 'images/title4/5.png', id: 't45'},
+        {src: 'images/title4/6.png', id: 't46'},
+        {src: 'images/title4/7.png', id: 't47'},
+        {src: 'images/title4/8.png', id: 't48'},
+        {src: 'images/title4/9.png', id: 't49'},
+        {src: 'images/title4/10.png', id: 't410'},
+        {src: 'images/title4/11.png', id: 't411'},
+        {src: 'images/title4/12.png', id: 't412'}
 
     ];//预加载
     loader = new createjs.LoadQueue(false);
@@ -334,6 +412,19 @@ $(function () {
         quiz5(9);
     });
 
+    $('#checkBtn').tap(function () {
+        console.log("checkBtn查看按钮被激发。");
+        $('#slogan1').hide();
+        $('#slogan2').hide();
+        $('#flag').hide();
+        $('#check').hide();
+
+        $('#page7').show();
+
+        document.getElementById("secResult").innerHTML=second+"";
+        document.getElementById("minResult").innerHTML=minute+"";
+    });
+
     //page7 logic
     $('#wxShare').tap(function () {
        $('#share').show();
@@ -341,6 +432,14 @@ $(function () {
     $('#share').tap(function () {
         $('#share').hide();
     });
+    $('#founder').tap(function () {
+        console.log("founder被激发");
+        window.location.href='http://www.founder.com';
+    });
+    $('#retry').tap(function () {
+        console.log("retry被激发");
+        window.location.href='index.html';
+    })
 });
 
 
@@ -353,8 +452,9 @@ var train= new createjs.Bitmap("./images/train.png");
 var railway = new createjs.Bitmap("./images/railway.png");
 /*火车在屏幕中的高度占比，和真实的火车像素高度*/
 var original = w*0.275;
-var scale = original/203;
-var bgScaleY=h/1206;
+var scale = original/130;
+var bgScaleY=h/750;
+var bgScaleX=w/466;
 var positonY=0.489*w;
 
 //title的初始化
@@ -434,7 +534,8 @@ var  stage1=new createjs.Stage("canvas1");
 var  stage_bg1= new createjs.Stage('bg1');
 
 var  stage_fbg1= new createjs.Stage('fbg1');
-var  background1 = new createjs.Bitmap('./images/page1/bgt.png');
+// var  background1 = new createjs.Bitmap('./images/page1/bgt.png');
+var  background1 = new createjs.Bitmap('./images/page1/bgt1.png');
 var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
 
 function train1In() {
@@ -479,7 +580,7 @@ function Scene1In() {
     stage_bg1.canvas.width=h;
     stage_bg1.canvas.height=w;
     background1.scaleX=bgScaleY;
-    background1.scaleY=scale;
+    background1.scaleY=bgScaleX;
     background1.x=-5*h;
     background1.y=0;
     stage_bg1.addChild(background1);
@@ -503,6 +604,7 @@ function Scene3In() {
         .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         cloud();
+        signal();
     }
     console.log("Scene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
@@ -515,28 +617,13 @@ function Scene4In() {
     }
     console.log("Scene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
-
-/**
- * 出现了奇变
- */
 function Scene5In() {
-
-    stage_bg1.canvas.width=h;
-    stage_bg1.canvas.height=w;
-    background1.scaleX=bgScaleY;
-    background1.scaleY=scale;
-    background1.x=-2*h;
-    background1.y=0;
-    stage_bg1.addChild(background1);
-
-    createjs.Ticker.setFPS(ratio);
-    createjs.Ticker.on('tick',stage_bg1);
 
     createjs.Tween.get(background1, {loop: false})
         .to({x: -h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         money();
-        flower();
+         // flower();
     }
     console.log("Scene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
@@ -546,7 +633,7 @@ function Scene6In() {
     function handleComplete() {
         /*$('#flower').show();*/
         money2();
-        flower();
+        // flower();
     }
 
     console.log("Scene6In 的帧率："+createjs.Ticker.getMeasuredFPS());
@@ -558,7 +645,7 @@ function frontScene1In() {
     stage_fbg1.canvas.width=h;
     stage_fbg1.canvas.height=w;
     frontgrond1.scaleX=bgScaleY;
-    frontgrond1.scaleY=scale;
+    frontgrond1.scaleY=bgScaleX;
     frontgrond1.x=-5*h;
     frontgrond1.y=0;
     stage_fbg1.addChild(frontgrond1);
@@ -583,7 +670,7 @@ function frontScene3In() {
 }
 function frontScene4In() {
     $(".keys3").hide();
-    // $("#signal").hide();
+    $("#signal").hide();
     $("#cloud").hide();
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4));
@@ -624,7 +711,7 @@ function train2In(){
 }
 function train3In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -0.9*h}, 8500, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         // 第三页要显示的逻辑
         // signal();
@@ -636,7 +723,7 @@ function train3In(){
 }
 function train4In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -0.9*h}, 8500, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         // 第四页要显示的逻辑
         startTimer();
@@ -647,7 +734,7 @@ function train4In(){
 }
 function train5In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -0.9*h}, 8500, createjs.Ease.getPowInOut(1)).call(handleComplete);
+        .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(1)).call(handleComplete);
     function handleComplete() {
         // 第五页要显示的逻辑
         startTimer();
@@ -658,11 +745,19 @@ function train5In(){
 }
 function train6In(){
     createjs.Tween.get(train, {loop: false})
-        .to({x: -4*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+        .to({x: -3.5*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
     function handleComplete() {
         // 第六页要显示的逻辑
         $('#flag').addClass('mainIn');
         $('#slogan1').addClass('mainIn');
+
+        setTimeout(function () {
+            $('#slogan1').removeClass('mainIn');
+            $('#slogan1').addClass('fadeOut');
+
+            $('#slogan2').addClass('mainIn');
+            $('#check').addClass('mainIn');
+        },5000);
 
     }
 
@@ -800,8 +895,8 @@ function bubble(){
         framerate:1,
         images:['./images/page1/bubble.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:3
         },
         animations:{
@@ -813,7 +908,7 @@ function bubble(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     bubbleContainer.addChild(img1);
 
     // createjs.Ticker.setFPS(30);
@@ -837,8 +932,8 @@ function snow(){
         framerate:2,
         images:['./images/page2/snow1.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:3
         },
         animations:{
@@ -850,7 +945,7 @@ function snow(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     snowContainer.addChild(img1);
     // createjs.Ticker.setFPS(2);
     createjs.Ticker.on('tick',snowStage);
@@ -873,8 +968,8 @@ function cloud(){
         framerate:1,
         images:['./images/page3/cloud.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:3
         },
         animations:{
@@ -886,13 +981,13 @@ function cloud(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     cloudContainer.addChild(img1);
     // createjs.Ticker.setFPS(2);
     createjs.Ticker.on('tick',cloudStage);
 }
 
-/*var signalStage,
+var signalStage,
     signalCanvas,
     signalContainer;
 signalCanvas=document.getElementById('signal');
@@ -908,12 +1003,17 @@ function signal(){
         framerate:1,
         images:['./images/page3/signal.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:30
         },
         animations:{
-            anim : [0,29,'anim']
+            anim : [0,1,2,3,4,5,
+                0,1,2,3,4,5,
+                0,1,2,3,4,5,
+                0,1,2,3,4,5,
+                0,1,2,3,4,5,
+                0,1,2,3,4,5]
         }
 
     };
@@ -921,12 +1021,12 @@ function signal(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     signalContainer.addChild(img1);
 
     createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',signalStage);
-}*/
+}
 
 
 //page4 背景动效
@@ -947,8 +1047,8 @@ function heart(){
         framerate:2,
         images:['./images/page4/heart.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:3
         },
         animations:{
@@ -960,7 +1060,7 @@ function heart(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     heartContainer.addChild(img1);
     // createjs.Ticker.setFPS(2);
     createjs.Ticker.on('tick',heartStage);
@@ -985,8 +1085,8 @@ function flower(){
         framerate:2,
         images:['./images/page5/flower.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:3
         },
         animations:{
@@ -996,7 +1096,7 @@ function flower(){
     };
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     flowerContainer.addChild(img1);
     createjs.Ticker.on('tick',flowerStage);
 }
@@ -1016,8 +1116,8 @@ function money(){
         framerate:2,
         images:['./images/page5/money.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:2
         },
         animations:{
@@ -1028,7 +1128,7 @@ function money(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     moneyContainer.addChild(img1);
 
     // createjs.Ticker.setFPS(1);
@@ -1046,8 +1146,8 @@ function money2(){
         framerate:2,
         images:['./images/page6/money.png'],
         frames:{
-            width:1206,
-            height:750,
+            width:750,
+            height:466,
             count:2
         },
         animations:{
@@ -1058,7 +1158,7 @@ function money2(){
     var spriteSheet2 = new createjs.SpriteSheet(data);
     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
 
-    img1.set({x:0,y:0,scaleX: h/1206,scaleY:w/750 });
+    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
     moneyContainer.addChild(img1);
     // createjs.Ticker.setFPS(1);
     createjs.Ticker.on('tick',moneyStage);
