@@ -423,6 +423,8 @@ $(function () {
 
         document.getElementById("secResult").innerHTML=second+"";
         document.getElementById("minResult").innerHTML=minute+"";
+
+        resultAjax();
     });
 
     //page7 logic
@@ -1071,35 +1073,35 @@ var flowerStage,
     flowerCanvas,
     flowerContainer;
 
-function flower(){
-    console.log("flower 创建");
-    flowerCanvas=document.getElementById('flower');
-    flowerStage = new createjs.Stage(flowerCanvas);//创建舞台
-    flowerContainer= new createjs.Container();
-    flowerStage.addChild(flowerContainer);
-
-    flowerStage.canvas.width=h;
-    flowerStage.canvas.height=w;
-
-    var data ={
-        framerate:2,
-        images:['./images/page5/flower.png'],
-        frames:{
-            width:750,
-            height:466,
-            count:3
-        },
-        animations:{
-            anim : [0,2,'anim']
-        }
-
-    };
-    var spriteSheet2 = new createjs.SpriteSheet(data);
-    var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-    img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-    flowerContainer.addChild(img1);
-    createjs.Ticker.on('tick',flowerStage);
-}
+// function flower(){
+//     console.log("flower 创建");
+//     flowerCanvas=document.getElementById('flower');
+//     flowerStage = new createjs.Stage(flowerCanvas);//创建舞台
+//     flowerContainer= new createjs.Container();
+//     flowerStage.addChild(flowerContainer);
+//
+//     flowerStage.canvas.width=h;
+//     flowerStage.canvas.height=w;
+//
+//     var data ={
+//         framerate:2,
+//         images:['./images/page5/flower.png'],
+//         frames:{
+//             width:750,
+//             height:466,
+//             count:3
+//         },
+//         animations:{
+//             anim : [0,2,'anim']
+//         }
+//
+//     };
+//     var spriteSheet2 = new createjs.SpriteSheet(data);
+//     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+//     img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
+//     flowerContainer.addChild(img1);
+//     createjs.Ticker.on('tick',flowerStage);
+// }
 
 var moneyStage,
     moneyCanvas,
@@ -1574,4 +1576,117 @@ function playStart() {
 function playRun(){
     createjs.Sound.registerSound({src:"asset/audio/running.mp3", id:"run"});
     createjs.Sound.play("run");
+}
+
+/**********************************微信分享的部分功能 **********************************/
+var apiUrl = '上线地址';
+function resultAjax(){
+    /**
+     * 例如
+     * url :http://访问地址?min=500&second=1000
+     * data:min/second
+     * return:min:分钟 second:秒
+     * json:null({
+     * "resultCode":0,
+     * "resultMsg":"操作成功",
+     * "resultData":{"min":00,"sec":33}})
+     */
+    $.ajax({
+        type:'GET',
+        url:apiUrl,
+        data:{
+            'min':minute,
+            'sec':second
+        },
+        dataType:'jsonp',
+//            beforeSend:function(){
+//                $('.pageLoadBox').show();
+//            },
+        success:function(data){
+
+            if(data.resultCode == 0){//接口访问成功
+                var resMin = data.resultData.min;
+                var resSec = data.resultData.sec ;
+                var descContent = '我的方正号用时'+resMin+'分'+resSec+'秒开往春天，你也来试试吧！';
+                shareAjax(descContent);
+            }else{
+               console.log("get error");
+            }
+        },
+        error:function(){//错误提示
+            console.log("get error");
+        }
+    });//ajax end
+}
+var imgUrl = "./images/shareIcon.jpg";
+var lineLink = "http://.../index.html";
+var shareTitle = '车票无限供应！开往春天的方正号！';
+var appid = '';
+function getWXConfig(){
+    $.getJSON("http://api.caixin.com/wxsdk/wxconfig.php?url=" + encodeURIComponent(window.location.href) + "&callback=?",function(data){
+        wx.config({
+            debug: false,
+            appId: data.appId,
+            timestamp: data.timestamp,
+            nonceStr: data.nonceStr,
+            signature: data.signature,
+            jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","translateVoice","uploadVoice"]
+        });
+    });
+}
+
+function shareAjax(descContent){
+    getWXConfig();
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            title: shareTitle, // 分享标题
+            link: lineLink, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: shareTitle, // 分享标题
+            desc: descContent, // 分享描述
+            link: lineLink, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareQQ({
+            title: shareTitle, // 分享标题
+            desc: descContent, // 分享描述
+            link: lineLink, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareWeibo({
+            title: shareTitle, // 分享标题
+            desc: descContent, // 分享描述
+            link: lineLink, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    });
+    //微信api分享到朋友圈文字
 }
