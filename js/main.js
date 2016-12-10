@@ -1,5 +1,5 @@
 /**
- * Created by hakuh on 2016/11/28.
+ * Created by hakuh on 2016/11/29.
  */
 // 横屏设置，以及重力监听
 LGlobal={};
@@ -58,10 +58,16 @@ function setScreen(){
 }
 
 // Timer
-var minute=0,
-    time=0,
-    second=0;// 分 秒
+var minute,
+    time,
+    second;
+window.minute=0;
+window.second=0;
+window.time=0;
+
 var int;
+
+
 /*function resetTimer()//重置
 {
     window.clearInterval(int);
@@ -96,7 +102,6 @@ function stopTimer()//暂停
     window.clearInterval(int);
 }
 
-
 // 预加载逻辑
 window.onload=function(){
     manifest = [
@@ -105,6 +110,7 @@ window.onload=function(){
         {src: 'asset/audio/running.mp3', id: 'sona4'},
         {src: 'asset/audio/start.mp3', id: 'sona5'},
         {src: 'asset/audio/wrong.mp3', id: 'sona6'},
+        {src: 'asset/audio/bg.mp3', id: 'sona7'},
         {src: 'asset/font/timing-light.TTF', id: 'font1'},
         {src: 'asset/font/writing-light.TTF', id: 'font2'},
 
@@ -247,10 +253,12 @@ function handleFileProgress(){//加载中函数
     var percent=loader.progress*100|0+'%';
     document.getElementById('loadPercent').innerHTML=percent+"%";
 }
-
+var myAudio = new Audio('./asset/audio/bg.mp3');
+myAudio.loop = true;
 function handleComplete(){
     // 显示下一张图
     playStart();
+    myAudio.play();
     frontScene1In();
     Scene1In();
     bubble();
@@ -260,12 +268,13 @@ function handleComplete(){
 }
 
 
+myAudio.play();
 
 $(function () {
     //page1
     $("#hint").tap(function(){
         $("#hint").hide();
-        playRun();
+        // playRun();
         train1Enter();
     });
 
@@ -281,7 +290,7 @@ $(function () {
 
     //page2
     $('#key20').tap(function(){
-        console.log('#key20 点击了');
+        // console.log('#key20 点击了');
         quiz2(0);
     });
     $('#key21').tap(function(){
@@ -314,7 +323,7 @@ $(function () {
     //page3
 
     $('#key30').tap(function(){
-        console.log('#key30 点击了');
+        // console.log('#key30 点击了');
         quiz3(0);
     });
     $('#key31').tap(function(){
@@ -347,7 +356,7 @@ $(function () {
 
     //page4
     $('#key40').tap(function(){
-        console.log("key40 背点击");
+        // console.log("key40 背点击");
         quiz4(0);
 
     });
@@ -413,19 +422,21 @@ $(function () {
     });
 
     $('#checkBtn').tap(function () {
-        console.log("checkBtn查看按钮被激发。");
+        // console.log("checkBtn查看按钮被激发。");
         $('#slogan1').hide();
         $('#slogan2').hide();
         $('#flag').hide();
         $('#check').hide();
 
         $('#page7').show();
-
+        myAudio.pause();
         document.getElementById("secResult").innerHTML=second+"";
         document.getElementById("minResult").innerHTML=minute+"";
 
-        resultAjax();
+
+
     });
+
 
     //page7 logic
     $('#wxShare').tap(function () {
@@ -435,14 +446,16 @@ $(function () {
         $('#share').hide();
     });
     $('#founder').tap(function () {
-        console.log("founder被激发");
+        // console.log("founder被激发");
         window.location.href='http://www.founder.com';
     });
     $('#retry').tap(function () {
-        console.log("retry被激发");
+        // console.log("retry被激发");
         window.location.href='index.html';
     })
 });
+
+
 
 
 /*****************************************火车的动效*********************************/
@@ -564,7 +577,7 @@ function train1In() {
         $("#hint").show();
     }
 
-    console.log("train1In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("train1In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function train1Enter() {
     createjs.Tween.get(train, {loop: false})
@@ -578,7 +591,7 @@ function train1Enter() {
 }
 
 function Scene1In() {
-    console.log("背景一创建");
+    // console.log("背景一创建");
     stage_bg1.canvas.width=h;
     stage_bg1.canvas.height=w;
     background1.scaleX=bgScaleY;
@@ -589,7 +602,7 @@ function Scene1In() {
 
     createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',stage_bg1);
-    console.log("Scene1In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("Scene1In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene2In() {
 
@@ -598,7 +611,7 @@ function Scene2In() {
     function handleComplete() {
         snow();
     }
-    console.log("Scene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("Scene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene3In() {
 
@@ -608,7 +621,7 @@ function Scene3In() {
         cloud();
         signal();
     }
-    console.log("Scene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("Scene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene4In() {
 
@@ -617,7 +630,7 @@ function Scene4In() {
     function handleComplete() {
         heart();
     }
-    console.log("Scene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("Scene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene5In() {
 
@@ -627,7 +640,7 @@ function Scene5In() {
         money();
          // flower();
     }
-    console.log("Scene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("Scene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function Scene6In() {
     createjs.Tween.get(background1, {loop: false})
@@ -638,12 +651,12 @@ function Scene6In() {
         // flower();
     }
 
-    console.log("Scene6In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("Scene6In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 
 
 function frontScene1In() {
-    console.log("前景一创建");
+    // console.log("前景一创建");
     stage_fbg1.canvas.width=h;
     stage_fbg1.canvas.height=w;
     frontgrond1.scaleX=bgScaleY;
@@ -660,7 +673,7 @@ function frontScene2In() {
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4));
 
-    console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function frontScene3In() {
     $(".keys2").hide();
@@ -668,7 +681,7 @@ function frontScene3In() {
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4));
 
-    console.log("frontScene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("frontScene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function frontScene4In() {
     $(".keys3").hide();
@@ -677,7 +690,7 @@ function frontScene4In() {
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4));
 
-    console.log("frontScene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("frontScene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
 
 }
 function frontScene5In() {
@@ -687,18 +700,27 @@ function frontScene5In() {
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: -h}, 6000, createjs.Ease.getPowInOut(4));
 
-    console.log("frontScene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("frontScene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function frontScene6In() {
     $(".keys5").hide();
     // $("#flower").hide();
     $("#money").hide();
     $(".timer").hide();
-    console.log("前景6进入，timer隐藏："+minute+':'+second);
+
+    /**
+     * weixin Interface
+     * 微信接口
+     */
+    shareAjax();
+
+
+     console.log("前景6进入，timer隐藏："+minute+':'+second);
     createjs.Tween.get(frontgrond1, {loop: false})
         .to({x: 0}, 6000, createjs.Ease.getPowInOut(4));
-    console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
+
 
 function train2In(){
     createjs.Tween.get(train, {loop: false})
@@ -743,7 +765,7 @@ function train5In(){
         $('.keys5').addClass('mainIn');
     }
 
-    console.log("train5In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("train5In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
 function train6In(){
     createjs.Tween.get(train, {loop: false})
@@ -763,9 +785,8 @@ function train6In(){
 
     }
 
-    console.log("train6In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // console.log("train6In 的帧率："+createjs.Ticker.getMeasuredFPS());
 }
-
 
 var  stageTitle1=new createjs.Stage("title1");
 var  stageTitle2=new createjs.Stage("title2");
@@ -782,7 +803,7 @@ function title1In() {
     TweenIn1Title(arrTitle1);
 }
 function title1Out() {
-    console.log("title1out 被调用");
+    // console.log("title1out 被调用");
 
     TweenOutTitle(arrTitle1);
     createjs.Tween.get(Title1_14, {loop: false})
@@ -887,7 +908,7 @@ var bubbleStage,
     bubbleContainer;
 bubbleCanvas=document.getElementById('bubble');
 function bubble(){
-    console.log("bubble canvas 创建");
+    // console.log("bubble canvas 创建");
     bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
     bubbleContainer= new createjs.Container();
     bubbleStage.addChild(bubbleContainer);
@@ -923,7 +944,7 @@ var img,snowStage,
     snowContainer;
     snowCanvas=document.getElementById('snow');
 function snow(){
-    console.log("snow canvas 创建成功");
+    // console.log("snow canvas 创建成功");
     snowStage = new createjs.Stage(snowCanvas);//创建舞台
     snowContainer= new createjs.Container();
     snowStage.addChild(snowContainer);
@@ -959,7 +980,7 @@ var cloudStage,
     cloudContainer;
 cloudCanvas=document.getElementById('cloud');
 function cloud(){
-    console.log("cloud创建");
+    // console.log("cloud创建");
     cloudStage = new createjs.Stage(cloudCanvas);//创建舞台
     cloudContainer= new createjs.Container();
     cloudStage.addChild(cloudContainer);
@@ -994,7 +1015,7 @@ var signalStage,
     signalContainer;
 signalCanvas=document.getElementById('signal');
 function signal(){
-    console.log("signal 创建");
+    // console.log("signal 创建");
     signalStage = new createjs.Stage(signalCanvas);//创建舞台
     signalContainer= new createjs.Container();
     signalStage.addChild(signalContainer);
@@ -1037,7 +1058,7 @@ var heartStage,
     heartContainer;
 heartCanvas=document.getElementById('heart');
 function heart(){
-    console.log("heart 创建");
+    // console.log("heart 创建");
     heartStage = new createjs.Stage(heartCanvas);//创建舞台
     heartContainer= new createjs.Container();
     heartStage.addChild(heartContainer);
@@ -1068,40 +1089,6 @@ function heart(){
     createjs.Ticker.on('tick',heartStage);
 }
 
-//page5 背景动效
-var flowerStage,
-    flowerCanvas,
-    flowerContainer;
-
-// function flower(){
-//     console.log("flower 创建");
-//     flowerCanvas=document.getElementById('flower');
-//     flowerStage = new createjs.Stage(flowerCanvas);//创建舞台
-//     flowerContainer= new createjs.Container();
-//     flowerStage.addChild(flowerContainer);
-//
-//     flowerStage.canvas.width=h;
-//     flowerStage.canvas.height=w;
-//
-//     var data ={
-//         framerate:2,
-//         images:['./images/page5/flower.png'],
-//         frames:{
-//             width:750,
-//             height:466,
-//             count:3
-//         },
-//         animations:{
-//             anim : [0,2,'anim']
-//         }
-//
-//     };
-//     var spriteSheet2 = new createjs.SpriteSheet(data);
-//     var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-//     img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-//     flowerContainer.addChild(img1);
-//     createjs.Ticker.on('tick',flowerStage);
-// }
 
 var moneyStage,
     moneyCanvas,
@@ -1544,15 +1531,6 @@ function checkPasscode5(key,password,arr) {
     }
 }
 
-/*function resetAll() {
-    Title1.visible=true;
-    Title1_r.visible=false;
-
-    Title2.visible=true;
-    Title2_r.visible=false;
-    enteredPass = [];
-    console.log("清零了请重新输入");
-}*/
 
 /*****************************************声音播放********************************/
 function playWrong() {
@@ -1579,69 +1557,82 @@ function playRun(){
 }
 
 /**********************************微信分享的部分功能 **********************************/
-var apiUrl = '上线地址';
-function resultAjax(){
-    /**
-     * 例如
-     * url :http://访问地址?min=500&second=1000
-     * data:min/second
-     * return:min:分钟 second:秒
-     * json:null({
-     * "resultCode":0,
-     * "resultMsg":"操作成功",
-     * "resultData":{"min":00,"sec":33}})
-     */
-    $.ajax({
-        type:'GET',
-        url:apiUrl,
-        data:{
-            'min':minute,
-            'sec':second
-        },
-        dataType:'jsonp',
-//            beforeSend:function(){
-//                $('.pageLoadBox').show();
-//            },
-        success:function(data){
 
-            if(data.resultCode == 0){//接口访问成功
-                var resMin = data.resultData.min;
-                var resSec = data.resultData.sec ;
-                var descContent = '我的方正号用时'+resMin+'分'+resSec+'秒开往春天，你也来试试吧！';
-                shareAjax(descContent);
-            }else{
-               console.log("get error");
+/**
+ * WeChat();为测试服代码
+ * getWXconfig()为正式服，上到财新平台请屏蔽代码
+ */
+window.addEventListener('load',function () {
+    WeChat();
+    //getWXConfig();
+})
+
+function WeChat() {
+    $.ajax(
+        {type:'get',
+            url:'ajax_getconfig.php',
+            success:function(data){
+                console.log("ajax success:"+data);
+                console.log("ajax success:"+JSON.parse(data).appId);
+                console.log("ajax success:"+JSON.parse(data).timestamp);
+                console.log("ajax success:"+JSON.parse(data).nonceStr);
+                console.log("ajax success:"+JSON.parse(data).signature);
+
+                wx.config({
+                    debug: false,
+                    appId:JSON.parse(data).appId,
+                    timestamp: JSON.parse(data).timestamp,
+                    nonceStr: JSON.parse(data).nonceStr,
+                    signature: JSON.parse(data).signature,
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',//
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo'
+
+                    ]
+                });
+
             }
-        },
-        error:function(){//错误提示
-            console.log("get error");
-        }
-    });//ajax end
-}
-var imgUrl = "./images/shareIcon.jpg";
-var lineLink = "http://.../index.html";
-var shareTitle = '车票无限供应！开往春天的方正号！';
-var appid = '';
-function getWXConfig(){
-    $.getJSON("http://api.caixin.com/wxsdk/wxconfig.php?url=" + encodeURIComponent(window.location.href) + "&callback=?",function(data){
-        wx.config({
-            debug: false,
-            appId: data.appId,
-            timestamp: data.timestamp,
-            nonceStr: data.nonceStr,
-            signature: data.signature,
-            jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","translateVoice","uploadVoice"]
         });
-    });
-}
 
-function shareAjax(descContent){
-    getWXConfig();
+}
+/**
+ * caixin wx
+ * 上到服务器之前，注意检查debug:false,是否为false，
+ * 如果需要调试开true会有弹框信息出现
+ */
+function getWXConfig(){
+        $.getJSON("http://api.caixin.com/wxsdk/wxconfig.php?url=" + encodeURIComponent(window.location.href) + "&callback=?",function(data){
+            wx.config({
+                debug: false,
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.nonceStr,
+                signature: data.signature,
+                jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","translateVoice","uploadVoice"]
+            });
+        });
+    }
+
+
+function shareAjax(){
+    /**
+     * url需要更改为正式服务器的地址
+     */
+    var url="http://weixin.assemblemedia.cn/founder/";
+    var imageUrl=url+"images/shareIcon.jpg";
+    var sharetitle='车票无限供应！开往春天的方正号！';
+    var sharedesc="您一共使用了"+window.minute+"分"+window.second+"秒到达春天!";
+    var shareLink=url+'index.html';
+
     wx.ready(function(){
         wx.onMenuShareTimeline({
-            title: shareTitle, // 分享标题
-            link: lineLink, // 分享链接
-            imgUrl: imgUrl, // 分享图标
+            title:sharetitle+sharedesc, // 分享标题
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
@@ -1650,10 +1641,10 @@ function shareAjax(descContent){
             }
         });
         wx.onMenuShareAppMessage({
-            title: shareTitle, // 分享标题
-            desc: descContent, // 分享描述
-            link: lineLink, // 分享链接
-            imgUrl: imgUrl, // 分享图标
+            title: sharetitle, // 分享标题
+            desc: sharedesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {
@@ -1664,10 +1655,10 @@ function shareAjax(descContent){
             }
         });
         wx.onMenuShareQQ({
-            title: shareTitle, // 分享标题
-            desc: descContent, // 分享描述
-            link: lineLink, // 分享链接
-            imgUrl: imgUrl, // 分享图标
+            title: sharetitle, // 分享标题
+            desc: sharedesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
@@ -1676,10 +1667,10 @@ function shareAjax(descContent){
             }
         });
         wx.onMenuShareWeibo({
-            title: shareTitle, // 分享标题
-            desc: descContent, // 分享描述
-            link: lineLink, // 分享链接
-            imgUrl: imgUrl, // 分享图标
+            title: sharetitle, // 分享标题
+            desc: sharedesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
@@ -1688,5 +1679,6 @@ function shareAjax(descContent){
             }
         });
     });
-    //微信api分享到朋友圈文字
-}
+
+ }
+
