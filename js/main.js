@@ -253,12 +253,14 @@ function handleFileProgress(){//加载中函数
     var percent=loader.progress*100|0+'%';
     document.getElementById('loadPercent').innerHTML=percent+"%";
 }
-var myAudio = new Audio('./asset/audio/bg.mp3');
-myAudio.loop = true;
+// var myAudio = new Audio('./asset/audio/bg.mp3');
+// myAudio.loop = true;
 function handleComplete(){
     // 显示下一张图
-    playStart();
-    myAudio.play();
+    //audio_bg.play();
+    //audio_start.play();
+    //playStart();
+    //myAudio.play();
     frontScene1In();
     Scene1In();
     bubble();
@@ -268,7 +270,7 @@ function handleComplete(){
 }
 
 
-myAudio.play();
+//myAudio.play();
 
 $(function () {
     //page1
@@ -1542,6 +1544,7 @@ function checkPasscode5(key,password,arr) {
 
 
 /*****************************************声音播放********************************/
+
 function playWrong() {
     createjs.Sound.registerSound({src:"asset/audio/wrong.mp3", id:"wrong"});
     createjs.Sound.play("wrong");
