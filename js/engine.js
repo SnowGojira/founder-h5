@@ -10,10 +10,11 @@ Sound.prototype.render = function () {
     this.audio = new Audio();
     this.audio.loop = this.loop;
     this.audio.src = this.src;
-    document.body.appendChild(this.audio);
+    document.body.prepend(this.audio);
 };
 
 Sound.prototype.play = function () {
+    console.log("sound play is triggered");
     if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {  // IOS
         WeixinJSBridge.invoke('getNetworkType', {}, function (res) {
 
@@ -23,6 +24,7 @@ Sound.prototype.play = function () {
         this.audio.play();
     }
 };
+
 
 
 ///////////////////////Instantiate Objects/////////////////////////////
@@ -35,5 +37,12 @@ var audio_wrong = new Audio("asset/audio/wrong.mp3","wrong"),
 
 (function () {
     audio_bg.render();
-    audio_bg.play();
+    audio_start.render();
+
 })();
+
+$("body").tap(function(){
+    console.log('body on click');
+    //audio_bg.Play();
+    audio_start.play();
+});

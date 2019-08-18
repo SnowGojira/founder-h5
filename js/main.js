@@ -257,6 +257,8 @@ function handleFileProgress(){//加载中函数
 // myAudio.loop = true;
 function handleComplete(){
     // 显示下一张图
+
+
     //audio_bg.play();
     //audio_start.play();
     //playStart();
