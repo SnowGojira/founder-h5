@@ -35,11 +35,13 @@ var audio_wrong = new Audio("asset/audio/wrong.mp3","wrong"),
     audio_run = new Audio("asset/audio/running.mp3", "run"),
     audio_bg = new Sound('asset/audio/bg.mp3',"bg");
 
-(function () {
-    audio_bg.render();
-    audio_start.render();
-
-})();
+audio_start.render();
+//audio_start.play();
+// (function () {
+//     audio_bg.render();
+//     audio_start.render();
+//
+// })();
 
 $("body").tap(function(){
     console.log('body on click');
