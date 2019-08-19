@@ -61,7 +61,7 @@
         //page1
         $("#hint").on('click',function(){
             $("#hint").hide();
-            // playRun();
+            audio_run.play();
             train1Enter();
         });
 
@@ -339,16 +339,7 @@
 // var  background1 = new createjs.Bitmap('./images/page1/bgt.png');
     var  background1 = new createjs.Bitmap('./images/page1/bgt1.png');
     var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
-    var Train = function (){
 
-    };
-    Train.prototype.enter = function(){
-
-    };
-
-    Train.prototype.leave = function(){
-
-    };
     function train1In() {
         stage1.canvas.width=h;
         stage1.canvas.height=w;
@@ -451,7 +442,6 @@
 
         // console.log("Scene6In 的帧率："+createjs.Ticker.getMeasuredFPS());
     }
-
 
     function frontScene1In() {
         // console.log("前景一创建");
