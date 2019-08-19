@@ -1,54 +1,47 @@
 //the logic going here
 
-function Sound (src,loop){
-    this.src = src;
-    this.loop = loop;
-    this.audio;
+function Sound (id_str,muted){
+    this.id = id_str;
+    this.muted = muted;
 }
 
-Sound.prototype.render = function () {
-    this.audio = new Audio();
-    this.audio.loop = this.loop;
-    this.audio.src = this.src;
-    document.body.prepend(this.audio);
-};
 
 Sound.prototype.play = function () {
-    console.log("sound play is triggered"+ this.audio);
-    (function (audio){
-        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {  // IOS
-            WeixinJSBridge.invoke('getNetworkType', {}, function (res) {
+    console.log("sound play is triggered "+ this.id+" "+this.muted);
+    let audio = document.getElementById(this.id);
+    audio.muted = this.muted;
 
-                audio.play();
-            });
-        }else{  // Android
-            audio.play();
-        }
-    })(this.audio);
+    if(audio){
+        audio.play().catch(e => console.log(e));
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play().catch(e => console.log(e));
+        }, false);
+    }
+
 };
 
 
 
 ///////////////////////Instantiate Objects/////////////////////////////
-var audio_wrong = new Sound("asset/audio/wrong.mp3",false),
-    audio_right = new Sound("asset/audio/right.mp3", false),
-    audio_out = new Sound("asset/audio/out.mp3", false),
-    audio_start = new Sound("asset/audio/start.mp3", false),
-    audio_run = new Sound("asset/audio/running.mp3", false),
-    audio_bg = new Sound('asset/audio/bg.mp3',true);
-var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
+var audio_wrong = new Sound('audio_wrong'),
+    audio_right = new Sound('audio_right'),
+    audio_out = new Sound('audio_out'),
+    audio_start = new Sound('audio_start',false),
+    audio_run = new Sound('audio_running'),
+    audio_bg = new Sound('audio_bg');
+// var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
 
 preload();
-renderAudios();
+// renderAudios();
 ////////////////////////functions' reference//////////////////////////////
-function renderAudios (){
-     audioArr.forEach(function (audio) {
-         audio.render();
-     });
-};
+// function renderAudios (){
+//      audioArr.forEach(function (audio) {
+//          audio.render();
+//      });
+// };
 
 function preload(){
-    manifest = [
+    let manifest = [
         {src: 'asset/audio/out.mp3', id: 'sona2'},
         {src: 'asset/audio/right.mp3', id: 'sona3'},
         {src: 'asset/audio/running.mp3', id: 'sona4'},
@@ -195,7 +188,7 @@ function preload(){
 };
 /***************************************按钮点击，逻辑激发*********************************/
 function handleFileProgress(){//加载中函数
-    var percent=loader.progress*100|0+'%';
+    let percent=loader.progress*100|0+'%';
     $('loadPercent').innerHTML=percent+"%";
 }
 
@@ -203,7 +196,7 @@ function handleComplete(){
     // 显示下一张图
     console.log("preload finished");
     //audio_bg.play();
-    audio_start.play();
+
     //playStart();
     //myAudio.play();
     //frontScene1In();
@@ -214,7 +207,12 @@ function handleComplete(){
     $('#page1').show();
 }
 
-
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('domcontentloaded is trigered');
+    // var context = new AudioContext();
+    //audio_start.muted = false;
+    //audio_start.play();
+});
 
 $("body").on('click',function(){
     console.log('body on click');
