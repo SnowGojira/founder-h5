@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/engine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-    </list>
+    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="" />
     <ignored path="founder-h5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -346,7 +342,7 @@
       <workItem from="1565965851027" duration="1536000" />
       <workItem from="1566035255701" duration="8061000" />
       <workItem from="1566203746686" duration="3804000" />
-      <workItem from="1566212916976" duration="1625000" />
+      <workItem from="1566212916976" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -618,7 +614,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341851000" />
+    <option name="totallyTimeSpent" value="342019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="27" y="73" width="1323" height="682" extended-state="0" />
