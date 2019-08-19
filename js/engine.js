@@ -1,15 +1,14 @@
 //the logic going here
 
-function Sound (id_str,muted){
+function Sound (id_str){
     this.id = id_str;
-    this.muted = muted;
 }
 
 
 Sound.prototype.play = function () {
-    console.log("sound play is triggered "+ this.id+" "+this.muted);
+    console.log("sound play is triggered "+ this.id);
     let audio = document.getElementById(this.id);
-    audio.muted = this.muted;
+    // audio.muted = this.muted;
 
     if(audio){
         audio.play().catch(e => console.log(e));
@@ -26,7 +25,7 @@ Sound.prototype.play = function () {
 var audio_wrong = new Sound('audio_wrong'),
     audio_right = new Sound('audio_right'),
     audio_out = new Sound('audio_out'),
-    audio_start = new Sound('audio_start',false),
+    audio_start = new Sound('audio_start'),
     audio_run = new Sound('audio_running'),
     audio_bg = new Sound('audio_bg');
 // var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
@@ -191,20 +190,22 @@ function handleFileProgress(){//加载中函数
     let percent=loader.progress*100|0+'%';
     $('loadPercent').innerHTML=percent+"%";
 }
-
+//todo the bgm will trigger DOMexceptions because of the new chrome policies
 function handleComplete(){
     // 显示下一张图
     console.log("preload finished");
     //audio_bg.play();
-
+    setTimeout((function () {
+        audio_start.play()
+    })(),1000);
     //playStart();
     //myAudio.play();
-    //frontScene1In();
-    //Scene1In();
-    //bubble();
-    //train1In();
+    frontScene1In();
+    Scene1In();
+    bubble();
+    train1In();
     $('#pageLoad').hide();
-    $('#page1').show();
+    $('#pageStage').show();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

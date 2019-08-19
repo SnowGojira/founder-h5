@@ -27,13 +27,13 @@ $signPackage = $jssdk->GetSignPackage();
 </head>
 <body>
 <!--audio-->
-<iframe src="asset/audio/start.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<!--<iframe src="asset/audio/start.mp3" allow="autoplay" id="audio" style="display:none"></iframe>-->
 <!--<audio id="audio_bg"  preload loop src="asset/audio/bg.mp3"></audio>-->
-<!--<audio id="audio_out"  preload src="asset/audio/out.mp3"></audio>-->
-<!--<audio id="audio_right"  preload src="asset/audio/right.mp3"></audio>-->
-<!--<audio id="audio_running"  preload src="asset/audio/running.mp3"></audio>-->
-<!--<audio id="audio_start"  autoplay muted src="asset/audio/start.mp3"></audio>-->
-<!--<audio id="audio_wrong"  preload src="asset/audio/wrong.mp3"></audio>-->
+<audio id="audio_out"  preload src="asset/audio/out.mp3"></audio>
+<audio id="audio_right"  preload src="asset/audio/right.mp3"></audio>
+<audio id="audio_running"  preload src="asset/audio/running.mp3"></audio>
+<audio id="audio_start" src="asset/audio/start.mp3"></audio>
+<audio id="audio_wrong"  preload src="asset/audio/wrong.mp3"></audio>
 
 <!--lock_screen-->
 <div class="lock none" >
@@ -44,7 +44,7 @@ $signPackage = $jssdk->GetSignPackage();
 <div class="page pageBox">
 
     <!--loading-->
-    <div  id="pageLoad">
+    <div  id="pageLoad" >
 
         <div class="page-loading animLoad">
             <img src="images/loading/load.gif">
@@ -53,7 +53,7 @@ $signPackage = $jssdk->GetSignPackage();
 
     </div>
     <!--page1-->
-    <div  id="page1" class="none" >
+    <div id="pageStage" class="none" >
         <div class="bg bg1">
             <canvas id="bg1"></canvas>
         </div>

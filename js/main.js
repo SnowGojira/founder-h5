@@ -368,7 +368,9 @@
         createjs.Ticker.on('tick',stage1);
         createjs.Tween.get(train, {loop: false})
             .to({x: h*3/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+
         function handleComplete() {
+            console.log("hint show or not?");
             $("#hint").show();
         }
 
@@ -503,11 +505,6 @@
         $("#money").hide();
         $(".timer").hide();
 
-        /**
-         * weixin Interface
-         * 微信接口
-         */
-        shareAjax();
 
 
         console.log("前景6进入，timer隐藏："+minute+':'+second);
