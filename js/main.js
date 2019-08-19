@@ -56,6 +56,7 @@
 
 //myAudio.play();
 
+//events' logic
     $(function () {
         //page1
         $("#hint").on('click',function(){
@@ -75,139 +76,139 @@
         });
 
         //page2
-        $('#key20').tap(function(){
+        $('#key20').on('click',function(){
             // console.log('#key20 点击了');
             quiz2(0);
         });
-        $('#key21').tap(function(){
+        $('#key21').on('click',function(){
             quiz2(1);
         });
-        $('#key22').tap(function(){
+        $('#key22').on('click',function(){
             quiz2(2);
         });
-        $('#key23').tap(function(){
+        $('#key23').on('click',function(){
             quiz2(3);
         });
-        $('#key24').tap(function(){
+        $('#key24').on('click',function(){
             quiz2(4);
         });
-        $('#key25').tap(function(){
+        $('#key25').on('click',function(){
             quiz2(5);
         });
-        $('#key26').tap(function(){
+        $('#key26').on('click',function(){
             quiz2(6);
         });
-        $('#key27').tap(function(){
+        $('#key27').on('click',function(){
             quiz2(7);
         });
-        $('#key28').tap(function(){
+        $('#key28').on('click',function(){
             quiz2(8);
         });
-        $('#key29').tap(function(){
+        $('#key29').on('click',function(){
             quiz2(9);
         });
         //page3
 
-        $('#key30').tap(function(){
+        $('#key30').on('click',function(){
             // console.log('#key30 点击了');
             quiz3(0);
         });
-        $('#key31').tap(function(){
+        $('#key31').on('click',function(){
             quiz3(1);
         });
-        $('#key32').tap(function(){
+        $('#key32').on('click',function(){
             quiz3(2);
         });
-        $('#key33').tap(function(){
+        $('#key33').on('click',function(){
             quiz3(3);
         });
-        $('#key34').tap(function(){
+        $('#key34').on('click',function(){
             quiz3(4);
         });
-        $('#key35').tap(function(){
+        $('#key35').on('click',function(){
             quiz3(5);
         });
-        $('#key36').tap(function(){
+        $('#key36').on('click',function(){
             quiz3(6);
         });
-        $('#key37').tap(function(){
+        $('#key37').on('click',function(){
             quiz3(7);
         });
-        $('#key38').tap(function(){
+        $('#key38').on('click',function(){
             quiz3(8);
         });
-        $('#key39').tap(function(){
+        $('#key39').on('click',function(){
             quiz3(9);
         });
 
         //page4
-        $('#key40').tap(function(){
+        $('#key40').on('click',function(){
             // console.log("key40 背点击");
             quiz4(0);
 
         });
-        $('#key41').tap(function(){
+        $('#key41').on('click',function(){
             quiz4(1);
         });
-        $('#key42').tap(function(){
+        $('#key42').on('click',function(){
             quiz4(2);
         });
-        $('#key43').tap(function(){
+        $('#key43').on('click',function(){
             quiz4(3);
         });
-        $('#key44').tap(function(){
+        $('#key44').on('click',function(){
             quiz4(4);
         });
-        $('#key45').tap(function(){
+        $('#key45').on('click',function(){
             quiz4(5);
         });
-        $('#key46').tap(function(){
+        $('#key46').on('click',function(){
             quiz4(6);
         });
-        $('#key47').tap(function(){
+        $('#key47').on('click',function(){
             quiz4(7);
         });
-        $('#key48').tap(function(){
+        $('#key48').on('click',function(){
             quiz4(8);
         });
-        $('#key49').tap(function(){
+        $('#key49').on('click',function(){
             quiz4(9);
         });
 
 
         //page5
-        $('#key50').tap(function(){
+        $('#key50').on('click',function(){
             quiz5(0);
         });
-        $('#key51').tap(function(){
+        $('#key51').on('click',function(){
             quiz5(1);
         });
-        $('#key52').tap(function(){
+        $('#key52').on('click',function(){
             quiz5(2);
         });
-        $('#key53').tap(function(){
+        $('#key53').on('click',function(){
             quiz5(3);
         });
-        $('#key54').tap(function(){
+        $('#key54').on('click',function(){
             quiz5(4);
         });
-        $('#key55').tap(function(){
+        $('#key55').on('click',function(){
             quiz5(5);
         });
-        $('#key56').tap(function(){
+        $('#key56').on('click',function(){
             quiz5(6);
         });
-        $('#key57').tap(function(){
+        $('#key57').on('click',function(){
             quiz5(7);
         });
-        $('#key58').tap(function(){
+        $('#key58').on('click',function(){
             quiz5(8);
         });
-        $('#key59').tap(function(){
+        $('#key59').on('click',function(){
             quiz5(9);
         });
 
-        $('#checkBtn').tap(function () {
+        $('#checkBtn').on('click',function () {
             // console.log("checkBtn查看按钮被激发。");
             $('#slogan1').hide();
             $('#slogan2').hide();
@@ -225,17 +226,17 @@
 
 
         //page7 logic
-        $('#wxShare').tap(function () {
+        $('#wxShare').on('click',function () {
             $('#share').show();
         });
-        $('#share').tap(function () {
+        $('#share').on('click',function () {
             $('#share').hide();
         });
-        $('#founder').tap(function () {
+        $('#founder').on('click',function () {
             // console.log("founder被激发");
             window.location.href='http://www.founder.com';
         });
-        $('#retry').tap(function () {
+        $('#retry').on('click',function () {
             // console.log("retry被激发");
             window.location.href='index.html';
         })

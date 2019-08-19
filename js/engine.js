@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //audio_start.play();
 });
 
-$("body").on('click',function(){
+$("body").on('click'',function(){
     console.log('body on click');
     //audio_bg.Play();
     audio_start.play();
