@@ -1,18 +1,23 @@
 //global variable
-var   w = document.documentElement.clientWidth,
+const w = document.documentElement.clientWidth,
       h = document.documentElement.clientHeight;
 
-var   original = w*0.275,
+const original = w*0.275,
+      ratio = 45,
       scale = original/130,
-      positonY=0.489*w;
+      positonY=0.489*w,
+      bgScaleY=h/750,
+      bgScaleX=w/466;
 //train's stop locations
-const loc_1 = {x:h*3/4, b:8000};
+const train_loc_1 = {x:h*3/4, b:8000};
+const train_loc_2 = {x:10, b:4000};
+
+
 //the logic going here
 
 function Sound (id_str){
     this.id = id_str;
 }
-
 
 Sound.prototype.play = function () {
     console.log("sound play is triggered "+ this.id);
@@ -30,6 +35,7 @@ Sound.prototype.play = function () {
     }
 };
 
+//train
 var Train = function (){
     this.train = new createjs.Bitmap("./images/train.png");
     this.railway = new createjs.Bitmap("./images/railway.png");
@@ -57,11 +63,46 @@ Train.prototype.render = function(){
     this.stage.addChild(this.railway);
     this.stage.addChild(this.train);
 
-    createjs.Ticker.setFPS(45);
+    createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',this.stage);
 };
 
+//scene
+function Scene(url){
+    this.stage = new createjs.Stage('bg1');
+    this.background = new createjs.Bitmap(url);
+}
 
+Scene.prototype.render = function(){
+    this.stage.canvas.width=h;
+    this.stage.canvas.height=w;
+    this.background.scaleX=bgScaleY;
+    this.background.scaleY=bgScaleX;
+    this.background.x=-5*h;
+    this.background.y=0;
+
+    this.stage.addChild(this.background);
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',this.stage);
+};
+
+Scene.prototype.update = function(x,b,callback){
+    createjs.Tween.get(this.background, {loop: false})
+        .to({x: x}, b, createjs.Ease.getPowInOut(4)).call(callback);
+};
+
+function frontScene1In() {
+    // console.log("前景一创建");
+    stage_fbg1.canvas.width=h;
+    stage_fbg1.canvas.height=w;
+    frontgrond1.scaleX=bgScaleY;
+    frontgrond1.scaleY=bgScaleX;
+    frontgrond1.x=-5*h;
+    frontgrond1.y=0;
+    stage_fbg1.addChild(frontgrond1);
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',stage_fbg1);
+}
 
 ///////////////////////Instantiate Objects/////////////////////////////
 var audio_wrong = new Sound('audio_wrong'),
@@ -71,7 +112,8 @@ var audio_wrong = new Sound('audio_wrong'),
     audio_run = new Sound('audio_running'),
     audio_bg = new Sound('audio_bg'),
 
-    express = new Train();
+    speed_train = new Train(),
+    back_scene = new Scene('./images/page1/bgt1.png');
 
 // var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
 

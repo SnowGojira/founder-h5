@@ -58,22 +58,17 @@ function handleFileProgress(){
 function handleComplete(){
     // 显示下一张图
     console.log("preload finished");
-    //audio_bg.play();
-
-    audio_start.play();
-    //playStart();
-    //myAudio.play();
 
     frontScene1In();
-    Scene1In();
+    //Scene1In();
+    back_scene.render();
     bubble();
-    express.render();
-    express.update(loc_1.x,loc_1.b,function () {
+    speed_train.render();
+    speed_train.update(train_loc_1.x,train_loc_1.b,function () {
         console.log("hint show or not?");
         $("#hint").show();
     });
 
-    //train1In();
     $('#pageLoad').hide();
     $('#pageStage').show();
 }
@@ -83,207 +78,209 @@ function handleComplete(){
 //myAudio.play();
 
 //events' logic
-    $(function () {
-        //page1
-        $("#hint").on('click',function(){
-            $("#hint").hide();
-            audio_run.play();
-            train1Enter();
+$(function () {
+    //page1
+    $("#hint").on('click', function () {
+        $("#hint").hide();
+        audio_run.play();
+        speed_train.update(train_loc_2.x, train_loc_2.b, function () {
+            $("#title").addClass('mainIn');
+            $("#startBtn").addClass('mainIn');
         });
-
-        $("#startBtn").on('click',function () {
-            /*console.log()*/
-            playOut();
-            Scene2In();
-            frontScene2In();
-            train2In();
-            title1In();
-
-        });
-
-        //page2
-        $('#key20').on('click',function(){
-            // console.log('#key20 点击了');
-            quiz2(0);
-        });
-        $('#key21').on('click',function(){
-            quiz2(1);
-        });
-        $('#key22').on('click',function(){
-            quiz2(2);
-        });
-        $('#key23').on('click',function(){
-            quiz2(3);
-        });
-        $('#key24').on('click',function(){
-            quiz2(4);
-        });
-        $('#key25').on('click',function(){
-            quiz2(5);
-        });
-        $('#key26').on('click',function(){
-            quiz2(6);
-        });
-        $('#key27').on('click',function(){
-            quiz2(7);
-        });
-        $('#key28').on('click',function(){
-            quiz2(8);
-        });
-        $('#key29').on('click',function(){
-            quiz2(9);
-        });
-        //page3
-
-        $('#key30').on('click',function(){
-            // console.log('#key30 点击了');
-            quiz3(0);
-        });
-        $('#key31').on('click',function(){
-            quiz3(1);
-        });
-        $('#key32').on('click',function(){
-            quiz3(2);
-        });
-        $('#key33').on('click',function(){
-            quiz3(3);
-        });
-        $('#key34').on('click',function(){
-            quiz3(4);
-        });
-        $('#key35').on('click',function(){
-            quiz3(5);
-        });
-        $('#key36').on('click',function(){
-            quiz3(6);
-        });
-        $('#key37').on('click',function(){
-            quiz3(7);
-        });
-        $('#key38').on('click',function(){
-            quiz3(8);
-        });
-        $('#key39').on('click',function(){
-            quiz3(9);
-        });
-
-        //page4
-        $('#key40').on('click',function(){
-            // console.log("key40 背点击");
-            quiz4(0);
-
-        });
-        $('#key41').on('click',function(){
-            quiz4(1);
-        });
-        $('#key42').on('click',function(){
-            quiz4(2);
-        });
-        $('#key43').on('click',function(){
-            quiz4(3);
-        });
-        $('#key44').on('click',function(){
-            quiz4(4);
-        });
-        $('#key45').on('click',function(){
-            quiz4(5);
-        });
-        $('#key46').on('click',function(){
-            quiz4(6);
-        });
-        $('#key47').on('click',function(){
-            quiz4(7);
-        });
-        $('#key48').on('click',function(){
-            quiz4(8);
-        });
-        $('#key49').on('click',function(){
-            quiz4(9);
-        });
-
-
-        //page5
-        $('#key50').on('click',function(){
-            quiz5(0);
-        });
-        $('#key51').on('click',function(){
-            quiz5(1);
-        });
-        $('#key52').on('click',function(){
-            quiz5(2);
-        });
-        $('#key53').on('click',function(){
-            quiz5(3);
-        });
-        $('#key54').on('click',function(){
-            quiz5(4);
-        });
-        $('#key55').on('click',function(){
-            quiz5(5);
-        });
-        $('#key56').on('click',function(){
-            quiz5(6);
-        });
-        $('#key57').on('click',function(){
-            quiz5(7);
-        });
-        $('#key58').on('click',function(){
-            quiz5(8);
-        });
-        $('#key59').on('click',function(){
-            quiz5(9);
-        });
-
-        $('#checkBtn').on('click',function () {
-            // console.log("checkBtn查看按钮被激发。");
-            $('#slogan1').hide();
-            $('#slogan2').hide();
-            $('#flag').hide();
-            $('#check').hide();
-
-            $('#page7').show();
-            myAudio.pause();
-            document.getElementById("secResult").innerHTML=second+"";
-            document.getElementById("minResult").innerHTML=minute+"";
-
-
-
-        });
-
-
-        //page7 logic
-        $('#wxShare').on('click',function () {
-            $('#share').show();
-        });
-        $('#share').on('click',function () {
-            $('#share').hide();
-        });
-        $('#founder').on('click',function () {
-            // console.log("founder被激发");
-            window.location.href='http://www.founder.com';
-        });
-        $('#retry').on('click',function () {
-            // console.log("retry被激发");
-            window.location.href='index.html';
-        })
     });
+
+    $("#startBtn").on('click', function () {
+        /*console.log()*/
+        playOut();
+        Scene2In();
+        frontScene2In();
+        train2In();
+        title1In();
+
+    });
+
+    //page2
+    $('#key20').on('click', function () {
+        // console.log('#key20 点击了');
+        quiz2(0);
+    });
+    $('#key21').on('click', function () {
+        quiz2(1);
+    });
+    $('#key22').on('click', function () {
+        quiz2(2);
+    });
+    $('#key23').on('click', function () {
+        quiz2(3);
+    });
+    $('#key24').on('click', function () {
+        quiz2(4);
+    });
+    $('#key25').on('click', function () {
+        quiz2(5);
+    });
+    $('#key26').on('click', function () {
+        quiz2(6);
+    });
+    $('#key27').on('click', function () {
+        quiz2(7);
+    });
+    $('#key28').on('click', function () {
+        quiz2(8);
+    });
+    $('#key29').on('click', function () {
+        quiz2(9);
+    });
+    //page3
+
+    $('#key30').on('click', function () {
+        // console.log('#key30 点击了');
+        quiz3(0);
+    });
+    $('#key31').on('click', function () {
+        quiz3(1);
+    });
+    $('#key32').on('click', function () {
+        quiz3(2);
+    });
+    $('#key33').on('click', function () {
+        quiz3(3);
+    });
+    $('#key34').on('click', function () {
+        quiz3(4);
+    });
+    $('#key35').on('click', function () {
+        quiz3(5);
+    });
+    $('#key36').on('click', function () {
+        quiz3(6);
+    });
+    $('#key37').on('click', function () {
+        quiz3(7);
+    });
+    $('#key38').on('click', function () {
+        quiz3(8);
+    });
+    $('#key39').on('click', function () {
+        quiz3(9);
+    });
+
+    //page4
+    $('#key40').on('click', function () {
+        // console.log("key40 背点击");
+        quiz4(0);
+
+    });
+    $('#key41').on('click', function () {
+        quiz4(1);
+    });
+    $('#key42').on('click', function () {
+        quiz4(2);
+    });
+    $('#key43').on('click', function () {
+        quiz4(3);
+    });
+    $('#key44').on('click', function () {
+        quiz4(4);
+    });
+    $('#key45').on('click', function () {
+        quiz4(5);
+    });
+    $('#key46').on('click', function () {
+        quiz4(6);
+    });
+    $('#key47').on('click', function () {
+        quiz4(7);
+    });
+    $('#key48').on('click', function () {
+        quiz4(8);
+    });
+    $('#key49').on('click', function () {
+        quiz4(9);
+    });
+
+
+    //page5
+    $('#key50').on('click', function () {
+        quiz5(0);
+    });
+    $('#key51').on('click', function () {
+        quiz5(1);
+    });
+    $('#key52').on('click', function () {
+        quiz5(2);
+    });
+    $('#key53').on('click', function () {
+        quiz5(3);
+    });
+    $('#key54').on('click', function () {
+        quiz5(4);
+    });
+    $('#key55').on('click', function () {
+        quiz5(5);
+    });
+    $('#key56').on('click', function () {
+        quiz5(6);
+    });
+    $('#key57').on('click', function () {
+        quiz5(7);
+    });
+    $('#key58').on('click', function () {
+        quiz5(8);
+    });
+    $('#key59').on('click', function () {
+        quiz5(9);
+    });
+
+    $('#checkBtn').on('click', function () {
+        // console.log("checkBtn查看按钮被激发。");
+        $('#slogan1').hide();
+        $('#slogan2').hide();
+        $('#flag').hide();
+        $('#check').hide();
+
+        $('#page7').show();
+        myAudio.pause();
+        document.getElementById("secResult").innerHTML = second + "";
+        document.getElementById("minResult").innerHTML = minute + "";
+
+
+    });
+
+
+    //page7 logic
+    $('#wxShare').on('click', function () {
+        $('#share').show();
+    });
+    $('#share').on('click', function () {
+        $('#share').hide();
+    });
+    $('#founder').on('click', function () {
+        // console.log("founder被激发");
+        window.location.href = 'http://www.founder.com';
+    });
+    $('#retry').on('click', function () {
+        // console.log("retry被激发");
+        window.location.href = 'index.html';
+    })
+});
 
 
 
 
     /*****************************************火车的动效*********************************/
-    var w = document.documentElement.clientWidth,
-        h = document.documentElement.clientHeight;
+    // var w = document.documentElement.clientWidth,
+    //     h = document.documentElement.clientHeight;
 //刷帧的帧率
-    var ratio=60;
+    //var ratio=60;
     var train= new createjs.Bitmap("./images/train.png");
     var railway = new createjs.Bitmap("./images/railway.png");
     /*火车在屏幕中的高度占比，和真实的火车像素高度*/
-    var original = w*0.275;
-    var scale = original/130;
-    var bgScaleY=h/750;
-    var bgScaleX=w/466;
-    var positonY=0.489*w;
+    // var original = w*0.275;
+    // var scale = original/130;
+    // var bgScaleY=h/750;
+    // var bgScaleX=w/466;
+    // var positonY=0.489*w;
 
 //title的初始化
     var Title1_0= new createjs.Bitmap("./images/title1/0.png");
@@ -366,44 +363,44 @@ function handleComplete(){
     var  background1 = new createjs.Bitmap('./images/page1/bgt1.png');
     var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
 
-    function train1In() {
-        stage1.canvas.width=h;
-        stage1.canvas.height=w;
-
-        train.scaleX=scale;
-        train.scaleY=scale;
-        railway.scaleY=scale;
-
-//设置在舞台中的位置
-        train.x=1000;
-        train.y=positonY;
-        railway.y=positonY;
-// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
-        stage1.addChild(railway);
-        stage1.addChild(train);
-
-        createjs.Ticker.setFPS(ratio);
-        createjs.Ticker.on('tick',stage1);
-        createjs.Tween.get(train, {loop: false})
-            .to({x: h*3/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-
-        function handleComplete() {
-            console.log("hint show or not?");
-            $("#hint").show();
-        }
-
-        // console.log("train1In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
-    function train1Enter() {
-        createjs.Tween.get(train, {loop: false})
-            .to({x: 10}, 4000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-        function handleComplete() {
-            $("#title").addClass('mainIn');
-            $("#startBtn").addClass('mainIn');
-        }
-        console.log("train1Enter 的帧率："+createjs.Ticker.getMeasuredFPS());
-
-    }
+//     function train1In() {
+//         stage1.canvas.width=h;
+//         stage1.canvas.height=w;
+//
+//         train.scaleX=scale;
+//         train.scaleY=scale;
+//         railway.scaleY=scale;
+//
+// //设置在舞台中的位置
+//         train.x=1000;
+//         train.y=positonY;
+//         railway.y=positonY;
+// // 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+//         stage1.addChild(railway);
+//         stage1.addChild(train);
+//
+//         createjs.Ticker.setFPS(ratio);
+//         createjs.Ticker.on('tick',stage1);
+//         createjs.Tween.get(train, {loop: false})
+//             .to({x: h*3/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+//
+//         function handleComplete() {
+//             console.log("hint show or not?");
+//             $("#hint").show();
+//         }
+//
+//         // console.log("train1In 的帧率："+createjs.Ticker.getMeasuredFPS());
+//     }
+//     function train1Enter() {
+//         createjs.Tween.get(train, {loop: false})
+//             .to({x: 10}, 4000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+//         function handleComplete() {
+//             $("#title").addClass('mainIn');
+//             $("#startBtn").addClass('mainIn');
+//         }
+//         console.log("train1Enter 的帧率："+createjs.Ticker.getMeasuredFPS());
+//
+//     }
 
     function Scene1In() {
         // console.log("背景一创建");

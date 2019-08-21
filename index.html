@@ -44,13 +44,24 @@ $signPackage = $jssdk->GetSignPackage();
 <div class="page pageBox">
 
     <!--loading-->
-    <div  id="pageLoad" >
+<!--    <div  id="pageLoad" >-->
 
-        <div class="page-loading animLoad">
-            <img src="images/loading/load.gif">
+<!--        <div class="page-loading animLoad">-->
+<!--            <img src="images/loading/load.gif">-->
+<!--        </div>-->
+<!--        <div class="NumType" id="loadPercent">10%</div>-->
+
+<!--    </div>-->
+    <!--hint and main title can not show problem-->
+    <!--page1 float-->
+    <div class="page1float">
+        <div class="floatTitle none" id="title">
+            <img src="images/page1/title.png">
         </div>
-        <div class="NumType" id="loadPercent">10%</div>
-
+        <div class="floatButton none" id="startBtn">
+            <img src="images/page1/btn.png">
+        </div>
+        <div class="Hint none" id="hint"></div>
     </div>
     <!--page1-->
     <div id="pageStage" class="none" >
@@ -236,16 +247,16 @@ $signPackage = $jssdk->GetSignPackage();
             </li>
 
         </ul>
-        <!--page1 float-->
-        <div class="page1float">
-            <div class="floatTitle none" id="title">
-                <img src="images/page1/title.png">
-            </div>
-            <div class="floatButton none" id="startBtn">
-                <img src="images/page1/btn.png">
-            </div>
-            <div class="Hint none" id="hint"></div>
-        </div>
+<!--        &lt;!&ndash;page1 float&ndash;&gt;-->
+<!--        <div class="page1float">-->
+<!--            <div class="floatTitle none" id="title">-->
+<!--                <img src="images/page1/title.png">-->
+<!--            </div>-->
+<!--            <div class="floatButton none" id="startBtn">-->
+<!--                <img src="images/page1/btn.png">-->
+<!--            </div>-->
+<!--            <div class="Hint none" id="hint"></div>-->
+<!--        </div>-->
 
         <div class="timer none" >
             <img src="images/timer.png">
