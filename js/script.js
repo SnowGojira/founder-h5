@@ -59,8 +59,10 @@ function handleComplete(){
     // 显示下一张图
     console.log("preload finished");
 
-    frontScene1In();
+    //frontScene1In();
     //Scene1In();
+    //todo hint div and the start div is behide the front scene
+    front_scene.render();
     back_scene.render();
     bubble();
     speed_train.render();

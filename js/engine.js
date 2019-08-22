@@ -68,9 +68,9 @@ Train.prototype.render = function(){
 };
 
 //scene
-function Scene(url){
-    this.stage = new createjs.Stage('bg1');
-    this.background = new createjs.Bitmap(url);
+function Scene(stage,image){
+    this.stage = new createjs.Stage(stage);
+    this.background = new createjs.Bitmap(image);
 }
 
 Scene.prototype.render = function(){
@@ -93,6 +93,7 @@ Scene.prototype.update = function(x,b,callback){
 
 function frontScene1In() {
     // console.log("前景一创建");
+    var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
     stage_fbg1.canvas.width=h;
     stage_fbg1.canvas.height=w;
     frontgrond1.scaleX=bgScaleY;
@@ -113,7 +114,8 @@ var audio_wrong = new Sound('audio_wrong'),
     audio_bg = new Sound('audio_bg'),
 
     speed_train = new Train(),
-    back_scene = new Scene('./images/page1/bgt1.png');
+    back_scene = new Scene('bg1','./images/page1/bgt1.png'),
+    front_scene = new Scene('fbg1','./images/page1/fbgt.png');
 
 // var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
 
