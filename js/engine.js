@@ -35,38 +35,6 @@ Sound.prototype.play = function () {
     }
 };
 
-//train
-var Train = function (){
-    this.train = new createjs.Bitmap("./images/train.png");
-    this.railway = new createjs.Bitmap("./images/railway.png");
-    this.stage = new createjs.Stage("canvas1");
-};
-Train.prototype.update = function(x,b,callback){
-    createjs.Tween.get(this.train, {loop: false})
-        .to({x: x}, b, createjs.Ease.getPowInOut(4)).call(callback);
-};
-
-Train.prototype.render = function(){
-
-    this.stage.canvas.width=h;
-    this.stage.canvas.height=w;
-
-    this.train.scaleX=scale;
-    this.train.scaleY=scale;
-    this.railway.scaleY=scale;
-
-//设置在舞台中的位置
-    this.train.x=1000;
-    this.train.y=positonY;
-    this.railway.y=positonY;
-// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
-    this.stage.addChild(this.railway);
-    this.stage.addChild(this.train);
-
-    createjs.Ticker.setFPS(ratio);
-    createjs.Ticker.on('tick',this.stage);
-};
-
 //scene
 function Scene(stage,image){
     this.stage = new createjs.Stage(stage);
@@ -91,20 +59,33 @@ Scene.prototype.update = function(x,b,callback){
         .to({x: x}, b, createjs.Ease.getPowInOut(4)).call(callback);
 };
 
-function frontScene1In() {
-    // console.log("前景一创建");
-    var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
-    stage_fbg1.canvas.width=h;
-    stage_fbg1.canvas.height=w;
-    frontgrond1.scaleX=bgScaleY;
-    frontgrond1.scaleY=bgScaleX;
-    frontgrond1.x=-5*h;
-    frontgrond1.y=0;
-    stage_fbg1.addChild(frontgrond1);
-    createjs.Ticker.setFPS(ratio);
-    createjs.Ticker.on('tick',stage_fbg1);
+//train
+function Train(stage, image){
+    Scene.call(this,stage,image);
 }
+Train.prototype = Object.create(Scene.prototype);
+Train.prototype.render = function(){
+    let railway = new createjs.Bitmap("./images/railway.png");
 
+    this.stage.canvas.width=h;
+    this.stage.canvas.height=w;
+
+    this.background.scaleX=scale;
+    this.background.scaleY=scale;
+    railway.scaleY=scale;
+
+//设置在舞台中的位置
+    this.background.x=1000;
+    this.background.y=positonY;
+    railway.y=positonY;
+// 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+
+    this.stage.addChild(railway);
+    this.stage.addChild(this.background);
+
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',this.stage);
+};
 ///////////////////////Instantiate Objects/////////////////////////////
 var audio_wrong = new Sound('audio_wrong'),
     audio_right = new Sound('audio_right'),
@@ -113,7 +94,7 @@ var audio_wrong = new Sound('audio_wrong'),
     audio_run = new Sound('audio_running'),
     audio_bg = new Sound('audio_bg'),
 
-    speed_train = new Train(),
+    speed_train = new Train('canvas1','./images/train.png'),
     back_scene = new Scene('bg1','./images/page1/bgt1.png'),
     front_scene = new Scene('fbg1','./images/page1/fbgt.png');
 

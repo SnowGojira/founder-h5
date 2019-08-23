@@ -404,20 +404,6 @@ $(function () {
 //
 //     }
 
-    function Scene1In() {
-        // console.log("背景一创建");
-        stage_bg1.canvas.width=h;
-        stage_bg1.canvas.height=w;
-        background1.scaleX=bgScaleY;
-        background1.scaleY=bgScaleX;
-        background1.x=-5*h;
-        background1.y=0;
-        stage_bg1.addChild(background1);
-
-        createjs.Ticker.setFPS(ratio);
-        createjs.Ticker.on('tick',stage_bg1);
-        // console.log("Scene1In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
     function Scene2In() {
 
         createjs.Tween.get(background1, {loop: false})
