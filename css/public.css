@@ -62,7 +62,7 @@ body,html{
     position:absolute;
     left:0;
     top:0;
-    z-index: 9999;
+    z-index: 10000;
     background:#000;
 
 }
@@ -119,7 +119,7 @@ body,html{
     /*width: 100%;
     height: 100%;
     overflow:hidden;*/
-    float: left;
+    /*float: left;*/
     position: fixed;
 
 }
@@ -128,23 +128,27 @@ body,html{
     width: 100%;
     height:100%;
     position: fixed;
-    z-index: 11;
+    /*z-index: 11;*/
+    z-index: -10;
 }
 .bg2{
     width: 100%;
     height:100%;
     position: fixed;
-    z-index: 11;
+    /*z-index: 11;*/
+    z-index: -10;
 }
 /*train z-index: 12*/
 .train1{
     position: fixed;
-    z-index: 12;
+    /*z-index: 12;*/
+    z-index: -9;
 }
 /*title z-index: 13*/
 .title{
     position: fixed;
-    z-index:13;
+    /*z-index:13;*/
+    z-index:-8;
 }
 /*animEff z-index: 14*/
 .animEff1{
@@ -152,7 +156,8 @@ body,html{
     height:100%;
     /*float: left;*/
     position: fixed;
-    z-index: 14;
+    /*z-index: 14;*/
+    z-index: -7;
 }
 #flower{
     position: fixed;
@@ -165,7 +170,8 @@ body,html{
     width: 100%;
     height:100%;
     position: fixed;
-    z-index: 15;
+    /*z-index: 15;*/
+    z-index: -6;
 }
 /*float z-index: 16*/
 .page1float{
