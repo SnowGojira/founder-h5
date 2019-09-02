@@ -58,7 +58,8 @@ function handleFileProgress(){
 function handleComplete(){
     // 显示下一张图
     console.log("preload finished");
-
+    $('#pageLoad').hide();
+    $('#pageStage').show();
     //frontScene1In();
     //Scene1In();
     //todo hint div and the start div is behide the front scene
@@ -67,17 +68,9 @@ function handleComplete(){
     bubble();
     speed_train.render();
     speed_train.update(train_loc_1.x,train_loc_1.b,function () {
-        console.log("hint show or not?");
         $("#hint").show();
     });
-
-    $('#pageLoad').hide();
-    $('#pageStage').show();
 }
-
-
-
-//myAudio.play();
 
 //events' logic
 $(function () {
@@ -93,8 +86,12 @@ $(function () {
 
     $("#startBtn").on('click', function () {
         /*console.log()*/
-        playOut();
-        Scene2In();
+        audio_out.play();
+        back_scene.update(back_loc_1.x,back_loc_1.b, ()=> {
+                snow();
+        });
+
+        // Scene2In();
         frontScene2In();
         train2In();
         title1In();

@@ -9,8 +9,11 @@ const original = w*0.275,
       bgScaleY=h/750,
       bgScaleX=w/466;
 //train's stop locations
-const train_loc_1 = {x:h*3/4, b:8000};
-const train_loc_2 = {x:10, b:4000};
+const train_loc_1 = {x:h*3/4, b:8000},
+      train_loc_2 = {x:10, b:4000};
+
+const back_loc_1 = {x:-4*h,b:6000};
+
 
 
 //the logic going here
@@ -248,19 +251,5 @@ function preload (handleFileProgress,handleComplete){
     loader.loadManifest(manifest);
     loader.addEventListener('progress', handleFileProgress);//加载完成 调用handleFileProgress函数
     loader.addEventListener('complete', handleComplete);//加载完成 调用handleComplete函数
-
 };
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('domcontentloaded is trigered');
-    // var context = new AudioContext();
-    //audio_start.muted = false;
-    //audio_start.play();
-});
-
-$("body").on('click',function(){
-    console.log('body on click');
-    //audio_bg.Play();
-    audio_start.play();
-});
