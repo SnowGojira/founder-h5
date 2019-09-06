@@ -282,76 +282,39 @@ $(function () {
     // var positonY=0.489*w;
 
 //title的初始化
-    var Title1_0= new createjs.Bitmap("./images/title1/0.png");
-    var Title1_1= new createjs.Bitmap("./images/title1/1.png");
-    var Title1_2= new createjs.Bitmap("./images/title1/2.png");
-    var Title1_3= new createjs.Bitmap("./images/title1/3.png");
-    var Title1_4= new createjs.Bitmap("./images/title1/4.png");
-    var Title1_5= new createjs.Bitmap("./images/title1/5.png");
-    var Title1_6= new createjs.Bitmap("./images/title1/6.png");
-    var Title1_7= new createjs.Bitmap("./images/title1/7.png");
-    var Title1_8= new createjs.Bitmap("./images/title1/8.png");
-    var Title1_9= new createjs.Bitmap("./images/title1/9.png");
-    var Title1_10= new createjs.Bitmap("./images/title1/10.png");
-    var Title1_11= new createjs.Bitmap("./images/title1/11.png");
-    var Title1_12= new createjs.Bitmap("./images/title1/12.png");
-    var Title1_13= new createjs.Bitmap("./images/title1/13.png");
-    var Title1_14= new createjs.Bitmap("./images/title1/14.png");
 
-    var Title2_0= new createjs.Bitmap("./images/title2/0.png");
-    var Title2_1= new createjs.Bitmap("./images/title2/1.png");
-    var Title2_2= new createjs.Bitmap("./images/title2/2.png");
-    var Title2_3= new createjs.Bitmap("./images/title2/3.png");
-    var Title2_4= new createjs.Bitmap("./images/title2/4.png");
-    var Title2_5= new createjs.Bitmap("./images/title2/5.png");
-    var Title2_6= new createjs.Bitmap("./images/title2/6.png");
-    var Title2_7= new createjs.Bitmap("./images/title2/7.png");
-    var Title2_8= new createjs.Bitmap("./images/title2/8.png");
-    var Title2_9= new createjs.Bitmap("./images/title2/9.png");
-    var Title2_10= new createjs.Bitmap("./images/title2/10.png");
-    var Title2_11= new createjs.Bitmap("./images/title2/11.png");
-    var Title2_12= new createjs.Bitmap("./images/title2/12.png");
-    var Title2_13= new createjs.Bitmap("./images/title2/13.png");
-    var Title2_14= new createjs.Bitmap("./images/title2/14.png");
+    const arrTitle1 = pushQuizPieces(14, 'title1'),
+          arrTitle2 = pushQuizPieces(14, 'title2'),
+          arrTitle3 = pushQuizPieces(10, 'title3'),
+          arrTitle4 = pushQuizPieces(12, 'title4');
 
-    var Title3_0= new createjs.Bitmap("./images/title3/0.png");
-    var Title3_1= new createjs.Bitmap("./images/title3/1.png");
-    var Title3_2= new createjs.Bitmap("./images/title3/2.png");
-    var Title3_3= new createjs.Bitmap("./images/title3/3.png");
-    var Title3_4= new createjs.Bitmap("./images/title3/4.png");
-    var Title3_5= new createjs.Bitmap("./images/title3/5.png");
-    var Title3_6= new createjs.Bitmap("./images/title3/6.png");
-    var Title3_7= new createjs.Bitmap("./images/title3/7.png");
-    var Title3_8= new createjs.Bitmap("./images/title3/8.png");
-    var Title3_9= new createjs.Bitmap("./images/title3/9.png");
-    var Title3_10= new createjs.Bitmap("./images/title3/10.png");
+    //recurse the quiz; loop can be used as well.
+    //Here I chose the readability over the proformance
+    //Since the array is short.
+    function pushQuizPieces(count,file_url,num=0,arr=[]){
 
-    var Title4_0= new createjs.Bitmap("./images/title4/0.png");
-    var Title4_1= new createjs.Bitmap("./images/title4/1.png");
-    var Title4_2= new createjs.Bitmap("./images/title4/2.png");
-    var Title4_3= new createjs.Bitmap("./images/title4/3.png");
-    var Title4_4= new createjs.Bitmap("./images/title4/4.png");
-    var Title4_5= new createjs.Bitmap("./images/title4/5.png");
-    var Title4_6= new createjs.Bitmap("./images/title4/6.png");
-    var Title4_7= new createjs.Bitmap("./images/title4/7.png");
-    var Title4_8= new createjs.Bitmap("./images/title4/8.png");
-    var Title4_9= new createjs.Bitmap("./images/title4/9.png");
-    var Title4_10= new createjs.Bitmap("./images/title4/10.png");
-    var Title4_11= new createjs.Bitmap("./images/title4/11.png");
-    var Title4_12= new createjs.Bitmap("./images/title4/12.png");
+        if(arr.length == count+1) return arr;
+
+        var image = new createjs.Bitmap("./images/"+file_url+"/"+num+".png");
+        arr.push(image);
+        const new_num = num+1;
+
+        return pushQuizPieces(count--,file_url,new_num,arr);
+    }
 
 
-    var arrTitle1=[Title1_0,Title1_1,Title1_2,Title1_3,Title1_4,
-        Title1_5,Title1_6,Title1_7,Title1_8,Title1_9,Title1_10,
-        Title1_11,Title1_12,Title1_13,Title1_14];
-    var arrTitle2=[Title2_0,Title2_1,Title2_2,Title2_3,Title2_4,
-        Title2_5,Title2_6,Title2_7,Title2_8,Title2_9,Title2_10,
-        Title2_11,Title2_12,Title2_13,Title2_14];
-    var arrTitle3=[Title3_0,Title3_1,Title3_2,Title3_3,Title3_4,
-        Title3_5,Title3_6,Title3_7,Title3_8,Title3_9,Title3_10];
-    var arrTitle4=[Title4_0,Title4_1,Title4_2,Title4_3,Title4_4,
-        Title4_5,Title4_6,Title4_7,Title4_8,Title4_9,Title4_10,
-        Title4_11,Title4_12];
+
+    // var arrTitle1=[Title1_0,Title1_1,Title1_2,Title1_3,Title1_4,
+    //     Title1_5,Title1_6,Title1_7,Title1_8,Title1_9,Title1_10,
+    //     Title1_11,Title1_12,Title1_13,Title1_14];
+    // var arrTitle2=[Title2_0,Title2_1,Title2_2,Title2_3,Title2_4,
+    //     Title2_5,Title2_6,Title2_7,Title2_8,Title2_9,Title2_10,
+    //     Title2_11,Title2_12,Title2_13,Title2_14];
+    // var arrTitle3=[Title3_0,Title3_1,Title3_2,Title3_3,Title3_4,
+    //     Title3_5,Title3_6,Title3_7,Title3_8,Title3_9,Title3_10];
+    // var arrTitle4=[Title4_0,Title4_1,Title4_2,Title4_3,Title4_4,
+    //     Title4_5,Title4_6,Title4_7,Title4_8,Title4_9,Title4_10,
+    //     Title4_11,Title4_12];
 
 // 火车page1
     var  stage1=new createjs.Stage("canvas1");
@@ -597,7 +560,7 @@ $(function () {
         // console.log("title1out 被调用");
 
         TweenOutTitle(arrTitle1);
-        createjs.Tween.get(Title1_14, {loop: false})
+        createjs.Tween.get(arrTitle1[14], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title1').hide();
@@ -615,7 +578,7 @@ $(function () {
     }
     function title2Out() {
         TweenOutTitle(arrTitle2);
-        createjs.Tween.get(Title2_14, {loop: false})
+        createjs.Tween.get(arrTitle2[14], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title2').hide();
@@ -633,7 +596,7 @@ $(function () {
     }
     function title3Out() {
         TweenOutTitle(arrTitle3);
-        createjs.Tween.get(Title3_10, {loop: false})
+        createjs.Tween.get(arrTitle3[10], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title3').hide();
@@ -651,7 +614,7 @@ $(function () {
     }
     function title4Out() {
         TweenOutTitle(arrTitle4);
-        createjs.Tween.get(Title4_12, {loop: false})
+        createjs.Tween.get(arrTitle4[12], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title4').hide();
