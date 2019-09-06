@@ -105,7 +105,7 @@ var audio_wrong = new Sound('audio_wrong'),
 
 
 // renderAudios();
-////////////////////////functions' reference//////////////////////////////
+////////////////////////Function Utils//////////////////////////////
 
 function preload (handleFileProgress,handleComplete){
     let manifest = [

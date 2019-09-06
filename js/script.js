@@ -1,49 +1,44 @@
 
-
+/**todo
+ * 1. When the Timer started, the timer count shows 'NaN
+ * 2. In my logic the script only need to control the UI
+ *    So Timer need to be setted in engine.js as an util
+ * */
 // Timer
-    var minute,
+    let minute,
         time,
         second;
     window.minute=0;
     window.second=0;
     window.time=0;
 
-    var int;
+    let int;
 
+    //Start the Timer
+    let startTimer = () => int=setInterval(timer,1000);
 
-    /*function resetTimer()//重置
-    {
-        window.clearInterval(int);
-        minute=second=0;
-        document.getElementById('timer').innerHTML='00:00';
-    }*/
-
-    function startTimer()//开始
-    {
-        int=setInterval(timer,1000);
-
-    }
-
-    function timer()//计时
+    //Timing
+    let timer = () =>
     {
         time++;
         var second1 = time % 60;
         var minute1 = Math.floor(time / 60) % 60;
 
-
         second = (second1 < 10) ? '0'+second1 : second1;
         minute = (minute1 < 10) ? '0'+minute1 : minute1;
 
-
         document.getElementById('timer').innerHTML=minute+':'+second;
         // console.log(minute+":"+second);
-
-    }
-
-    function stopTimer()//暂停
+    };
+    //stop the timer
+    let stopTimer = () => window.clearInterval(int);
+    //reset the timer
+    let resetTimer = () =>
     {
-        window.clearInterval(int);
-    }
+       window.clearInterval(int);
+       minute=second=0;
+       document.getElementById('timer').innerHTML='00:00';
+    };
 
 // 预加载逻辑
 
@@ -281,13 +276,11 @@ $(function () {
     // var bgScaleX=w/466;
     // var positonY=0.489*w;
 
-//title的初始化
-
+//Initialize the 'Title' part
     const arrTitle1 = pushQuizPieces(14, 'title1'),
           arrTitle2 = pushQuizPieces(14, 'title2'),
           arrTitle3 = pushQuizPieces(10, 'title3'),
           arrTitle4 = pushQuizPieces(12, 'title4');
-
     //recurse the quiz; loop can be used as well.
     //Here I chose the readability over the proformance
     //Since the array is short.
@@ -302,19 +295,6 @@ $(function () {
         return pushQuizPieces(count--,file_url,new_num,arr);
     }
 
-
-
-    // var arrTitle1=[Title1_0,Title1_1,Title1_2,Title1_3,Title1_4,
-    //     Title1_5,Title1_6,Title1_7,Title1_8,Title1_9,Title1_10,
-    //     Title1_11,Title1_12,Title1_13,Title1_14];
-    // var arrTitle2=[Title2_0,Title2_1,Title2_2,Title2_3,Title2_4,
-    //     Title2_5,Title2_6,Title2_7,Title2_8,Title2_9,Title2_10,
-    //     Title2_11,Title2_12,Title2_13,Title2_14];
-    // var arrTitle3=[Title3_0,Title3_1,Title3_2,Title3_3,Title3_4,
-    //     Title3_5,Title3_6,Title3_7,Title3_8,Title3_9,Title3_10];
-    // var arrTitle4=[Title4_0,Title4_1,Title4_2,Title4_3,Title4_4,
-    //     Title4_5,Title4_6,Title4_7,Title4_8,Title4_9,Title4_10,
-    //     Title4_11,Title4_12];
 
 // 火车page1
     var  stage1=new createjs.Stage("canvas1");
