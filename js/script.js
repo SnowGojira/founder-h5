@@ -49,7 +49,14 @@ function handleFileProgress(){
     let percent=loader.progress*100|0+'%';
     $('loadPercent').innerHTML=percent+"%";
 }
-//todo the bgm will trigger DOMexceptions because of the new chrome policies
+
+/**
+ * About autoplay BGM:
+ * The latest Chrome policy have forbidden this action.
+ * The solution is Using a button to trigger.
+ * For the future: Need to be discussed with customers first.
+ */
+
 function handleComplete(){
     // 显示下一张图
     console.log("preload finished");

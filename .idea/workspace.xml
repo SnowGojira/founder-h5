@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+            <state relative-caret-position="1007">
+              <caret line="955" column="13" selection-start-line="955" selection-start-column="13" selection-end-line="955" selection-end-column="13" />
               <folding>
                 <element signature="e#936#1026#0" />
                 <element signature="e#1129#1578#0" />
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="255" selection-start-line="255" selection-end-line="255" />
+            <state relative-caret-position="111">
+              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
               <folding>
                 <element signature="n#!!block;n#Sound#0" />
                 <element signature="e#467#923#0" />
@@ -349,7 +349,7 @@
       <workItem from="1566203746686" duration="3804000" />
       <workItem from="1566212916976" duration="12496000" />
       <workItem from="1566808448563" duration="178000" />
-      <workItem from="1566808672341" duration="7401000" />
+      <workItem from="1566808672341" duration="8234000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -621,7 +621,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360301000" />
+    <option name="totallyTimeSpent" value="361134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,7 +637,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21040893" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14126395" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49791667" weight="0.13721186" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.7568773" side_tool="true" weight="0.32991454" />
@@ -649,7 +649,7 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.24312268" visible="true" weight="0.051282052" />
+      <window_info active="true" anchor="bottom" id="TODO" order="10" sideWeight="0.24312268" visible="true" weight="0.051282052" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -831,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="255" selection-start-line="255" selection-end-line="255" />
+        <state relative-caret-position="111">
+          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
           <folding>
             <element signature="n#!!block;n#Sound#0" />
             <element signature="e#467#923#0" />
@@ -844,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        <state relative-caret-position="1007">
+          <caret line="955" column="13" selection-start-line="955" selection-start-column="13" selection-end-line="955" selection-end-column="13" />
           <folding>
             <element signature="e#936#1026#0" />
             <element signature="e#1129#1578#0" />
