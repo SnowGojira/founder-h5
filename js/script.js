@@ -15,11 +15,12 @@
     let int;
 
     //Start the Timer
-    let startTimer = () => int=setInterval(timer,1000);
+    function startTimer () {
+        int=setInterval(timer,1000);
+    }
 
     //Timing
-    let timer = () =>
-    {
+    function timer () {
         time++;
         var second1 = time % 60;
         var minute1 = Math.floor(time / 60) % 60;
@@ -31,10 +32,11 @@
         // console.log(minute+":"+second);
     };
     //stop the timer
-    let stopTimer = () => window.clearInterval(int);
+    function stopTimer () {
+        window.clearInterval(int);
+    }
     //reset the timer
-    let resetTimer = () =>
-    {
+    function resetTimer (){
        window.clearInterval(int);
        minute=second=0;
        document.getElementById('timer').innerHTML='00:00';
@@ -44,12 +46,6 @@
 
 window.onload = preload(handleFileProgress,handleComplete);
 
-//加载中函数
-function handleFileProgress(){
-    let percent=loader.progress*100|0+'%';
-    $('loadPercent').innerHTML=percent+"%";
-}
-
 /**
  * About autoplay BGM:
  * The latest Chrome policy have forbidden this action.
@@ -57,19 +53,23 @@ function handleFileProgress(){
  * For the future: Need to be discussed with customers first.
  */
 
+function handleFileProgress(){
+    let percent=loader.progress*100|0+'%';
+    $('loadPercent').innerHTML=percent+"%";
+}
+
 function handleComplete(){
-    // 显示下一张图
-    console.log("preload finished");
-    $('#pageLoad').hide();
+
+    Hide(['#pageLoad']);
     $('#pageStage').show();
     //frontScene1In();
     //Scene1In();
-    //todo hint div and the start div is behide the front scene
+    bubble_anim.render();
     front_scene.render();
     back_scene.render();
-    bubble();
     speed_train.render();
-    speed_train.update(train_loc_1.x,train_loc_1.b,function () {
+
+    speed_train.update(train_loc_1,()=>{
         $("#hint").show();
     });
 }
@@ -78,9 +78,9 @@ function handleComplete(){
 $(function () {
     //page1
     $("#hint").on('click', function () {
-        $("#hint").hide();
+        Hide(["#hint"]);
         audio_run.play();
-        speed_train.update(train_loc_2.x, train_loc_2.b, function () {
+        speed_train.update(train_loc_2, ()=> {
             $("#title").addClass('mainIn');
             $("#startBtn").addClass('mainIn');
         });
@@ -88,19 +88,25 @@ $(function () {
 
     $("#startBtn").on('click', function () {
         /*console.log()*/
+        Hide([".page1float","#bubble"]);
         audio_out.play();
-        back_scene.update(back_loc_1.x,back_loc_1.b, ()=> {
-                snow();
-        });
+        
+        front_scene.update(front_loc_1);
+        back_scene.update(back_loc_1);
 
-        // Scene2In();
-        frontScene2In();
-        train2In();
-        title1In();
+        speed_train.update(train_loc_3,()=>{
+            snow_anim.render();
+            $('.timer').show();
+            $('.keys2').addClass('mainIn');
+
+            startTimer();
+        });
+        // title means the quiz on the train
+        // title1In();
 
     });
 
-    //page2
+    //page2 quiz UI
     $('#key20').on('click', function () {
         // console.log('#key20 点击了');
         quiz2(0);
@@ -235,11 +241,12 @@ $(function () {
 
     $('#checkBtn').on('click', function () {
         // console.log("checkBtn查看按钮被激发。");
-        $('#slogan1').hide();
-        $('#slogan2').hide();
-        $('#flag').hide();
-        $('#check').hide();
+        // $('#slogan1').hide();
+        // $('#slogan2').hide();
+        // $('#flag').hide();
+        // $('#check').hide();
 
+        Hide(['#slogan1','#slogan2','#flag','#check']);
         $('#page7').show();
         myAudio.pause();
         document.getElementById("secResult").innerHTML = second + "";
@@ -312,51 +319,13 @@ $(function () {
     var  background1 = new createjs.Bitmap('./images/page1/bgt1.png');
     var  frontgrond1 = new createjs.Bitmap('./images/page1/fbgt.png');
 
-//     function train1In() {
-//         stage1.canvas.width=h;
-//         stage1.canvas.height=w;
-//
-//         train.scaleX=scale;
-//         train.scaleY=scale;
-//         railway.scaleY=scale;
-//
-// //设置在舞台中的位置
-//         train.x=1000;
-//         train.y=positonY;
-//         railway.y=positonY;
-// // 把动画放到舞台上，创建一个间隔事件侦听，进行动画
-//         stage1.addChild(railway);
-//         stage1.addChild(train);
-//
-//         createjs.Ticker.setFPS(ratio);
-//         createjs.Ticker.on('tick',stage1);
-//         createjs.Tween.get(train, {loop: false})
-//             .to({x: h*3/4}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-//
-//         function handleComplete() {
-//             console.log("hint show or not?");
-//             $("#hint").show();
-//         }
-//
-//         // console.log("train1In 的帧率："+createjs.Ticker.getMeasuredFPS());
-//     }
-//     function train1Enter() {
-//         createjs.Tween.get(train, {loop: false})
-//             .to({x: 10}, 4000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-//         function handleComplete() {
-//             $("#title").addClass('mainIn');
-//             $("#startBtn").addClass('mainIn');
-//         }
-//         console.log("train1Enter 的帧率："+createjs.Ticker.getMeasuredFPS());
-//
-//     }
 
     function Scene2In() {
 
         createjs.Tween.get(background1, {loop: false})
             .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function handleComplete() {
-            snow();
+            snow_anim.render();
         }
         // console.log("Scene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
     }
@@ -414,8 +383,8 @@ $(function () {
         createjs.Ticker.on('tick',stage_fbg1);
     }
     function frontScene2In() {
-        $(".page1float").hide();
-        $("#bubble").hide();
+        //$(".page1float").hide();
+        //$("#bubble").hide();
         createjs.Tween.get(frontgrond1, {loop: false})
             .to({x: -4*h}, 6000, createjs.Ease.getPowInOut(4));
 
@@ -644,76 +613,76 @@ $(function () {
 
     /*****************************************背景动效*********************************/
 //page1 实验性的动效
-    var bubbleStage,
-        bubbleCanvas,
-        bubbleContainer;
-    bubbleCanvas=document.getElementById('bubble');
-    function bubble(){
-        // console.log("bubble canvas 创建");
-        bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
-        bubbleContainer= new createjs.Container();
-        bubbleStage.addChild(bubbleContainer);
-        bubbleStage.canvas.height=w;
-        bubbleStage.canvas.width=h;
-        var data ={
-            framerate:1,
-            images:['./images/page1/bubble.png'],
-            frames:{
-                width:750,
-                height:466,
-                count:3
-            },
-            animations:{
-                anim : [0,2,'anim']
-            }
-
-        };
-
-        var spriteSheet2 = new createjs.SpriteSheet(data);
-        var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-
-        img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-        bubbleContainer.addChild(img1);
-
-        // createjs.Ticker.setFPS(30);
-        createjs.Ticker.on('tick',bubbleStage);
-    }
+//     var bubbleStage,
+//         bubbleCanvas,
+//         bubbleContainer;
+//     bubbleCanvas=document.getElementById('bubble');
+//     function bubble(){
+//         // console.log("bubble canvas 创建");
+//         bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
+//         bubbleContainer= new createjs.Container();
+//         bubbleStage.addChild(bubbleContainer);
+//         bubbleStage.canvas.height=w;
+//         bubbleStage.canvas.width=h;
+//         var data ={
+//             framerate:1,
+//             images:['./images/page1/bubble.png'],
+//             frames:{
+//                 width:750,
+//                 height:466,
+//                 count:3
+//             },
+//             animations:{
+//                 anim : [0,2,'anim']
+//             }
+//
+//         };
+//
+//         var spriteSheet2 = new createjs.SpriteSheet(data);
+//         var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+//
+//         img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
+//         bubbleContainer.addChild(img1);
+//
+//         // createjs.Ticker.setFPS(30);
+//         createjs.Ticker.on('tick',bubbleStage);
+//     }
 
 //page2 实验性的动效
-    var img,snowStage,
-        snowCanvas,
-        snowContainer;
-    snowCanvas=document.getElementById('snow');
-    function snow(){
-        // console.log("snow canvas 创建成功");
-        snowStage = new createjs.Stage(snowCanvas);//创建舞台
-        snowContainer= new createjs.Container();
-        snowStage.addChild(snowContainer);
-        snowStage.canvas.height=w;
-        snowStage.canvas.width=h;
-
-        var data ={
-            framerate:2,
-            images:['./images/page2/snow1.png'],
-            frames:{
-                width:750,
-                height:466,
-                count:3
-            },
-            animations:{
-                anim : [0,2,'anim']
-            }
-
-        };
-
-        var spriteSheet2 = new createjs.SpriteSheet(data);
-        var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-
-        img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-        snowContainer.addChild(img1);
-        // createjs.Ticker.setFPS(2);
-        createjs.Ticker.on('tick',snowStage);
-    }
+//     var img,snowStage,
+//         snowCanvas,
+//         snowContainer;
+//     snowCanvas=document.getElementById('snow');
+//     function snow(){
+//         // console.log("snow canvas 创建成功");
+//         snowStage = new createjs.Stage(snowCanvas);//创建舞台
+//         snowContainer= new createjs.Container();
+//         snowStage.addChild(snowContainer);
+//         snowStage.canvas.height=w;
+//         snowStage.canvas.width=h;
+//
+//         var data ={
+//             framerate:2,
+//             images:['./images/page2/snow1.png'],
+//             frames:{
+//                 width:750,
+//                 height:466,
+//                 count:3
+//             },
+//             animations:{
+//                 anim : [0,2,'anim']
+//             }
+//
+//         };
+//
+//         var spriteSheet2 = new createjs.SpriteSheet(data);
+//         var img1 = new createjs.Sprite(spriteSheet2, 'anim');
+//
+//         img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
+//         snowContainer.addChild(img1);
+//         // createjs.Ticker.setFPS(2);
+//         createjs.Ticker.on('tick',snowStage);
+//     }
 
 //page3 实验性动效
     var cloudStage,

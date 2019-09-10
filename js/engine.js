@@ -10,9 +10,11 @@ const original = w*0.275,
       bgScaleX=w/466;
 //train's stop locations
 const train_loc_1 = {x:h*3/4, b:8000},
-      train_loc_2 = {x:10, b:4000};
+      train_loc_2 = {x:10, b:4000},
+      train_loc_3 = {x: -0.3*h, b:8000};
 
-const back_loc_1 = {x:-4*h,b:6000};
+const back_loc_1 = {x:-4*h,b:6000},
+      front_loc_1 ={x: -4*h,b: 6000};
 
 
 
@@ -42,11 +44,12 @@ Sound.prototype.play = function () {
 function Scene(stage,image){
     this.stage = new createjs.Stage(stage);
     this.background = new createjs.Bitmap(image);
+    this.stage.canvas.width=h;
+    this.stage.canvas.height=w;
 }
 
 Scene.prototype.render = function(){
-    this.stage.canvas.width=h;
-    this.stage.canvas.height=w;
+
     this.background.scaleX=bgScaleY;
     this.background.scaleY=bgScaleX;
     this.background.x=-5*h;
@@ -57,10 +60,17 @@ Scene.prototype.render = function(){
     createjs.Ticker.on('tick',this.stage);
 };
 
-Scene.prototype.update = function(x,b,callback){
-    createjs.Tween.get(this.background, {loop: false})
-        .to({x: x}, b, createjs.Ease.getPowInOut(4)).call(callback);
+Scene.prototype.update = function(...args){
+    if(args[1]== undefined){
+        createjs.Tween.get(this.background, {loop: false})
+            .to({x: args[0].x}, args[0].b, createjs.Ease.getPowInOut(4));
+    }else{
+        createjs.Tween.get(this.background, {loop: false})
+            .to({x: args[0].x}, args[0].b, createjs.Ease.getPowInOut(4)).call(args[1]);
+    }
+
 };
+
 
 //train
 function Train(stage, image){
@@ -69,9 +79,6 @@ function Train(stage, image){
 Train.prototype = Object.create(Scene.prototype);
 Train.prototype.render = function(){
     let railway = new createjs.Bitmap("./images/railway.png");
-
-    this.stage.canvas.width=h;
-    this.stage.canvas.height=w;
 
     this.background.scaleX=scale;
     this.background.scaleY=scale;
@@ -89,6 +96,43 @@ Train.prototype.render = function(){
     createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',this.stage);
 };
+
+function SheetAnim (id,url){
+    this.url = url;
+    this.canvas = document.getElementById(id);
+    this.stage = new createjs.Stage(this.canvas);
+    this.container = new createjs.Container();
+}
+
+SheetAnim.prototype.render = function(){
+
+    this.stage.addChild(this.container);
+    this.stage.canvas.height=w;
+    this.stage.canvas.width=h;
+
+    let data ={
+        framerate:1,
+        images:[this.url],
+        frames:{
+            width:750,
+            height:466,
+            count:3
+        },
+        animations:{
+            anim : [0,2,'anim']
+        }
+
+    };
+
+    let spriteSheet = new createjs.SpriteSheet(data);
+    let img = new createjs.Sprite(spriteSheet, 'anim');
+
+    img.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
+    this.container.addChild(img);
+
+    createjs.Ticker.on('tick',this.stage);
+};
+
 ///////////////////////Instantiate Objects/////////////////////////////
 var audio_wrong = new Sound('audio_wrong'),
     audio_right = new Sound('audio_right'),
@@ -99,7 +143,10 @@ var audio_wrong = new Sound('audio_wrong'),
 
     speed_train = new Train('canvas1','./images/train.png'),
     back_scene = new Scene('bg1','./images/page1/bgt1.png'),
-    front_scene = new Scene('fbg1','./images/page1/fbgt.png');
+    front_scene = new Scene('fbg1','./images/page1/fbgt.png'),
+
+    bubble_anim = new SheetAnim('bubble','./images/page1/bubble.png'),
+    snow_anim = new SheetAnim('snow','./images/page2/snow1.png');
 
 // var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
 
@@ -253,3 +300,8 @@ function preload (handleFileProgress,handleComplete){
     loader.addEventListener('complete', handleComplete);//加载完成 调用handleComplete函数
 };
 
+function Hide(arr){
+    arr.forEach(e => {
+        $(e).hide();
+    });
+}
