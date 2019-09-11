@@ -109,33 +109,52 @@ $(function () {
 
     //page2 quiz UI
 
-    $('#key20').on('click', function () {
-        // console.log('#key20 点击了');
-        quiz2(0);
-    });
-    $('#key21').on('click', function () {
-        quiz2(1);
-    });
-    $('#key22').on('click', function () {
-        quiz2(2);
-    });
-    $('#key23').on('click', function () {
-        quiz2(3);
-    });
-    $('#key24').on('click', function () {
-        quiz2(4);
-    });
-    $('#key25').on('click', function () {
-        quiz2(5);
-    });
+    // $('#key20').on('click', function () {
+    //     // console.log('#key20 点击了');
+    //     quiz2(0);
+    // });
+    // $('#key21').on('click', function () {
+    //     quiz2(1);
+    // });
+    // $('#key22').on('click', function () {
+    //     quiz2(2);
+    // });
+    // $('#key23').on('click', function () {
+    //     quiz2(3);
+    // });
+    // $('#key24').on('click', function () {
+    //     quiz2(4);
+    // });
+    // $('#key25').on('click', function () {
+    //     quiz2(5);
+    // });
 
-
+    //todo why the password and topic array is unddfined ??
     $('.key').on('click',function(e){
         let id_str = $(this).attr("id").split(''),
-            func_id = 'quiz'+id_str[3],
-            value = id_str[4];
-        func_id(value);
-        console.log('id',func_id);
+            sec_id = id_str[3],
+            key_id = id_str[4],
+            arrTitle, password;
+
+        if(sec_id == 2) {
+            password = password2;
+            arrTitle = arrTitle2;
+        }else if(sec_id == 3) {
+            password = password3;
+            arrTitle = arrTitle3;
+        }else if(sec_id == 4) {
+            password = password4;
+            arrTitle = arrTitle4;
+        }else if(sec_id == 5) {
+            password = password5;
+            arrTitle = arrTitle5;
+        }
+
+        console.log('first password',password);
+        console.log('first arrTitle',arrTitle);
+
+        parseQuiz(sec_id,key_id,password,arrTitle, enteredPass = [], booleanArr = []);
+        console.log('id',sec_id+' '+key_id);
     });
 
     //page3
@@ -457,20 +476,20 @@ $(function () {
         // console.log("train6In 的帧率："+createjs.Ticker.getMeasuredFPS());
     }
 
-    var  stageTitle1=new createjs.Stage("title1");
+    // var  stageTitle1=new createjs.Stage("title1");
     var  stageTitle2=new createjs.Stage("title2");
     var  stageTitle3=new createjs.Stage("title3");
     var  stageTitle4=new createjs.Stage("title4");
 //stage和handle函数要注意避免毁掉错误
-    function title1In() {
-        stageTitle1.canvas.width=h;
-        stageTitle1.canvas.height=w;
-
-        initTitle(arrTitle2,stageTitle1);
-        createjs.Ticker.setFPS(ratio);
-        createjs.Ticker.on('tick',stageTitle1);
-        TweenIn1Title(arrTitle2);
-    }
+//     function title1In() {
+//         stageTitle1.canvas.width=h;
+//         stageTitle1.canvas.height=w;
+//
+//         initTitle(arrTitle2,stageTitle1);
+//         createjs.Ticker.setFPS(ratio);
+//         createjs.Ticker.on('tick',stageTitle1);
+//         TweenIn1Title(arrTitle2);
+//     }
     function title1Out() {
         // console.log("title1out 被调用");
 
@@ -765,15 +784,117 @@ $(function () {
     var enteredPass4 = [];
     var enteredPass5 = [];
 
+    function parseQuiz(sec_id,key_id,password,array){
+        //todo this function will be called with click event
+        //todo so you need to consture a closure to make sure
+        //todo enteredPass can hold the number
+        let choice = $('#key'+sec_id+key_id).attr('data-choice'),
+            key = '#key'+sec_id;
+
+
+        enteredPass.push(choice);
+        // console.log('key',key);
+        // console.log('password',password);
+        // console.log('arrTitle',array);
+        console.log('choice',choice);
+        console.log('enteredPass',enteredPass);
+        console.log('booleanArr',booleanArr);
+
+        function parse(key,password,arr) {
+            /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
+            if (enteredPass.length <= password.length){
+                for(var i = 0; i<password.length;i++){
+                    if (enteredPass[i]==password[i]){
+                        booleanArr.push(true);
+                        VBTitleByNum(arr, i+1);
+                        if(i == password.length-1) {
+                            playOut();
+                            stopTimer();
+
+                            topic1.Leave(function () {
+                                $('#title1').hide();
+                                title2In();
+                            });
+
+                            title1Out();
+
+                            Scene3In();
+                            frontScene3In();
+                            train3In();
+                        }
+                    }else{
+                        booleanArr.push(false);
+                    }
+                }
+            }
+            if(enteredPass.length>0 ){
+                if (booleanArr[enteredPass.length-1]){
+                    checkRight(key+enteredPass[enteredPass.length-1]);
+                }else {
+                    checkWrong(key+enteredPass[enteredPass.length-1]);
+                    enteredPass.pop();
+                }
+                //需要清空，重新加入新的遍历array
+                booleanArr=[];
+            }
+            // console.log("enteredPass的状态："+enteredPass2);
+        }
+
+        parse(key,password,array);
+    }
     function quiz2(a) {
-        var Choice = $('#key2'+a).attr('data-choice');
+        let Choice = $('#key2'+a).attr('data-choice');
         enteredPass2.push(Choice);
         checkPasscode2('#key2',password2,arrTitle2);
     }
 
-    function quiz(sec, v){
+function checkPasscode2(key,password,arr) {
+    /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
+    if (enteredPass2.length <= password.length){
+        for(var i = 0; i<password.length;i++){
+            if (enteredPass2[i]==password[i]){
+                booleanArr.push(true);
+                VBTitleByNum(arr, i+1);
+                if(i == password.length-1) {
+                    playOut();
+                    stopTimer();
 
+                    topic1.Leave(function () {
+                        $('#title1').hide();
+                        title2In();
+                    });
+
+                    title1Out();
+
+                    Scene3In();
+                    frontScene3In();
+                    train3In();
+                }
+            }else{
+                booleanArr.push(false);
+            }
+        }
     }
+    if(enteredPass2.length>0 ){
+        if (booleanArr[enteredPass2.length-1]){
+            checkRight(key+enteredPass2[enteredPass2.length-1]);
+        }else {
+            checkWrong(key+enteredPass2[enteredPass2.length-1]);
+            enteredPass2.pop();
+        }
+        //需要清空，重新加入新的遍历array
+        booleanArr=[];
+    }
+    // console.log("enteredPass的状态："+enteredPass2);
+}
+
+function VBTitleByNum(arr,num){
+    for(var i=0;i<arr.length;i++){
+        i==num?arr[i].visible=true:arr[i].visible=false;
+    }
+}
+
+
     function quiz3(a) {
         var Choice = $('#key3'+a).attr('data-choice');
         enteredPass3.push(Choice);
@@ -793,7 +914,7 @@ $(function () {
     }
 
     /*拼写的规则*/
-    var booleanArr = [];
+    //var booleanArr = [];
 
 
     function checkRight(key){
@@ -815,98 +936,9 @@ $(function () {
     /**
      *遍历将指定的题目变成可见的
      */
-    function VBTitleByNum(arr,num){
-        for(var i=0;i<arr.length;i++){
-            i==num?arr[i].visible=true:arr[i].visible=false;
-        }
-    }
 
-    function checkPasscode2(key,password,arr) {
-        /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-        if (enteredPass2.length <= password.length){
-            for(var i = 0; i<password.length;i++){
-                if (enteredPass2[i]==password[i]){
-                    booleanArr.push(true);
-                    VBTitleByNum(arr, i+1);
-                    if(i == password.length-1){
-                        playOut();
-                        stopTimer();
 
-                        topic1.Leave(function(){
-                            $('#title1').hide();
-                            title2In();
-                        });
 
-                        title1Out();
-
-                        Scene3In();
-                        frontScene3In();
-                        train3In();
-                    }
-                    // switch (i){
-                    //     case 0:
-                    //         VBTitleByNum(arr,1);
-                    //         break;
-                    //     case 1:
-                    //         VBTitleByNum(arr,2);
-                    //         break;
-                    //     case 2:
-                    //         VBTitleByNum(arr,3);
-                    //         break;
-                    //     case 3:
-                    //         VBTitleByNum(arr,4);
-                    //         break;
-                    //     case 4:
-                    //         VBTitleByNum(arr,5);
-                    //         break;
-                    //     case 5:
-                    //         VBTitleByNum(arr,6);
-                    //         break;
-                    //     case 6:
-                    //         VBTitleByNum(arr,7);
-                    //         break;
-                    //     case 7:
-                    //         VBTitleByNum(arr,8);
-                    //         break;
-                    //     case 8:
-                    //         VBTitleByNum(arr,9);
-                    //         break;
-                    //     case 9:
-                    //         VBTitleByNum(arr,10);
-                    //         break;
-                    //     case 10:
-                    //         VBTitleByNum(arr,11);
-                    //         break;
-                    //     case 11:
-                    //         VBTitleByNum(arr,12);
-                    //         break;
-                    //     case 12:
-                    //         VBTitleByNum(arr,13);
-                    //         break;
-                    //     case 13:
-                    //         VBTitleByNum(arr,14);
-                    //
-                    //         break;
-                    //     default:
-                    //         break;
-                    // }
-                }else{
-                    booleanArr.push(false);
-                }
-            }
-        }
-        if(enteredPass2.length>0 ){
-            if (booleanArr[enteredPass2.length-1]){
-                checkRight(key+enteredPass2[enteredPass2.length-1]);
-            }else {
-                checkWrong(key+enteredPass2[enteredPass2.length-1]);
-                enteredPass2.pop();
-            }
-            //需要清空，重新加入新的遍历array
-            booleanArr=[];
-        }
-        // console.log("enteredPass的状态："+enteredPass2);
-    }
 
     function checkPasscode3(key,password,arr) {
         /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */

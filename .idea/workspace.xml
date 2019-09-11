@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/js/engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/engine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
     <ignored path="founder-h5.iws" />
@@ -28,10 +27,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+            <state relative-caret-position="120">
+              <caret line="789" column="46" selection-start-line="789" selection-start-column="46" selection-end-line="789" selection-end-column="46" />
               <folding>
-                <element signature="e#25559#25573#0" />
+                <element signature="e#2604#2644#0" />
+                <element signature="e#22654#23870#0" />
+                <element signature="e#23029#23401#0" />
+                <element signature="e#22159#23515#0" />
+                <element signature="e#22562#22978#0" />
               </folding>
             </state>
           </provider>
@@ -40,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="235" selection-start-line="235" selection-end-line="235" />
+            <state relative-caret-position="285">
+              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
               <folding>
                 <element signature="n#!!block;n#pushQuizPieces#0" />
                 <element signature="n#!!block;n#Sound#0" />
@@ -54,7 +57,6 @@
                 <element signature="n#!!block;n#Tween#0" />
                 <element signature="e#3449#3735#0" />
                 <element signature="e#3989#4243#0" />
-                <element signature="e#4329#4753#0" />
               </folding>
             </state>
           </provider>
@@ -158,6 +160,7 @@
       <find>Title</find>
       <find>arrTitle</find>
       <find>title1</find>
+      <find>title1out</find>
     </findStrings>
     <replaceStrings>
       <replace>on('click,</replace>
@@ -202,7 +205,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1366" />
     <option name="height" value="677" />
@@ -364,7 +367,7 @@
       <workItem from="1566808448563" duration="178000" />
       <workItem from="1566808672341" duration="8234000" />
       <workItem from="1568087201268" duration="10405000" />
-      <workItem from="1568171022216" duration="4686000" />
+      <workItem from="1568171022216" duration="8331000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -636,7 +639,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376225000" />
+    <option name="totallyTimeSpent" value="379870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,7 +651,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="677" extended-state="0" />
+    <frame x="0" y="23" width="1366" height="677" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -836,8 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
+        <state relative-caret-position="285">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
           <folding>
             <element signature="n#!!block;n#pushQuizPieces#0" />
             <element signature="n#!!block;n#Sound#0" />
@@ -850,17 +853,20 @@
             <element signature="n#!!block;n#Tween#0" />
             <element signature="e#3449#3735#0" />
             <element signature="e#3989#4243#0" />
-            <element signature="e#4329#4753#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+        <state relative-caret-position="120">
+          <caret line="789" column="46" selection-start-line="789" selection-start-column="46" selection-end-line="789" selection-end-column="46" />
           <folding>
-            <element signature="e#25559#25573#0" />
+            <element signature="e#2604#2644#0" />
+            <element signature="e#22654#23870#0" />
+            <element signature="e#23029#23401#0" />
+            <element signature="e#22159#23515#0" />
+            <element signature="e#22562#22978#0" />
           </folding>
         </state>
       </provider>
