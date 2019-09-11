@@ -213,6 +213,11 @@ var audio_wrong = new Sound('audio_wrong'),
 
     bubble_anim = new SheetAnim('bubble','./images/page1/bubble.png'),
     snow_anim = new SheetAnim('snow','./images/page2/snow1.png'),
+    cloud_anim = new SheetAnim('cloud','./images/page3/cloud.png'),
+    signal_anim = new SheetAnim('signal','./images/page3/signal.png'),
+    heart_anim = new SheetAnim('heart','./images/page4/heart.png'),
+    money_anim = new SheetAnim('money','./images/page5/money.png'),
+    money2_anim = new SheetAnim('money2','./images/page6/money.png'),
 
     topic1 = new Tween("title1",arrTitle2),
     topic2 = new Tween("title2",arrTitle3),

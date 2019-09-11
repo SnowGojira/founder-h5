@@ -250,8 +250,10 @@ $(function () {
         createjs.Tween.get(background1, {loop: false})
             .to({x: -3*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function handleComplete() {
-            cloud();
-            signal();
+            cloud_anim.render();
+            signal_anim.render();
+            // cloud();
+            // signal();
         }
         // console.log("Scene3In 的帧率："+createjs.Ticker.getMeasuredFPS());
     }
@@ -260,7 +262,8 @@ $(function () {
         createjs.Tween.get(background1, {loop: false})
             .to({x: -2*h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function handleComplete() {
-            heart();
+            heart_anim.render();
+            // heart();
         }
         // console.log("Scene4In 的帧率："+createjs.Ticker.getMeasuredFPS());
     }
@@ -269,7 +272,8 @@ $(function () {
         createjs.Tween.get(background1, {loop: false})
             .to({x: -h}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function handleComplete() {
-            money();
+            money_anim.render();
+            // money();
             // flower();
         }
         // console.log("Scene5In 的帧率："+createjs.Ticker.getMeasuredFPS());
@@ -279,7 +283,8 @@ $(function () {
             .to({x: 0}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function handleComplete() {
             /*$('#flower').show();*/
-            money2();
+            money2_anim.render()
+            // money2();
             // flower();
         }
 
@@ -468,6 +473,7 @@ $(function () {
     var cloudStage,
         cloudCanvas,
         cloudContainer;
+
     cloudCanvas=document.getElementById('cloud');
     function cloud(){
         // console.log("cloud创建");
@@ -503,6 +509,7 @@ $(function () {
     var signalStage,
         signalCanvas,
         signalContainer;
+
     signalCanvas=document.getElementById('signal');
     function signal(){
         // console.log("signal 创建");
@@ -547,6 +554,7 @@ $(function () {
         heartCanvas,
         heartContainer;
     heartCanvas=document.getElementById('heart');
+
     function heart(){
         // console.log("heart 创建");
         heartStage = new createjs.Stage(heartCanvas);//创建舞台
@@ -584,6 +592,7 @@ $(function () {
         moneyCanvas,
         moneyContainer;
     function money(){
+
         moneyCanvas=document.getElementById('money');
         moneyStage = new createjs.Stage(moneyCanvas);//创建舞台
         moneyContainer= new createjs.Container();
