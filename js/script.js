@@ -223,20 +223,7 @@ $(function () {
 
 
     /*****************************************火车的动效*********************************/
-    // var w = document.documentElement.clientWidth,
-    //     h = document.documentElement.clientHeight;
-//刷帧的帧率
-    //var ratio=60;
-    var train= new createjs.Bitmap("./images/train.png");
-    var railway = new createjs.Bitmap("./images/railway.png");
-    /*火车在屏幕中的高度占比，和真实的火车像素高度*/
-    // var original = w*0.275;
-    // var scale = original/130;
-    // var bgScaleY=h/750;
-    // var bgScaleX=w/466;
-    // var positonY=0.489*w;
 
-//Initialize the 'Title' part
 
 
 // 火车page1
@@ -360,71 +347,6 @@ $(function () {
         // console.log("frontScene2In 的帧率："+createjs.Ticker.getMeasuredFPS());
     }
 
-
-    // function train2In(){
-    //     createjs.Tween.get(train, {loop: false})
-    //         .to({x: -0.3*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-    //     function handleComplete() {
-    //         // 第二页要显示的逻辑
-    //         $('.timer').show();
-    //         startTimer();
-    //         $('.keys2').addClass('mainIn');
-    //     }
-    //     console.log("train2In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    // }
-    function train3In(){
-        createjs.Tween.get(train, {loop: false})
-            .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-        function handleComplete() {
-            // 第三页要显示的逻辑
-            // signal();
-
-        }
-
-        console.log("train3In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
-    function train4In(){
-        createjs.Tween.get(train, {loop: false})
-            .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-        function handleComplete() {
-            // 第四页要显示的逻辑
-            startTimer();
-            $('.keys4').addClass('mainIn');
-        }
-
-        console.log("train4In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
-    function train5In(){
-        createjs.Tween.get(train, {loop: false})
-            .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(1)).call(handleComplete);
-        function handleComplete() {
-            // 第五页要显示的逻辑
-            startTimer();
-            $('.keys5').addClass('mainIn');
-        }
-
-        // console.log("train5In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
-    function train6In(){
-        createjs.Tween.get(train, {loop: false})
-            .to({x: -3.5*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-        function handleComplete() {
-            // 第六页要显示的逻辑
-            $('#flag').addClass('mainIn');
-            $('#slogan1').addClass('mainIn');
-
-            setTimeout(function () {
-                $('#slogan1').removeClass('mainIn');
-                $('#slogan1').addClass('fadeOut');
-
-                $('#slogan2').addClass('mainIn');
-                $('#check').addClass('mainIn');
-            },5000);
-
-        }
-
-        // console.log("train6In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
 
     // var  stageTitle1=new createjs.Stage("title1");
     var  stageTitle2=new createjs.Stage("title2");

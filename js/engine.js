@@ -198,20 +198,6 @@ Tween.prototype.Leave = function(cb){
 };
 
 
-var  stageTitle1=new createjs.Stage("title1");
-var  stageTitle2=new createjs.Stage("title2");
-var  stageTitle3=new createjs.Stage("title3");
-var  stageTitle4=new createjs.Stage("title4");
-//stage和handle函数要注意避免毁掉错误
-function title1In() {
-    stageTitle1.canvas.width=h;
-    stageTitle1.canvas.height=w;
-
-    initTitle(arrTitle2,stageTitle1);
-    createjs.Ticker.setFPS(ratio);
-    createjs.Ticker.on('tick',stageTitle1);
-    TweenIn1Title(arrTitle2);
-}
 
 ///////////////////////Instantiate Objects/////////////////////////////
 var audio_wrong = new Sound('audio_wrong'),
@@ -234,10 +220,6 @@ var audio_wrong = new Sound('audio_wrong'),
     topic4 = new Tween("title4",arrTitle5);
 
 
-// var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
-
-
-// renderAudios();
 ////////////////////////Function Utils//////////////////////////////
 
 function preload (handleFileProgress,handleComplete){
