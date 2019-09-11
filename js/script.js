@@ -468,7 +468,7 @@ $(function () {
 
     /*****************************************背景动效*********************************/
 
-
+//todo check the frame of each function, some animations are not fluent
 //page3 实验性动效
     var cloudStage,
         cloudCanvas,
