@@ -11,7 +11,10 @@ const original = w*0.275,
 //train's stop locations
 const train_loc_1 = {x:h*3/4, b:8000},
       train_loc_2 = {x:10, b:4000},
-      train_loc_3 = {x: -0.3*h, b:8000};
+      train_loc_3 = {x: -0.3*h, b:8000},
+      train_loc_4 = {x: -0.9*h-50, b:6000},
+      train_loc_5 = {x: -3.5*h, b:8000};
+
 
 const back_loc_1 = {x:-4*h,b:6000},
       front_loc_1 ={x: -4*h,b: 6000};

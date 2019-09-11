@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/js/engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/engine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
     <ignored path="founder-h5.iws" />
@@ -27,10 +28,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1314">
-              <caret line="726" column="45" selection-start-line="726" selection-start-column="45" selection-end-line="726" selection-end-column="45" />
+            <state relative-caret-position="235">
+              <caret line="181" column="13" lean-forward="true" selection-start-line="181" selection-start-column="13" selection-end-line="181" selection-end-column="13" />
               <folding>
-                <element signature="e#3200#3970#0" />
                 <element signature="e#5855#6285#0" />
                 <element signature="e#8348#8648#0" />
                 <element signature="e#8673#8984#0" />
@@ -44,10 +44,6 @@
                 <element signature="e#11351#11612#0" />
                 <element signature="e#11642#12020#0" />
                 <element signature="e#12027#12050#0" />
-                <element signature="e#12490#12874#0" />
-                <element signature="e#12898#13257#0" />
-                <element signature="e#13281#13643#0" />
-                <element signature="e#13667#14308#0" />
                 <element signature="e#12939#12964#0" />
                 <element signature="e#14834#15164#0" />
                 <element signature="e#15188#15431#0" />
@@ -66,7 +62,6 @@
                 <element signature="e#21281#22169#0" />
                 <element signature="e#22191#23085#0" />
                 <element signature="e#23403#23520#0" />
-                <element signature="e#24364#24501#0" />
                 <element signature="e#24531#24668#0" />
               </folding>
             </state>
@@ -85,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7856">
-              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="407">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
               <folding>
                 <element signature="n#!!block;n#pushQuizPieces#0" />
                 <element signature="n#!!block;n#Sound#0" />
@@ -173,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>function wec</find>
       <find>wecha</find>
       <find>声音</find>
       <find>Hint</find>
@@ -203,6 +197,7 @@
       <find>quiz3</find>
       <find>key</find>
       <find>.key</find>
+      <find>train3</find>
     </findStrings>
     <replaceStrings>
       <replace>on('click,</replace>
@@ -398,7 +393,7 @@
       <workItem from="1566808448563" duration="178000" />
       <workItem from="1566808672341" duration="8234000" />
       <workItem from="1568087201268" duration="10405000" />
-      <workItem from="1568171022216" duration="11946000" />
+      <workItem from="1568171022216" duration="12778000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -670,7 +665,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383485000" />
+    <option name="totallyTimeSpent" value="384317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,10 +856,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7856">
-          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+        <state relative-caret-position="407">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
           <folding>
             <element signature="n#!!block;n#pushQuizPieces#0" />
             <element signature="n#!!block;n#Sound#0" />
@@ -881,19 +883,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tools.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1314">
-          <caret line="726" column="45" selection-start-line="726" selection-start-column="45" selection-end-line="726" selection-end-column="45" />
+        <state relative-caret-position="235">
+          <caret line="181" column="13" lean-forward="true" selection-start-line="181" selection-start-column="13" selection-end-line="181" selection-end-column="13" />
           <folding>
-            <element signature="e#3200#3970#0" />
             <element signature="e#5855#6285#0" />
             <element signature="e#8348#8648#0" />
             <element signature="e#8673#8984#0" />
@@ -907,10 +901,6 @@
             <element signature="e#11351#11612#0" />
             <element signature="e#11642#12020#0" />
             <element signature="e#12027#12050#0" />
-            <element signature="e#12490#12874#0" />
-            <element signature="e#12898#13257#0" />
-            <element signature="e#13281#13643#0" />
-            <element signature="e#13667#14308#0" />
             <element signature="e#12939#12964#0" />
             <element signature="e#14834#15164#0" />
             <element signature="e#15188#15431#0" />
@@ -929,7 +919,6 @@
             <element signature="e#21281#22169#0" />
             <element signature="e#22191#23085#0" />
             <element signature="e#23403#23520#0" />
-            <element signature="e#24364#24501#0" />
             <element signature="e#24531#24668#0" />
           </folding>
         </state>

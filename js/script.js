@@ -124,36 +124,61 @@ $(function () {
                     topic2.Enter(3000);
                 });
 
+                speed_train.update(train_loc_4,()=>{
+                    startTimer();
+                    $('.keys3').addClass('mainIn');
+                });
                 Scene3In();
                 frontScene3In();
-                train3In();
+                // train3In();
             }
         }else if(sec_id == 3) {
             password = password3;
             arrTitle = arrTitle3;
             procedure = function () {
+                speed_train.update(train_loc_4,()=>{
+                    startTimer();
+                    $('.keys4').addClass('mainIn');
+                });
+
                 title2Out();
                 Scene4In();
                 frontScene4In();
-                train4In();
+                // train4In();
             }
         }else if(sec_id == 4) {
             password = password4;
             arrTitle = arrTitle4;
             procedure = function () {
+                speed_train.update(train_loc_4, () => {
+                    startTimer();
+                    $('.keys5').addClass('mainIn');
+                });
                 title3Out();
                 Scene5In();
                 frontScene5In();
-                train5In();
+                // train5In();
             }
         }else if(sec_id == 5) {
             password = password5;
             arrTitle = arrTitle5;
             procedure = function () {
+                speed_train.update(train_loc_5,() =>{
+                    $('#flag').addClass('mainIn');
+                    $('#slogan1').addClass('mainIn');
+
+                    setTimeout(function () {
+                        $('#slogan1').removeClass('mainIn');
+                        $('#slogan1').addClass('fadeOut');
+
+                        $('#slogan2').addClass('mainIn');
+                        $('#check').addClass('mainIn');
+                    },5000);
+                });
                 title4Out();
                 Scene6In();
                 frontScene6In();
-                train6In();
+                // train6In();
             }
         }
 
@@ -353,8 +378,7 @@ $(function () {
         function handleComplete() {
             // 第三页要显示的逻辑
             // signal();
-            startTimer();
-            $('.keys3').addClass('mainIn');
+
         }
 
         console.log("train3In 的帧率："+createjs.Ticker.getMeasuredFPS());
@@ -698,7 +722,6 @@ $(function () {
     }
 
 
-
 /*****************************************题目逻辑*********************************/
     const password2 =[0,1,1,0,2,1,4,0,1,0,5,3,5,1],
           password3 =[4,3,1,4,1,4,6,4,1,1,5,6,0,2],
@@ -716,7 +739,6 @@ $(function () {
             enteredPass.push(choice);
             // console.log('enteredPass',enteredPass);
             // console.log('booleanArr',booleanArr);
-
             if (enteredPass.length <= password.length){
                 for(var i = 0; i<password.length;i++){
                     if (enteredPass[i]==password[i]){
@@ -754,8 +776,9 @@ $(function () {
     }
 }
 
+//todo sound did not play fluently.Has stubbed!
     function checkRight(key){
-        playRight();
+        audio_right.play()
         $(key+'_r').show();
         setTimeout(function () {
             $(key+'_r').hide();
@@ -763,28 +786,13 @@ $(function () {
     }
 
     function checkWrong(key){
-        playWrong();
+        audio_wrong.play();
         $(key+'_w').show();
         setTimeout(function () {
             $(key+'_w').hide();
         },100);
     }
 
-    /*****************************************声音播放********************************/
-
-    function playWrong() {
-        createjs.Sound.registerSound({src:"asset/audio/wrong.mp3", id:"wrong"});
-        createjs.Sound.play("wrong");
-    }
-
-    function playRight(){
-        createjs.Sound.registerSound({src:"asset/audio/right.mp3", id:"right"});
-        createjs.Sound.play("right");
-    }
-    function playOut() {
-        createjs.Sound.registerSound({src:"asset/audio/out.mp3", id:"out"});
-        createjs.Sound.play("out");
-    }
 
 
 
