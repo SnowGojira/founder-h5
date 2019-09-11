@@ -90,7 +90,7 @@ $(function () {
         /*console.log()*/
         Hide([".page1float","#bubble"]);
         audio_out.play();
-        
+
         front_scene.update(front_loc_1);
         back_scene.update(back_loc_1);
 
@@ -102,43 +102,53 @@ $(function () {
             startTimer();
         });
         // title means the quiz on the train
-        // title1In();
+        title1In();
 
     });
 
     //page2 quiz UI
-    $('#key20').on('click', function () {
-        // console.log('#key20 点击了');
-        quiz2(0);
-    });
-    $('#key21').on('click', function () {
-        quiz2(1);
-    });
-    $('#key22').on('click', function () {
-        quiz2(2);
-    });
-    $('#key23').on('click', function () {
-        quiz2(3);
-    });
-    $('#key24').on('click', function () {
-        quiz2(4);
-    });
-    $('#key25').on('click', function () {
-        quiz2(5);
-    });
-    $('#key26').on('click', function () {
-        quiz2(6);
-    });
-    $('#key27').on('click', function () {
-        quiz2(7);
-    });
-    $('#key28').on('click', function () {
-        quiz2(8);
-    });
-    $('#key29').on('click', function () {
+    let quizPress2 = quizPress(2,10);
+
+    quizPress2.forEach(e => { e()});
+    // $('#key20').on('click', function () {
+    //     // console.log('#key20 点击了');
+    //     quiz2(0);
+    // });
+    // $('#key21').on('click', function () {
+    //     quiz2(1);
+    // });
+    // $('#key22').on('click', function () {
+    //     quiz2(2);
+    // });
+    // $('#key23').on('click', function () {
+    //     quiz2(3);
+    // });
+    // $('#key24').on('click', function () {
+    //     quiz2(4);
+    // });
+    // $('#key25').on('click', function () {
+    //     quiz2(5);
+    // });
+    // $('#key26').on('click', function () {
+    //     quiz2(6);
+    // });
+    // $('#key27').on('click', function () {
+    //     quiz2(7);
+    // });
+    // $('#key28').on('click', function () {
+    //     quiz2(8);
+    // });
+    // $('#key29').on('click', function () {
         quiz2(9);
-    });
+    // });
     //page3
+    $('.key').on('click',function(e){
+        let id_str = $(this).attr("id").split(''),
+            func_id = 'quiz'+id_str[3],
+            value = id_str[4];
+        func_id(value);
+        console.log('id',func_id);
+    });
 
     $('#key30').on('click', function () {
         // console.log('#key30 点击了');
@@ -272,8 +282,6 @@ $(function () {
         window.location.href = 'index.html';
     })
 });
-
-
 
 
     /*****************************************火车的动效*********************************/
@@ -432,17 +440,17 @@ $(function () {
     }
 
 
-    function train2In(){
-        createjs.Tween.get(train, {loop: false})
-            .to({x: -0.3*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
-        function handleComplete() {
-            // 第二页要显示的逻辑
-            $('.timer').show();
-            startTimer();
-            $('.keys2').addClass('mainIn');
-        }
-        console.log("train2In 的帧率："+createjs.Ticker.getMeasuredFPS());
-    }
+    // function train2In(){
+    //     createjs.Tween.get(train, {loop: false})
+    //         .to({x: -0.3*h}, 8000, createjs.Ease.getPowInOut(4)).call(handleComplete);
+    //     function handleComplete() {
+    //         // 第二页要显示的逻辑
+    //         $('.timer').show();
+    //         startTimer();
+    //         $('.keys2').addClass('mainIn');
+    //     }
+    //     console.log("train2In 的帧率："+createjs.Ticker.getMeasuredFPS());
+    // }
     function train3In(){
         createjs.Tween.get(train, {loop: false})
             .to({x: -0.9*h-50}, 6000, createjs.Ease.getPowInOut(4)).call(handleComplete);
@@ -612,77 +620,7 @@ $(function () {
     }
 
     /*****************************************背景动效*********************************/
-//page1 实验性的动效
-//     var bubbleStage,
-//         bubbleCanvas,
-//         bubbleContainer;
-//     bubbleCanvas=document.getElementById('bubble');
-//     function bubble(){
-//         // console.log("bubble canvas 创建");
-//         bubbleStage = new createjs.Stage(bubbleCanvas);//创建舞台
-//         bubbleContainer= new createjs.Container();
-//         bubbleStage.addChild(bubbleContainer);
-//         bubbleStage.canvas.height=w;
-//         bubbleStage.canvas.width=h;
-//         var data ={
-//             framerate:1,
-//             images:['./images/page1/bubble.png'],
-//             frames:{
-//                 width:750,
-//                 height:466,
-//                 count:3
-//             },
-//             animations:{
-//                 anim : [0,2,'anim']
-//             }
-//
-//         };
-//
-//         var spriteSheet2 = new createjs.SpriteSheet(data);
-//         var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-//
-//         img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-//         bubbleContainer.addChild(img1);
-//
-//         // createjs.Ticker.setFPS(30);
-//         createjs.Ticker.on('tick',bubbleStage);
-//     }
 
-//page2 实验性的动效
-//     var img,snowStage,
-//         snowCanvas,
-//         snowContainer;
-//     snowCanvas=document.getElementById('snow');
-//     function snow(){
-//         // console.log("snow canvas 创建成功");
-//         snowStage = new createjs.Stage(snowCanvas);//创建舞台
-//         snowContainer= new createjs.Container();
-//         snowStage.addChild(snowContainer);
-//         snowStage.canvas.height=w;
-//         snowStage.canvas.width=h;
-//
-//         var data ={
-//             framerate:2,
-//             images:['./images/page2/snow1.png'],
-//             frames:{
-//                 width:750,
-//                 height:466,
-//                 count:3
-//             },
-//             animations:{
-//                 anim : [0,2,'anim']
-//             }
-//
-//         };
-//
-//         var spriteSheet2 = new createjs.SpriteSheet(data);
-//         var img1 = new createjs.Sprite(spriteSheet2, 'anim');
-//
-//         img1.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-//         snowContainer.addChild(img1);
-//         // createjs.Ticker.setFPS(2);
-//         createjs.Ticker.on('tick',snowStage);
-//     }
 
 //page3 实验性动效
     var cloudStage,
@@ -875,12 +813,15 @@ $(function () {
     var enteredPass3 = [];
     var enteredPass4 = [];
     var enteredPass5 = [];
-    function quiz2(a) {
+
+    function quiz(a) {
         var Choice = $('#key2'+a).attr('data-choice');
         enteredPass2.push(Choice);
         checkPasscode2('#key2',password_shijie,arrTitle1);
     }
+    function quiz(sec, v){
 
+    }
     function quiz3(a) {
         var Choice = $('#key3'+a).attr('data-choice');
         enteredPass3.push(Choice);
