@@ -102,8 +102,9 @@ $(function () {
             startTimer();
         });
         // title means the quiz on the train
-        title1In();
-
+        // title1In();
+        topic1.render();
+        topic1.Enter(8000);
     });
 
     //page2 quiz UI
@@ -266,23 +267,6 @@ $(function () {
     // var positonY=0.489*w;
 
 //Initialize the 'Title' part
-    const arrTitle2 = pushQuizPieces(14, 'title1'),
-          arrTitle3 = pushQuizPieces(14, 'title2'),
-          arrTitle4 = pushQuizPieces(10, 'title3'),
-          arrTitle5 = pushQuizPieces(12, 'title4');
-    //recurse the quiz; loop can be used as well.
-    //Here I chose the readability over the proformance
-    //Since the array is short.
-    function pushQuizPieces(count,file_url,num=0,arr=[]){
-
-        if(arr.length == count+1) return arr;
-
-        var image = new createjs.Bitmap("./images/"+file_url+"/"+num+".png");
-        arr.push(image);
-        const new_num = num+1;
-
-        return pushQuizPieces(count--,file_url,new_num,arr);
-    }
 
 
 // 火车page1
@@ -847,6 +831,11 @@ $(function () {
                     if(i == password.length-1){
                         playOut();
                         stopTimer();
+
+                        topic1.Leave(function(){
+                            $('#title1').hide();
+                            title2In();
+                        });
 
                         title1Out();
 

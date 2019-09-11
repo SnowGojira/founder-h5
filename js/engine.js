@@ -1,4 +1,4 @@
-//global variable
+//////////////////////////////////////////global variable//////////////////////
 const w = document.documentElement.clientWidth,
       h = document.documentElement.clientHeight;
 
@@ -16,14 +16,32 @@ const train_loc_1 = {x:h*3/4, b:8000},
 const back_loc_1 = {x:-4*h,b:6000},
       front_loc_1 ={x: -4*h,b: 6000};
 
+//initial image series
+const arrTitle2 = pushQuizPieces(14, 'title1'),
+    arrTitle3 = pushQuizPieces(14, 'title2'),
+    arrTitle4 = pushQuizPieces(10, 'title3'),
+    arrTitle5 = pushQuizPieces(12, 'title4');
+//recurse the quiz; loop can be used as well.
+//Here I chose the readability over the proformance
+//Since the array is short.
+function pushQuizPieces(count,file_url,num=0,arr=[]){
+
+    if(arr.length == count+1) return arr;
+
+    var image = new createjs.Bitmap("./images/"+file_url+"/"+num+".png");
+    arr.push(image);
+    const new_num = num+1;
+
+    return pushQuizPieces(count--,file_url,new_num,arr);
+}
 
 
-//the logic going here
+///////////////////////////////////////Prototype///////////////////////////////
 
+//audio
 function Sound (id_str){
     this.id = id_str;
 }
-
 Sound.prototype.play = function () {
     console.log("sound play is triggered "+ this.id);
     let audio = document.getElementById(this.id);
@@ -40,6 +58,7 @@ Sound.prototype.play = function () {
     }
 };
 
+
 //scene
 function Scene(stage,image){
     this.stage = new createjs.Stage(stage);
@@ -47,7 +66,6 @@ function Scene(stage,image){
     this.stage.canvas.width=h;
     this.stage.canvas.height=w;
 }
-
 Scene.prototype.render = function(){
 
     this.background.scaleX=bgScaleY;
@@ -59,7 +77,6 @@ Scene.prototype.render = function(){
     createjs.Ticker.setFPS(ratio);
     createjs.Ticker.on('tick',this.stage);
 };
-
 Scene.prototype.update = function(...args){
     if(args[1]== undefined){
         createjs.Tween.get(this.background, {loop: false})
@@ -71,8 +88,7 @@ Scene.prototype.update = function(...args){
 
 };
 
-
-//train
+//train: the son of Scene
 function Train(stage, image){
     Scene.call(this,stage,image);
 }
@@ -97,13 +113,14 @@ Train.prototype.render = function(){
     createjs.Ticker.on('tick',this.stage);
 };
 
+
+//animation of the background
 function SheetAnim (id,url){
     this.url = url;
     this.canvas = document.getElementById(id);
     this.stage = new createjs.Stage(this.canvas);
     this.container = new createjs.Container();
 }
-
 SheetAnim.prototype.render = function(){
 
     this.stage.addChild(this.container);
@@ -133,6 +150,66 @@ SheetAnim.prototype.render = function(){
     createjs.Ticker.on('tick',this.stage);
 };
 
+
+//the action of the quiz's topic
+function Tween(canvas,img_arr){
+    this.stage = new createjs.Stage(canvas);
+    this.img_arr = img_arr;
+}
+Tween.prototype.render = function() {
+    this.stage.canvas.width=h;
+    this.stage.canvas.height=w;
+
+    for(let i=0;i<this.img_arr.length;i++){
+        this.img_arr[i].scaleX=scale*1.2;
+        this.img_arr[i].scaleY=scale*1.2;
+
+        i==0? this.img_arr[i].visible=true:this.img_arr[i].visible=false;
+
+        this.img_arr[i].x=h;
+        this.img_arr[i].y=positonY*0.95;
+        this.stage.addChild(this.img_arr[i]);
+   }
+
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',this.stage);
+
+};
+//first time 8000, after is 3000
+Tween.prototype.Enter = function (b){
+
+    this.img_arr.forEach(e => {
+        createjs.Tween.get(e, {loop: false})
+            .to({x: h*0.42}, b, createjs.Ease.getPowInOut(4));
+    });
+}
+Tween.prototype.Leave = function(cb){
+    let length = this.img_arr.length;
+    for(var i=0;i<length-1;i++){
+        createjs.Tween.get(this.img_arr[i], {loop: false})
+            .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4));
+    }
+
+    createjs.Tween.get(this.img_arr[length-1], {loop: false})
+        .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(cb);
+};
+
+
+var  stageTitle1=new createjs.Stage("title1");
+var  stageTitle2=new createjs.Stage("title2");
+var  stageTitle3=new createjs.Stage("title3");
+var  stageTitle4=new createjs.Stage("title4");
+//stage和handle函数要注意避免毁掉错误
+function title1In() {
+    stageTitle1.canvas.width=h;
+    stageTitle1.canvas.height=w;
+
+    initTitle(arrTitle2,stageTitle1);
+    createjs.Ticker.setFPS(ratio);
+    createjs.Ticker.on('tick',stageTitle1);
+    TweenIn1Title(arrTitle2);
+}
+
 ///////////////////////Instantiate Objects/////////////////////////////
 var audio_wrong = new Sound('audio_wrong'),
     audio_right = new Sound('audio_right'),
@@ -146,7 +223,13 @@ var audio_wrong = new Sound('audio_wrong'),
     front_scene = new Scene('fbg1','./images/page1/fbgt.png'),
 
     bubble_anim = new SheetAnim('bubble','./images/page1/bubble.png'),
-    snow_anim = new SheetAnim('snow','./images/page2/snow1.png');
+    snow_anim = new SheetAnim('snow','./images/page2/snow1.png'),
+
+    topic1 = new Tween("title1",arrTitle2),
+    topic2 = new Tween("title2",arrTitle3),
+    topic3 = new Tween("title3",arrTitle4),
+    topic4 = new Tween("title4",arrTitle5);
+
 
 // var audioArr = [audio_run,audio_start,audio_bg,audio_out,audio_right,audio_run,audio_wrong];
 
