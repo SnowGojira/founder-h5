@@ -76,7 +76,7 @@ function handleComplete(){
 
 //events' logic
 $(function () {
-    //page1
+    //page1 start page
     $("#hint").on('click', function () {
         Hide(["#hint"]);
         audio_run.play();
@@ -101,147 +101,73 @@ $(function () {
 
             startTimer();
         });
-        // title means the quiz on the train
-        // title1In();
+
+        // topic means the quiz on the train
         topic1.render();
         topic1.Enter(8000);
     });
 
-    //page2 quiz UI
-
-    // $('#key20').on('click', function () {
-    //     // console.log('#key20 点击了');
-    //     quiz2(0);
-    // });
-    // $('#key21').on('click', function () {
-    //     quiz2(1);
-    // });
-    // $('#key22').on('click', function () {
-    //     quiz2(2);
-    // });
-    // $('#key23').on('click', function () {
-    //     quiz2(3);
-    // });
-    // $('#key24').on('click', function () {
-    //     quiz2(4);
-    // });
-    // $('#key25').on('click', function () {
-    //     quiz2(5);
-    // });
-
-    //todo why the password and topic array is unddfined ??
+    //page2-5 quiz page
     $('.key').on('click',function(e){
         let id_str = $(this).attr("id").split(''),
             sec_id = id_str[3],
             key_id = id_str[4],
-            arrTitle, password;
+            arrTitle, password,procedure;
 
         if(sec_id == 2) {
             password = password2;
             arrTitle = arrTitle2;
+            procedure = function(){
+                topic1.Leave(function () {
+                    $('#title1').hide();
+                    topic2.render();
+                    topic2.Enter(3000);
+                });
+
+                Scene3In();
+                frontScene3In();
+                train3In();
+            }
         }else if(sec_id == 3) {
             password = password3;
             arrTitle = arrTitle3;
+            procedure = function () {
+                title2Out();
+                Scene4In();
+                frontScene4In();
+                train4In();
+            }
         }else if(sec_id == 4) {
             password = password4;
             arrTitle = arrTitle4;
+            procedure = function () {
+                title3Out();
+                Scene5In();
+                frontScene5In();
+                train5In();
+            }
         }else if(sec_id == 5) {
             password = password5;
             arrTitle = arrTitle5;
+            procedure = function () {
+                title4Out();
+                Scene6In();
+                frontScene6In();
+                train6In();
+            }
         }
 
-        console.log('first password',password);
-        console.log('first arrTitle',arrTitle);
+        // console.log('first password',password);
+        // console.log('first arrTitle',arrTitle);
 
-        parseQuiz(sec_id,key_id,password,arrTitle, enteredPass = [], booleanArr = []);
-        console.log('id',sec_id+' '+key_id);
-    });
+        parseQuiz(sec_id,key_id,password,arrTitle,procedure);
 
-    //page3
-    $('#key30').on('click', function () {
-        // console.log('#key30 点击了');
-        quiz3(0);
-    });
-    $('#key31').on('click', function () {
-        quiz3(1);
-    });
-    $('#key32').on('click', function () {
-        quiz3(2);
-    });
-    $('#key33').on('click', function () {
-        quiz3(3);
-    });
-    $('#key34').on('click', function () {
-        quiz3(4);
-    });
-    $('#key35').on('click', function () {
-        quiz3(5);
-    });
-    $('#key36').on('click', function () {
-        quiz3(6);
     });
 
 
-    //page4
-    $('#key40').on('click', function () {
-        // console.log("key40 背点击");
-        quiz4(0);
-
-    });
-    $('#key41').on('click', function () {
-        quiz4(1);
-    });
-    $('#key42').on('click', function () {
-        quiz4(2);
-    });
-    $('#key43').on('click', function () {
-        quiz4(3);
-    });
-    $('#key44').on('click', function () {
-        quiz4(4);
-    });
-    $('#key45').on('click', function () {
-        quiz4(5);
-    });
-    $('#key46').on('click', function () {
-        quiz4(6);
-    });
-    $('#key47').on('click', function () {
-        quiz4(7);
-    });
-
-
-
-    //page5
-    $('#key50').on('click', function () {
-        quiz5(0);
-    });
-    $('#key51').on('click', function () {
-        quiz5(1);
-    });
-    $('#key52').on('click', function () {
-        quiz5(2);
-    });
-    $('#key53').on('click', function () {
-        quiz5(3);
-    });
-    $('#key54').on('click', function () {
-        quiz5(4);
-    });
-    $('#key55').on('click', function () {
-        quiz5(5);
-    });
-    $('#key56').on('click', function () {
-        quiz5(6);
-    });
-
-
+    //page6 result page
     $('#checkBtn').on('click', function () {
         // console.log("checkBtn查看按钮被激发。");
-        // $('#slogan1').hide();
-        // $('#slogan2').hide();
-        // $('#flag').hide();
-        // $('#check').hide();
 
         Hide(['#slogan1','#slogan2','#flag','#check']);
         $('#page7').show();
@@ -253,7 +179,7 @@ $(function () {
     });
 
 
-    //page7 logic
+    //page7 share page
     $('#wxShare').on('click', function () {
         $('#share').show();
     });
@@ -773,54 +699,35 @@ $(function () {
 
 
 
-    /*****************************************题目逻辑*********************************/
-//The passcode to check against.
-    var password2 =[0,1,1,0,2,1,4,0,1,0,5,3,5,1];//4
-    var password3 =[4,3,1,4,1,4,6,4,1,1,5,6,0,2];//5
-    var password4 =[0,3,6,2,7,1,0,0,4,5];//4
-    var password5 = [6,5,1,2,2,6,1,1,3,2,4,0];
-    var enteredPass2 = [];
-    var enteredPass3 = [];
-    var enteredPass4 = [];
-    var enteredPass5 = [];
+/*****************************************题目逻辑*********************************/
+    const password2 =[0,1,1,0,2,1,4,0,1,0,5,3,5,1],
+          password3 =[4,3,1,4,1,4,6,4,1,1,5,6,0,2],
+          password4 =[0,3,6,2,7,1,0,0,4,5],
+          password5 = [6,5,1,2,2,6,1,1,3,2,4,0];
 
-    function parseQuiz(sec_id,key_id,password,array){
-        //todo this function will be called with click event
-        //todo so you need to consture a closure to make sure
-        //todo enteredPass can hold the number
-        let choice = $('#key'+sec_id+key_id).attr('data-choice'),
-            key = '#key'+sec_id;
+    let enteredPass = [],
+        booleanArr = [];
 
+    function parseQuiz(sec_id,key_id,password,arr,cb) {
 
-        enteredPass.push(choice);
-        // console.log('key',key);
-        // console.log('password',password);
-        // console.log('arrTitle',array);
-        console.log('choice',choice);
-        console.log('enteredPass',enteredPass);
-        console.log('booleanArr',booleanArr);
+            let choice = $('#key'+sec_id+key_id).attr('data-choice'),
+                key = '#key'+sec_id;
 
-        function parse(key,password,arr) {
-            /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
+            enteredPass.push(choice);
+            // console.log('enteredPass',enteredPass);
+            // console.log('booleanArr',booleanArr);
+
             if (enteredPass.length <= password.length){
                 for(var i = 0; i<password.length;i++){
                     if (enteredPass[i]==password[i]){
                         booleanArr.push(true);
                         VBTitleByNum(arr, i+1);
                         if(i == password.length-1) {
-                            playOut();
+                            enteredPass = [];
+                            audio_out.play();
                             stopTimer();
 
-                            topic1.Leave(function () {
-                                $('#title1').hide();
-                                title2In();
-                            });
-
-                            title1Out();
-
-                            Scene3In();
-                            frontScene3In();
-                            train3In();
+                            cb();
                         }
                     }else{
                         booleanArr.push(false);
@@ -837,85 +744,15 @@ $(function () {
                 //需要清空，重新加入新的遍历array
                 booleanArr=[];
             }
-            // console.log("enteredPass的状态："+enteredPass2);
-        }
 
-        parse(key,password,array);
-    }
-    function quiz2(a) {
-        let Choice = $('#key2'+a).attr('data-choice');
-        enteredPass2.push(Choice);
-        checkPasscode2('#key2',password2,arrTitle2);
+
     }
 
-function checkPasscode2(key,password,arr) {
-    /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-    if (enteredPass2.length <= password.length){
-        for(var i = 0; i<password.length;i++){
-            if (enteredPass2[i]==password[i]){
-                booleanArr.push(true);
-                VBTitleByNum(arr, i+1);
-                if(i == password.length-1) {
-                    playOut();
-                    stopTimer();
-
-                    topic1.Leave(function () {
-                        $('#title1').hide();
-                        title2In();
-                    });
-
-                    title1Out();
-
-                    Scene3In();
-                    frontScene3In();
-                    train3In();
-                }
-            }else{
-                booleanArr.push(false);
-            }
-        }
-    }
-    if(enteredPass2.length>0 ){
-        if (booleanArr[enteredPass2.length-1]){
-            checkRight(key+enteredPass2[enteredPass2.length-1]);
-        }else {
-            checkWrong(key+enteredPass2[enteredPass2.length-1]);
-            enteredPass2.pop();
-        }
-        //需要清空，重新加入新的遍历array
-        booleanArr=[];
-    }
-    // console.log("enteredPass的状态："+enteredPass2);
-}
-
-function VBTitleByNum(arr,num){
+    function VBTitleByNum(arr,num){
     for(var i=0;i<arr.length;i++){
         i==num?arr[i].visible=true:arr[i].visible=false;
     }
 }
-
-
-    function quiz3(a) {
-        var Choice = $('#key3'+a).attr('data-choice');
-        enteredPass3.push(Choice);
-        checkPasscode3('#key3',password_zaibian,arrTitle2);
-    }
-
-    function quiz4(a) {
-        var Choice = $('#key4'+a).attr('data-choice');
-        enteredPass4.push(Choice);
-        checkPasscode4('#key4',password_chuangxin,arrTitle3);
-    }
-
-    function quiz5(a) {
-        var Choice = $('#key5'+a).attr('data-choice');
-        enteredPass5.push(Choice);
-        checkPasscode5('#key5',password_bubian,arrTitle4);
-    }
-
-    /*拼写的规则*/
-    //var booleanArr = [];
-
 
     function checkRight(key){
         playRight();
@@ -933,244 +770,6 @@ function VBTitleByNum(arr,num){
         },100);
     }
 
-    /**
-     *遍历将指定的题目变成可见的
-     */
-
-
-
-
-    function checkPasscode3(key,password,arr) {
-        /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-        if (enteredPass3.length>password.length){
-            return;
-        }else{
-            for(var i = 0; i<password.length;i++){
-                if (enteredPass3[i]==password[i]){
-                    booleanArr.push(true);
-                    switch (i){
-                        case 0:
-                            VBTitleByNum(arr,1);
-                            break;
-                        case 1:
-                            VBTitleByNum(arr,2);
-                            break;
-                        case 2:
-                            VBTitleByNum(arr,3);
-                            break;
-                        case 3:
-                            VBTitleByNum(arr,4);
-                            break;
-                        case 4:
-                            VBTitleByNum(arr,5);
-                            break;
-                        case 5:
-                            VBTitleByNum(arr,6);
-                            break;
-                        case 6:
-                            VBTitleByNum(arr,7);
-                            break;
-                        case 7:
-                            VBTitleByNum(arr,8);
-                            break;
-                        case 8:
-                            VBTitleByNum(arr,9);
-                            break;
-                        case 9:
-                            VBTitleByNum(arr,10);
-                            break;
-                        case 10:
-                            VBTitleByNum(arr,11);
-                            break;
-                        case 11:
-                            VBTitleByNum(arr,12);
-                            break;
-                        case 12:
-                            VBTitleByNum(arr,13);
-                            break;
-                        case 13:
-                            VBTitleByNum(arr,14);
-                            playOut();
-                            stopTimer();
-
-                            title2Out();
-                            Scene4In();
-                            frontScene4In();
-                            train4In();
-                            break;
-                        default:
-                            break;
-                    }
-                }else{
-
-                    booleanArr.push(false);
-                }
-            }
-        }
-
-        if(enteredPass3.length>0 ){
-            if (booleanArr[enteredPass3.length-1]){
-                checkRight(key+enteredPass3[enteredPass3.length-1]);
-            }else {
-                checkWrong(key+enteredPass3[enteredPass3.length-1]);
-                enteredPass3.pop();
-            }
-            //需要清空，重新加入新的遍历array
-            booleanArr=[];
-        }else{
-        }
-    }
-
-    function checkPasscode4(key,password,arr) {
-        /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-        if (enteredPass4.length>password.length){
-            return;
-        }else{
-            for(var i = 0; i<password.length;i++){
-                if (enteredPass4[i]==password[i]){
-                    booleanArr.push(true);
-                    switch (i){
-                        case 0:
-                            VBTitleByNum(arr,1);
-                            break;
-                        case 1:
-                            VBTitleByNum(arr,2);
-                            break;
-                        case 2:
-                            VBTitleByNum(arr,3);
-                            break;
-                        case 3:
-                            VBTitleByNum(arr,4);
-                            break;
-                        case 4:
-                            VBTitleByNum(arr,5);
-                            break;
-                        case 5:
-                            VBTitleByNum(arr,6);
-                            break;
-                        case 6:
-                            VBTitleByNum(arr,7);
-                            break;
-                        case 7:
-                            VBTitleByNum(arr,8);
-                            break;
-                        case 8:
-                            VBTitleByNum(arr,9);
-                            break;
-                        case 9:
-                            VBTitleByNum(arr,10);
-                            playOut();
-                            stopTimer();
-
-                            title3Out();
-                            Scene5In();
-                            frontScene5In();
-                            train5In();
-                            break;
-                        default:
-                            break;
-                    }
-                }else{
-
-                    booleanArr.push(false);
-                }
-            }
-        }
-
-        if(enteredPass4.length>0 ){
-            if (booleanArr[enteredPass4.length-1]){
-                checkRight(key+enteredPass4[enteredPass4.length-1]);
-            }else {
-                checkWrong(key+enteredPass4[enteredPass4.length-1]);
-                enteredPass4.pop();
-            }
-            //需要清空，重新加入新的遍历array
-            booleanArr=[];
-        }else{
-        }
-
-    }
-
-    function checkPasscode5(key,password,arr) {
-        /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-        if (enteredPass5.length>password.length){
-            return;
-        }else{
-            for(var i = 0; i<password.length;i++){
-                if (enteredPass5[i]==password[i]){
-                    booleanArr.push(true);
-                    switch (i){
-                        case 0:
-                            VBTitleByNum(arr,1);
-                            break;
-                        case 1:
-                            VBTitleByNum(arr,2);
-                            break;
-                        case 2:
-                            VBTitleByNum(arr,3);
-                            break;
-                        case 3:
-                            VBTitleByNum(arr,4);
-                            break;
-                        case 4:
-                            VBTitleByNum(arr,5);
-                            break;
-                        case 5:
-                            VBTitleByNum(arr,6);
-                            break;
-                        case 6:
-                            VBTitleByNum(arr,7);
-                            break;
-                        case 7:
-                            VBTitleByNum(arr,8);
-                            break;
-                        case 8:
-                            VBTitleByNum(arr,9);
-                            break;
-                        case 9:
-                            VBTitleByNum(arr,10);
-
-                            break;
-                        case 10:
-                            VBTitleByNum(arr,11);
-
-                            break;
-                        case 11:
-                            VBTitleByNum(arr,12);
-
-                            playRun();
-                            stopTimer();
-
-                            title4Out();
-                            Scene6In();
-                            frontScene6In();
-                            train6In();
-
-                            break;
-                        default:
-                            break;
-                    }
-                }else{
-
-                    booleanArr.push(false);
-                }
-            }
-        }
-
-        if(enteredPass5.length>0 ){
-            if (booleanArr[enteredPass5.length-1]){
-                checkRight(key+enteredPass5[enteredPass5.length-1]);
-            }else {
-                checkWrong(key+enteredPass5[enteredPass5.length-1]);
-                enteredPass5.pop();
-            }
-            //需要清空，重新加入新的遍历array
-            booleanArr=[];
-        }else{
-        }
-    }
-
-
     /*****************************************声音播放********************************/
 
     function playWrong() {
@@ -1187,13 +786,5 @@ function VBTitleByNum(arr,num){
         createjs.Sound.play("out");
     }
 
-    function playStart() {
-        createjs.Sound.registerSound({src:"asset/audio/start.mp3", id:"start"});
-        createjs.Sound.play("start");
-    }
-    function playRun(){
-        createjs.Sound.registerSound({src:"asset/audio/running.mp3", id:"run"});
-        createjs.Sound.play("run");
-    }
 
 
