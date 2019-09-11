@@ -107,41 +107,28 @@ $(function () {
     });
 
     //page2 quiz UI
-    let quizPress2 = quizPress(2,10);
 
-    quizPress2.forEach(e => { e()});
-    // $('#key20').on('click', function () {
-    //     // console.log('#key20 点击了');
-    //     quiz2(0);
-    // });
-    // $('#key21').on('click', function () {
-    //     quiz2(1);
-    // });
-    // $('#key22').on('click', function () {
-    //     quiz2(2);
-    // });
-    // $('#key23').on('click', function () {
-    //     quiz2(3);
-    // });
-    // $('#key24').on('click', function () {
-    //     quiz2(4);
-    // });
-    // $('#key25').on('click', function () {
-    //     quiz2(5);
-    // });
-    // $('#key26').on('click', function () {
-    //     quiz2(6);
-    // });
-    // $('#key27').on('click', function () {
-    //     quiz2(7);
-    // });
-    // $('#key28').on('click', function () {
-    //     quiz2(8);
-    // });
-    // $('#key29').on('click', function () {
-        quiz2(9);
-    // });
-    //page3
+    $('#key20').on('click', function () {
+        // console.log('#key20 点击了');
+        quiz2(0);
+    });
+    $('#key21').on('click', function () {
+        quiz2(1);
+    });
+    $('#key22').on('click', function () {
+        quiz2(2);
+    });
+    $('#key23').on('click', function () {
+        quiz2(3);
+    });
+    $('#key24').on('click', function () {
+        quiz2(4);
+    });
+    $('#key25').on('click', function () {
+        quiz2(5);
+    });
+
+
     $('.key').on('click',function(e){
         let id_str = $(this).attr("id").split(''),
             func_id = 'quiz'+id_str[3],
@@ -150,6 +137,7 @@ $(function () {
         console.log('id',func_id);
     });
 
+    //page3
     $('#key30').on('click', function () {
         // console.log('#key30 点击了');
         quiz3(0);
@@ -172,15 +160,7 @@ $(function () {
     $('#key36').on('click', function () {
         quiz3(6);
     });
-    $('#key37').on('click', function () {
-        quiz3(7);
-    });
-    $('#key38').on('click', function () {
-        quiz3(8);
-    });
-    $('#key39').on('click', function () {
-        quiz3(9);
-    });
+
 
     //page4
     $('#key40').on('click', function () {
@@ -209,12 +189,7 @@ $(function () {
     $('#key47').on('click', function () {
         quiz4(7);
     });
-    $('#key48').on('click', function () {
-        quiz4(8);
-    });
-    $('#key49').on('click', function () {
-        quiz4(9);
-    });
+
 
 
     //page5
@@ -239,15 +214,7 @@ $(function () {
     $('#key56').on('click', function () {
         quiz5(6);
     });
-    $('#key57').on('click', function () {
-        quiz5(7);
-    });
-    $('#key58').on('click', function () {
-        quiz5(8);
-    });
-    $('#key59').on('click', function () {
-        quiz5(9);
-    });
+
 
     $('#checkBtn').on('click', function () {
         // console.log("checkBtn查看按钮被激发。");
@@ -299,10 +266,10 @@ $(function () {
     // var positonY=0.489*w;
 
 //Initialize the 'Title' part
-    const arrTitle1 = pushQuizPieces(14, 'title1'),
-          arrTitle2 = pushQuizPieces(14, 'title2'),
-          arrTitle3 = pushQuizPieces(10, 'title3'),
-          arrTitle4 = pushQuizPieces(12, 'title4');
+    const arrTitle2 = pushQuizPieces(14, 'title1'),
+          arrTitle3 = pushQuizPieces(14, 'title2'),
+          arrTitle4 = pushQuizPieces(10, 'title3'),
+          arrTitle5 = pushQuizPieces(12, 'title4');
     //recurse the quiz; loop can be used as well.
     //Here I chose the readability over the proformance
     //Since the array is short.
@@ -515,16 +482,16 @@ $(function () {
         stageTitle1.canvas.width=h;
         stageTitle1.canvas.height=w;
 
-        initTitle(arrTitle1,stageTitle1);
+        initTitle(arrTitle2,stageTitle1);
         createjs.Ticker.setFPS(ratio);
         createjs.Ticker.on('tick',stageTitle1);
-        TweenIn1Title(arrTitle1);
+        TweenIn1Title(arrTitle2);
     }
     function title1Out() {
         // console.log("title1out 被调用");
 
-        TweenOutTitle(arrTitle1);
-        createjs.Tween.get(arrTitle1[14], {loop: false})
+        TweenOutTitle(arrTitle2);
+        createjs.Tween.get(arrTitle2[14], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title1').hide();
@@ -535,14 +502,14 @@ $(function () {
         stageTitle2.canvas.width=h;
         stageTitle2.canvas.height=w;
 
-        initTitle(arrTitle2,stageTitle2);
+        initTitle(arrTitle3,stageTitle2);
         createjs.Ticker.setFPS(ratio);
         createjs.Ticker.on('tick',stageTitle2);
-        TweenInTitle(arrTitle2);
+        TweenInTitle(arrTitle3);
     }
     function title2Out() {
-        TweenOutTitle(arrTitle2);
-        createjs.Tween.get(arrTitle2[14], {loop: false})
+        TweenOutTitle(arrTitle3);
+        createjs.Tween.get(arrTitle3[14], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title2').hide();
@@ -553,14 +520,14 @@ $(function () {
         stageTitle3.canvas.width=h;
         stageTitle3.canvas.height=w;
 
-        initTitle(arrTitle3,stageTitle3);
+        initTitle(arrTitle4,stageTitle3);
         createjs.Ticker.setFPS(ratio);
         createjs.Ticker.on('tick',stageTitle3);
-        TweenInTitle(arrTitle3);
+        TweenInTitle(arrTitle4);
     }
     function title3Out() {
-        TweenOutTitle(arrTitle3);
-        createjs.Tween.get(arrTitle3[10], {loop: false})
+        TweenOutTitle(arrTitle4);
+        createjs.Tween.get(arrTitle4[10], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title3').hide();
@@ -571,14 +538,14 @@ $(function () {
         stageTitle4.canvas.width=h;
         stageTitle4.canvas.height=w;
 
-        initTitle(arrTitle4,stageTitle4);
+        initTitle(arrTitle5,stageTitle4);
         createjs.Ticker.setFPS(ratio);
         createjs.Ticker.on('tick',stageTitle4);
-        TweenInTitle(arrTitle4);
+        TweenInTitle(arrTitle5);
     }
     function title4Out() {
-        TweenOutTitle(arrTitle4);
-        createjs.Tween.get(arrTitle4[12], {loop: false})
+        TweenOutTitle(arrTitle5);
+        createjs.Tween.get(arrTitle5[12], {loop: false})
             .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(handleComplete);
         function  handleComplete() {
             $('#title4').hide();
@@ -805,20 +772,21 @@ $(function () {
 
     /*****************************************题目逻辑*********************************/
 //The passcode to check against.
-    var password_shijie=[0,1,1,0,2,1,4,0,1,0,5,3,5,1];//4
-    var password_zaibian=[4,3,1,4,1,4,6,4,1,1,5,6,0,2];//5
-    var password_chuangxin=[0,3,6,2,7,1,0,0,4,5];//4
-    var password_bubian = [6,5,1,2,2,6,1,1,3,2,4,0];
+    var password2 =[0,1,1,0,2,1,4,0,1,0,5,3,5,1];//4
+    var password3 =[4,3,1,4,1,4,6,4,1,1,5,6,0,2];//5
+    var password4 =[0,3,6,2,7,1,0,0,4,5];//4
+    var password5 = [6,5,1,2,2,6,1,1,3,2,4,0];
     var enteredPass2 = [];
     var enteredPass3 = [];
     var enteredPass4 = [];
     var enteredPass5 = [];
 
-    function quiz(a) {
+    function quiz2(a) {
         var Choice = $('#key2'+a).attr('data-choice');
         enteredPass2.push(Choice);
-        checkPasscode2('#key2',password_shijie,arrTitle1);
+        checkPasscode2('#key2',password2,arrTitle2);
     }
+
     function quiz(sec, v){
 
     }
@@ -871,74 +839,74 @@ $(function () {
 
     function checkPasscode2(key,password,arr) {
         /*Runs through each of the password values. If the arrays match, it triggers the unlocked() function */
-        if (enteredPass2.length>password.length){
-            return;
-        }else{
+        if (enteredPass2.length <= password.length){
             for(var i = 0; i<password.length;i++){
                 if (enteredPass2[i]==password[i]){
                     booleanArr.push(true);
-                    switch (i){
-                        case 0:
-                            VBTitleByNum(arr,1);
-                            break;
-                        case 1:
-                            VBTitleByNum(arr,2);
-                            break;
-                        case 2:
-                            VBTitleByNum(arr,3);
-                            break;
-                        case 3:
-                            VBTitleByNum(arr,4);
-                            break;
-                        case 4:
-                            VBTitleByNum(arr,5);
-                            break;
-                        case 5:
-                            VBTitleByNum(arr,6);
-                            break;
-                        case 6:
-                            VBTitleByNum(arr,7);
-                            break;
-                        case 7:
-                            VBTitleByNum(arr,8);
-                            break;
-                        case 8:
-                            VBTitleByNum(arr,9);
-                            break;
-                        case 9:
-                            VBTitleByNum(arr,10);
-                            break;
-                        case 10:
-                            VBTitleByNum(arr,11);
-                            break;
-                        case 11:
-                            VBTitleByNum(arr,12);
-                            break;
-                        case 12:
-                            VBTitleByNum(arr,13);
-                            break;
-                        case 13:
-                            VBTitleByNum(arr,14);
-                            playOut();
-                            stopTimer();
+                    VBTitleByNum(arr, i+1);
+                    if(i == password.length-1){
+                        playOut();
+                        stopTimer();
 
-                            title1Out();
+                        title1Out();
 
-                            Scene3In();
-                            frontScene3In();
-                            train3In();
-                            break;
-                        default:
-                            break;
+                        Scene3In();
+                        frontScene3In();
+                        train3In();
                     }
+                    // switch (i){
+                    //     case 0:
+                    //         VBTitleByNum(arr,1);
+                    //         break;
+                    //     case 1:
+                    //         VBTitleByNum(arr,2);
+                    //         break;
+                    //     case 2:
+                    //         VBTitleByNum(arr,3);
+                    //         break;
+                    //     case 3:
+                    //         VBTitleByNum(arr,4);
+                    //         break;
+                    //     case 4:
+                    //         VBTitleByNum(arr,5);
+                    //         break;
+                    //     case 5:
+                    //         VBTitleByNum(arr,6);
+                    //         break;
+                    //     case 6:
+                    //         VBTitleByNum(arr,7);
+                    //         break;
+                    //     case 7:
+                    //         VBTitleByNum(arr,8);
+                    //         break;
+                    //     case 8:
+                    //         VBTitleByNum(arr,9);
+                    //         break;
+                    //     case 9:
+                    //         VBTitleByNum(arr,10);
+                    //         break;
+                    //     case 10:
+                    //         VBTitleByNum(arr,11);
+                    //         break;
+                    //     case 11:
+                    //         VBTitleByNum(arr,12);
+                    //         break;
+                    //     case 12:
+                    //         VBTitleByNum(arr,13);
+                    //         break;
+                    //     case 13:
+                    //         VBTitleByNum(arr,14);
+                    //
+                    //         break;
+                    //     default:
+                    //         break;
+                    // }
                 }else{
                     booleanArr.push(false);
                 }
             }
         }
         if(enteredPass2.length>0 ){
-            // console.log("enteredPass里面开始有内容的时候："+booleanArr);
-            // console.log("当前指针对应的boolean值是："+booleanArr[enteredPass2.length-1]+"");
             if (booleanArr[enteredPass2.length-1]){
                 checkRight(key+enteredPass2[enteredPass2.length-1]);
             }else {
@@ -947,7 +915,6 @@ $(function () {
             }
             //需要清空，重新加入新的遍历array
             booleanArr=[];
-        }else{
         }
         // console.log("enteredPass的状态："+enteredPass2);
     }
