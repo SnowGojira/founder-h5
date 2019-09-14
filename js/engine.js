@@ -41,6 +41,9 @@ const password2 =[0,1,1,0,2,1,4,0,1,0,5,3,5,1],
       password4 =[0,3,6,2,7,1,0,0,4,5],
       password5 = [6,5,1,2,2,6,1,1,3,2,4,0];
 
+let enteredPass = [],
+    booleanArr = [];
+
 //initial image series
 const arrTitle2 = pushQuizPieces(14, 'title1'),
     arrTitle3 = pushQuizPieces(14, 'title2'),
@@ -55,11 +58,12 @@ const arrTitle2 = pushQuizPieces(14, 'title1'),
 
 //audio
 function Sound (id_str){
-    this.id = id_str;
+    // this.id = id_str;
+    this.url = 'asset/audio/'+id_str+'.mp3';
 }
 Sound.prototype.play = function () {
-    console.log("sound play is triggered "+ this.id);
-    let audio = document.getElementById(this.id);
+    // console.log("sound play is triggered "+ this.url);
+    let audio = new Audio(this.url);
 
     if(audio){
         audio.play().catch(e =>
@@ -93,6 +97,9 @@ Scene.prototype.render = function(){
     createjs.Ticker.on('tick',this.stage);
 };
 Scene.prototype.update = function(...args){
+    //when scene updated, the input key's container should be emptied
+    enteredPass = [];
+    booleanArr=[];
     if(args[1]== undefined){
         createjs.Tween.get(this.background, {loop: false})
             .to({x: args[0].x}, args[0].b, createjs.Ease.getPowInOut(4));
@@ -133,13 +140,15 @@ Train.prototype.render = function(){
 function SheetAnim (id,url){
     this.url = url;
     this.canvas = document.getElementById(id);
-    this.stage = new createjs.Stage(this.canvas);
-    this.container = new createjs.Container();
+
 }
 SheetAnim.prototype.render = function(...args){
-    this.stage.addChild(this.container);
-    this.stage.canvas.height=w;
-    this.stage.canvas.width=h;
+    let stage = new createjs.Stage(this.canvas);
+    let container = new createjs.Container();
+
+    stage.addChild(container);
+    stage.canvas.height=w;
+    stage.canvas.width=h;
 
     let frames_count,anim_arr;
     if(args.length == 0){
@@ -169,9 +178,9 @@ SheetAnim.prototype.render = function(...args){
     let img = new createjs.Sprite(spriteSheet, 'anim');
 
     img.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
-    this.container.addChild(img);
+    container.addChild(img);
 
-    createjs.Ticker.on('tick',this.stage);
+    createjs.Ticker.on('tick',stage);
 };
 
 
@@ -221,12 +230,18 @@ Tween.prototype.Leave = function(cb){
 
 
 ///////////////////////Instantiate Objects/////////////////////////////
-var audio_wrong = new Sound('audio_wrong'),
-    audio_right = new Sound('audio_right'),
-    audio_out = new Sound('audio_out'),
-    audio_start = new Sound('audio_start'),
-    audio_run = new Sound('audio_running'),
-    audio_bg = new Sound('audio_bg'),
+// var audio_wrong = new Sound('audio_wrong'),
+//     audio_right = new Sound('audio_right'),
+//     audio_out = new Sound('audio_out'),
+//     audio_start = new Sound('audio_start'),
+//     audio_run = new Sound('audio_running'),
+//     audio_bg = new Sound('audio_bg'),
+var audio_wrong = new Sound('wrong'),
+    audio_right = new Sound('right'),
+    audio_out = new Sound('out'),
+    audio_start = new Sound('start'),
+    audio_run = new Sound('running'),
+    audio_bg = new Sound('bg'),
 
     speed_train = new Train('canvas1','./images/train.png'),
     back_scene = new Scene('bg1','./images/page1/bgt1.png'),
@@ -409,4 +424,66 @@ function pushQuizPieces(count,file_url,num=0,arr=[]){
     const new_num = num+1;
 
     return pushQuizPieces(count--,file_url,new_num,arr);
+}
+
+
+
+function parseQuiz(sec_id,key_id,password,arr,cb) {
+
+    let choice = $('#key'+sec_id+key_id).attr('data-choice'),
+        key = '#key'+sec_id;
+
+    enteredPass.push(choice);
+    // console.log('enteredPass',enteredPass);
+    // console.log('booleanArr',booleanArr);
+    if (enteredPass.length <= password.length){
+        for(let i = 0; i< password.length;i++){
+            if (enteredPass[i]==password[i]){
+                booleanArr.push(true);
+                checkByAnswerCode(arr, i+1);
+                if(i == password.length-1) {
+                    // enteredPass = [];
+                    audio_out.play();
+                    stopTimer();
+                    cb();
+                }
+            }else{
+                booleanArr.push(false);
+            }
+        }
+    }
+    if(enteredPass.length>0 ){
+        if (booleanArr[enteredPass.length-1]){
+            checkRight(key+enteredPass[enteredPass.length-1]);
+        }else {
+            checkWrong(key+enteredPass[enteredPass.length-1]);
+            enteredPass.pop();
+        }
+        //需要清空，重新加入新的遍历array
+        booleanArr=[];
+    }
+
+
+}
+
+function checkByAnswerCode(arr,num){
+    for(let i=0;i<arr.length;i++){
+        i == num ?arr[i].visible=true:arr[i].visible=false;
+    }
+}
+
+function checkRight(key){
+    audio_right.play()
+    $(key+'_r').show();
+    setTimeout(function () {
+        $(key+'_r').hide();
+    },10);
+}
+
+function checkWrong(key){
+    audio_wrong.play();
+    $(key+'_w').show();
+    setTimeout(function () {
+        $(key+'_w').hide();
+    },10);
 }
