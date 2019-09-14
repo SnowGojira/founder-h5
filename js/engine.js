@@ -58,7 +58,6 @@ const arrTitle2 = pushQuizPieces(14, 'title1'),
 
 //audio
 function Sound (id_str){
-    // this.id = id_str;
     this.url = 'asset/audio/'+id_str+'.mp3';
 }
 Sound.prototype.play = function () {

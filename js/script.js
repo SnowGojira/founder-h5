@@ -3,9 +3,7 @@
  * 1. When the Timer started, the timer count shows 'NaN
  * 2. In my logic the script only need to control the UI
  *    So Timer need to be setted in engine.js as an util
- * 3. The quiz part has container problem, the first press are not right
  * 4. The timer UI did not hide.
- * 5. sound did not play fluently.Has stubbed!
  * */
 // Timer
     let minute,
