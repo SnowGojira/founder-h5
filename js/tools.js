@@ -181,3 +181,40 @@
 
         }
 })();
+
+// Timer
+let minute,
+    second;
+window.minute=0;
+window.second=0;
+window.time=0;
+
+let int,time = 0;
+
+//Start the Timer
+function startTimer () {
+    int=setInterval(timer,1000);
+}
+
+//Timing
+function timer () {
+    time++;
+    var second1 = time % 60;
+    var minute1 = Math.floor(time / 60) % 60;
+
+    second = (second1 < 10) ? '0'+second1 : second1;
+    minute = (minute1 < 10) ? '0'+minute1 : minute1;
+
+    document.getElementById('timer').innerHTML=minute+':'+second;
+    // console.log(minute+":"+second);
+};
+//stop the timer
+function stopTimer () {
+    window.clearInterval(int);
+}
+//reset the timer
+function resetTimer (){
+    window.clearInterval(int);
+    minute=second=0;
+    document.getElementById('timer').innerHTML='00:00';
+};

@@ -486,3 +486,4 @@ function checkWrong(key){
         $(key+'_w').hide();
     },10);
 }
+
