@@ -229,12 +229,7 @@ Tween.prototype.Leave = function(cb){
 
 
 ///////////////////////Instantiate Objects/////////////////////////////
-// var audio_wrong = new Sound('audio_wrong'),
-//     audio_right = new Sound('audio_right'),
-//     audio_out = new Sound('audio_out'),
-//     audio_start = new Sound('audio_start'),
-//     audio_run = new Sound('audio_running'),
-//     audio_bg = new Sound('audio_bg'),
+
 var audio_wrong = new Sound('wrong'),
     audio_right = new Sound('right'),
     audio_out = new Sound('out'),

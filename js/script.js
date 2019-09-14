@@ -1,20 +1,14 @@
 
-/**todo
- * 1. When the Timer started, the timer count shows 'NaN
- * 2. In my logic the script only need to control the UI
- *    So Timer need to be setted in engine.js as an uti
- * */
-
-// 预加载逻辑
-
-window.onload = preload(handleFileProgress,handleComplete);
-
 /**
  * About autoplay BGM:
  * The latest Chrome policy have forbidden this action.
  * The solution is Using a button to trigger.
  * For the future: Need to be discussed with customers first.
  */
+
+// preload
+
+window.onload = preload(handleFileProgress,handleComplete);
 
 function handleFileProgress(){
     let percent=loader.progress*100|0+'%';
@@ -199,7 +193,6 @@ $(function () {
         window.location.href = 'index.html';
     })
 });
-
 
 
 
