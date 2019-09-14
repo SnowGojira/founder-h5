@@ -28,13 +28,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="287" column="24" lean-forward="true" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
+            <state relative-caret-position="5173">
+              <caret line="707" column="50" selection-start-line="707" selection-start-column="50" selection-end-line="707" selection-end-column="50" />
               <folding>
-                <element signature="e#3200#3970#0" />
-                <element signature="e#5855#6285#0" />
                 <element signature="e#8348#8648#0" />
                 <element signature="e#8673#8984#0" />
+                <element signature="e#9009#9298#0" />
+                <element signature="e#9323#9635#0" />
+                <element signature="e#9660#10009#0" />
                 <element signature="e#10040#10406#0" />
                 <element signature="e#10436#10708#0" />
                 <element signature="e#10738#10999#0" />
@@ -42,17 +43,7 @@
                 <element signature="e#11351#11612#0" />
                 <element signature="e#11642#12020#0" />
                 <element signature="e#12939#12964#0" />
-                <element signature="e#14834#15164#0" />
-                <element signature="e#15188#15431#0" />
-                <element signature="e#15457#15745#0" />
-                <element signature="e#15769#16012#0" />
-                <element signature="e#16038#16326#0" />
-                <element signature="e#16350#16593#0" />
-                <element signature="e#16619#16883#0" />
-                <element signature="e#16946#17233#0" />
-                <element signature="e#17266#17446#0" />
-                <element signature="e#17477#17657#0" />
-                <element signature="e#17690#17871#0" />
+                <element signature="e#14425#14438#0" />
                 <element signature="e#23403#23520#0" />
                 <element signature="e#24531#24668#0" />
               </folding>
@@ -77,30 +68,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="219" column="68" selection-start-line="219" selection-start-column="68" selection-end-line="219" selection-end-column="68" />
+            <state relative-caret-position="398">
+              <caret line="411" column="1" selection-start-line="411" selection-start-column="1" selection-end-line="411" selection-end-column="1" />
               <folding>
-                <element signature="n#!!block;n#pushQuizPieces#0" />
                 <element signature="n#!!block;n#Sound#0" />
                 <element signature="e#584#1040#0" />
                 <element signature="e#1275#1527#0" />
                 <element signature="e#1572#1902#0" />
                 <element signature="e#2065#2507#0" />
-                <element signature="n#!!block;n#SheetAnim#0" />
-                <element signature="e#2745#3326#0" />
                 <element signature="n#!!block;n#Tween#0" />
                 <element signature="e#3449#3735#0" />
                 <element signature="e#3989#4243#0" />
+                <element signature="n#!!block;n#pushQuizPieces#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajax_getconfig.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -108,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5433">
+            <state relative-caret-position="-1137">
               <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
               <folding>
                 <element signature="n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -165,8 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tap</find>
-      <find>page1float</find>
       <find>train</find>
       <find>hint</find>
       <find>fbg1</find>
@@ -180,7 +158,6 @@
       <find>snow()</find>
       <find>key2</find>
       <find>enteredPass2</find>
-      <find>title</find>
       <find>arrTitle4</find>
       <find>Title</find>
       <find>arrTitle</find>
@@ -195,6 +172,9 @@
       <find>heart</find>
       <find>money</find>
       <find>money2</find>
+      <find>back</find>
+      <find>title</find>
+      <find>signal</find>
     </findStrings>
     <replaceStrings>
       <replace>on('click,</replace>
@@ -269,6 +249,12 @@
               <item name="founder-h5" type="b2602c69:ProjectViewProjectNode" />
               <item name="founder-h5" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="founder-h5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="founder-h5" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="page5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="founder-h5" type="b2602c69:ProjectViewProjectNode" />
@@ -390,7 +376,7 @@
       <workItem from="1566808448563" duration="178000" />
       <workItem from="1566808672341" duration="8234000" />
       <workItem from="1568087201268" duration="10405000" />
-      <workItem from="1568171022216" duration="14067000" />
+      <workItem from="1568171022216" duration="17050000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -662,7 +648,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="385606000" />
+    <option name="totallyTimeSpent" value="388589000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,9 +821,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images/page5/flower.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/page6/money.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/page5/money.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="411" column="1" selection-start-line="411" selection-start-column="1" selection-end-line="411" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#Sound#0" />
+            <element signature="e#584#1040#0" />
+            <element signature="e#1275#1527#0" />
+            <element signature="e#1572#1902#0" />
+            <element signature="e#2065#2507#0" />
+            <element signature="n#!!block;n#Tween#0" />
+            <element signature="e#3449#3735#0" />
+            <element signature="e#3989#4243#0" />
+            <element signature="n#!!block;n#pushQuizPieces#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5433">
+        <state relative-caret-position="-1137">
           <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -865,35 +878,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/engine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="219" column="68" selection-start-line="219" selection-start-column="68" selection-end-line="219" selection-end-column="68" />
-          <folding>
-            <element signature="n#!!block;n#pushQuizPieces#0" />
-            <element signature="n#!!block;n#Sound#0" />
-            <element signature="e#584#1040#0" />
-            <element signature="e#1275#1527#0" />
-            <element signature="e#1572#1902#0" />
-            <element signature="e#2065#2507#0" />
-            <element signature="n#!!block;n#SheetAnim#0" />
-            <element signature="e#2745#3326#0" />
-            <element signature="n#!!block;n#Tween#0" />
-            <element signature="e#3449#3735#0" />
-            <element signature="e#3989#4243#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="287" column="24" lean-forward="true" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
+        <state relative-caret-position="5173">
+          <caret line="707" column="50" selection-start-line="707" selection-start-column="50" selection-end-line="707" selection-end-column="50" />
           <folding>
-            <element signature="e#3200#3970#0" />
-            <element signature="e#5855#6285#0" />
             <element signature="e#8348#8648#0" />
             <element signature="e#8673#8984#0" />
+            <element signature="e#9009#9298#0" />
+            <element signature="e#9323#9635#0" />
+            <element signature="e#9660#10009#0" />
             <element signature="e#10040#10406#0" />
             <element signature="e#10436#10708#0" />
             <element signature="e#10738#10999#0" />
@@ -901,17 +895,7 @@
             <element signature="e#11351#11612#0" />
             <element signature="e#11642#12020#0" />
             <element signature="e#12939#12964#0" />
-            <element signature="e#14834#15164#0" />
-            <element signature="e#15188#15431#0" />
-            <element signature="e#15457#15745#0" />
-            <element signature="e#15769#16012#0" />
-            <element signature="e#16038#16326#0" />
-            <element signature="e#16350#16593#0" />
-            <element signature="e#16619#16883#0" />
-            <element signature="e#16946#17233#0" />
-            <element signature="e#17266#17446#0" />
-            <element signature="e#17477#17657#0" />
-            <element signature="e#17690#17871#0" />
+            <element signature="e#14425#14438#0" />
             <element signature="e#23403#23520#0" />
             <element signature="e#24531#24668#0" />
           </folding>

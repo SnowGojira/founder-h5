@@ -8,7 +8,7 @@ const original = w*0.275,
       positonY=0.489*w,
       bgScaleY=h/750,
       bgScaleX=w/466;
-//train's stop locations
+
 const train_loc_1 = {x:h*3/4, b:8000},
       train_loc_2 = {x:10, b:4000},
       train_loc_3 = {x: -0.3*h, b:8000},
@@ -16,8 +16,30 @@ const train_loc_1 = {x:h*3/4, b:8000},
       train_loc_5 = {x: -3.5*h, b:8000};
 
 
-const back_loc_1 = {x:-4*h,b:6000},
-      front_loc_1 ={x: -4*h,b: 6000};
+const location_1 = {x:-4*h,b:6000},
+      location_2 = {x: -3*h, b:6000},
+      location_3 = {x: -2*h, b:6000},
+      location_4 = {x: -h,b: 6000},
+      location_5 = {x: 0,b: 6000};
+
+const signal_args = {
+        count: 30,
+        array:[0,1,2,3,4,5,
+            0,1,2,3,4,5,
+            0,1,2,3,4,5,
+            0,1,2,3,4,5,
+            0,1,2,3,4,5,
+            0,1,2,3,4,5]
+    },
+    money_args = {
+        count: 2,
+        array:[0,1,'anim']
+    };
+
+const password2 =[0,1,1,0,2,1,4,0,1,0,5,3,5,1],
+      password3 =[4,3,1,4,1,4,6,4,1,1,5,6,0,2],
+      password4 =[0,3,6,2,7,1,0,0,4,5],
+      password5 = [6,5,1,2,2,6,1,1,3,2,4,0];
 
 //initial image series
 const arrTitle2 = pushQuizPieces(14, 'title1'),
@@ -27,16 +49,6 @@ const arrTitle2 = pushQuizPieces(14, 'title1'),
 //recurse the quiz; loop can be used as well.
 //Here I chose the readability over the proformance
 //Since the array is short.
-function pushQuizPieces(count,file_url,num=0,arr=[]){
-
-    if(arr.length == count+1) return arr;
-
-    var image = new createjs.Bitmap("./images/"+file_url+"/"+num+".png");
-    arr.push(image);
-    const new_num = num+1;
-
-    return pushQuizPieces(count--,file_url,new_num,arr);
-}
 
 
 ///////////////////////////////////////Prototype///////////////////////////////
@@ -124,11 +136,20 @@ function SheetAnim (id,url){
     this.stage = new createjs.Stage(this.canvas);
     this.container = new createjs.Container();
 }
-SheetAnim.prototype.render = function(){
-
+SheetAnim.prototype.render = function(...args){
     this.stage.addChild(this.container);
     this.stage.canvas.height=w;
     this.stage.canvas.width=h;
+
+    let frames_count,anim_arr;
+    if(args.length == 0){
+        frames_count = 3;
+        anim_arr = [0,2,'anim'];
+    } else{
+        frames_count = args[0];
+        anim_arr = args [1];
+    }
+
 
     let data ={
         framerate:1,
@@ -136,10 +157,10 @@ SheetAnim.prototype.render = function(){
         frames:{
             width:750,
             height:466,
-            count:3
+            count:frames_count
         },
         animations:{
-            anim : [0,2,'anim']
+            anim : anim_arr
         }
 
     };
@@ -377,4 +398,15 @@ function Hide(arr){
     arr.forEach(e => {
         $(e).hide();
     });
+}
+
+function pushQuizPieces(count,file_url,num=0,arr=[]){
+
+    if(arr.length == count+1) return arr;
+
+    var image = new createjs.Bitmap("./images/"+file_url+"/"+num+".png");
+    arr.push(image);
+    const new_num = num+1;
+
+    return pushQuizPieces(count--,file_url,new_num,arr);
 }
