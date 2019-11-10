@@ -121,7 +121,10 @@ body,html{
     overflow:hidden;*/
     /*float: left;*/
     position: fixed;
-
+    will-change: transform;
+}
+.bg{
+    will-change: transform;
 }
 /*bg z-index: 11*/
 .bg1{
@@ -141,6 +144,7 @@ body,html{
 /*train z-index: 12*/
 .train1{
     position: fixed;
+    will-change: transform;
     /*z-index: 12;*/
     z-index: -9;
 }
@@ -212,6 +216,7 @@ body,html{
     background: url("../images/page1/hint.png") 0 0 no-repeat;
     background-size: 100% 100%;
     z-index: 18;
+    will-change: transform;
 }
 /*背景的signal的z-index要复写*/
 #signal{
@@ -227,6 +232,7 @@ body,html{
     text-align: center;
     bottom: 5.3vh;
     display: none;
+    will-change: transform;
 }
 .keys li{
     display: inline-block;
