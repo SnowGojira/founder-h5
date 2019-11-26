@@ -45,8 +45,8 @@ $(function () {
     $("#startBtn").on('click', function () {
         /*console.log()*/
         Hide([".page1float","#bubble"]);
-        audio_out.play();
 
+        audio_out.play();
         front_scene.update(location_1);
         back_scene.update(location_1);
 
