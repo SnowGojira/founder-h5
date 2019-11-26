@@ -256,9 +256,10 @@ var audio_wrong = new Sound('wrong'),
 
 
 ////////////////////////Function Utils//////////////////////////////
-
+//todo the preload function is taking so much time, need to minimize the preloader
 function preload (handleFileProgress,handleComplete){
     let manifest = [
+        //todo audio part and the font need more tests on the mobile side
         {src: 'asset/audio/out.mp3', id: 'sona2'},
         {src: 'asset/audio/right.mp3', id: 'sona3'},
         {src: 'asset/audio/running.mp3', id: 'sona4'},
