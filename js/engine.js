@@ -3,17 +3,60 @@ const w = document.documentElement.clientWidth,
       h = document.documentElement.clientHeight;
 
 const original = w*0.275,
-      ratio = 45,
+      ratio = 60,
       scale = original/130,
-      positonY=0.489*w,
-      bgScaleY=h/750,
-      bgScaleX=w/466;
+      positonY=0.489*w;
+
+const bgScale = {
+      bgScaleX : h/676,
+      bgScaleY : w/420,
+      x:-5*h,
+      y:0
+},
+    fbgScale = {
+        bgScaleX : h/676,
+        bgScaleY : w/420,
+        x:-5*h,
+        y:0.465*w
+    },
+    bubbleRatio ={
+        bgScaleX : h/676,
+        bgScaleY : w/this.h,
+        h:167
+    },
+    snowRatio ={
+        bgScaleX : h/676,
+        bgScaleY : w/this.h,
+        h:420
+    },
+    cloudRatio ={
+        bgScaleX : h/676,
+        bgScaleY : w/this.h,
+        h:150
+    },
+
+    heartRatio ={
+        bgScaleX : h/676,
+        bgScaleY : w/this.h,
+        h:203
+    },
+    moneyRatio ={
+        bgScaleX : h/676,
+        bgScaleY : w/this.h,
+        h:173
+    },
+    money2Ratio ={
+        bgScaleX : h/676,
+        bgScaleY : w/this.h,
+        h:172
+    };
+
 
 const train_loc_1 = {x:h*3/4, b:8000},
       train_loc_2 = {x:10, b:4000},
       train_loc_3 = {x: -0.3*h, b:8000},
       train_loc_4 = {x: -0.9*h-50, b:6000},
-      train_loc_5 = {x: -3.5*h, b:8000};
+      train_loc_5 = {x: -2.8*h, b:8000};
 
 
 const location_1 = {x:-4*h,b:6000},
@@ -56,40 +99,42 @@ const arrTitle2 = pushQuizPieces(14, 'title1'),
 
 ///////////////////////////////////////Prototype///////////////////////////////
 
-//audio
-function Sound (id_str){
-    this.url = 'asset/audio/'+id_str+'.mp3';
-}
-Sound.prototype.play = function () {
-    // console.log("sound play is triggered "+ this.url);
-    let audio = new Audio(this.url);
-
-    if(audio){
-        audio.play().catch(e =>
-            console.log("sound play method has something wrong: "+e)
-        );
-        document.addEventListener("WeixinJSBridgeReady", () => {
-            audio.play().catch(e =>
-                console.log("sound wechat play method has something wrong: "+e)
-            );
-        }, false);
-    }
-};
+// function Sound (id_str){
+//     // this.url = 'asset/audio/'+id_str+'.mp3';
+//     this.audio = $(`#${id_str}`)[0];
+// }
+// const soundPlay = function () {
+//     // console.log("sound play is triggered "+ this.url);
+//     // let audio = new Audio(`'asset/audio/${id}.mp3'`);
+//     let audio = this.audio;
+//
+//     if(audio){
+//         audio.play().catch(e =>
+//             console.log("sound play method has something wrong: "+e)
+//         );
+//         document.addEventListener("WeixinJSBridgeReady", () => {
+//             audio.play().catch(e =>
+//                 console.log("sound wechat play method has something wrong: "+e)
+//             );
+//         }, false);
+//     }
+// };
 
 
 //scene
-function Scene(stage,image){
+function Scene(stage,image,ratio){
     this.stage = new createjs.Stage(stage);
     this.background = new createjs.Bitmap(image);
+    this.ratio = ratio;
     this.stage.canvas.width=h;
     this.stage.canvas.height=w;
 }
 Scene.prototype.render = function(){
 
-    this.background.scaleX=bgScaleY;
-    this.background.scaleY=bgScaleX;
-    this.background.x=-5*h;
-    this.background.y=0;
+    this.background.scaleX=this.ratio.bgScaleX;
+    this.background.scaleY=this.ratio.bgScaleY;
+    this.background.x=this.ratio.x;
+    this.background.y=this.ratio.y;
 
     this.stage.addChild(this.background);
     createjs.Ticker.setFPS(ratio);
@@ -136,9 +181,10 @@ Train.prototype.render = function(){
 
 
 //animation of the background
-function SheetAnim (id,url){
+function SheetAnim (id,url,ratio){
     this.url = url;
     this.canvas = document.getElementById(id);
+    this.ratio = ratio;
 
 }
 SheetAnim.prototype.render = function(...args){
@@ -163,8 +209,10 @@ SheetAnim.prototype.render = function(...args){
         framerate:1,
         images:[this.url],
         frames:{
-            width:750,
-            height:466,
+            // width:750,
+            // height:466,
+            width:676,
+            height:this.ratio.h,
             count:frames_count
         },
         animations:{
@@ -176,7 +224,8 @@ SheetAnim.prototype.render = function(...args){
     let spriteSheet = new createjs.SpriteSheet(data);
     let img = new createjs.Sprite(spriteSheet, 'anim');
 
-    img.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
+    // img.set({x:0,y:0,scaleX: h/750,scaleY:w/466 });
+    img.set({x:0,y:0,scaleX: this.ratio.x,scaleY:this.ratio.y });
     container.addChild(img);
 
     createjs.Ticker.on('tick',stage);
@@ -226,46 +275,58 @@ Tween.prototype.Leave = function(cb){
         .to({x: 1.2*h}, 3000, createjs.Ease.getPowInOut(4)).call(cb);
 };
 
+//audio
 
+let Sound = {
+    play:function (id) {
+        let audio = new Audio(`asset/audio/${id}.mp3`);
+        console.log(audio);
+        if(audio){
+            audio.play().catch(e =>
+                console.log("sound play method has something wrong: "+e)
+            );
+            document.addEventListener("WeixinJSBridgeReady", () => {
+                audio.play().catch(e =>
+                    console.log("sound wechat play method has something wrong: "+e)
+                );
+            }, false);
+        }
+    }
+};
 
 ///////////////////////Instantiate Objects/////////////////////////////
 
-var audio_wrong = new Sound('wrong'),
-    audio_right = new Sound('right'),
-    audio_out = new Sound('out'),
-    audio_start = new Sound('start'),
-    audio_run = new Sound('running'),
-    audio_bg = new Sound('bg'),
+const speed_train = new Train('canvas1', './images/train1.png'),
+    back_scene = new Scene('bg1', './images/page1/bgt1.jpeg', bgScale),
+    front_scene = new Scene('fbg1', './images/page1/fbgt1.png', fbgScale),
 
-    speed_train = new Train('canvas1','./images/train.png'),
-    back_scene = new Scene('bg1','./images/page1/bgt1.png'),
-    front_scene = new Scene('fbg1','./images/page1/fbgt.png'),
+    bubble_anim = new SheetAnim('bubble', './images/page1/bubble1.png', bubbleRatio),
+    snow_anim = new SheetAnim('snow', './images/page2/snow1.png', snowRatio),
+    cloud_anim = new SheetAnim('cloud', './images/page3/cloud.png', cloudRatio),
+    // signal_anim = new SheetAnim('signal','./images/page3/signal.png',signalRatio),
+    heart_anim = new SheetAnim('heart', './images/page4/heart.png', heartRatio),
+    money_anim = new SheetAnim('money', './images/page5/money.png', moneyRatio),
+    money2_anim = new SheetAnim('money2', './images/page6/money.png', money2Ratio),
 
-    bubble_anim = new SheetAnim('bubble','./images/page1/bubble.png'),
-    snow_anim = new SheetAnim('snow','./images/page2/snow1.png'),
-    cloud_anim = new SheetAnim('cloud','./images/page3/cloud.png'),
-    signal_anim = new SheetAnim('signal','./images/page3/signal.png'),
-    heart_anim = new SheetAnim('heart','./images/page4/heart.png'),
-    money_anim = new SheetAnim('money','./images/page5/money.png'),
-    money2_anim = new SheetAnim('money2','./images/page6/money.png'),
+    topic1 = new Tween("title1", arrTitle2),
+    topic2 = new Tween("title2", arrTitle3),
+    topic3 = new Tween("title3", arrTitle4),
+    topic4 = new Tween("title4", arrTitle5);
 
-    topic1 = new Tween("title1",arrTitle2),
-    topic2 = new Tween("title2",arrTitle3),
-    topic3 = new Tween("title3",arrTitle4),
-    topic4 = new Tween("title4",arrTitle5);
-
-
+// var audio_wrong =  Sound.setAudio('wrong'),
+//     audio_right = Sound.setAudio('right'),
+//     audio_out = Sound.setAudio('out'),
+//     // audio_start = Sound.setAudio('start'),
+//     audio_run = Sound.setAudio('running');
 ////////////////////////Function Utils//////////////////////////////
-//todo the preload function is taking so much time, need to minimize the preloader
+
 function preload (handleFileProgress,handleComplete){
     let manifest = [
-        //todo audio part and the font need more tests on the mobile side
         {src: 'asset/audio/out.mp3', id: 'sona2'},
         {src: 'asset/audio/right.mp3', id: 'sona3'},
-        {src: 'asset/audio/running.mp3', id: 'sona4'},
+        {src: 'asset/audio/run.mp3', id: 'sona4'},
         {src: 'asset/audio/start.mp3', id: 'sona5'},
         {src: 'asset/audio/wrong.mp3', id: 'sona6'},
-        {src: 'asset/audio/bg.mp3', id: 'sona7'},
         {src: 'asset/font/timing-light.TTF', id: 'font1'},
         {src: 'asset/font/writing-light.TTF', id: 'font2'},
 
@@ -273,8 +334,8 @@ function preload (handleFileProgress,handleComplete){
         {src: 'images/page1/bubble.png', id: 'p13'},
         {src: 'images/page1/hint.png', id: 'p15'},
         {src: 'images/page1/title.png', id: 'p16'},
-        {src: 'images/page1/fbgt.png', id: 'p18'},
-        {src: 'images/page1/bgt1.png', id: 'p19'},
+        {src: 'images/page1/fbgt1.png', id: 'p18'},
+        {src: 'images/page1/bgt1.jpeg', id: 'p19'},
 
         {src: 'images/page2/snow1.png', id: 'p20'},
         {src: 'images/page2/fa1.png', id: 'p21'},
@@ -293,7 +354,6 @@ function preload (handleFileProgress,handleComplete){
         {src: 'images/page3/fa5.png', id: 'p35'},
         {src: 'images/page3/fa6.png', id: 'p36'},
         {src: 'images/page3/fa7.png', id: 'p37'},
-        {src: 'images/page3/signal.png', id: 'p38'},
 
         {src: 'images/page4/heart.png', id: 'p40'},
         {src: 'images/page4/fa1.png', id: 'p41'},
@@ -305,7 +365,6 @@ function preload (handleFileProgress,handleComplete){
         {src: 'images/page4/fa7.png', id: 'p47'},
         {src: 'images/page4/fa8.png', id: 'p48'},
 
-        {src: 'images/page5/flower.png', id: 'p50'},
         {src: 'images/page5/fa1.png', id: 'p51'},
         {src: 'images/page5/fa2.png', id: 'p52'},
         {src: 'images/page5/fa3.png', id: 'p53'},
@@ -438,7 +497,7 @@ function parseQuiz(sec_id,key_id,password,arr,cb) {
                 checkByAnswerCode(arr, i+1);
                 if(i == password.length-1) {
                     // enteredPass = [];
-                    audio_out.play();
+                    Sound.play('out');
                     stopTimer();
                     cb();
                 }
@@ -468,7 +527,7 @@ function checkByAnswerCode(arr,num){
 }
 
 function checkRight(key){
-    audio_right.play()
+    Sound.play('right');
     $(key+'_r').show();
     setTimeout(function () {
         $(key+'_r').hide();
@@ -476,7 +535,7 @@ function checkRight(key){
 }
 
 function checkWrong(key){
-    audio_wrong.play();
+    Sound.play('wrong');
     $(key+'_w').show();
     setTimeout(function () {
         $(key+'_w').hide();

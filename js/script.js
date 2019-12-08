@@ -6,13 +6,14 @@
  * For the future: Need to be discussed with customers first.
  */
 
-// preload
+// todo : the train is still not quite smooth...
 
 window.onload = preload(handleFileProgress,handleComplete);
 
 function handleFileProgress(){
     let percent=loader.progress*100|0+'%';
-    $('loadPercent').innerHTML=percent+"%";
+    console.log(percent);
+    $('#loadPercent').text(`${percent}%`);
 }
 
 function handleComplete(){
@@ -35,7 +36,7 @@ $(function () {
     //page1 start page
     $("#hint").on('click', function () {
         Hide(["#hint"]);
-        audio_run.play();
+        Sound.play('run');
         speed_train.update(train_loc_2, ()=> {
             $("#title").addClass('mainIn');
             $("#startBtn").addClass('mainIn');
@@ -46,14 +47,14 @@ $(function () {
         /*console.log()*/
         Hide([".page1float","#bubble"]);
 
-        audio_out.play();
+        Sound.play('out');
         front_scene.update(location_1);
         back_scene.update(location_1);
 
         speed_train.update(train_loc_3,()=>{
             snow_anim.render();
             $('.timer').show();
-            $('.keys2').addClass('mainIn');
+            $('.keys2').show();
 
             startTimer();
         });
@@ -80,27 +81,21 @@ $(function () {
                     topic2.Enter(3000);
                 });
 
-                speed_train.update(train_loc_4,()=>{
-                    cloud_anim.render();
-                    signal_anim.render(signal_args.count,signal_args.array);
-                    startTimer();
-                    $('.keys3').addClass('mainIn');
-                });
 
                 front_scene.update(location_2);
-                back_scene.update(location_2);
+                back_scene.update(location_2,()=>{
+                    cloud_anim.render();
+                    startTimer();
+                    $('.keys3').show();
+                });
+
             }
         }else if(sec_id == 3) {
             password = password3;
             arrTitle = arrTitle3;
             procedure = function () {
-                Hide([".keys3","#cloud","#signal"]);
+                Hide([".keys3","#cloud"]);
 
-                speed_train.update(train_loc_4,()=>{
-                    heart_anim.render();
-                    startTimer();
-                    $('.keys4').addClass('mainIn');
-                });
                 topic2.Leave(function () {
                     $('#title2').hide();
                     topic3.render();
@@ -108,7 +103,12 @@ $(function () {
                 });
 
                 front_scene.update(location_3);
-                back_scene.update(location_3);
+                back_scene.update(location_3,()=>{
+                    heart_anim.render();
+                    startTimer();
+                    $('.keys4').show();
+                });
+
             }
         }else if(sec_id == 4) {
             password = password4;
@@ -116,12 +116,6 @@ $(function () {
             procedure = function () {
                 Hide([".keys4","#heart"]);
 
-                speed_train.update(train_loc_4, () => {
-                    money_anim.render(money_args.count,money_args.array);
-
-                    startTimer();
-                    $('.keys5').addClass('mainIn');
-                });
                 topic3.Leave(function () {
                     $('#title3').hide();
                     topic4.render();
@@ -129,7 +123,11 @@ $(function () {
                 });
 
                 front_scene.update(location_4);
-                back_scene.update(location_4);
+                back_scene.update(location_4,()=>{
+                    money_anim.render(money_args.count,money_args.array);
+                    startTimer();
+                    $('.keys5').show();
+                });
 
             }
         }else if(sec_id == 5) {
@@ -160,8 +158,6 @@ $(function () {
             }
         }
 
-        // console.log('passed password',password);
-        // console.log('passed arrTitle',arrTitle);
         parseQuiz(sec_id,key_id,password,arrTitle,procedure);
 
     });

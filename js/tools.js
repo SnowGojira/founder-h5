@@ -55,131 +55,7 @@
         }
     }
 
-    ///**********************************微信分享的部分功能 **********************************/
 
-        /**
-         * WeChat();为测试服代码
-         * getWXconfig()为正式服，上到财新平台请屏蔽代码
-         */
-        window.addEventListener('load',function () {
-            WeChat();
-            //getWXConfig();
-        });
-
-        function WeChat() {
-            $.ajax(
-                {type:'get',
-                    url:'ajax_getconfig.php',
-                    success:function(data){
-                        console.log("ajax success:"+data);
-                        console.log("ajax success:"+JSON.parse(data).appId);
-                        console.log("ajax success:"+JSON.parse(data).timestamp);
-                        console.log("ajax success:"+JSON.parse(data).nonceStr);
-                        console.log("ajax success:"+JSON.parse(data).signature);
-
-                        wx.config({
-                            debug: false,
-                            appId:JSON.parse(data).appId,
-                            timestamp: JSON.parse(data).timestamp,
-                            nonceStr: JSON.parse(data).nonceStr,
-                            signature: JSON.parse(data).signature,
-                            jsApiList: [
-                                // 所有要调用的 API 都要加到这个列表中
-                                'checkJsApi',
-                                'onMenuShareTimeline',//
-                                'onMenuShareAppMessage',
-                                'onMenuShareQQ',
-                                'onMenuShareWeibo'
-
-                            ]
-                        });
-
-                    }
-                });
-
-        }
-        /**
-         * caixin wx
-         * 上到服务器之前，注意检查debug:false,是否为false，
-         * 如果需要调试开true会有弹框信息出现
-         */
-        function getWXConfig(){
-            $.getJSON("http://api.caixin.com/wxsdk/wxconfig.php?url=" + encodeURIComponent(window.location.href) + "&callback=?",function(data){
-                wx.config({
-                    debug: false,
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonceStr,
-                    signature: data.signature,
-                    jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","translateVoice","uploadVoice"]
-                });
-            });
-        }
-
-
-        function shareAjax(){
-            /**
-             * url需要更改为正式服务器的地址
-             */
-            var url="http://weixin.assemblemedia.cn/founder/";
-            var imageUrl=url+"images/shareIcon.jpg";
-            var sharetitle='车票无限供应！开往春天的方正号！';
-            var sharedesc="您一共使用了"+window.minute+"分"+window.second+"秒到达春天!";
-            var shareLink=url+'index.html';
-
-            wx.ready(function(){
-                wx.onMenuShareTimeline({
-                    title:sharetitle+sharedesc, // 分享标题
-                    link: shareLink, // 分享链接
-                    imgUrl: imageUrl, // 分享图标
-                    success: function () {
-                        // 用户确认分享后执行的回调函数
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-                    }
-                });
-                wx.onMenuShareAppMessage({
-                    title: sharetitle, // 分享标题
-                    desc: sharedesc, // 分享描述
-                    link: shareLink, // 分享链接
-                    imgUrl: imageUrl, // 分享图标
-                    type: '', // 分享类型,music、video或link，不填默认为link
-                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                    success: function () {
-                        // 用户确认分享后执行的回调函数
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-                    }
-                });
-                wx.onMenuShareQQ({
-                    title: sharetitle, // 分享标题
-                    desc: sharedesc, // 分享描述
-                    link: shareLink, // 分享链接
-                    imgUrl: imageUrl, // 分享图标
-                    success: function () {
-                        // 用户确认分享后执行的回调函数
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-                    }
-                });
-                wx.onMenuShareWeibo({
-                    title: sharetitle, // 分享标题
-                    desc: sharedesc, // 分享描述
-                    link: shareLink, // 分享链接
-                    imgUrl: imageUrl, // 分享图标
-                    success: function () {
-                        // 用户确认分享后执行的回调函数
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-                    }
-                });
-            });
-
-        }
 })();
 
 // Timer
@@ -218,3 +94,131 @@ function resetTimer (){
     minute=second=0;
     document.getElementById('timer').innerHTML='00:00';
 };
+
+
+///**********************************微信分享的部分功能 **********************************/
+
+/**
+ * WeChat();为测试服代码
+ * getWXconfig()为正式服，上到财新平台请屏蔽代码
+ * 暂时不调用
+ */
+// window.addEventListener('load',function () {
+//     WeChat();
+//     //getWXConfig();
+// });
+
+function WeChat() {
+    $.ajax(
+        {type:'get',
+            url:'ajax_getconfig.php',
+            success:function(data){
+                console.log("ajax success:"+data);
+                console.log("ajax success:"+JSON.parse(data).appId);
+                console.log("ajax success:"+JSON.parse(data).timestamp);
+                console.log("ajax success:"+JSON.parse(data).nonceStr);
+                console.log("ajax success:"+JSON.parse(data).signature);
+
+                wx.config({
+                    debug: false,
+                    appId:JSON.parse(data).appId,
+                    timestamp: JSON.parse(data).timestamp,
+                    nonceStr: JSON.parse(data).nonceStr,
+                    signature: JSON.parse(data).signature,
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',//
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo'
+
+                    ]
+                });
+
+            }
+        });
+
+}
+/**
+ * caixin wx
+ * 上到服务器之前，注意检查debug:false,是否为false，
+ * 如果需要调试开true会有弹框信息出现
+ */
+function getWXConfig(){
+    $.getJSON("http://api.caixin.com/wxsdk/wxconfig.php?url=" + encodeURIComponent(window.location.href) + "&callback=?",function(data){
+        wx.config({
+            debug: false,
+            appId: data.appId,
+            timestamp: data.timestamp,
+            nonceStr: data.nonceStr,
+            signature: data.signature,
+            jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","translateVoice","uploadVoice"]
+        });
+    });
+}
+
+
+function shareAjax(){
+    /**
+     * url需要更改为正式服务器的地址
+     */
+    var url="http://weixin.assemblemedia.cn/founder/";
+    var imageUrl=url+"images/shareIcon.jpg";
+    var sharetitle='车票无限供应！开往春天的方正号！';
+    var sharedesc="您一共使用了"+window.minute+"分"+window.second+"秒到达春天!";
+    var shareLink=url+'index.html';
+
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            title:sharetitle+sharedesc, // 分享标题
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: sharetitle, // 分享标题
+            desc: sharedesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareQQ({
+            title: sharetitle, // 分享标题
+            desc: sharedesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareWeibo({
+            title: sharetitle, // 分享标题
+            desc: sharedesc, // 分享描述
+            link: shareLink, // 分享链接
+            imgUrl: imageUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    });
+
+}
