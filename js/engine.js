@@ -38,7 +38,7 @@ const bgScale = {
     heartRatio ={
         bgScaleX : h/676,
         bgScaleY : w/this.h,
-        h:203
+        h:61
     },
     moneyRatio ={
         bgScaleX : h/676,
@@ -98,27 +98,6 @@ const arrTitle2 = pushQuizPieces(14, 'title1'),
 
 
 ///////////////////////////////////////Prototype///////////////////////////////
-
-// function Sound (id_str){
-//     // this.url = 'asset/audio/'+id_str+'.mp3';
-//     this.audio = $(`#${id_str}`)[0];
-// }
-// const soundPlay = function () {
-//     // console.log("sound play is triggered "+ this.url);
-//     // let audio = new Audio(`'asset/audio/${id}.mp3'`);
-//     let audio = this.audio;
-//
-//     if(audio){
-//         audio.play().catch(e =>
-//             console.log("sound play method has something wrong: "+e)
-//         );
-//         document.addEventListener("WeixinJSBridgeReady", () => {
-//             audio.play().catch(e =>
-//                 console.log("sound wechat play method has something wrong: "+e)
-//             );
-//         }, false);
-//     }
-// };
 
 
 //scene
