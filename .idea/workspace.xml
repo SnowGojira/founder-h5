@@ -1,54 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/page1/bgt1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/audio/bg.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/audio/running.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/asset/audio/run.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page1/bgt1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page1/fbgt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page2/snow1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/page2/snow1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page3/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/page3/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page3/signal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page4/heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/page4/heart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page5/flower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page5/money.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/page5/money.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/page6/money.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/page6/money.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/railway.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/railway.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/timer.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/timer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title3/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title3/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/title4/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/title4/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/engine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/lib/zepto.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lib/zepto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tools.js" afterDir="false" />
-    </list>
+    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="" />
     <ignored path="founder-h5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -112,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="280" column="8" selection-start-line="280" selection-start-column="4" selection-end-line="280" selection-end-column="8" />
+              <caret line="315" selection-start-line="315" selection-start-column="3" selection-end-line="319" selection-end-column="45" />
               <folding>
                 <element signature="n#!!block;n#Scene#0" />
                 <element signature="n#!!block;n#Train#0" />
@@ -192,8 +145,8 @@
       <find>speed_train</find>
       <find>audio</find>
       <find>bubble</find>
-      <find>Sound</find>
       <find>play</find>
+      <find>Sound</find>
     </findStrings>
     <replaceStrings>
       <replace>on('click,</replace>
@@ -403,7 +356,7 @@
       <workItem from="1574724931245" duration="2900000" />
       <workItem from="1574856198656" duration="1126000" />
       <workItem from="1574872487590" duration="522000" />
-      <workItem from="1575709162114" duration="14873000" />
+      <workItem from="1575709162114" duration="15161000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -675,7 +628,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="413344000" />
+    <option name="totallyTimeSpent" value="413632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -938,7 +891,7 @@
     <entry file="file://$PROJECT_DIR$/js/engine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="280" column="8" selection-start-line="280" selection-start-column="4" selection-end-line="280" selection-end-column="8" />
+          <caret line="315" selection-start-line="315" selection-start-column="3" selection-end-line="319" selection-end-column="45" />
           <folding>
             <element signature="n#!!block;n#Scene#0" />
             <element signature="n#!!block;n#Train#0" />
