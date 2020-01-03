@@ -25,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3448">
+            <state relative-caret-position="861">
               <caret line="38" column="18" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="18" />
               <folding>
                 <element signature="n#!!block;n#handleFileProgress#0" />
@@ -43,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tools.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
+            <state relative-caret-position="2788">
               <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
               <folding>
                 <element signature="e#109#137#0" />
@@ -64,18 +64,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="313" column="1" lean-forward="true" selection-start-line="313" selection-start-column="1" selection-end-line="313" selection-end-column="1" />
+            <state relative-caret-position="250">
+              <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding>
-                <element signature="n#!!block;n#Scene#0" />
-                <element signature="n#!!block;n#Train#0" />
-                <element signature="e#3337#3779#0" />
-                <element signature="n#!!block;n#SheetAnim#0" />
-                <element signature="e#3958#4808#0" />
-                <element signature="e#5531#5683#0" />
-                <element signature="e#5720#6057#0" />
-                <element signature="n#!!block;n#pushQuizPieces#0" />
-                <element signature="n#!!block;n#checkRight#0" />
+                <element signature="e#3091#3275#0" />
+                <element signature="e#4146#4183#0" />
+                <element signature="e#4778#4873#0" />
+                <element signature="e#15362#15589#0" />
+                <element signature="e#16866#16986#0" />
               </folding>
             </state>
           </provider>
@@ -84,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="1066">
               <caret line="26" column="42" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="42" />
               <folding>
                 <element signature="n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -244,6 +240,12 @@
             <path>
               <item name="founder-h5" type="b2602c69:ProjectViewProjectNode" />
               <item name="founder-h5" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="page4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="founder-h5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="founder-h5" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -274,19 +276,19 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/images/page6" />
-      <recent name="$PROJECT_DIR$/images/page5" />
-      <recent name="$PROJECT_DIR$/images/page4" />
-      <recent name="$PROJECT_DIR$/images/page3" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/page1" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/js/lib" />
       <recent name="F:\汉字H5\founder-h5" />
       <recent name="F:\汉字H5\founder-h5\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/page4" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/images/page6" />
+      <recent name="$PROJECT_DIR$/images/page5" />
+      <recent name="$PROJECT_DIR$/images/page3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -356,6 +358,7 @@
       <workItem from="1574856198656" duration="1126000" />
       <workItem from="1574872487590" duration="522000" />
       <workItem from="1575709162114" duration="15499000" />
+      <workItem from="1575796239490" duration="443000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -627,7 +630,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="413970000" />
+    <option name="totallyTimeSpent" value="414413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,7 +646,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14126395" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14126395" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49791667" weight="0.13721186" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.7568773" side_tool="true" weight="0.32991454" />
@@ -769,9 +772,7 @@
     <entry file="file://$PROJECT_DIR$/images/title1/0.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/page5/flower.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/images/page5/flower.png" />
     <entry file="file://$PROJECT_DIR$/images/page6/money.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -810,30 +811,42 @@
     <entry file="file://$PROJECT_DIR$/images/shareIcon.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/page1/fbgt.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/page1/bgt1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/page1/bgt1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/images/page1/fbgt.png" />
+    <entry file="file://$PROJECT_DIR$/images/page1/bgt1.png" />
+    <entry file="file://$PROJECT_DIR$/images/page1/bgt1.jpg" />
     <entry file="file://$PROJECT_DIR$/images/title3/0.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/images/page1/fbgt1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/train.png">
+    <entry file="file://$PROJECT_DIR$/images/page5/money.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/page5/money.png">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="17809" column="4" selection-start-line="17809" selection-start-column="4" selection-end-line="17809" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#handleFileProgress#0" />
+            <element signature="n#!!block;n#handleComplete#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/timer.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/tools.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
+        <state relative-caret-position="2788">
           <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
           <folding>
             <element signature="e#109#137#0" />
@@ -845,19 +858,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/timer.png">
+    <entry file="file://$PROJECT_DIR$/images/train.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="17809" column="4" selection-start-line="17809" selection-start-column="4" selection-end-line="17809" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="1066">
           <caret line="26" column="42" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="42" />
           <folding>
             <element signature="n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -876,31 +882,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3448">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!block;n#handleFileProgress#0" />
-            <element signature="n#!!block;n#handleComplete#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="313" column="1" lean-forward="true" selection-start-line="313" selection-start-column="1" selection-end-line="313" selection-end-column="1" />
+        <state relative-caret-position="250">
+          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
           <folding>
-            <element signature="n#!!block;n#Scene#0" />
-            <element signature="n#!!block;n#Train#0" />
-            <element signature="e#3337#3779#0" />
-            <element signature="n#!!block;n#SheetAnim#0" />
-            <element signature="e#3958#4808#0" />
-            <element signature="e#5531#5683#0" />
-            <element signature="e#5720#6057#0" />
-            <element signature="n#!!block;n#pushQuizPieces#0" />
-            <element signature="n#!!block;n#checkRight#0" />
+            <element signature="e#3091#3275#0" />
+            <element signature="e#4146#4183#0" />
+            <element signature="e#4778#4873#0" />
+            <element signature="e#15362#15589#0" />
+            <element signature="e#16866#16986#0" />
           </folding>
         </state>
       </provider>
