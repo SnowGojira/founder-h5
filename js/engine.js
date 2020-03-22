@@ -504,20 +504,27 @@ function checkByAnswerCode(arr,num){
         i == num ?arr[i].visible=true:arr[i].visible=false;
     }
 }
-
+var rightTimeout,wrongTimeout;
 function checkRight(key){
+    clearTimeout(rightTimeout);
+
     Sound.play('right');
     $(key+'_r').show();
-    setTimeout(function () {
+    rightTimeout=setTimeout(function () {
         $(key+'_r').hide();
     },10);
+
+
 }
 
 function checkWrong(key){
+    clearTimeout(wrongTimeout);
+    
     Sound.play('wrong');
     $(key+'_w').show();
-    setTimeout(function () {
+    wrongTimeout=setTimeout(function () {
         $(key+'_w').hide();
     },10);
+
 }
 

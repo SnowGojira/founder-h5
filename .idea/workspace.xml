@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="" />
+    <list default="true" id="4a73ae02-56b0-416a-86df-44ef0b252e98" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/js/engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/engine.js" afterDir="false" />
+    </list>
     <ignored path="founder-h5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,6 +19,26 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1557589479">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="121" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="121" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="founder-h5" />
   </component>
@@ -25,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="38" column="18" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="18" />
+            <state relative-caret-position="1575">
+              <caret line="55" column="20" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="20" />
               <folding>
                 <element signature="n#!!block;n#handleFileProgress#0" />
                 <element signature="n#!!block;n#handleComplete#0" />
@@ -43,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tools.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2788">
+            <state relative-caret-position="567">
               <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
               <folding>
                 <element signature="e#109#137#0" />
@@ -64,15 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-              <folding>
-                <element signature="e#3091#3275#0" />
-                <element signature="e#4146#4183#0" />
-                <element signature="e#4778#4873#0" />
-                <element signature="e#15362#15589#0" />
-                <element signature="e#16866#16986#0" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="521" column="4" selection-start-line="521" selection-start-column="4" selection-end-line="521" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -80,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1066">
+            <state relative-caret-position="1170">
               <caret line="26" column="42" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="42" />
               <folding>
                 <element signature="n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -113,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sig</find>
       <find>heart</find>
       <find>money</find>
       <find>money2</find>
@@ -123,7 +137,6 @@
       <find>sound</find>
       <find>bg</find>
       <find>hint</find>
-      <find>timer</find>
       <find>starttimer</find>
       <find>Scen</find>
       <find>Scene</find>
@@ -143,6 +156,8 @@
       <find>bubble</find>
       <find>play</find>
       <find>Sound</find>
+      <find>timer</find>
+      <find>time</find>
     </findStrings>
     <replaceStrings>
       <replace>on('click,</replace>
@@ -185,14 +200,20 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1366" />
-    <option name="height" value="677" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1367" />
+    <option name="height" value="678" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -202,7 +223,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,6 +278,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,13 +325,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Node.js.engine.js">
-    <configuration name="engine.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="engine.js" working-dir="$PROJECT_DIR$/js">
+    <configuration name="engine.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="engine.js" working-dir="$PROJECT_DIR$/js">
       <method v="2" />
     </configuration>
-    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" path-to-node="$PROJECT_DIR$/js/test.js" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/js">
+    <configuration name="test.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/js/test.js" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/js">
       <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
@@ -359,6 +380,7 @@
       <workItem from="1574872487590" duration="522000" />
       <workItem from="1575709162114" duration="15499000" />
       <workItem from="1575796239490" duration="443000" />
+      <workItem from="1584879322880" duration="739000" />
     </task>
     <task id="LOCAL-00001" summary="build workspace / 创建程序框架">
       <created>1480272183177</created>
@@ -630,7 +652,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="414413000" />
+    <option name="totallyTimeSpent" value="415152000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,11 +664,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="677" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14126395" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.098479845" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49791667" weight="0.13721186" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.7568773" side_tool="true" weight="0.32991454" />
@@ -699,6 +721,9 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="建好静态框架/Build a static framework" />
@@ -830,40 +855,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!block;n#handleFileProgress#0" />
-            <element signature="n#!!block;n#handleComplete#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/timer.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tools.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2788">
-          <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
-          <folding>
-            <element signature="e#109#137#0" />
-            <element signature="e#164#2663#0" />
-            <element signature="n#!!block;n#WeChat#0" />
-            <element signature="n#!!block;n#getWXConfig#0" />
-            <element signature="n#!!block;n#shareAjax#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/images/train.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1066">
+        <state relative-caret-position="1170">
           <caret line="26" column="42" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="42" />
           <folding>
             <element signature="n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -882,17 +882,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!block;n#handleFileProgress#0" />
+            <element signature="n#!!block;n#handleComplete#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="223" column="1" selection-start-line="223" selection-start-column="1" selection-end-line="223" selection-end-column="1" />
+          <folding>
+            <element signature="e#109#137#0" />
+            <element signature="e#164#2663#0" />
+            <element signature="n#!!block;n#WeChat#0" />
+            <element signature="n#!!block;n#getWXConfig#0" />
+            <element signature="n#!!block;n#shareAjax#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-          <folding>
-            <element signature="e#3091#3275#0" />
-            <element signature="e#4146#4183#0" />
-            <element signature="e#4778#4873#0" />
-            <element signature="e#15362#15589#0" />
-            <element signature="e#16866#16986#0" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="521" column="4" selection-start-line="521" selection-start-column="4" selection-end-line="521" selection-end-column="4" />
         </state>
       </provider>
     </entry>
