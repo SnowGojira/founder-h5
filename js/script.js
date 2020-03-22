@@ -18,16 +18,18 @@ function handleFileProgress(){
 function handleComplete(){
 
     Hide(['#pageLoad']);
-    $('#pageStage').show();
+    $('#page7').show();
 
-    bubble_anim.render();
-    front_scene.render();
-    back_scene.render();
-    speed_train.render();
-
-    speed_train.update(train_loc_1,()=>{
-        $("#hint").show();
-    });
+    // $('#pageStage').show();
+    //
+    // bubble_anim.render();
+    // front_scene.render();
+    // back_scene.render();
+    // speed_train.render();
+    //
+    // speed_train.update(train_loc_1,()=>{
+    //     $("#hint").show();
+    // });
 }
 
 //events' logic
@@ -43,7 +45,6 @@ $(function () {
     });
 
     $("#startBtn").on('click', function () {
-        /*console.log()*/
         Hide([".page1float","#bubble"]);
         audio_out.play();
 
@@ -69,7 +70,7 @@ $(function () {
             key_id = id_str[4],
             arrTitle, password,procedure;
 
-        if(sec_id == 2) {
+        if(sec_id === 2) {
             password = password2;
             arrTitle = arrTitle2;
             procedure = function(){
@@ -90,7 +91,7 @@ $(function () {
                 front_scene.update(location_2);
                 back_scene.update(location_2);
             }
-        }else if(sec_id == 3) {
+        }else if(sec_id === 3) {
             password = password3;
             arrTitle = arrTitle3;
             procedure = function () {
@@ -110,7 +111,7 @@ $(function () {
                 front_scene.update(location_3);
                 back_scene.update(location_3);
             }
-        }else if(sec_id == 4) {
+        }else if(sec_id === 4) {
             password = password4;
             arrTitle = arrTitle4;
             procedure = function () {
@@ -132,7 +133,7 @@ $(function () {
                 back_scene.update(location_4);
 
             }
-        }else if(sec_id == 5) {
+        }else if(sec_id === 5) {
             password = password5;
             arrTitle = arrTitle5;
             procedure = function () {
@@ -160,8 +161,6 @@ $(function () {
             }
         }
 
-        // console.log('passed password',password);
-        // console.log('passed arrTitle',arrTitle);
         parseQuiz(sec_id,key_id,password,arrTitle,procedure);
 
     });

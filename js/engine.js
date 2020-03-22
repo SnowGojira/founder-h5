@@ -150,7 +150,7 @@ SheetAnim.prototype.render = function(...args){
     stage.canvas.width=h;
 
     let frames_count,anim_arr;
-    if(args.length == 0){
+    if(args.length === 0){
         frames_count = 3;
         anim_arr = [0,2,'anim'];
     } else{
@@ -395,7 +395,7 @@ function preload (handleFileProgress,handleComplete){
     loader = new createjs.LoadQueue(false);
     // 关键！----设置并发数
     loader.setMaxConnections(100);
-// 关键！---一定要将其设置为 true, 否则不起作用。
+    // 关键！---一定要将其设置为 true, 否则不起作用。
     loader.maintainScriptOrder=true;
     loader.installPlugin(createjs.Sound);
     loader.loadManifest(manifest);
