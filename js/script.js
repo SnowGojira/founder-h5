@@ -12,7 +12,7 @@ window.onload = preload(handleFileProgress,handleComplete);
 
 function handleFileProgress(){
     let percent=loader.progress*100|0+'%';
-    console.log(percent);
+    // console.log(percent);
     $('#loadPercent').text(`${percent}%`);
 }
 
@@ -62,7 +62,7 @@ $(function () {
         topic1.render();
         topic1.Enter(8000);
     });
-
+    let sloganTimeout;
     //page2-5 quiz page
     $('.key').on('click',function(e){
         let id_str = $(this).attr("id").split(''),
@@ -141,7 +141,7 @@ $(function () {
                     $('#flag').addClass('mainIn');
                     $('#slogan1').addClass('mainIn');
 
-                    setTimeout(function () {
+                    sloganTimeout=setTimeout(function () {
                         $('#slogan1').removeClass('mainIn');
                         $('#slogan1').addClass('fadeOut');
 
@@ -165,6 +165,7 @@ $(function () {
 
     //page6 result page
     $('#checkBtn').on('click', function () {
+        clearTimeout(sloganTimeout);
 
         Hide(['#slogan1','#slogan2','#flag','#check']);
         $('#page7').show();
